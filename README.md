@@ -27,7 +27,7 @@ BEAN_ITP/
 ├── tsconfig.json
 ├── yarn.lock
 
-# To locally run the client
+**To locally run the client
 1. **Clone the Project:**
 
    ```sh
