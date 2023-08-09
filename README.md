@@ -5,6 +5,7 @@
 
 # File Strucutre
 
+
 ```bash
 BEAN_ITP/
 ├── node_modules/
@@ -25,8 +26,6 @@ BEAN_ITP/
 ├── package.json
 ├── tsconfig.json
 ├── yarn.lock
-''' 
-
 
 # To locally run the client
 1. **Clone the Project:**
