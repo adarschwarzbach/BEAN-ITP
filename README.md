@@ -4,41 +4,21 @@
 🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️
 
 # File Strucutre
-- **project-root/**
-  This is the top-level directory containing the entire project.
+- BEAN_ITP/
+  - node_modules/
+  - public/
+    - index.html
+    - ...
+  - server/
+    - numpyLambdaLayer
+  - src/
+    - App.tsx
+    - index.tsx
+    - ...
+  - package.json
+  - tsconfig.json
+  - README.md
 
-  - **node_modules/**
-    Directory for project dependencies.
-
-  - **public/**
-    Static assets and main HTML file.
-    
-    - `index.html`
-      The main HTML file of the React app.
-
-  - **src/**
-    Source code for your React app.
-
-    - `App.tsx`
-      The main component of the React app.
-
-    - `index.tsx`
-      Entry point of the React app.
-
-  - **server/**
-    Server-related files.
-    
-    - `server.js`
-      The server script.
-    
-    - `package.json`
-      Server-specific package configuration.
-
-- `package.json`
-  Project metadata and dependency information.
-
-- `tsconfig.json`
-  TypeScript configuration settings.
 
 
 
