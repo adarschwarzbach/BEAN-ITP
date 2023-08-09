@@ -1,10 +1,11 @@
 # BEAN - An Isotachphoresis Calculator
 
 **Work in progres**
-🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️
---- insert about BEAN and its purpose ---
+🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️ 
 
-# File Strucutre
+** Insert some info about BEAN & its purpose **
+
+# File Structure
 ```sh
 BEAN_ITP/
 ├── node_modules/
@@ -45,4 +46,4 @@ BEAN_ITP/
     ```sh
     yarn start
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view BEAN in the browser.
