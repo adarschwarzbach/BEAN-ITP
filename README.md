@@ -23,26 +23,25 @@
 # Project File Structure in Markdown
 
 ```bash
-    BEAN_ITP/
-    ├── node_modules/
-    ├── public/
-    │   ├── index.html
-    │   └── ...
-    ├── server/
-    │   ├── numpyLambdaLayer/ (Service to use numpy in AWS)
-    │   ├── beanBackend.py (Lambda function for BEAN API)
-    │   ├── zipBackend.sh (Script to zip beanBackend.py)
-    │   ├── diffusion_free_model.py (Edited version of diffusion calculations)
-    │   └── ...
-    ├── src/
-    │   ├── App.tsx
-    │   ├── index.tsx
-    │   └── ...
-    ├── README.md
-    ├── package.json
-    ├── tsconfig.json
-    ├── yarn.lock
-''' 
+BEAN_ITP/
+├── node_modules/
+├── public/
+│   ├── index.html
+│   └── ...
+├── server/
+│   ├── numpyLambdaLayer/ (Service to use numpy in AWS)
+│   ├── beanBackend.py (Lambda function for BEAN API)
+│   ├── zipBackend.sh (Script to zip beanBackend.py)
+│   ├── diffusion_free_model.py (Edited version of diffusion calculations)
+│   └── ...
+├── src/
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── ...
+├── README.md
+├── package.json
+├── tsconfig.json
+├── yarn.lock
 
 
 # To locally run the client
