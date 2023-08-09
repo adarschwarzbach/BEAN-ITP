@@ -1,7 +1,8 @@
 # BEAN - An Isotachphoresis Calculator
 
 **Work in progres**
-🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️ 
+
+**🟢🟢🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️**
 
 ** Insert some info about BEAN & its purpose **
 
