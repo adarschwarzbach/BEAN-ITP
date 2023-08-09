@@ -26,7 +26,7 @@ BEAN_ITP/
 ├── yarn.lock
 ```
 
-# To locally run the client
+# To locally run the client (once client is completed)
 
 1. **Clone the Project:**
 
