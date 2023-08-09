@@ -13,6 +13,7 @@ BEAN_ITP/
 │   ├── index.html
 │   └── ...
 ├── server/
+│   ├── docker/ # Containarize python venv & dependencies 
 │   ├── numpyLambdaLayer/ # Service to use numpy in AWS
 │   ├── beanBackend.py # AWS Lambda function for BEAN API
 │   ├── zipBackend.sh # Script to zip beanBackend.py
