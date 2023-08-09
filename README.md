@@ -4,9 +4,7 @@
 🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️
 
 # File Strucutre
-
-
-```bash
+```sh
 BEAN_ITP/
 ├── node_modules/
 ├── public/
@@ -26,8 +24,10 @@ BEAN_ITP/
 ├── package.json
 ├── tsconfig.json
 ├── yarn.lock
+```
 
-**To locally run the client
+# To locally run the client
+
 1. **Clone the Project:**
 
    ```sh
