@@ -1,5 +1,12 @@
-.App {
-  text-align: center;
+@import "normalize.css";
+@import "@blueprintjs/core/lib/css/blueprint.css";
+@import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+/* Container for our App to avoid full screen color */
+.app-container {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .App-logo {
@@ -24,15 +31,8 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  background-color: #383E47;
+  color: #182026;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
