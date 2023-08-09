@@ -2,6 +2,7 @@
 
 **Work in progres**
 🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+--- insert about BEAN and its purpose ---
 
 # File Strucutre
 ```sh
@@ -12,9 +13,10 @@ BEAN_ITP/
 │   └── ...
 ├── server/
 │   ├── numpyLambdaLayer/ # Service to use numpy in AWS
-│   ├── beanBackend.py # Lambda function for BEAN API
+│   ├── beanBackend.py # AWS Lambda function for BEAN API
 │   ├── zipBackend.sh # Script to zip beanBackend.py
 │   ├── diffusion_free_model.py # Edited version of diffusion calculations
+│   ├── printOutput.py # Script to print .npz otput files from the model
 │   └── ...
 ├── src/ # Client code - not started
 │   ├── App.tsx
@@ -26,7 +28,8 @@ BEAN_ITP/
 ├── yarn.lock
 ```
 
-# To locally run the client (once client is completed)
+# To locally run the client 
+(once client is completed)
 
 1. **Clone the Project:**
 
