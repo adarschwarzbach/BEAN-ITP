@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { InputGroup, Tooltip, Position, H5, Button, FormGroup, Intent, Switch, Card, Elevation, Divider, Classes } from '@blueprintjs/core';
+import { InputGroup, Tooltip, Position, H5, Button, FormGroup, Intent, Switch, Divider } from '@blueprintjs/core';
 
 
 const App: React.FC = () => {

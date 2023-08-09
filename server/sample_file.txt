@@ -1,0 +1,41 @@
+N = 4 #Do not edit this line
+IonicEffectFlag=0 #0 for no ionic strength correction, 1 for calculation with ionic strength correction
+
+#Example of Anionic ITP
+
+species = { 0: {'Name': 'HCl', 'valence': [-1], 'mobility': [-79.1e-9], 
+		'pKa': [-2], 'concentration': 0.01, 'type': 'LE'},
+	    1: {'Name': 'Tris', 'valence': [1], 'mobility': [29.5e-9], 
+		'pKa': [8.076], 'concentration': 0.02, 'type': 'Background'}, 
+	    2: {'Name': 'MOPS', 'valence': [-1], 'mobility': [-26.9e-9], 
+		'pKa': [7.2], 'concentration': 0.001, 'type': 'Analyte'},
+	    3: {'Name': 'HEPES', 'valence': [-1], 'mobility': [-23.5e-9], 
+		'pKa': [7.5], 'concentration': 0.005, 'type': 'TE'}, 
+	}
+	
+
+##Example of Cationic ITP	
+'''
+species = { 0: {'Name': 'Imidazol', 'valence': [1], 'mobility': [52.0e-9], 
+		'pKa': [7.15], 'concentration': 0.07, 'type': 'LE'},
+	    1: {'Name': 'HCl', 'valence': [-1], 'mobility': [-79.1e-9], 
+		'pKa': [-2], 'concentration': 0.03, 'type': 'Background'}, 
+	    2: {'Name': 'BisTris', 'valence': [1], 'mobility': [29.5e-9], 
+		'pKa': [6.4], 'concentration': 0.01, 'type': 'Analyte'},
+	    3: {'Name': 'Pyridine', 'valence': [1], 'mobility': [29.5e-9], 
+		'pKa': [5.18], 'concentration': 0.1, 'type': 'TE'}, 
+	}	
+'''	
+		
+	
+#Multivalent species can be input using the following format
+# {'Name': 'Sebacic-Acid', 'valence': [-2, -1], 'mobility': [-4.49e-008, -2.07e-008 ], 'pKa': [5.38, 4.53], 'concentration': 0.00021, 'type': 'LE'
+
+#-----Do not edit the following lines---------------
+Nspecies = len(species) 
+cMat_read = np.zeros((Nspecies,N)) #initialize cMat to zero
+cMat_read[0,0] = species[0]['concentration']
+cMat_read[1,:] = species[1]['concentration']
+cMat_read[2,1] = species[2]['concentration']
+cMat_read[3,2:] = species[3]['concentration']
+
