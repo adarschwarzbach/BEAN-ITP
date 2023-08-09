@@ -14,7 +14,9 @@ BEAN_ITP/
 │   └── ...
 ├── server/
 │   ├── docker/ # Containarize python venv & dependencies 
+│   │   └── ...
 │   ├── numpyLambdaLayer/ # Service to use numpy in AWS
+│   │   └── ...
 │   ├── beanBackend.py # AWS Lambda function for BEAN API
 │   ├── zipBackend.sh # Script to zip beanBackend.py
 │   ├── diffusion_free_model.py # Edited version of diffusion calculations
