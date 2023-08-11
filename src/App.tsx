@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import { InputGroup, Tooltip, Position, H5, Button, FormGroup, Intent, Switch, Divider } from '@blueprintjs/core';
+import HeaderBanner from './components/Header/HeaderBanner';
 
 
 const App: React.FC = () => {
@@ -8,6 +9,8 @@ const App: React.FC = () => {
   const themeClass = isDarkMode ? 'bp5-dark' : '';
 
   return (
+    <>
+      <HeaderBanner className={themeClass}/>
     <div className={`${themeClass} app-container `}>
       <div className={`bp3-ui-text ${themeClass}`} style={{ padding: '20px' }}>
           <H5>Input Details</H5>
@@ -56,6 +59,7 @@ const App: React.FC = () => {
           <Switch checked={isDarkMode} label="Dark Mode" onChange={() => setIsDarkMode(!isDarkMode)} style={{marginTop: '20px'}} />
       </div>
     </div>
+    </>
   );
 }
 
