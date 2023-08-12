@@ -22,7 +22,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,7 +32,12 @@
 }
 
 body {
-  background-color: #383E47;
+  background-color: #252A31;
   color: #182026;
 }
 
+.form-data {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
