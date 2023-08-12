@@ -13,7 +13,7 @@ const App: React.FC = () => {
       <HeaderBanner className={themeClass}/>
     <div className={`${themeClass} app-container `}>
       <div className={`bp3-ui-text ${themeClass}`} style={{ padding: '20px' }}>
-          <H5>Input Details</H5>
+          {/* <H5>Input Details</H5>
           <Divider />
           <FormGroup
               label="Name"
@@ -56,7 +56,7 @@ const App: React.FC = () => {
           </FormGroup>
 
           <Button intent={Intent.PRIMARY}>Submit</Button>
-          <Switch checked={isDarkMode} label="Dark Mode" onChange={() => setIsDarkMode(!isDarkMode)} style={{marginTop: '20px'}} />
+          <Switch checked={isDarkMode} label="Dark Mode" onChange={() => setIsDarkMode(!isDarkMode)} style={{marginTop: '20px'}} /> */}
       </div>
     </div>
     </>

@@ -8,7 +8,6 @@ interface Props {
 
 const HeaderBanner: React.FC<Props> = ({ className }) => {
     return (
-        <div className={`background`}>
         <Navbar className={`${className}`}>
             <Navbar.Group align={Alignment.LEFT} className={`${className } background`}>
                 <Navbar.Heading  className='pull-left'>
@@ -17,14 +16,12 @@ const HeaderBanner: React.FC<Props> = ({ className }) => {
                     </a>
                 </Navbar.Heading>
                 <Navbar.Divider />
-                <Navbar.Heading className='custom-title'> {`   BEAN`}</Navbar.Heading>
+                <Navbar.Heading className='custom-title'> BEAN</Navbar.Heading>
             </Navbar.Group>
             <Navbar.Group align={Alignment.RIGHT}>
-                {/* <Button className="bp3-minimal" icon="home" text="Home" /> */}
                 <Button className="bp3-minimal" icon="people" text="About" />
             </Navbar.Group>
         </Navbar>
-        </div>
     );
 }
 

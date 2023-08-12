@@ -1,13 +1,15 @@
 
 body .bp5-navbar.bp5-dark, .bp5-dark .bp5-navbar {
   background-color: #2F343C;
+  /* Might mess up movile  */
+  min-width:550px;
 }
 
-.custom-navbar {
+/* .custom-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 .custom-title {
     /* font-size: 18px; */
