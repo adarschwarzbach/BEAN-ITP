@@ -1,5 +1,5 @@
-import React from 'react';
-import { Column, Table2, Cell, Utils } from '@blueprintjs/table';
+import React, {useState} from 'react';
+import { Column, Table2, Cell, TableLoadingOption } from '@blueprintjs/table';
 import './ZoneConcentrationTable.css';
 
 type SpeciesData = {
@@ -37,6 +37,9 @@ const columnNames = ['Species', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
 
 
 const ZoneConcentrationsTable: React.FC = () => {
+	const [isLoading, setIsLoading] = useState(false);
+	const loadingOptions = isLoading ? [TableLoadingOption.CELLS] : [];
+
 	const numRows = data.length;
 
 	const renderCell = (rowIndex: number, columnIndex: number) => {
@@ -63,6 +66,7 @@ const ZoneConcentrationsTable: React.FC = () => {
 		// <div className="table-container bp5-dark">
 		<Table2 
 			numRows={numRows}
+			loadingOptions={loadingOptions}
 		>
 			{renderColumns()}
 		</Table2>
