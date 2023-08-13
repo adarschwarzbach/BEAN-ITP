@@ -4,6 +4,7 @@ import HeaderBanner from './components/Header/HeaderBanner';
 import SpeciesForm from './SpeciesData/SpeciesForm';
 import ZoneConcentrationsTable from './SpeciesData/SpeciesTables/ZoneConcentrationTable';
 import PHTable from './SpeciesData/SpeciesTables/PHTable/PHTable';
+import HeatMap from './components/HeatMap/HeatMap';
 const App: React.FC = () => {
 	const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 	const themeClass = isDarkMode ? 'bp5-dark' : '';
@@ -26,6 +27,7 @@ const App: React.FC = () => {
 					<ZoneConcentrationsTable/>
 					<div style = {{height:'12px'}}/>
 					<PHTable/>
+					<HeatMap/>
 				</div>
 			</div>
 		</>
