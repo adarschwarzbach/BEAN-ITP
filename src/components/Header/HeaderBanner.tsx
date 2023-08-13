@@ -7,22 +7,22 @@ interface Props {
 }
 
 const HeaderBanner: React.FC<Props> = ({ className }) => {
-    return (
-        <Navbar className={`${className}`}>
-            <Navbar.Group align={Alignment.LEFT} className={`${className } background`}>
-                <Navbar.Heading  className='pull-left'>
-                    <a href="https://microfluidics.stanford.edu/" className='lab-link'>
+	return (
+		<Navbar className={`${className}`}>
+			<Navbar.Group align={Alignment.LEFT} className={`${className } background`}>
+				<Navbar.Heading  className='pull-left'>
+					<a href="https://microfluidics.stanford.edu/" className='lab-link'>
                     The Stanford University Microfluidics Laboratory
-                    </a>
-                </Navbar.Heading>
-                <Navbar.Divider />
-                <Navbar.Heading className='custom-title'> BEAN</Navbar.Heading>
-            </Navbar.Group>
-            <Navbar.Group align={Alignment.RIGHT}>
-                <Button className="bp3-minimal" icon="people" text="About" />
-            </Navbar.Group>
-        </Navbar>
-    );
-}
+					</a>
+				</Navbar.Heading>
+				<Navbar.Divider />
+				<Navbar.Heading className='custom-title'> BEAN</Navbar.Heading>
+			</Navbar.Group>
+			<Navbar.Group align={Alignment.RIGHT}>
+				<Button className="bp3-minimal" icon="people" text="About" />
+			</Navbar.Group>
+		</Navbar>
+	);
+};
 
 export default HeaderBanner;
