@@ -1,6 +1,25 @@
+@import '@blueprintjs/core/lib/css/blueprint.css';
+@import '@blueprintjs/select/lib/css/blueprint-select.css';
+@import 'normalize.css/normalize.css';
+
 .bp5-dark .species-search .bp5-input {
-    background-color: #30404D !important;
+    background-color: #383E47 !important;
 }
+
 .bp5-dark .species-search::placeholder {
     color: rgba(191, 204, 214, 0.6);
 }
+
+.bp5-menu {
+    background-color: #2F343C !important;
+}
+
+.bp5-popover-content {
+    background-color: #2F343C !important;
+}
+
+
+.bp5-popover-arrow-fill {
+    fill: #2F343C !important;
+}
+

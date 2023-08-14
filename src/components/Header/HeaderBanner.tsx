@@ -19,7 +19,7 @@ const HeaderBanner: React.FC<Props> = ({ className }) => {
 				<Navbar.Heading className='custom-title'> BEAN</Navbar.Heading>
 			</Navbar.Group>
 			<Navbar.Group align={Alignment.RIGHT}>
-				<Button className="bp3-minimal" icon="people" text="About" />
+				<Button className="bp5-minimal" icon="people" text="About" />
 			</Navbar.Group>
 		</Navbar>
 	);
