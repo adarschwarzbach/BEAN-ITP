@@ -65,36 +65,43 @@ export const SpeciesSelect: React.FC = () => {
 		};
 	};
 
+	const handleButtonClick = (event: React.MouseEvent) => {
+		event.stopPropagation();
+	};
+
+
 	return (
-		<Select
-			className="my-custom-class"
-			items={commonSpecies}
-			itemRenderer={renderSpecies}
-			itemPredicate={filterBySpecies}
-			onItemSelect={handleSpeciesSelect}
-			noResults={<MenuItem disabled={true} text="No results." />}
-			onQueryChange={(newQuery) => setQuery(newQuery)}
-			query={query}
-			filterable={true}
-			inputProps={{
-				placeholder: inputPlaceholder,
-				className: 'bp5-dark my-input',
-				style: {backgroundColor: '#1C2127', color: 'white'}
-			}}
-			createNewItemFromQuery={createNewSpeciesFromQuery}
-			createNewItemRenderer={(query, active, handleClick) => (
-				<MenuItem
-					icon="add"
-					text={`Create "${query}"`}
-					active={active}
-					onClick={handleClick}
-					shouldDismissPopover={false}
-					style = {{color: 'white', }}
-				/>
-			)}
-		>
-			<Button rightIcon="exchange" minimal={true}/>
-		</Select>
+		<div onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
+			<Select
+				className="my-custom-class"
+				items={commonSpecies}
+				itemRenderer={renderSpecies}
+				itemPredicate={filterBySpecies}
+				onItemSelect={handleSpeciesSelect}
+				noResults={<MenuItem disabled={true} text="No results." />}
+				onQueryChange={(newQuery) => setQuery(newQuery)}
+				query={query}
+				filterable={true}
+				inputProps={{
+					placeholder: inputPlaceholder,
+					className: 'bp5-dark my-input',
+					style: {backgroundColor: '#1C2127', color: 'white'}
+				}}
+				createNewItemFromQuery={createNewSpeciesFromQuery}
+				createNewItemRenderer={(query, active, handleClick) => (
+					<MenuItem
+						icon="add"
+						text={`Create "${query}"`}
+						active={active}
+						onClick={handleClick}
+						shouldDismissPopover={false}
+						style = {{color: 'white', }}
+					/>
+				)}
+			>
+				<Button rightIcon="exchange" minimal={true} />
+			</Select>
+		</div>
 	);
 };
 export default SpeciesSelect;
