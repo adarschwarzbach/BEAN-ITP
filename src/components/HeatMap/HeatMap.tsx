@@ -63,7 +63,7 @@ const HeatMap = () => {
 	yScale.range([yMax, 0]);
 
 	return (
-		<svg width={width} height={height + 60} >
+		<svg width={width} height={height + 20} >
 			{/* <rect x={0} y={0} width={width} height={height} rx={14} fill={background} /> */}
 			<Group top={(height - yMax) / 2} left={(width - xMax) / 2}>
 				<HeatmapRect
