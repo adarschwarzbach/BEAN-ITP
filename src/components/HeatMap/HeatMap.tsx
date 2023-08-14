@@ -7,9 +7,11 @@ import { getSeededRandom } from '@visx/mock-data';
 import { scaleSequential } from 'd3-scale';
 import { interpolateViridis } from 'd3-scale-chromatic';
 import { rgb } from 'd3-color';
+import { interpolateGreys } from 'd3-scale-chromatic';
 
 
-export const background = '#28272c';
+
+export const background = '#1C2127';
 
 const seededRandom = getSeededRandom(0.41);
 
@@ -38,8 +40,9 @@ const colorScale = scaleSequential(interpolateViridis)
     
 function darkerColor(color: string) {
 	const col = rgb(color);
-	return col.darker(1.5).toString();  // 1.5 is the factor, you can adjust this
+	return col.darker(0.5).toString();  // Adjust the factor to 0.5 for subtler transition
 }
+
 
 export type HeatmapProps = {
   width: number;
@@ -50,17 +53,19 @@ export type HeatmapProps = {
 const margin = { top: 10, left: 20, right: 20, bottom: 10 };
 const width = 500;
 const height = 500;
+
+
 const HeatMap = () => {
 	const xMax = width - margin.left - margin.right;
 	const yMax = height - margin.top - margin.bottom;
-  
+
 	xScale.range([0, xMax]);
 	yScale.range([yMax, 0]);
-  
+
 	return (
-		<svg width={width} height={height}>
-			<rect x={0} y={0} width={width} height={height} rx={14} fill={background} />
-			<Group top={margin.top} left={margin.left}>
+		<svg width={width} height={height + 60} >
+			{/* <rect x={0} y={0} width={width} height={height} rx={14} fill={background} /> */}
+			<Group top={(height - yMax) / 2} left={(width - xMax) / 2}>
 				<HeatmapRect
 					data={binData}
 					xScale={xScale}
@@ -69,8 +74,8 @@ const HeatMap = () => {
 					binWidth={xMax / binData.length}
 					binHeight={yMax / binData[0].bins.length}
 				>
-					{heatmap =>
-						heatmap.map(heatmapBins =>
+					{heatmap => 
+						heatmap.map(heatmapBins => 
 							heatmapBins.map(bin => (
 								<g key={`heatmap-rect-${bin.row}-${bin.column}`}>
 									<defs>
@@ -101,6 +106,6 @@ const HeatMap = () => {
 		</svg>
 	);
 };
-    
+
 
 export default HeatMap;
