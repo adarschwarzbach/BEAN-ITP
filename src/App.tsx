@@ -5,9 +5,9 @@ import SpeciesForm from './SpeciesData/SpeciesForm';
 import ZoneConcentrationsTable from './SpeciesData/SpeciesTables/ZoneConcentrationTable';
 import PHTable from './SpeciesData/SpeciesTables/PHTable/PHTable';
 import HeatMap from './components/HeatMap/HeatMap';
+import { SpeciesSelect } from './components/SpeciesSelect/SpeciesSelect';
 const App: React.FC = () => {
-	const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
-	const themeClass = isDarkMode ? 'bp5-dark' : '';
+	const themeClass = 'bp5-dark';
 
 	return (
 		<>
@@ -23,11 +23,13 @@ const App: React.FC = () => {
 						</div>
 					</div>	
 				</div>
-				<div style = {{display:'flex', flexDirection:'column'}}>
+				<div style = {{display:'flex', flexDirection:'column'}} className='bp5-dark'>
 					<ZoneConcentrationsTable/>
 					<div style = {{height:'12px'}}/>
 					<PHTable/>
 					<HeatMap/>
+					<div style = {{height:'12px'}}/>
+					<SpeciesSelect/>
 				</div>
 			</div>
 		</>

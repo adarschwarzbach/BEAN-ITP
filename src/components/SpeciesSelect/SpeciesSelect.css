@@ -1,0 +1,6 @@
+.bp5-dark .species-search .bp5-input {
+    background-color: #30404D !important;
+}
+.bp5-dark .species-search::placeholder {
+    color: rgba(191, 204, 214, 0.6);
+}
