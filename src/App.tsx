@@ -18,11 +18,13 @@ const App: React.FC = () => {
 				<HeaderBanner className={themeClass}/>
 				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:'12px'}}>
 					<div className={`${themeClass} app-container `}>
-						<BeanComputationButton />
-						<div style = {{height:'12px'}}/>
-						<IonicEffectSwitch/>
 						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
 							<div className='form-data'>
+								<div style={{ display: 'flex', alignItems: 'center', alignSelf:'center' }}>
+									<BeanComputationButton />
+									<div style={{ width: '12px' }} />
+									<IonicEffectSwitch />
+								</div>
 								<SpeciesForm index = "0"/>
 								<SpeciesForm index = "1"/>
 								<SpeciesForm index = "2"/>
