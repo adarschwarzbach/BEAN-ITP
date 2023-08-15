@@ -16,12 +16,10 @@ const BeanComputationButton: React.FC = () => {
 			if (typeof response.body === 'string') {
 				const parsedBody = JSON.parse(response.body);
 				setBeanResults(parsedBody);
-				console.log(parsedBody);
 			} 
-			// else {
-			// 	console.log(response.body);
-			// }
-    
+			else {
+				throw new Error('Error occurred: response.body is not a string');
+			}
 		} catch (error) {
 			console.error('Error occurred:', error);
 		}

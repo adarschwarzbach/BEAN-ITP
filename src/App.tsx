@@ -21,9 +21,9 @@ const App: React.FC = () => {
 						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
 							<div className='form-data'>
 								<div style={{ display: 'flex', alignItems: 'center', alignSelf:'center' }}>
-									<BeanComputationButton />
-									<div style={{ width: '12px' }} />
 									<IonicEffectSwitch />
+									<div style={{ width: '12px' }} />
+									<BeanComputationButton />
 								</div>
 								<SpeciesForm index = "0"/>
 								<SpeciesForm index = "1"/>

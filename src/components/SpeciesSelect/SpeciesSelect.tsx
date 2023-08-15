@@ -70,7 +70,6 @@ export const SpeciesSelect: React.FC<Props> = ({dataIndex}) => {
 	};
 
 	const handleSpeciesSelect = (species: Species) => {
-		console.log('hit');
 		setSelectedSpecies(species);
 
 		// Update the speciesDict with the selected species for the given index
@@ -86,8 +85,6 @@ export const SpeciesSelect: React.FC<Props> = ({dataIndex}) => {
 			};
 		});
 
-		console.log(species);
-		console.log(speciesDict);
 		const displayValue = `${species.name}`;
 		setInputPlaceholder(displayValue);
 	};
