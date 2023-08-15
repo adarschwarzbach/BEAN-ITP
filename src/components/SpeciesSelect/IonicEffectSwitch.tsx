@@ -1,6 +1,7 @@
+import React from 'react';
 import { Switch } from '@blueprintjs/core';
-import React, { useState } from 'react';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
+import './IonicEffectSwitch.css'; // Import the CSS file
 
 const IonicEffectSwitch: React.FC = () => {
 	const { ionicEffect, setIonicEffect } = useSpeciesData();
@@ -14,11 +15,13 @@ const IonicEffectSwitch: React.FC = () => {
 	};
 
 	return (
-		<Switch
-			label="Consider Ionic Effect"
-			checked={ionicEffect !== 0}
-			onChange={toggleIonicEffect}
-		/>
+		<div className="switch-container"> {/* Wrap the switch in the new div */}
+			<Switch
+				label="Consider Ionic Effect"
+				checked={ionicEffect !== 0}
+				onChange={toggleIonicEffect}
+			/>
+		</div>
 	);
 };
 

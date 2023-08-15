@@ -1,0 +1,13 @@
+.switch-container {
+    padding-top: 10px; /* Add some padding to give space around the switch */
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* White with 10% opacity for a slight lightening effect */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* So it wraps only as much space as required by the switch */
+}
+
+.bp3-switch:focus .bp3-control-indicator {
+    outline: none;
+    box-shadow: none;
+}

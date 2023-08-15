@@ -31,7 +31,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 		'0': {
 			'Name': 'HCl',
 			'valence': [-1],
-			'mobility': [-7.91e-8],
+			'mobility': [-7.91],
 			'pKa': [-2],
 			'concentration': 0.01,
 			'type': 'LE'
@@ -39,7 +39,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 		'1': {
 			'Name': 'Tris',
 			'valence': [1],
-			'mobility': [2.95e-8],
+			'mobility': [2.95],
 			'pKa': [8.076],
 			'concentration': 0.02,
 			'type': 'Background'
@@ -47,7 +47,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 		'2': {
 			'Name': 'MOPS',
 			'valence': [-1],
-			'mobility': [-2.69e-8],
+			'mobility': [-2.69],
 			'pKa': [7.2],
 			'concentration': 0.001,
 			'type': 'Analyte'
@@ -55,7 +55,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 		'3': {
 			'Name': 'HEPES',
 			'valence': [-1],
-			'mobility': [-2.35e-8],
+			'mobility': [-2.35],
 			'pKa': [7.5],
 			'concentration': 0.005,
 			'type': 'TE'

@@ -3,6 +3,7 @@ import { Section, SectionCard, FormGroup, InputGroup, Tooltip, Position } from '
 import './SpeciesForm.css';
 import SpeciesSelect from '../SpeciesSelect/SpeciesSelect';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
+import { beanComputation } from '../../Utils/beanComputation';
 
 interface SpeciesData {
     Name: string;
@@ -114,7 +115,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						</Tooltip>
 
 						<Tooltip 
-							content="Information about Mobility" 
+							content="Format: mobility * 1e-8" 
 							isOpen={mobilityTooltipOpen}
 							onInteraction={(nextOpen) => setMobilityTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
