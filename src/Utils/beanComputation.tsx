@@ -27,14 +27,24 @@ interface ComputationResponse {
     };
 }
 
-const BEAN_COMPUTATION_API = 'https://87wq9jocd2.execute-api.us-west-1.amazonaws.com/default/beanComputation';
+const BEAN_COMPUTATION_API = '/default/beanComputation';
 
 export const beanComputation = async (ionicEffect: number, speciesDict: Record<string, Species>): Promise<ComputationResponse> => {
 	// Transforming mobility data
 	const modifiedSpeciesDict = { ...speciesDict };
+
 	for (const key in modifiedSpeciesDict) {
 		if (modifiedSpeciesDict[key].mobility) {
-			modifiedSpeciesDict[key].mobility = modifiedSpeciesDict[key].mobility.map(value => value * 1e-8);
+			modifiedSpeciesDict[key].mobility = modifiedSpeciesDict[key].mobility.map(value => {
+				// Check if value is not 0, as log(0) is undefined
+				if (value !== 0) {
+					const magnitude = Math.floor(Math.log10(Math.abs(value)));
+					// Normalize the value to be between 1 and 10 and then multiply by 1e-8
+					return (value / Math.pow(10, magnitude)) * 1e-8;
+				} else {
+					return 0;
+				}
+			});
 		}
 	}
 
@@ -42,6 +52,7 @@ export const beanComputation = async (ionicEffect: number, speciesDict: Record<s
 		ionicEffect,
 		species: modifiedSpeciesDict
 	};
+	console.log('requestData', JSON.stringify(requestData));
 
 	try {
 		const response = await fetch(BEAN_COMPUTATION_API, {

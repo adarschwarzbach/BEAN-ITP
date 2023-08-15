@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Column, Table2, Cell, TableLoadingOption } from '@blueprintjs/table';
 import '../ZoneConcentrationTable.css';
+import { useSpeciesData } from '../../../../Contexts/SpeciesData';
 
 const concentrations = [
 	8.396585528437043e-09,
@@ -18,8 +19,8 @@ const pHData = concentrations.map(toPHValue);
 const columnNames = ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
 
 const PHTable: React.FC = () => {
-	const [isLoading, setIsLoading] = useState(false);
-	const loadingOptions = isLoading ? [TableLoadingOption.CELLS] : [];
+	const { loading } = useSpeciesData();
+	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 
 	const numRows = 1; // We just have one row of pH values.
 

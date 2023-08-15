@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Column, Table2, Cell, TableLoadingOption } from '@blueprintjs/table';
 import './ZoneConcentrationTable.css';
+import { useSpeciesData } from '../../../Contexts/SpeciesData';
 
 type SpeciesData = {
     species: string;
@@ -37,8 +38,8 @@ const columnNames = ['Species', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
 
 
 const ZoneConcentrationsTable: React.FC = () => {
-	const [isLoading, setIsLoading] = useState(false);
-	const loadingOptions = isLoading ? [TableLoadingOption.CELLS] : [];
+	const { loading } = useSpeciesData();
+	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 
 	const numRows = data.length;
 
