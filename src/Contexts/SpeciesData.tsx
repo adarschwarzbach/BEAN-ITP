@@ -75,6 +75,8 @@ interface DataContextProps {
     setSpeciesDict: React.Dispatch<React.SetStateAction<Record<string, Species>>>;
 	beanResults: ComputationResult;
 	setBeanResults: React.Dispatch<React.SetStateAction<ComputationResult>>;
+	validInput: boolean;
+	setValidInput: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface DataProviderProps {
@@ -84,7 +86,7 @@ interface DataProviderProps {
 const DataContext = createContext<DataContextProps | undefined>(undefined);
 
 export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
-
+	const [validInput, setValidInput] = useState<boolean>(true);
 	const [ionicEffect, setIonicEffect] = useState<number>(0);
 	const [loading, setLoading] = useState<boolean>(false);
 	const [beanResults, setBeanResults] = useState<ComputationResult>(initialData);
@@ -125,7 +127,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	);
 
 	return (
-		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults }}>
+		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, validInput, setValidInput }}>
 			{children}
 		</DataContext.Provider>
 	);

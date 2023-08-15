@@ -18,7 +18,7 @@ interface Props {
 }
 
 const SpeciesForm: React.FC<Props> = ({ index }) => {
-	const { speciesDict } = useSpeciesData();
+	const { speciesDict, setSpeciesDict, validInput, setValidInput } = useSpeciesData();
 	const speciesData = speciesDict[index];
 
 	const [rawData, setRawData] = useState<Record<string, string>>({
@@ -52,7 +52,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
 		let isInvalid = false;
-    
+		
 		if (name === 'valence' || name === 'mobility' || name === 'pKa') {
 			const numbers = value.split(',').map(v => {
 				const num = parseFloat(v.trim());
@@ -61,7 +61,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 				}
 				return num;
 			});
-    
+	
 			// Store raw input value
 			setRawData(prevRawData => ({
 				...prevRawData,
@@ -69,18 +69,39 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 			}));
 		} else if (name === 'concentration') {
 			isInvalid = value.includes(',') || isNaN(parseFloat(value));
-
+	
 			// Store raw input value
 			setRawData(prevRawData => ({
 				...prevRawData,
 				concentration: value
 			}));
 		}
-    
-		setInvalidInputs(prevInvalid => ({
-			...prevInvalid,
-			[name]: isInvalid
-		}));
+	
+		setInvalidInputs(prevInvalid => {
+			const updatedInvalidInputs = {
+				...prevInvalid,
+				[name]: isInvalid
+			};
+	
+			// Update global validity after updating the individual invalid flags.
+			const allValid = Object.values(updatedInvalidInputs).every(validity => !validity);
+			setValidInput(allValid);  // Update global validInput state
+	
+			return updatedInvalidInputs;
+		});
+	
+		// Update speciesDict
+		setSpeciesDict(prevDict => {
+			const updatedDict = { ...prevDict };
+			if (!isInvalid) {
+				if (name === 'valence' || name === 'mobility' || name === 'pKa') {
+					updatedDict[index][name] = value.split(',').map(v => parseFloat(v.trim()));
+				} else if (name === 'concentration') {
+					updatedDict[index][name] = parseFloat(value);
+				}
+			}
+			return updatedDict;
+		});
 	};
 
 	return (

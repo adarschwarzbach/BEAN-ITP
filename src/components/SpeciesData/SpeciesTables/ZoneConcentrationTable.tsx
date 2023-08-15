@@ -18,13 +18,12 @@ function truncateToThreeDecimal(num: number): number {
 const columnNames = ['Species', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
 
 const ZoneConcentrationsTable: React.FC = () => {
-	const { loading, beanResults } = useSpeciesData();
+	const { loading, speciesDict, beanResults } = useSpeciesData();
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 
 	const computedZoneConcentrations = beanResults?.ComputedZoneConcentrations ?? [];
-	console.log('computedZoneConcentrations', beanResults);
 
-	const speciesList = ['SpeciesA', 'SpeciesB', 'SpeciesC', 'SpeciesD'];
+	const speciesList = Object.values(speciesDict).map(species => species.Name);
 
 	const data: SpeciesData[] = computedZoneConcentrations.map((row, index) => ({
 		species: speciesList[index],
