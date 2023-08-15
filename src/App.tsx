@@ -18,10 +18,10 @@ const App: React.FC = () => {
 					<div className={`${themeClass} app-container `}>
 						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
 							<div className='form-data'>
-								<SpeciesForm />
-								<SpeciesForm />
-								<SpeciesForm />
-								<SpeciesForm />
+								<SpeciesForm index = "0"/>
+								<SpeciesForm index = "1"/>
+								<SpeciesForm index = "2"/>
+								<SpeciesForm index = "3"/>
 							</div>
 						</div>	
 					</div>

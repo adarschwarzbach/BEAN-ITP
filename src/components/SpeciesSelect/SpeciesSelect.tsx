@@ -1,8 +1,9 @@
 import commonSpeciesData from './commonSpecies.json';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Select, ItemRenderer } from '@blueprintjs/select';
 import { Button, MenuItem} from '@blueprintjs/core';
 import './SpeciesSelect.css';
+import { useSpeciesData } from '../../Contexts/SpeciesData';
 
 const commonSpecies = commonSpeciesData as Species[];
 
@@ -11,6 +12,10 @@ interface Species {
     valence: number[];
     mobility: number[];
     pKa: number[];
+}
+
+interface Props {
+    dataIndex: string;  // This prop will determine which species in the speciesDict we are updating
 }
 
 const renderSpecies: ItemRenderer<Species> = (species, { handleClick, modifiers }) => {
@@ -41,7 +46,9 @@ const renderSpecies: ItemRenderer<Species> = (species, { handleClick, modifiers 
 	);
 };
 
-export const SpeciesSelect: React.FC = () => {
+export const SpeciesSelect: React.FC<Props> = ({dataIndex}) => {
+	const { speciesDict, setSpeciesDict } = useSpeciesData(); // Extract values from context
+
 	const [selectedSpecies, setSelectedSpecies] = useState<Species | null>(null);
 	const [query, setQuery] = useState<string>('');
 	const [inputPlaceholder, setInputPlaceholder] = useState<string>('Choose a species...');
@@ -49,13 +56,6 @@ export const SpeciesSelect: React.FC = () => {
 	const filterBySpecies = (query: string, species: Species): boolean => {
 		return species.name.toLowerCase().includes(query.toLowerCase());
 	};
-
-	const handleSpeciesSelect = (species: Species) => {
-		setSelectedSpecies(species);
-		const displayValue = `${species.name}`;
-		setInputPlaceholder(displayValue);
-	};
-
 	const createNewSpeciesFromQuery = (query: string): Species => {
 		return {
 			name: query,
@@ -69,6 +69,28 @@ export const SpeciesSelect: React.FC = () => {
 		event.stopPropagation();
 	};
 
+	const handleSpeciesSelect = (species: Species) => {
+		console.log('hit');
+		setSelectedSpecies(species);
+
+		// Update the speciesDict with the selected species for the given index
+		setSpeciesDict(prevSpeciesDict => {
+			return {
+				...prevSpeciesDict,
+				[dataIndex]: {
+					...species,
+					Name: species.name,  // Adjust this based on your Species interface naming
+					concentration: speciesDict[dataIndex].concentration,  // Preserve the concentration
+					type: speciesDict[dataIndex].type  // Preserve the type
+				}
+			};
+		});
+
+		console.log(species);
+		console.log(speciesDict);
+		const displayValue = `${species.name}`;
+		setInputPlaceholder(displayValue);
+	};
 
 	return (
 		<div onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
@@ -98,10 +120,12 @@ export const SpeciesSelect: React.FC = () => {
 						style = {{color: 'white', }}
 					/>
 				)}
+				activeItem={null}  // Set the active item to null
 			>
 				<Button rightIcon="exchange" minimal={true} />
 			</Select>
 		</div>
 	);
+    
 };
 export default SpeciesSelect;
