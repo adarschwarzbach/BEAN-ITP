@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Column, Table2, Cell, TableLoadingOption } from '@blueprintjs/table';
-import './../ZoneConcentrationTable.css';
+import '../ZoneConcentrationTable.css';
 
 const concentrations = [
 	8.396585528437043e-09,

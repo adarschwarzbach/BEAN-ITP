@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Section,SectionCard, FormGroup, InputGroup, Button, Tooltip, Position } from '@blueprintjs/core';
 import './SpeciesForm.css';
-import SpeciesSelect from '../components/SpeciesSelect/SpeciesSelect';
+import SpeciesSelect from '../SpeciesSelect/SpeciesSelect';
 
 const SpeciesForm: React.FC = () => {
 	const [formData, setFormData] = useState({
