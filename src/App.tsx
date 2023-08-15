@@ -7,6 +7,7 @@ import PHTable from './components/SpeciesData/SpeciesTables/PHTable/PHTable';
 import HeatMap from './components/HeatMap/HeatMap';
 import SpeciesSelect from './components/SpeciesSelect/SpeciesSelect';
 import { DataProvider } from './Contexts/SpeciesData';
+import IonicEffectSwitch from './components/SpeciesSelect/IonicFlag';
 const App: React.FC = () => {
 	const themeClass = 'bp5-dark';
 
@@ -16,6 +17,7 @@ const App: React.FC = () => {
 				<HeaderBanner className={themeClass}/>
 				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:'12px'}}>
 					<div className={`${themeClass} app-container `}>
+						<IonicEffectSwitch/>
 						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
 							<div className='form-data'>
 								<SpeciesForm index = "0"/>
