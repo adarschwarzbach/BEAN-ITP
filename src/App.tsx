@@ -11,6 +11,7 @@ import BeanComputationButton from './components/SpeciesSelect/BeanComputationBut
 import GrayHeatMap from './components/HeatMap/SimpleHeatMap';
 import SimpleHeatmap from './components/HeatMap/SimpleHeatMap';
 import LinedHeatMap from './components/HeatMap/LinedHeatMap';
+import ComputeChecks from './components/SpeciesData/ComputeChecks/ComputeChecks';
 
 const App: React.FC = () => {
 	const themeClass = 'bp5-dark';
@@ -38,11 +39,13 @@ const App: React.FC = () => {
 					</div>
 					<div style = {{margin:'-40px'}}/>
 
-					<div style = {{display:'flex', flexDirection:'column', paddingBottom:100}} className='bp5-dark'>
+					<div style = {{display:'flex', flexDirection:'column', marginBottom:-34}} className='bp5-dark'>
 						<div style = {{paddingLeft:60}}>
 							<ZoneConcentrationsTable/>
 							<div style = {{height:'12px'}}/>
 							<PHTable/>
+							<div style = {{height:'12px'}}/>
+							<ComputeChecks/>
 						</div>
 						
 						<div style = {{display:'flex', flexDirection:'row', justifyContent:'start', alignItems:'end', marginLeft:'-80'}}>
@@ -50,7 +53,7 @@ const App: React.FC = () => {
 								<HeatMap color = 'viridis' title = 'Viridis Heatmap' key = 'viridis'/>
 							</div>
 							
-							<div style = {{padding:'12px'}}>
+							<div style = {{padding:'12px', marginLeft:-16}}>
 								<SimpleHeatmap  color = 'gray'   title = 'Gray Heat Map'/>
 							</div>
 							<div style = {{padding:'12px', alignSelf:'flex-end'}}>

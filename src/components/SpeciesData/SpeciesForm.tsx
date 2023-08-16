@@ -123,6 +123,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						>
 							<FormGroup label="Valence" style={{ flex: 1, marginRight: 20 }}>
 								<InputGroup 
+									style = {{fontSize: 12, minWidth: 20}}
 									name="valence" 
 									value={rawData.valence} 
 									onChange={handleChange} 
@@ -139,6 +140,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						>
 							<FormGroup label="Mobility" style={{ flex: 1, marginRight: 20 }}>
 								<InputGroup 
+									style = {{fontSize: 12,}}
 									name="mobility" 
 									value={rawData.mobility} 
 									onChange={handleChange} 
@@ -153,8 +155,9 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 							onInteraction={(nextOpen) => setPkaTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
 						>
-							<FormGroup label="pKa" style={{ flex: 1, marginRight: 20 }}>
+							<FormGroup label="pKa" style={{ flex: 1, marginRight: 20, minWidth:48 }}>
 								<InputGroup 
+									style = {{fontSize: 12,}}
 									name="pKa" 
 									value={rawData.pKa} 
 									onChange={handleChange} 
@@ -171,6 +174,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						>
 							<FormGroup label="Concentration" style={{ flex: 1 }}>
 								<InputGroup 
+									style = {{fontSize: 12,}}
 									name="concentration" 
 									value={rawData.concentration} 
 									onChange={handleChange} 

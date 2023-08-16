@@ -1,3 +1,7 @@
 .bp5-section-header.bp5-interactive:hover.bp5-dark, .bp5-dark .bp5-section-header.bp5-interactive:hover, .bp5-section-header.bp5-interactive:active.bp5-dark, .bp5-dark .bp5-section-header.bp5-interactive:active{
     /* background:#404854 !important; */
   }
+
+.small-input-text {
+    font-size: 12px;  /* You can adjust this value according to your needs */
+}
