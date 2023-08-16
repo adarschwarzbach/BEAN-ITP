@@ -33,8 +33,6 @@ export const beanComputation = async (ionicEffect: number, speciesDict: Record<s
 	// Transforming mobility data
 	const modifiedSpeciesDict = { ...speciesDict };
 
-	console.log('speciesDict: ', speciesDict);
-
 	for (const key in modifiedSpeciesDict) {
 		if (modifiedSpeciesDict[key].mobility) {
 			modifiedSpeciesDict[key].mobility = modifiedSpeciesDict[key].mobility.map(value => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
 import { beanComputation } from '../../Utils/beanComputation';
 import { Button } from '@blueprintjs/core';
@@ -6,6 +6,10 @@ import { Button } from '@blueprintjs/core';
 
 const BeanComputationButton: React.FC = () => {
 	const {setLoading,  ionicEffect, speciesDict, setBeanResults } = useSpeciesData();
+
+	useEffect(() => {
+		handleApiCall();
+	}, []);
 
 	// Check if all inputs are valid
 	const handleApiCall = async () => {

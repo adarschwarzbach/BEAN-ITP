@@ -28,14 +28,14 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 		concentration: speciesData.concentration.toString(),
 	});
 
-	useEffect(() => {
-		setRawData({
-			valence: speciesData.valence.join(', '),
-			mobility: speciesData.mobility.join(', '),
-			pKa: speciesData.pKa.join(', '),
-			concentration: speciesData.concentration.toString(),
-		});
-	}, [speciesData]);
+	// useEffect(() => {
+	// 	setRawData({
+	// 		valence: speciesData.valence.join(', '),
+	// 		mobility: speciesData.mobility.join(', '),
+	// 		pKa: speciesData.pKa.join(', '),
+	// 		concentration: speciesData.concentration.toString(),
+	// 	});
+	// }, [speciesData]);
 
 	const [valenceTooltipOpen, setValenceTooltipOpen] = useState(false);
 	const [mobilityTooltipOpen, setMobilityTooltipOpen] = useState(false);
@@ -52,7 +52,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
 		let isInvalid = false;
-		
+	
 		if (name === 'valence' || name === 'mobility' || name === 'pKa') {
 			const numbers = value.split(',').map(v => {
 				const num = parseFloat(v.trim());
@@ -62,7 +62,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 				return num;
 			});
 	
-			// Store raw input value
+			// For mobility, store value as-is without multiplying by 1e-8
 			setRawData(prevRawData => ({
 				...prevRawData,
 				[name]: value
@@ -70,7 +70,6 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 		} else if (name === 'concentration') {
 			isInvalid = value.includes(',') || isNaN(parseFloat(value));
 	
-			// Store raw input value
 			setRawData(prevRawData => ({
 				...prevRawData,
 				concentration: value
@@ -83,14 +82,12 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 				[name]: isInvalid
 			};
 	
-			// Update global validity after updating the individual invalid flags.
 			const allValid = Object.values(updatedInvalidInputs).every(validity => !validity);
-			setValidInput(allValid);  // Update global validInput state
+			setValidInput(allValid);
 	
 			return updatedInvalidInputs;
 		});
 	
-		// Update speciesDict
 		setSpeciesDict(prevDict => {
 			const updatedDict = { ...prevDict };
 			if (!isInvalid) {
@@ -135,7 +132,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						</Tooltip>
 
 						<Tooltip 
-							content="Information about Mobility" 
+							content="Mobility of form: (mobility * 1e-8)" 
 							isOpen={mobilityTooltipOpen}
 							onInteraction={(nextOpen) => setMobilityTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
