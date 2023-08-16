@@ -1,13 +1,13 @@
 To do:
 
-- Create a react context for species data
-    -  Set up the form inputs to update use
-    -  Set up species select to update state/forms
-    -  Set tables to listen to this state
+Add chart headsers
 
 - Set up network calls to API 
-    - Update state and subscribers accordingly
+    - Add error state
 
 - Create container layouts for inputs, tables, HeatMap
 
 - Create AWS service to compute 
+
+
+
