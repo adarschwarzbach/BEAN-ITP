@@ -1,68 +1,11 @@
-import './App.css';
-import React, { useState } from 'react';
-import HeaderBanner from './components/Header/HeaderBanner';
-import SpeciesForm from './components/SpeciesData/SpeciesForm';
-import ZoneConcentrationsTable from './components/SpeciesData/SpeciesTables/ZoneConcentrationTable';
-import PHTable from './components/SpeciesData/SpeciesTables/PHTable/PHTable';
-import HeatMap from './components/HeatMap/HeatMap';
-import { DataProvider } from './Contexts/SpeciesData';
-import IonicEffectSwitch from './components/SpeciesSelect/IonicEffectSwitch';
-import BeanComputationButton from './components/SpeciesSelect/BeanComputationButton';
-import GrayHeatMap from './components/HeatMap/SimpleHeatMap';
-import SimpleHeatmap from './components/HeatMap/SimpleHeatMap';
-import LinedHeatMap from './components/HeatMap/LinedHeatMap';
-import ComputeChecks from './components/SpeciesData/ComputeChecks/ComputeChecks';
+import React from 'react';
+import { DataProvider,} from './Contexts/SpeciesData';
+import Entrypoint from './components/Templates/Entrypoint';
 
 const App: React.FC = () => {
-	const themeClass = 'bp5-dark';
-
 	return (
 		<DataProvider>
-			<>
-				<HeaderBanner className={themeClass}/>
-				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:'90px'}}>
-					<div className={`${themeClass} app-container `}>
-						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
-							<div className='form-data'>
-								<div style={{ display: 'flex', alignItems: 'center', alignSelf:'center' }}>
-									<IonicEffectSwitch />
-									<div style={{ width: '12px' }} />
-									<BeanComputationButton />
-								</div>
-								<SpeciesForm index = "0"/>
-								<SpeciesForm index = "1"/>
-								<SpeciesForm index = "2"/>
-								<SpeciesForm index = "3"/>
-							</div>
-						</div>	
-					</div>
-					<div style = {{margin:'-40px'}}/>
-
-					<div style = {{display:'flex', flexDirection:'column', marginBottom:-30}} className='bp5-dark'>
-						<div style = {{paddingLeft:60}}>
-							<ZoneConcentrationsTable/>
-							<div style = {{height:'12px'}}/>
-							<PHTable/>
-							<div style = {{height:'12px'}}/>
-							<ComputeChecks/>
-						</div>
-						
-						<div style = {{display:'flex', flexDirection:'row', justifyContent:'start', alignItems:'end', marginLeft:'-80'}}>
-							<div style = {{padding:'12px', marginBottom:-6}}>
-								<HeatMap color = 'viridis' title = 'Viridis Heatmap' key = 'viridis'/>
-							</div>
-							
-							<div style = {{padding:'12px', marginLeft:-16}}>
-								<SimpleHeatmap  color = 'gray'   title = 'Gray Heat Map'/>
-							</div>
-							<div style = {{padding:'12px', alignSelf:'flex-end'}}>
-								<LinedHeatMap color = 'plasma' title = 'Plasma Heat Map' />
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</>
+			<Entrypoint />
 		</DataProvider>
 	);
 };

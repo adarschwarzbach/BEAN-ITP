@@ -55,8 +55,8 @@ const HeatMap: React.FC<HeatMapProps> = ({title, color}) => {
 	const xAxisTitle = 'X Axis Title';
 	const yAxisTitle = 'Y Axis Title';
 
-	const width = 200 + margin.left + margin.right;
-	const height = 200 + margin.top + margin.bottom;
+	const width = 180 + margin.left + margin.right;
+	const height = 180 + margin.top + margin.bottom;
 
 	const xMax = width - margin.left - margin.right;
 	const yMax = height - margin.top - margin.bottom;
@@ -79,7 +79,7 @@ const HeatMap: React.FC<HeatMapProps> = ({title, color}) => {
 				</text>
 				<text
 					x={xMax / 2}
-					y={yMax + 30}
+					y={yMax + 25}
 					fontSize={14}
 					textAnchor="middle"
 					fill="#D3D8DE"

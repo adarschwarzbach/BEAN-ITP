@@ -79,6 +79,8 @@ interface DataContextProps {
 	setValidInput: React.Dispatch<React.SetStateAction<boolean>>;
 	error: boolean;
 	setError: React.Dispatch<React.SetStateAction<boolean>>;
+	gloablLoading: boolean;
+	setGlobalLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface DataProviderProps {
@@ -92,6 +94,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	const [error, setError] = useState<boolean>(false);
 	const [ionicEffect, setIonicEffect] = useState<number>(0);
 	const [loading, setLoading] = useState<boolean>(false);
+	const [gloablLoading, setGlobalLoading] = useState<boolean>(true);
 	const [beanResults, setBeanResults] = useState<ComputationResult>(initialData);
 	const [speciesDict, setSpeciesDict] = useState<Record<string, Species>>({
 		'0': {
@@ -130,7 +133,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	);
 
 	return (
-		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, validInput, setValidInput, error, setError }}>
+		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading}}>
 			{children}
 		</DataContext.Provider>
 	);

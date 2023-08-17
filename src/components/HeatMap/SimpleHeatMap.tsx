@@ -62,7 +62,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 			>
 				{title}
 			</text>
-			<svg width={200} height={200}>
+			<svg width={180} height={180}>
 				{data.map((row, rowIndex) => {
 					return row.map((value, colIndex) => {
 						return (
@@ -83,7 +83,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 				fill="#D3D8DE"
 				style={{alignSelf:'center'}}
 			>
-				No lines between data points
+				No point distinction
 			</text>
 		</div>
 	);

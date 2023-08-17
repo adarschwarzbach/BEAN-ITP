@@ -8,9 +8,10 @@ const ComputeChecks: React.FC = () => {
 	const { beanResults, loading, error } = useSpeciesData();
 
 	return (
-		<Card className={loading ? SKELETON : ''} style={{ padding: '15px', width: 'fit-content' }}>
-			<h5 style={{ margin: '0 0 15px 0' }}>Check Results:</h5>
-			<div style={{ display: 'flex', justifyContent: 'start', marginBottom: '10px' }}>
+		<>
+			<h5 style={{ margin: '0 0 8px 0' }}>Check Results:</h5>
+			<Card className={loading ? SKELETON : ''} style={{ padding: '12px', paddingBottom:4, width: 'fit-content' }}>
+				{/* <div style={{ display: 'flex', justifyContent: 'start', marginBottom: '10px' }}> */}
 				<Checkbox 
 					checked={beanResults.LEZoneConditionSatisfied && !error} 
 					label="LE zone condition is satisfied" 
@@ -22,8 +23,8 @@ const ComputeChecks: React.FC = () => {
 					label="Analyte zone condition is satisfied" 
 					disabled={true}
 				/>
-			</div>
-			<div style={{ display: 'flex', justifyContent: 'start', marginTop: '10px' }}>
+				{/* </div> */}
+				{/* <div style={{ display: 'flex', justifyContent: 'start', marginTop: '10px' }}> */}
 				<Checkbox 
 					checked={beanResults.TEZoneConditionSatisfied  && !error} 
 					label="TE zone condition is satisfied" 
@@ -35,8 +36,9 @@ const ComputeChecks: React.FC = () => {
 					label="Stable ITP is predicted" 
 					disabled={true}
 				/>
-			</div>
-		</Card>
+				{/* </div> */}
+			</Card>
+		</>
 	);
 };
 

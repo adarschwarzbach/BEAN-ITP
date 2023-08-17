@@ -7,9 +7,9 @@ import { Button } from '@blueprintjs/core';
 const BeanComputationButton: React.FC = () => {
 	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError } = useSpeciesData();
 
-	useEffect(() => {
-		handleApiCall();
-	}, []);
+	// useEffect(() => {
+	// 	handleApiCall();
+	// }, []);
 
 	// Check if all inputs are valid
 	const handleApiCall = async () => {

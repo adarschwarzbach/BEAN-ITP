@@ -65,6 +65,7 @@ const ZoneConcentrationsTable: React.FC = () => {
 				numRows={speciesList.length}
 				loadingOptions={loadingOptions}
 				enableRowHeader={false} // Disable the default row headers
+				columnWidths={[120, 120, 120, 120, 120]}
 			>
 				{renderColumns()}
 			</Table2>
