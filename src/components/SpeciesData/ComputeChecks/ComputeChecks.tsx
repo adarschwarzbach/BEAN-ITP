@@ -2,6 +2,7 @@ import React from 'react';
 import { Checkbox, Card } from '@blueprintjs/core';
 import { useSpeciesData } from '../../../Contexts/SpeciesData';
 import { SKELETON } from '@blueprintjs/core/lib/esm/common/classes';
+import './ComputeChecks.css';
 
 const ComputeChecks: React.FC = () => {
 	const { beanResults, loading, error } = useSpeciesData();
@@ -13,7 +14,7 @@ const ComputeChecks: React.FC = () => {
 				<Checkbox 
 					checked={beanResults.LEZoneConditionSatisfied && !error} 
 					label="LE zone condition is satisfied" 
-					disabled={true} 
+					// disabled={true} 
 				/>
 				<div style={{ width: '20px' }} />
 				<Checkbox 

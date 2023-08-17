@@ -22,25 +22,25 @@ import tensorflow as tf
 
 
 # START GLOBALS
-species = { 0: {'Name': 'HCl', 'valence': [-1], 'mobility': [-79.1e-9], 
-		'pKa': [-2], 'concentration': 0.01, 'type': 'LE'},
-	    1: {'Name': 'Tris', 'valence': [1], 'mobility': [29.5e-9], 
-		'pKa': [8.076], 'concentration': 0.02, 'type': 'Background'}, 
-	    2: {'Name': 'MOPS', 'valence': [-1], 'mobility': [-26.9e-9], 
-		'pKa': [7.2], 'concentration': 0.001, 'type': 'Analyte'},
-	    3: {'Name': 'HEPES', 'valence': [-1], 'mobility': [-23.5e-9], 
-		'pKa': [7.5], 'concentration': 0.005, 'type': 'TE'}, 
-	}
-
-
 # species = { 0: {'Name': 'HCl', 'valence': [-1], 'mobility': [-79.1e-9], 
 # 		'pKa': [-2], 'concentration': 0.01, 'type': 'LE'},
 # 	    1: {'Name': 'Tris', 'valence': [1], 'mobility': [29.5e-9], 
 # 		'pKa': [8.076], 'concentration': 0.02, 'type': 'Background'}, 
 # 	    2: {'Name': 'MOPS', 'valence': [-1], 'mobility': [-26.9e-9], 
 # 		'pKa': [7.2], 'concentration': 0.001, 'type': 'Analyte'},
-# 	    3: {'Name': 'Sebacic-Acid', 'valence': [-2, -1], 'mobility': [-4.49e-008, -2.07e-008 ], 'pKa': [5.38, 4.53], 'concentration': 0.00021, 'type': 'LE'}
+# 	    3: {'Name': 'HEPES', 'valence': [-1], 'mobility': [-23.5e-9], 
+# 		'pKa': [7.5], 'concentration': 0.005, 'type': 'TE'}, 
 # 	}
+
+
+species = { 0: {'Name': 'HCl', 'valence': [-1], 'mobility': [-79.1e-9], 
+		'pKa': [-2], 'concentration': 0.01, 'type': 'LE'},
+	    1: {'Name': 'Tris', 'valence': [1], 'mobility': [29.5e-9], 
+		'pKa': [8.076], 'concentration': 0.02, 'type': 'Background'}, 
+	    2: {'Name': 'MOPS', 'valence': [-1], 'mobility': [-26.9e-9], 
+		'pKa': [7.2], 'concentration': 0.001, 'type': 'Analyte'},
+	    3: {'Name': 'Sebacic-Acid', 'valence': [-2, -1], 'mobility': [-4.49e-008, -2.07e-008 ], 'pKa': [5.38, 4.53], 'concentration': 0.00021, 'type': 'TE'}
+	}
 
 def create_cMat(species):
     Nspecies = len(species)

@@ -2,12 +2,19 @@ To do:
 
 Add chart headsers
 
-- Set up network calls to API 
-    - Add error state
-
 - Create container layouts for inputs, tables, HeatMap
 
 - Create AWS service to compute 
 
 
-
+-user entered CI with a valence of opposite sign to TE
+-user entered TE and LE ion of same sign
+-user entered sample (if they did) with valence of same sign as LE
+-user approximately meets net neutrality in sample zone?
+	-TE effective mobility in TE is indeed lower magnitude than LE effective mobility in TE
+		-else “TE is not suitable given choice of LE”
+	-LE effective mobility in LE is higher magnitude than LE effective mobility in TE
+		-else “LE is not suitable given choice of TE”
+	-Sample (if entered) has effective mobility magnitude in TE that is higher magnitude than TE
+	AND: 	Sample has lower effective mob magnitude than LE in LE zone.
+		-else:  “sample will not focus between the chosen LE and TE zones”

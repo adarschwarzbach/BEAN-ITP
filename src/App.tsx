@@ -20,8 +20,7 @@ const App: React.FC = () => {
 		<DataProvider>
 			<>
 				<HeaderBanner className={themeClass}/>
-				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:'140px'}}>
-
+				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:'90px'}}>
 					<div className={`${themeClass} app-container `}>
 						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
 							<div className='form-data'>
@@ -39,7 +38,7 @@ const App: React.FC = () => {
 					</div>
 					<div style = {{margin:'-40px'}}/>
 
-					<div style = {{display:'flex', flexDirection:'column', marginBottom:-34}} className='bp5-dark'>
+					<div style = {{display:'flex', flexDirection:'column', marginBottom:-30}} className='bp5-dark'>
 						<div style = {{paddingLeft:60}}>
 							<ZoneConcentrationsTable/>
 							<div style = {{height:'12px'}}/>
@@ -49,7 +48,7 @@ const App: React.FC = () => {
 						</div>
 						
 						<div style = {{display:'flex', flexDirection:'row', justifyContent:'start', alignItems:'end', marginLeft:'-80'}}>
-							<div style = {{padding:'12px'}}>
+							<div style = {{padding:'12px', marginBottom:-6}}>
 								<HeatMap color = 'viridis' title = 'Viridis Heatmap' key = 'viridis'/>
 							</div>
 							

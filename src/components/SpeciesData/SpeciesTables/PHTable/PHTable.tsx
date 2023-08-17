@@ -39,7 +39,7 @@ const PHTable: React.FC = () => {
 	};
 
 	return (
-		<div style = {{width: 600}}>
+		<div style = {{width: 600 }}>
 			<h5 style = {{marginBottom:8}} >
 				{ !error ? 'pH by species' : 'N/A'}
 			</h5>

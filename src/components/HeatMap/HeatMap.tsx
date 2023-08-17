@@ -23,8 +23,8 @@ type HeatMapProps = {
 
 const HeatMap: React.FC<HeatMapProps> = ({title, color}) => {
 	const binData = genBins(
-		16,
-		16,
+		24,
+		24,
 		(idx) => 150 * idx,
 		(i, number) => 25 * (number - i) * Math.random(),
 	);
