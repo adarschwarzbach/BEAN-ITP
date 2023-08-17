@@ -8,9 +8,7 @@ import { useSpeciesData } from '../../../../Contexts/SpeciesData';
 
 
 const PHTable: React.FC = () => {
-	
-
-	const { loading, speciesDict, beanResults } = useSpeciesData();
+	const { loading, speciesDict, beanResults, error } = useSpeciesData();
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 
 	const numRows = 1; // We just have one row of pH values.
@@ -24,6 +22,7 @@ const PHTable: React.FC = () => {
 	const pHData = beanResults.cH[0].map(toPHValue);
 
 	const renderCell = (rowIndex: number, columnIndex: number) => {
+		if (error) return <Cell />;
 		return <Cell>{pHData[columnIndex].toFixed(3)}</Cell>;
 	};
 
@@ -41,6 +40,9 @@ const PHTable: React.FC = () => {
 
 	return (
 		<div style = {{width: 600}}>
+			<h5 style = {{marginBottom:8}} >
+				{ !error ? 'pH by species' : 'N/A'}
+			</h5>
 			<Table2 
 				numRows={numRows}
 				loadingOptions={loadingOptions}

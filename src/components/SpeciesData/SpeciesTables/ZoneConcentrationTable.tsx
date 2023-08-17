@@ -18,7 +18,7 @@ function truncateToThreeDecimal(num: number): number {
 const columnNames = ['Species', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
 
 const ZoneConcentrationsTable: React.FC = () => {
-	const { loading, speciesDict, beanResults } = useSpeciesData();
+	const { loading, speciesDict, beanResults, error } = useSpeciesData();
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 
 	const computedZoneConcentrations = beanResults?.ComputedZoneConcentrations ?? [];
@@ -34,6 +34,7 @@ const ZoneConcentrationsTable: React.FC = () => {
 	}));
 
 	const renderCell = (rowIndex: number, columnIndex: number) => {
+		if (error) return <Cell />;
 		const rowData = data[rowIndex];
 		switch (columnIndex) {
 		case 0: return <Cell>{rowData.species}</Cell>;
@@ -56,13 +57,18 @@ const ZoneConcentrationsTable: React.FC = () => {
 	};
 
 	return (
-		<Table2 
-			numRows={speciesList.length}
-			loadingOptions={loadingOptions}
-			enableRowHeader={false} // Disable the default row headers
-		>
-			{renderColumns()}
-		</Table2>
+		<div>
+			<h5 style = {{marginBottom:8}} >
+				{ !error ? 'Zone Concentrations by Species ' : 'Error Computing ITP'}
+			</h5>
+			<Table2 
+				numRows={speciesList.length}
+				loadingOptions={loadingOptions}
+				enableRowHeader={false} // Disable the default row headers
+			>
+				{renderColumns()}
+			</Table2>
+		</div>
 	);
 
 };

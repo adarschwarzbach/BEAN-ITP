@@ -14,10 +14,10 @@ const ProjectInfoPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 			className="bp5-dark"  // Add bp5-dark for dark mode
 			icon="info-sign"
 			onClose={onClose}
-			title="Project Information"
+			title="About BEAN"
 			isOpen={isOpen}
 			style={{
-				padding: '24px',
+				padding: '12px',
 				width: '50%',
 				maxWidth: '600px',
 				textAlign: 'center'

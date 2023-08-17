@@ -7,6 +7,14 @@ interface Species {
     type: string;
 }
 
+interface ErrorResponse {
+	statusCode: number;
+	body: {
+		error:boolean;
+	};
+}
+
+
 interface ComputationResponse {
     statusCode: number;
     body: {
@@ -29,7 +37,7 @@ interface ComputationResponse {
 
 const BEAN_COMPUTATION_API = '/default/beanComputation';
 
-export const beanComputation = async (ionicEffect: number, speciesDict: Record<string, Species>): Promise<ComputationResponse> => {
+export const beanComputation = async (ionicEffect: number, speciesDict: Record<string, Species>): Promise<ComputationResponse | ErrorResponse> => {
 	// Transforming mobility data
 	const modifiedSpeciesDict = { ...speciesDict };
 
@@ -75,6 +83,11 @@ export const beanComputation = async (ionicEffect: number, speciesDict: Record<s
 		} else {
 			console.error('An unknown error occurred:', error);
 		}
-		throw error;  // Rethrow the error to be handled by the caller
+		return {
+			statusCode: 400,
+			body: {
+				error: false
+			}
+		};
 	}
 };
