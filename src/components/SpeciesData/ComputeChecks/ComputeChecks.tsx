@@ -14,7 +14,7 @@ const ComputeChecks: React.FC = () => {
 				<Checkbox 
 					checked={beanResults.LEZoneConditionSatisfied && !error} 
 					label="LE zone condition is satisfied" 
-					// disabled={true} 
+					disabled={true} 
 				/>
 				<div style={{ width: '20px' }} />
 				<Checkbox 
