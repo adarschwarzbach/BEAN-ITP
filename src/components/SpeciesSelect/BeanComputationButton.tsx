@@ -47,7 +47,7 @@ const BeanComputationButton: React.FC = () => {
 			onClick={handleApiCall} 
 			icon = 'rocket'
 		>
-            Compute ITP
+           Run
 		</Button>
 	);
 };

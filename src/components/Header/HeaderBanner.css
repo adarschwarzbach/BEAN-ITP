@@ -40,3 +40,10 @@ a {
     color: #FFFFFF; /* blue colors for links too */
     text-decoration: inherit; /* no underline */
   }
+
+.header-banner-class-name {
+    position: -webkit-sticky; /* For Safari browser compatibility */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures that the header remains above other elements when scrolling */
+}

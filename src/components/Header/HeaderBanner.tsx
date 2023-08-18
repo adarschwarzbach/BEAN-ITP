@@ -10,11 +10,11 @@ interface Props {
 const HeaderBanner: React.FC<Props> = ({ className }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<Navbar className={`${className}`}>
+		<Navbar className={`${className} .header-banner-class-name`}>
 			<Navbar.Group align={Alignment.LEFT} className={`${className } background`}>
 				<Navbar.Heading  className='pull-left'>
 					<a href="https://microfluidics.stanford.edu/" className='lab-link'>
-                    The Stanford University Microfluidics Laboratory
+                    Stanford University Microfluidics Laboratory
 					</a>
 				</Navbar.Heading>
 				<Navbar.Divider />

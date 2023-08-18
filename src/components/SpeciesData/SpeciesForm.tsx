@@ -104,7 +104,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 	return (
 		<div style = {{margin:4}}>
 			<Section 
-				collapsible = {true}
+				collapsible = {false}
 				compact = {true}
 				title ={speciesData.Name}
 				subtitle={`Type: ${speciesData.type}`}
@@ -133,7 +133,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						</Tooltip>
 
 						<Tooltip 
-							content="Mobility of form: (mobility * 1e-8)" 
+							content="Absolute mobility at each valence, 10^-8 m²/(V.s)" 
 							isOpen={mobilityTooltipOpen}
 							onInteraction={(nextOpen) => setMobilityTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}

@@ -35,7 +35,7 @@ const PHTable: React.FC = () => {
 	};
 
 	return (
-		<div style={{width: 300}}>
+		<div style={{width: 280}}>
 			<h5 style = {{marginBottom:8}} >
 				{ !error ? 'pH by Zone' : 'Error Computing ITP'}
 			</h5>
@@ -43,7 +43,7 @@ const PHTable: React.FC = () => {
 				numRows={numRows}
 				loadingOptions={loadingOptions}
 				enableRowHeader={false}
-				columnWidths={[150, 150]}
+				columnWidths={[140, 140]}
 			>
 				<Column 
 					name="Zone" 
