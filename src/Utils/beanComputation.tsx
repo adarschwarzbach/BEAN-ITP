@@ -35,7 +35,8 @@ interface ComputationResponse {
     };
 }
 
-const BEAN_COMPUTATION_API = '/default/beanComputation';
+const BASE_URL = 'https://87wq9jocd2.execute-api.us-west-1.amazonaws.com';
+const BEAN_COMPUTATION_API = `${BASE_URL}/default/beanComputation`;
 
 
 export const beanComputation = async (ionicEffect: number, speciesObject: Record<string, Species>): Promise<ComputationResponse | ErrorResponse> => {

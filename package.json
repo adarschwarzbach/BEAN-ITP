@@ -1,7 +1,6 @@
 {
   "name": "bean",
   "version": "0.1.0",
-  "proxy": "https://87wq9jocd2.execute-api.us-west-1.amazonaws.com",
   "homepage": "https://adarschwarzbach.github.io/BEAN-ITP/",
   "private": true,
   "dependencies": {
