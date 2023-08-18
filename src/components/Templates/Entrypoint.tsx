@@ -29,7 +29,7 @@ const Entrypoint: React.FC = () => {
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
 	
 			const computationPromise = beanComputation(ionicEffectCopy, speciesDictCopy);
-			const timeoutPromise = new Promise(resolve => setTimeout(resolve, 800));
+			const timeoutPromise = new Promise(resolve => setTimeout(resolve, 600));
 	
 			await Promise.all([computationPromise, timeoutPromise]);
 	
