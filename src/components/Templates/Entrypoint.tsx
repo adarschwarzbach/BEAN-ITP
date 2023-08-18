@@ -56,10 +56,11 @@ const Entrypoint: React.FC = () => {
 					justifyContent: 'center',
 					alignItems: 'center',
 					height: '100vh',
-					padding:12
+					padding: 12,
+					marginTop: '-20%' // Move the content up by 10% of its parent's height
 				}} className={themeClass}>
-					<h3>Try a computer</h3>
-					<p>We do not currently support mobile. For the best BEAN experience, please try a computer :)</p>
+					<h3 style={{ textAlign: 'center' }}>Try a computer</h3>
+					<p style={{ textAlign: 'center' }}>We do not currently support mobile. For the best BEAN experience, please try a computer :)</p>
 				</div>
 				:
 				<>
