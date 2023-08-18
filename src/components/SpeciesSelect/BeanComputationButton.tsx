@@ -5,7 +5,7 @@ import { Button } from '@blueprintjs/core';
 
 
 const BeanComputationButton: React.FC = () => {
-	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError } = useSpeciesData();
+	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput } = useSpeciesData();
 
 	// useEffect(() => {
 	// 	handleApiCall();
@@ -20,6 +20,7 @@ const BeanComputationButton: React.FC = () => {
 	
 			// Create a deep copy of speciesDict
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
+
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
 			if (response.statusCode != 200) {
@@ -46,6 +47,7 @@ const BeanComputationButton: React.FC = () => {
 		<Button 
 			onClick={handleApiCall} 
 			icon = 'rocket'
+			disabled = {!validInput}
 		>
            Run
 		</Button>

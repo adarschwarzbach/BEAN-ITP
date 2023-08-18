@@ -31,19 +31,18 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 	const externalUpdateRef = useRef(true);
 
 	useEffect(() => {
-		if (speciesDict[index] && externalUpdateRef.current) { 
+		if (speciesDict[index] && externalUpdateRef.current) {
 			const updatedData = {
 				valence: speciesDict[index].valence.join(', '),
 				mobility: speciesDict[index].mobility.join(', '),
 				pKa: speciesDict[index].pKa.join(', '),
 				concentration: speciesDict[index].concentration.toString(),
 			};
-			
+	
 			setRawData(updatedData);
 	
 			// Check for empty values and update invalidInputs
 			const areOthersEmpty = !updatedData.valence && !updatedData.mobility && !updatedData.pKa;
-	
 			const newInvalidInputs = {
 				valence: !updatedData.valence,
 				mobility: !updatedData.mobility,
@@ -54,12 +53,10 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 			// If everything else is empty and only concentration is filled, make concentration empty
 			if (areOthersEmpty && updatedData.concentration) {
 				setRawData(prevData => ({ ...prevData, concentration: '' }));
+				setValidInput(false);
 			}
 	
 			setInvalidInputs(newInvalidInputs);
-	
-			const allValid = Object.values(newInvalidInputs).every(validity => !validity);
-			setValidInput(allValid);
 		}
 	
 		externalUpdateRef.current = true;
@@ -87,6 +84,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 				const num = parseFloat(v.trim());
 				if (isNaN(num)) {
 					isInvalid = true;
+					setValidInput(false);
 				}
 				return num;
 			});
@@ -129,7 +127,11 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 			return updatedDict;
 		});
 
+
+
 		externalUpdateRef.current = false;
+		const allValid = Object.values(invalidInputs).every(validity => !validity);
+		setValidInput(allValid);
 	};
 
 	return (

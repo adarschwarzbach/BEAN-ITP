@@ -40,6 +40,7 @@ const BEAN_COMPUTATION_API = `${BASE_URL}/default/beanComputation`;
 
 
 export const beanComputation = async (ionicEffect: number, speciesObject: Record<string, Species>): Promise<ComputationResponse | ErrorResponse> => {
+
 	// Transforming mobility data
 	const modifiedspeciesObject = { ...speciesObject };
 
