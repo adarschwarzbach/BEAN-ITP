@@ -15,14 +15,20 @@ const BeanComputationButton: React.FC = () => {
 	const handleApiCall = async () => {
 		setLoading(true);
 		try {
-			const response = await beanComputation(ionicEffect, speciesDict);
+			// Create a copy of ionicEffect (for primitives like numbers, direct assignment is okay)
+			const ionicEffectCopy = ionicEffect;
+	
+			// Create a deep copy of speciesDict
+			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
+	
+			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
 			console.log(response);
-			if(response.statusCode != 200){
+			if (response.statusCode != 200) {
 				setError(true);
 				setLoading(false);
-				return; 
+				return;
 			}
-    
+		
 			if (typeof response.body === 'string') {
 				const parsedBody = JSON.parse(response.body);
 				setBeanResults(parsedBody);

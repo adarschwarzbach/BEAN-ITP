@@ -20,14 +20,20 @@ const Entrypoint: React.FC = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const computationPromise = beanComputation(ionicEffect, speciesDict);
+			// Create a copy of ionicEffect 
+			const ionicEffectCopy = ionicEffect;
+	
+			// Create a deep copy of speciesDict
+			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
+	
+			const computationPromise = beanComputation(ionicEffectCopy, speciesDictCopy);
 			const timeoutPromise = new Promise(resolve => setTimeout(resolve, 500));
-    
+	
 			await Promise.all([computationPromise, timeoutPromise]);
-    
+	
 			setGlobalLoading(false);
 		};
-        
+	
 		fetchData();
 	}, []);
 
