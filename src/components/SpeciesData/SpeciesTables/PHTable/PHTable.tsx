@@ -15,11 +15,14 @@ const PHTable: React.FC = () => {
 
 	const pHData = beanResults.cH[0].map(toPHValue);
 
+	const zones = ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
+
 	const renderCell = (rowIndex: number, columnIndex: number) => {
 		if (error) return <Cell />;
+
         
 		switch(columnIndex) {
-		case 0: return <Cell>{Object.values(speciesDict)[rowIndex].Name}</Cell>;
+		case 0: return <Cell>{Object.values(zones)[rowIndex]}</Cell>;
 		case 1: return <Cell>{pHData[rowIndex].toFixed(3)}</Cell>;
 		default: return <Cell />;
 		}
@@ -28,7 +31,7 @@ const PHTable: React.FC = () => {
 	return (
 		<div style={{width: 300}}>
 			<h5 style = {{marginBottom:8}} >
-				{ !error ? 'pH by Species' : 'Error Computing ITP'}
+				{ !error ? 'pH by Zone' : 'Error Computing ITP'}
 			</h5>
 			<Table2 
 				numRows={numRows}
@@ -37,7 +40,7 @@ const PHTable: React.FC = () => {
 				columnWidths={[150, 150]}
 			>
 				<Column 
-					name="Species" 
+					name="Zone" 
 					cellRenderer={(rowIndex: number) => renderCell(rowIndex, 0)}
 				/>
 				<Column 
