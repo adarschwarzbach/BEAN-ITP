@@ -52,10 +52,11 @@ const Entrypoint: React.FC = () => {
 			isMobile ? 
 				<div style={{
 					display: 'flex',
-					flexDirection: 'column', // Set the children direction to column
-					justifyContent: 'center', // Center children vertically
-					alignItems: 'center', // Center children horizontally
-					height: '100vh' // Take full height of the viewport
+					flexDirection: 'column',
+					justifyContent: 'center',
+					alignItems: 'center',
+					height: '100vh',
+					padding:12
 				}} className={themeClass}>
 					<h3>Try a computer</h3>
 					<p>We do not currently support mobile. For the best BEAN experience, please try a computer :)</p>
