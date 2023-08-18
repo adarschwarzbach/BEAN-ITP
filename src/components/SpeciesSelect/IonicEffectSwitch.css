@@ -1,11 +1,13 @@
 .switch-container {
-    padding-top: 8px; /* Add some padding to give space around the switch */
+    padding-top: 8px;
     padding-right: 8px;
     padding-left: 8px;
-    padding-bottom: -4px;
-    background-color: rgba(255, 255, 255, 0.1); /* White with 10% opacity for a slight lightening effect */
-    border-radius: 5px; /* Rounded corners */
-    display: inline-block; /* So it wraps only as much space as required by the switch */
+    padding-bottom: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    display: flex; /* Use flex instead of inline-block */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
 }
 
 .bp3-switch:focus .bp3-control-indicator {
