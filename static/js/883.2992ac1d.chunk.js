@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkbean=self.webpackChunkbean||[]).push([[883],{883:function(e,n,t){t.r(n),t.d(n,{allPathsLoader:function(){return u}});var r=t(859),u=function(e,n){return(0,r.mG)(void 0,void 0,void 0,(function(){return(0,r.Jh)(this,(function(r){switch(r.label){case 0:return[4,Promise.all([t.e(680),t.e(500),t.e(104)]).then(t.bind(t,820))];case 1:return[2,(0,r.sent().getIconPaths)(e,n)]}}))}))}}}]);
+//# sourceMappingURL=883.2992ac1d.chunk.js.map

@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/BEAN-ITP/static/css/main.d8a07d34.css",
+    "main.js": "/BEAN-ITP/static/js/main.dc3c48bd.js",
+    "static/js/883.2992ac1d.chunk.js": "/BEAN-ITP/static/js/883.2992ac1d.chunk.js",
+    "static/js/224.5ad54878.chunk.js": "/BEAN-ITP/static/js/224.5ad54878.chunk.js",
+    "static/js/787.9f68ca54.chunk.js": "/BEAN-ITP/static/js/787.9f68ca54.chunk.js",
+    "blueprint-icons-all-paths.js": "/BEAN-ITP/static/js/blueprint-icons-all-paths.52ade000.chunk.js",
+    "blueprint-icons-16px-paths.js": "/BEAN-ITP/static/js/blueprint-icons-16px-paths.26f91c2c.chunk.js",
+    "blueprint-icons-20px-paths.js": "/BEAN-ITP/static/js/blueprint-icons-20px-paths.9371efd9.chunk.js",
+    "static/media/blueprint-icons-20.svg?": "/BEAN-ITP/static/media/blueprint-icons-20.69e09533623b64863cf5.svg",
+    "static/media/blueprint-icons-16.svg?": "/BEAN-ITP/static/media/blueprint-icons-16.928936b25a7f631d44d6.svg",
+    "static/media/blueprint-icons-20.eot?": "/BEAN-ITP/static/media/blueprint-icons-20.7a9cd56e4f1468be3c57.eot",
+    "static/media/blueprint-icons-20.ttf?": "/BEAN-ITP/static/media/blueprint-icons-20.cf3d85353267b1034956.ttf",
+    "static/media/blueprint-icons-16.eot?": "/BEAN-ITP/static/media/blueprint-icons-16.2669cc26a3ca40496c1a.eot",
+    "static/media/blueprint-icons-16.ttf?": "/BEAN-ITP/static/media/blueprint-icons-16.fe34be7b52fe280ae6fc.ttf",
+    "static/media/stanford_logo_black.png": "/BEAN-ITP/static/media/stanford_logo_black.641e725a98fb196f7711.png",
+    "static/media/blueprint-icons-20.woff?": "/BEAN-ITP/static/media/blueprint-icons-20.6bafdea7cca3b5a2de42.woff",
+    "static/media/blueprint-icons-16.woff?": "/BEAN-ITP/static/media/blueprint-icons-16.6908f1544dc20870cd80.woff",
+    "static/media/blueprint-icons-20.woff2?": "/BEAN-ITP/static/media/blueprint-icons-20.c20dc60373b0a5fbfa7f.woff2",
+    "static/media/blueprint-icons-16.woff2?": "/BEAN-ITP/static/media/blueprint-icons-16.5d3be7e91ef0bd98ba43.woff2",
+    "index.html": "/BEAN-ITP/index.html",
+    "main.d8a07d34.css.map": "/BEAN-ITP/static/css/main.d8a07d34.css.map",
+    "main.dc3c48bd.js.map": "/BEAN-ITP/static/js/main.dc3c48bd.js.map",
+    "883.2992ac1d.chunk.js.map": "/BEAN-ITP/static/js/883.2992ac1d.chunk.js.map",
+    "224.5ad54878.chunk.js.map": "/BEAN-ITP/static/js/224.5ad54878.chunk.js.map",
+    "787.9f68ca54.chunk.js.map": "/BEAN-ITP/static/js/787.9f68ca54.chunk.js.map",
+    "blueprint-icons-all-paths.52ade000.chunk.js.map": "/BEAN-ITP/static/js/blueprint-icons-all-paths.52ade000.chunk.js.map",
+    "blueprint-icons-16px-paths.26f91c2c.chunk.js.map": "/BEAN-ITP/static/js/blueprint-icons-16px-paths.26f91c2c.chunk.js.map",
+    "blueprint-icons-20px-paths.9371efd9.chunk.js.map": "/BEAN-ITP/static/js/blueprint-icons-20px-paths.9371efd9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8a07d34.css",
+    "static/js/main.dc3c48bd.js"
+  ]
+}
