@@ -49,7 +49,7 @@ const Entrypoint: React.FC = () => {
 
 			<>
 				<HeaderBanner className={themeClass}/>
-				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:170, marginLeft:20}}>
+				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:160, marginLeft:70}}>
 					<div className={`${themeClass} app-container `} style = {{marginRight:-40}}>
 						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
 							<div className='form-data'>
