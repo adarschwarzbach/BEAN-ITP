@@ -18,3 +18,6 @@ Add chart headsers
 	-Sample (if entered) has effective mobility magnitude in TE that is higher magnitude than TE
 	AND: 	Sample has lower effective mob magnitude than LE in LE zone.
 		-else:  “sample will not focus between the chosen LE and TE zones”
+
+
+Add check for multivalent

@@ -47,24 +47,30 @@ const Entrypoint: React.FC = () => {
 			</div>
 			:
 
-			<>
-				<HeaderBanner className={themeClass}/>
-				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:160, marginLeft:70}}>
-					<div className={`${themeClass} app-container `} style = {{marginRight:-40}}>
-						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
-							<div className='form-data'>
-								<div style={{ display: 'flex', alignItems: 'center', alignSelf:'center' }}>
-									<IonicEffectSwitch />
-									<div style={{ width: '12px' }} />
-									<BeanComputationButton />
+			isMobile ? 
+				<div style = {{display:'flex', alignContent:'center', justifyContent:'center'}} className={themeClass}>
+					<h3>Try a computer</h3>
+					<p>We do not currently support mobile. For the best BEAN expereince, please try a computer :)</p>
+				</div>
+				:
+				<>
+					<HeaderBanner className={themeClass}/>
+					<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:160, marginLeft:70}}>
+						<div className={`${themeClass} app-container `} style = {{marginRight:-40}}>
+							<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
+								<div className='form-data'>
+									<div style={{ display: 'flex', alignItems: 'center', alignSelf:'center' }}>
+										<IonicEffectSwitch />
+										<div style={{ width: '12px' }} />
+										<BeanComputationButton />
+									</div>
+									<SpeciesForm index = "0"/>
+									<SpeciesForm index = "1"/>
+									<SpeciesForm index = "2"/>
+									<SpeciesForm index = "3"/>
 								</div>
-								<SpeciesForm index = "0"/>
-								<SpeciesForm index = "1"/>
-								<SpeciesForm index = "2"/>
-								<SpeciesForm index = "3"/>
-							</div>
-						</div>	
-					</div>
+							</div>	
+						</div>
 
 					{/* <div style = {{margin:'-50px'}}/> */}
                     
