@@ -1,6 +1,6 @@
 
 import './Entrypoint.css';
-import React, {useState, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import HeaderBanner from '../Header/HeaderBanner';
 import SpeciesForm from '../SpeciesData/SpeciesForm';
 import ZoneConcentrationsTable from '../SpeciesData/SpeciesTables/ZoneConcentrationTable';
