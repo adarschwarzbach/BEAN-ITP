@@ -22,7 +22,6 @@ const BeanComputationButton: React.FC = () => {
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
-			console.log(response);
 			if (response.statusCode != 200) {
 				setError(true);
 				setLoading(false);
