@@ -106,18 +106,18 @@ const Entrypoint: React.FC = () => {
 								</div>
 
 							</div>
-							<div style = {{height:24}}/>
+							<div style = {{height:34}}/>
 						
-							<div style = {{display:'flex', flexDirection:'row', justifyContent:'start', alignItems:'end', marginLeft:'-80'}}>
-								<div style = {{padding:'12px', marginBottom:-6}}>
-									<HeatMap color = 'viridis' title = 'Viridis Heatmap' key = 'viridis'/>
-								</div>
+							<div style = {{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
 							
-								<div style = {{padding:'12px', marginLeft:-16}}>
-									<SimpleHeatmap  color = 'plasma'   title = 'Gray Heat Map'/>
+								<div style = {{padding:'12px', marginLeft:54}}>
+									<SimpleHeatmap  color = 'viridis'   title = 'Viridis Heat Map'/>
 								</div>
-								<div style = {{padding:'12px', alignSelf:'flex-end'}}>
-									<LinedHeatMap color = 'plasma' title = 'Plasma Heat Map' />
+								<div style = {{padding:'12px',}}>
+									<SimpleHeatmap  color = 'plasma'   title = 'Plasma Heat Map'/>
+								</div>
+								<div style = {{padding:'12px',}}>
+									<SimpleHeatmap  color = 'inferno'   title = 'Inferno Heat Map'/>
 								</div>
 							
 							</div>
