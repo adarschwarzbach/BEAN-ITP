@@ -114,7 +114,7 @@ const Entrypoint: React.FC = () => {
 								</div>
 							
 								<div style = {{padding:'12px', marginLeft:-16}}>
-									<SimpleHeatmap  color = 'gray'   title = 'Gray Heat Map'/>
+									<SimpleHeatmap  color = 'plasma'   title = 'Gray Heat Map'/>
 								</div>
 								<div style = {{padding:'12px', alignSelf:'flex-end'}}>
 									<LinedHeatMap color = 'plasma' title = 'Plasma Heat Map' />

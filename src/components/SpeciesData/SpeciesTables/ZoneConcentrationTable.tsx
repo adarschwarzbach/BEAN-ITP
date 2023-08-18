@@ -17,6 +17,13 @@ function truncateToThreeDecimal(num: number): number {
 
 const columnNames = ['Species', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
 
+function toThreeSigFigs(num: number): number {
+	if (num === 0) return 0;
+	const magnitude = Math.floor(Math.log10(Math.abs(num)));
+	const factor = Math.pow(10, 3 - 1 - magnitude);
+	return Math.round(num * factor) / factor;
+}
+
 const ZoneConcentrationsTable: React.FC = () => {
 	const { loading, speciesDict, beanResults, error } = useSpeciesData();
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
@@ -38,10 +45,10 @@ const ZoneConcentrationsTable: React.FC = () => {
 		const rowData = data[rowIndex];
 		switch (columnIndex) {
 		case 0: return <Cell>{rowData.species}</Cell>;
-		case 1: return <Cell>{truncateToThreeDecimal(rowData.zone1)}</Cell>;
-		case 2: return <Cell>{truncateToThreeDecimal(rowData.zone2)}</Cell>;
-		case 3: return <Cell>{truncateToThreeDecimal(rowData.zone3)}</Cell>;
-		case 4: return <Cell>{truncateToThreeDecimal(rowData.zone4)}</Cell>;
+		case 1: return <Cell>{toThreeSigFigs(rowData.zone1)}</Cell>;
+		case 2: return <Cell>{toThreeSigFigs(rowData.zone2)}</Cell>;
+		case 3: return <Cell>{toThreeSigFigs(rowData.zone3)}</Cell>;
+		case 4: return <Cell>{toThreeSigFigs(rowData.zone4)}</Cell>;
 		default: return <Cell />;
 		}
 	};

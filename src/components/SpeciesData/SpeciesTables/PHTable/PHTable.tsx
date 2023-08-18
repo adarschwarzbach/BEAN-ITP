@@ -15,6 +15,12 @@ const PHTable: React.FC = () => {
 
 	const pHData = beanResults.cH[0].map(toPHValue);
 
+	function toTwoSigFigs(num: number): number {
+		const magnitude = Math.floor(Math.log10(Math.abs(num)));
+		const factor = Math.pow(10, magnitude - 1);
+		return Math.round(num / factor) * factor;
+	}
+
 	const zones = ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
 
 	const renderCell = (rowIndex: number, columnIndex: number) => {
@@ -23,7 +29,7 @@ const PHTable: React.FC = () => {
         
 		switch(columnIndex) {
 		case 0: return <Cell>{Object.values(zones)[rowIndex]}</Cell>;
-		case 1: return <Cell>{pHData[rowIndex].toFixed(3)}</Cell>;
+		case 1: return <Cell>{toTwoSigFigs(pHData[rowIndex])}</Cell>;
 		default: return <Cell />;
 		}
 	};

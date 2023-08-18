@@ -62,14 +62,20 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 			>
 				{title}
 			</text>
-			<svg width={180} height={180}>
+			<svg width={180} height={220}>  {/* Adjusted height */}
+				<defs>
+					<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+						<stop offset="0%" stopColor={colorScale(1)} /> {/* Swapped positions */}
+						<stop offset="100%" stopColor={colorScale(0)} /> {/* Swapped positions */}
+					</linearGradient>
+				</defs>
 				{data.map((row, rowIndex) => {
 					return row.map((value, colIndex) => {
 						return (
 							<rect
 								key={`${rowIndex}-${colIndex}`}
-								x={colIndex * 8}  // Adjusted size
-								y={rowIndex * 8}  // Adjusted size
+								x={colIndex * 8}  
+								y={rowIndex * 8}  
 								width={8}
 								height={8}
 								fill={colorScale(value)}
@@ -77,6 +83,13 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 						);
 					});
 				})}
+				<rect
+					x={30} 
+					y={200} 
+					width={120} 
+					height={10}
+					fill="url(#gradient)"
+				/>
 			</svg>
 			<text
 				textAnchor="middle"
@@ -88,5 +101,6 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 		</div>
 	);
 };
+
 
 export default SimpleHeatmap;
