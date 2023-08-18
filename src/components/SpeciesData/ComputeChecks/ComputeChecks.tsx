@@ -9,7 +9,7 @@ const ComputeChecks: React.FC = () => {
 
 	return (
 		<>
-			<h5 style={{ margin: '0 0 8px 0' }}>Check Results:</h5>
+			<h5 style={{ margin: '0 0 8px 0' }}>ITP Checks</h5>
 			<Card className={loading ? SKELETON : ''} style={{ padding: '12px', paddingBottom:4, width: 'fit-content' }}>
 				{/* <div style={{ display: 'flex', justifyContent: 'start', marginBottom: '10px' }}> */}
 				<Checkbox 

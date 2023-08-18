@@ -28,7 +28,7 @@ const PHTable: React.FC = () => {
 	return (
 		<div style={{width: 300}}>
 			<h5 style = {{marginBottom:8}} >
-				{ !error ? 'pH by Species' : 'N/A'}
+				{ !error ? 'pH by Species' : 'Error Computing ITP'}
 			</h5>
 			<Table2 
 				numRows={numRows}

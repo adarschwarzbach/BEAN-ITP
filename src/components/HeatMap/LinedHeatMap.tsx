@@ -64,7 +64,7 @@ const LinedHeatMap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 			>
 				{title}
 			</text>
-			<svg width={184} height={184}>
+			<svg width={184} height={180}>
 				<text x="50%" y="15" textAnchor="middle" fontSize="16">{title}</text>
 			
 				{data.map((row, rowIndex) => {

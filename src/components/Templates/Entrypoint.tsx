@@ -43,8 +43,8 @@ const Entrypoint: React.FC = () => {
 
 			<>
 				<HeaderBanner className={themeClass}/>
-				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:'140px'}}>
-					<div className={`${themeClass} app-container `}>
+				<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:170, marginLeft:20}}>
+					<div className={`${themeClass} app-container `} style = {{marginRight:-40}}>
 						<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
 							<div className='form-data'>
 								<div style={{ display: 'flex', alignItems: 'center', alignSelf:'center' }}>
@@ -59,14 +59,17 @@ const Entrypoint: React.FC = () => {
 							</div>
 						</div>	
 					</div>
-					<div style = {{margin:'-50px'}}/>
 
-					<div style = {{display:'flex', flexDirection:'column', marginBottom:-30,}} className='bp5-dark'>
+					{/* <div style = {{margin:'-50px'}}/> */}
+                    
+
+					<div style = {{display:'flex', flexDirection:'column', marginBottom:-34}} className='bp5-dark'>
 						<div style = {{paddingLeft:60, alignItems:'center'}}>
 							<div style = {{display: 'inline-block'}}>
 								<ZoneConcentrationsTable/>
 							</div>
-							<div style = {{height:'12px'}}/>
+							<div style = {{height:'50px'}}/>
+                            
                             
 							<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'end', justifyContent: 'start' }}>
 								
@@ -81,6 +84,7 @@ const Entrypoint: React.FC = () => {
 							</div>
 
 						</div>
+						<div style = {{height:24}}/>
 						
 						<div style = {{display:'flex', flexDirection:'row', justifyContent:'start', alignItems:'end', marginLeft:'-80'}}>
 							<div style = {{padding:'12px', marginBottom:-6}}>

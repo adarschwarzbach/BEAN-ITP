@@ -69,7 +69,7 @@ const HeatMap: React.FC<HeatMapProps> = ({title, color}) => {
 			<Group top={margin.top} left={margin.left}>
 				<text
 					x={xMax / 2}
-					y={6}
+					y={5}
 					fontSize={16}
 					textAnchor="middle"
 					fill="#D3D8DE"
