@@ -33,6 +33,8 @@ const renderSpecies: ItemRenderer<Species> = (species, { handleClick, modifiers 
 					<>
 						{species.name}
 						<div style={{ fontSize: 'smaller' }}>
+						Valence: {species.valence.join(', ')}
+							{' | '}
                         Mobility: {species.mobility.join(', ')}
 							{' | '}
                         pKa: {species.pKa.join(', ')}
@@ -48,7 +50,6 @@ const renderSpecies: ItemRenderer<Species> = (species, { handleClick, modifiers 
 
 export const SpeciesSelect: React.FC<Props> = ({dataIndex}) => {
 	const { speciesDict, setSpeciesDict } = useSpeciesData(); // Extract values from context
-
 	const [selectedSpecies, setSelectedSpecies] = useState<Species | null>(null);
 	const [query, setQuery] = useState<string>('');
 	const [inputPlaceholder, setInputPlaceholder] = useState<string>('Choose a species...');
@@ -56,38 +57,50 @@ export const SpeciesSelect: React.FC<Props> = ({dataIndex}) => {
 	const filterBySpecies = (query: string, species: Species): boolean => {
 		return species.name.toLowerCase().includes(query.toLowerCase());
 	};
+
 	const createNewSpeciesFromQuery = (query: string): Species => {
 		return {
 			name: query,
-			valence: [-1],
+			valence: [],
 			mobility: [],
 			pKa: [],
 		};
 	};
 
-	const handleButtonClick = (event: React.MouseEvent) => {
-		event.stopPropagation();
-	};
-
 	const handleSpeciesSelect = (species: Species) => {
 		setSelectedSpecies(species);
-
-		// Update the speciesDict with the selected species for the given index
-		setSpeciesDict(prevSpeciesDict => {
-			return {
-				...prevSpeciesDict,
-				[dataIndex]: {
-					...species,
-					Name: species.name,  // Adjust this based on your Species interface naming
-					concentration: speciesDict[dataIndex].concentration,  // Preserve the concentration
-					type: speciesDict[dataIndex].type  // Preserve the type
-				}
+	
+		// Deep copy of the speciesDict
+		const updatedSpeciesDict = JSON.parse(JSON.stringify(speciesDict));
+	
+		// Find the species data from commonSpecies
+		const existingSpeciesData = commonSpecies.find(s => s.name === species.name);
+	
+		if (existingSpeciesData) {
+			updatedSpeciesDict[dataIndex] = {
+				...updatedSpeciesDict[dataIndex],
+				...existingSpeciesData,
+				Name: existingSpeciesData.name,  // Adjust this based on your Species interface naming
 			};
-		});
-
+		} else {
+			updatedSpeciesDict[dataIndex] = {
+				...updatedSpeciesDict[dataIndex],
+				Name: species.name,
+				pKa: [],  // Resetting pKa, mobility, valence
+				mobility: [],
+				valence: []
+			};
+		}
+	
+		// Update the speciesDict state
+		setSpeciesDict(updatedSpeciesDict);
+	
 		const displayValue = `${species.name}`;
 		setInputPlaceholder(displayValue);
 	};
+	
+	
+	
 
 	return (
 		<div onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>

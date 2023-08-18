@@ -47,6 +47,8 @@ export const beanComputation = async (ionicEffect: number, speciesObject: Record
 		if (modifiedspeciesObject[key].mobility) {
 			modifiedspeciesObject[key].mobility = modifiedspeciesObject[key].mobility.map(value => value * 1e-8);
 		}
+		// Convert concentration from mM to M
+		modifiedspeciesObject[key].concentration = modifiedspeciesObject[key].concentration / 1000;
 	}
 
 	const requestData = {

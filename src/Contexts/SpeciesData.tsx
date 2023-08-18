@@ -102,7 +102,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 			'valence': [-1],
 			'mobility': [-7.91],
 			'pKa': [-2],
-			'concentration': 0.01,
+			'concentration': 10,
 			'type': 'LE'
 		},
 		'1': {
@@ -110,7 +110,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 			'valence': [1],
 			'mobility': [2.95],
 			'pKa': [8.076],
-			'concentration': 0.02,
+			'concentration': 20,
 			'type': 'Background'
 		},
 		'2': {
@@ -118,7 +118,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 			'valence': [-1],
 			'mobility': [-2.69],
 			'pKa': [7.2],
-			'concentration': 0.001,
+			'concentration': 1,
 			'type': 'Analyte'
 		},
 		'3': {
@@ -126,7 +126,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 			'valence': [-1],
 			'mobility': [-2.35],
 			'pKa': [7.5],
-			'concentration': 0.005,
+			'concentration': 5,
 			'type': 'TE'
 		}
 	}

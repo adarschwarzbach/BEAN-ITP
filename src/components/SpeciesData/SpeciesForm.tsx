@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Section, SectionCard, FormGroup, InputGroup, Tooltip, Position } from '@blueprintjs/core';
 import './SpeciesForm.css';
 import SpeciesSelect from '../SpeciesSelect/SpeciesSelect';
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const SpeciesForm: React.FC<Props> = ({ index }) => {
-	const { speciesDict, setSpeciesDict, validInput, setValidInput } = useSpeciesData();
+	const { speciesDict, setSpeciesDict, validInput, setValidInput} = useSpeciesData();
 	const speciesData = speciesDict[index];
 
 	const [rawData, setRawData] = useState<Record<string, string>>({
@@ -28,14 +28,43 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 		concentration: speciesData.concentration.toString(),
 	});
 
-	// useEffect(() => {
-	// 	setRawData({
-	// 		valence: speciesData.valence.join(', '),
-	// 		mobility: speciesData.mobility.join(', '),
-	// 		pKa: speciesData.pKa.join(', '),
-	// 		concentration: speciesData.concentration.toString(),
-	// 	});
-	// }, [speciesData]);
+	const externalUpdateRef = useRef(true);
+
+	useEffect(() => {
+		if (speciesDict[index] && externalUpdateRef.current) { 
+			const updatedData = {
+				valence: speciesDict[index].valence.join(', '),
+				mobility: speciesDict[index].mobility.join(', '),
+				pKa: speciesDict[index].pKa.join(', '),
+				concentration: speciesDict[index].concentration.toString(),
+			};
+			
+			setRawData(updatedData);
+	
+			// Check for empty values and update invalidInputs
+			const areOthersEmpty = !updatedData.valence && !updatedData.mobility && !updatedData.pKa;
+	
+			const newInvalidInputs = {
+				valence: !updatedData.valence,
+				mobility: !updatedData.mobility,
+				pKa: !updatedData.pKa,
+				concentration: areOthersEmpty || !updatedData.concentration,
+			};
+	
+			// If everything else is empty and only concentration is filled, make concentration empty
+			if (areOthersEmpty && updatedData.concentration) {
+				setRawData(prevData => ({ ...prevData, concentration: '' }));
+			}
+	
+			setInvalidInputs(newInvalidInputs);
+	
+			const allValid = Object.values(newInvalidInputs).every(validity => !validity);
+			setValidInput(allValid);
+		}
+	
+		externalUpdateRef.current = true;
+	
+	}, [speciesDict, index]);
 
 	const [valenceTooltipOpen, setValenceTooltipOpen] = useState(false);
 	const [mobilityTooltipOpen, setMobilityTooltipOpen] = useState(false);
@@ -99,6 +128,8 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 			}
 			return updatedDict;
 		});
+
+		externalUpdateRef.current = false;
 	};
 
 	return (
@@ -167,7 +198,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						</Tooltip>
 
 						<Tooltip 
-							content="Information about Concentration" 
+							content="Concentration in mM (millimolar)" 
 							isOpen={concentrationTooltipOpen}
 							onInteraction={(nextOpen) => setConcentrationTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
