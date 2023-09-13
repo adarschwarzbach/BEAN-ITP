@@ -22,7 +22,7 @@ BEAN_ITP/
 │   ├── diffusion_free_model.py # Edited version of diffusion calculations
 │   ├── printOutput.py # Script to print .npz otput files from the model
 │   └── ...
-├── src/ # Client code - not started
+├── src/ # Client
 │   ├── App.tsx
 │   ├── index.tsx
 │   └── ...
