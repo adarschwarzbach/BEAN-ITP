@@ -1,9 +1,8 @@
 # BEAN - An Isotachphoresis Calculator
-
 **Work in progress** 🟢🟢🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️
 
 
-** Insert some info about BEAN & its purpose **
+Try it out [here](https://adarschwarzbach.github.io/BEAN-ITP/)!
 
 # File Structure
 ```sh
