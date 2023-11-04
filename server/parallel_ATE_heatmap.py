@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 
 client_config = botocore.config.Config(
-    max_pool_connections=700,
+    max_pool_connections=900,
 )
 
 lambda_client = boto3.client('lambda', config=client_config)
@@ -50,11 +50,27 @@ def lambda_handler(event, context):
 
     args_list = [(LE_C, pH, species, ionicEffect) for LE_C in LE_C_values for pH in pH_values]
 
-    with ThreadPoolExecutor(max_workers=700) as executor:
+    start_time = time.time()  # Start timer
+    
+    with ThreadPoolExecutor(max_workers=900) as executor:
         results = list(executor.map(invoke_worker_lambda, args_list))
 
+    total_time = time.time() - start_time  # Calculate total time
+    
     num_rows = len(LE_C_values)
     num_columns = len(pH_values)
     grid_results = organize_results_into_grid(results, num_rows, num_columns)
+    
+    
+    # Count the number of calculations and itpCheck occurrences
+    total_calculations = len(results)
+    itpCheck_true_count = sum(1 for res in results if json.loads(res['body'])['itpCheck'])
+    
+    
 
-    return grid_results
+    return {
+        "grid_results": grid_results,
+        "total_time": total_time,
+        "total_calculations": total_calculations,
+        "itpCheck_true_count": itpCheck_true_count
+    }
