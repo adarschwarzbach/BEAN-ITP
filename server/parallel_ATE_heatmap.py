@@ -1,13 +1,22 @@
 import boto3
+import botocore
 import json
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
 
-lambda_client = boto3.client('lambda')
+client_config = botocore.config.Config(
+    max_pool_connections=100,
+)
 
-def invoke_worker_lambda(LE_C):
+lambda_client = boto3.client('lambda', config=client_config)
+
+def invoke_worker_lambda(args):
+    
+    pH = args[1]
+    LE_C = args[0]
     payload =  {
       "ionicEffect": 0,
-      "pH": 8.7,
+      "pH": pH,
       "LE_C":LE_C,
       "species": {
         "0": {
@@ -77,8 +86,25 @@ def invoke_worker_lambda(LE_C):
     )
     return json.loads(response['Payload'].read())
 
-def lambda_handler(event, context):
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        results = list(executor.map(invoke_worker_lambda, range(1, 1001, 10)))
 
-    return results
+def organize_results_into_grid(flat_results, num_rows, num_columns):
+    grid_results = [flat_results[i * num_columns : (i + 1) * num_columns] for i in range(num_rows)]
+    return grid_results
+
+def lambda_handler(event, context):
+    # Generate 20 LE_C values between 1-1000
+    LE_C_values = [i * 50 for i in range(1, 21)]
+
+    # Generate 20 pH values between 8.7 - 1 and 8.7 + 2
+    pH_values = [8.7 + i * 0.15 - 1 for i in range(20)]
+
+    args_list = [(LE_C, pH) for LE_C in LE_C_values for pH in pH_values]
+
+    with ThreadPoolExecutor(max_workers=700) as executor:
+        results = list(executor.map(invoke_worker_lambda, args_list))
+
+    num_rows = len(LE_C_values)
+    num_columns = len(pH_values)
+    grid_results = organize_results_into_grid(results, num_rows, num_columns)
+
+    return grid_results
