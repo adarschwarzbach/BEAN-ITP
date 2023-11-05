@@ -52,7 +52,7 @@ const BeanComputationButton: React.FC = () => {
 				setAteHeatmapResults(ateHeatmapResults);
 			} else {
 				// It's not a valid ateHeatmapResults object, so set the state to the initial value
-				setAteHeatmapResults(ateHeatmapInitial);
+				setAteHeatmapResults({grid_results: [], itpCheck_true_count: 0, total_calculations: 0, total_time: 0});
 			}
 
 			setAteHeatmapLoading(false);
