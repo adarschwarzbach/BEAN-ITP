@@ -18,7 +18,7 @@ import { isMobile } from 'react-device-detect';
 
 
 const Entrypoint: React.FC = () => {
-	const {ionicEffect, speciesDict, gloablLoading, setGlobalLoading} = useSpeciesData();
+	const {ionicEffect, speciesDict, gloablLoading, setGlobalLoading, ateHeatmapLoading} = useSpeciesData();
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -111,13 +111,13 @@ const Entrypoint: React.FC = () => {
 							<div style = {{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
 							
 								<div style = {{padding:'12px', marginLeft:54}}>
-									<SimpleHeatmap  color = 'viridis'   title = 'Viridis Heat Map'/>
+									<SimpleHeatmap  color = 'viridis'   title = 'Viridis Heat Map' loading = {ateHeatmapLoading} />
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap  color = 'plasma'   title = 'Plasma Heat Map'/>
+									<SimpleHeatmap  color = 'plasma'   title = 'Plasma Heat Map' loading = {ateHeatmapLoading} />
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap  color = 'inferno'   title = 'Inferno Heat Map'/>
+									<SimpleHeatmap  color = 'inferno'   title = 'Inferno Heat Map' loading = {ateHeatmapLoading} />
 								</div>
 							
 							</div>

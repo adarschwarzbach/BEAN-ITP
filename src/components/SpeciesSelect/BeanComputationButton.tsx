@@ -7,7 +7,7 @@ import ateHeatmapInitial from '../../Contexts/ateHeatmapInitial';
 
 
 const BeanComputationButton: React.FC = () => {
-	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults} = useSpeciesData();
+	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading} = useSpeciesData();
 
 	// useEffect(() => {
 	// 	handleApiCall();
@@ -16,6 +16,7 @@ const BeanComputationButton: React.FC = () => {
 	// Check if all inputs are valid
 	const handleApiCall = async () => {
 		setLoading(true);
+		setAteHeatmapLoading(true);
 		try {
 			// Create a copy of ionicEffect (for primitives like numbers, direct assignment is okay)
 			const ionicEffectCopy = ionicEffect;
@@ -25,19 +26,7 @@ const BeanComputationButton: React.FC = () => {
 
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
-
-
-			const ateHeatmapResults = await ateHeatmapComputation(ionicEffectCopy, 8, speciesDictCopy);
-
-			if (typeof ateHeatmapResults === 'object' && 'grid_results' in ateHeatmapResults) {
-				// It's a valid ateHeatmapResults object, so set the state
-				setAteHeatmapResults(ateHeatmapResults);
-			} else {
-				// It's not a valid ateHeatmapResults object, so set the state to the initial value
-				setAteHeatmapResults(ateHeatmapInitial);
-			}
-			console.log('rez', ateHeatmapResults);
-
+			
 			if (response.statusCode != 200) {
 				setError(true);
 				setLoading(false);
@@ -49,13 +38,28 @@ const BeanComputationButton: React.FC = () => {
 				setBeanResults(parsedBody);
 				setError(false);
 			} 
+
 			else {
 				throw new Error('Error occurred: response.body is not a string');
 			}
+
+			setLoading(false);
+			// Perform the ateHeatmap computation
+			const ateHeatmapResults = await ateHeatmapComputation(ionicEffectCopy, 8.8, speciesDictCopy);
+
+			if (typeof ateHeatmapResults === 'object' && 'grid_results' in ateHeatmapResults) {
+				// It's a valid ateHeatmapResults object, so set the state
+				setAteHeatmapResults(ateHeatmapResults);
+			} else {
+				// It's not a valid ateHeatmapResults object, so set the state to the initial value
+				setAteHeatmapResults(ateHeatmapInitial);
+			}
+
+			setAteHeatmapLoading(false);
+
 		} catch (error) {
 			console.error('Error occurred:', error);
 		}
-		setLoading(false);
 	};
 
 	return (
