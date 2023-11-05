@@ -1,4 +1,7 @@
-const responseArray  = {
+
+
+
+const initial = {
 	'grid_results': [
 		[
 			{
@@ -1727,11 +1730,33 @@ const responseArray  = {
 };
   
 
-const ateHeatmapInitial = responseArray.map(item => {
-	return {
-		...item,
-		body: JSON.parse(item.body)
-	};
-});
+interface ateBody {
+	ATEpH: number;
+	itpCheck: boolean;
+}
+
+interface ateHeatmapResults {
+	grid_results: ateHeatmapDatapoint[][];
+	itpCheck_true_count: number;
+	total_calculations: number;
+	total_time: number;
+  }
+  
+interface ateHeatmapDatapoint {
+statusCode: number;
+body: ateBody;
+}
+
+const ateHeatmapInitial: ateHeatmapResults = {
+	grid_results: initial.grid_results.map((row) =>
+		row.map((datapoint) => ({
+			statusCode: datapoint.statusCode,
+			body: JSON.parse(datapoint.body) as ateBody, // Parse the body JSON string
+		}))
+	),
+	total_time: initial.total_time,
+	total_calculations: initial.total_calculations,
+	itpCheck_true_count: initial.itpCheck_true_count,
+};
 
 export default ateHeatmapInitial;

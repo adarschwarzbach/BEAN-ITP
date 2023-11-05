@@ -57,31 +57,29 @@ interface ComputationResult {
 	adjustedTeZone: string[]; // I'm using 'any[]' because I don't have specific data about the items of this array.
 	runTime: number;
   }
-
-interface ateHeatmapResults {
+  interface ateHeatmapResults {
 	grid_results: ateHeatmapDatapoint[][];
 	itpCheck_true_count: number;
 	total_calculations: number;
 	total_time: number;
-}
-
-interface ateHeatmapDatapoint {
+  }
+  
+  interface ateHeatmapDatapoint {
 	statusCode: number;
-	body: ateBody
-}
-
-interface ateBody {
+	body: ateBody;
+  }
+  
+  interface ateBody {
 	ATEpH: number;
 	itpCheck: boolean;
-}
-
+  }
 interface Species {
     Name: string;
     valence: number[];
     mobility: number[];
     pKa: number[];
     concentration: number;
-    type: string;
+	type: string;
 }
 
 interface DataContextProps {

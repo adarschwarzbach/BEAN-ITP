@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { scaleSequential } from 'd3-scale';
-import { interpolateGreys, interpolatePlasma, interpolateViridis, interpolateInferno} from 'd3-scale-chromatic';
+import { interpolateGreys, interpolatePlasma, interpolateViridis, interpolateInferno } from 'd3-scale-chromatic';
+import { useSpeciesData } from '../../Contexts/SpeciesData';
 
 const generateLargeData = (rows: number, columns: number): number[][] => {
 	const data: number[][] = [];
@@ -56,6 +57,11 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 	const colorScaleHeatmap = colorScaleGenerator(color).domain([0, colorMax]);
 	const colorScaleBar = colorScaleGenerator(color).domain([0, 1]);
 	const gradientId = `gradient-${color}`;  // Unique gradient ID based on the color prop
+
+
+	const { ateHeatmapResults, setAteHeatmapResults, loading, setLoading } = useSpeciesData();
+	
+	console.log('from heatmap', ateHeatmapResults);
 
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
