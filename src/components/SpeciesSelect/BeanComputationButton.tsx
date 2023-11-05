@@ -2,6 +2,7 @@ import React from 'react';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
 import { beanComputation } from '../../Utils/beanComputation';
 import { Button } from '@blueprintjs/core';
+import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
 
 
 const BeanComputationButton: React.FC = () => {
@@ -23,6 +24,13 @@ const BeanComputationButton: React.FC = () => {
 
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
+
+			ateHeatmapComputation(ionicEffectCopy, 8.7, speciesDictCopy).then(response => {
+				console.log(response.body);
+			}).catch(error => {
+				console.error('An error occurred:', error);
+			});
+
 			if (response.statusCode != 200) {
 				setError(true);
 				setLoading(false);
