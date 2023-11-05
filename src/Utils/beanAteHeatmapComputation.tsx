@@ -44,21 +44,32 @@ const BEAN_COMPUTATION_API = `${BASE_URL}/prod/`;
 // Function to perform the computation
 export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
 	console.log('hit');
-	const modifiedSpeciesObject = { ...speciesObject };
-	for (const key in modifiedSpeciesObject) {
-		if (modifiedSpeciesObject[key].mobility) {
-			modifiedSpeciesObject[key].mobility = modifiedSpeciesObject[key].mobility.map(value => value * 1e-8);
+    
+	// Check if speciesObject is indeed an object
+	if (typeof speciesObject !== 'object' || speciesObject === null) {
+		console.error('speciesObject is not an object:', speciesObject);
+		return;
+	}
+
+	// Convert the species object to the desired format
+	const modifiedSpeciesObject = {};
+	for (const key in speciesObject) {
+		if (Object.prototype.hasOwnProperty.call(speciesObject, key)) {
+			modifiedSpeciesObject[Number(key)] = {
+				...speciesObject[key],
+				mobility: speciesObject[key].mobility, // .map(value => value * 1e-8)
+				concentration: speciesObject[key].concentration / 1000,
+			};
 		}
-		modifiedSpeciesObject[key].concentration = modifiedSpeciesObject[key].concentration / 1000;
 	}
 
 	const requestData = {
-		'ionicEffect':ionicEffect,
-		'pH':pH,
+		'ionicEffect': ionicEffect,
+		'pH': pH,
 		'species': modifiedSpeciesObject
 	};
-    
-	await postData();
+
+	console.log(requestData);
 
 	try {
 		const response = await fetch(BEAN_COMPUTATION_API, {
@@ -74,9 +85,9 @@ export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
 			console.error('Server responded with an error:', errorData);
 			throw new Error(`Server responded with status: ${response.status}`);
 		}
-        
+
 		const data = await response.json();
-		console.log(data);
+		console.log('work',data);
 		return data;
 
 	} catch (error) {
@@ -92,65 +103,64 @@ export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
 
 
 
-async function postData() {
-	const url = 'https://dcll8lpii8.execute-api.us-west-1.amazonaws.com/prod/';
-	const data = {
-		ionicEffect: 0,
-		pH: 8.7,
-		species: {
-			'0': {
-				Name: 'HCl',
-				valence: [-1],
-				mobility: [-7.91e-8],
-				pKa: [-2],
-				concentration: 0.00001,
-				type: 'LE'
-			},
-			'1': {
-				Name: 'Tris',
-				valence: [1],
-				mobility: [2.95e-8],
-				pKa: [8.076],
-				concentration: 0.00002,
-				type: 'Background'
-			},
-			'2': {
-				Name: 'MOPS',
-				valence: [-1],
-				mobility: [-2.69e-8],
-				pKa: [7.2],
-				concentration: 0.000001,
-				type: 'Analyte'
-			},
-			'3': {
-				Name: 'HEPES',
-				valence: [-1],
-				mobility: [-2.35e-8],
-				pKa: [7.5],
-				concentration: 0.000005,
-				type: 'TE'
-			}
-		}
-	};
+// async function postData() {
+// 	const url = 'https://dcll8lpii8.execute-api.us-west-1.amazonaws.com/prod/';
+// 	const data = {
+// 		ionicEffect: 0,
+// 		pH: 8.7,
+// 		species: {
+// 			'0': {
+// 				Name: 'HCl',
+// 				valence: [-1],
+// 				mobility: [-7.91e-8],
+// 				pKa: [-2],
+// 				concentration: 0.00001,
+// 				type: 'LE'
+// 			},
+// 			'1': {
+// 				Name: 'Tris',
+// 				valence: [1],
+// 				mobility: [2.95e-8],
+// 				pKa: [8.076],
+// 				concentration: 0.00002,
+// 				type: 'Background'
+// 			},
+// 			'2': {
+// 				Name: 'MOPS',
+// 				valence: [-1],
+// 				mobility: [-2.69e-8],
+// 				pKa: [7.2],
+// 				concentration: 0.000001,
+// 				type: 'Analyte'
+// 			},
+// 			'3': {
+// 				Name: 'HEPES',
+// 				valence: [-1],
+// 				mobility: [-2.35e-8],
+// 				pKa: [7.5],
+// 				concentration: 0.000005,
+// 				type: 'TE'
+// 			}
+// 		}
+// 	};
   
-	try {
-		const response = await fetch(url, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		});
+// 	console.log(data);
+// 	try {
+// 		const response = await fetch(url, {
+// 			method: 'POST',
+// 			headers: {
+// 				'Content-Type': 'application/json',
+// 			},
+// 			body: JSON.stringify(data),
+// 		});
         
-		if (!response.ok) {
-			throw new Error(`HTTP error! Status: ${response.status}`);
-		}
+// 		if (!response.ok) {
+// 			throw new Error(`HTTP error! Status: ${response.status}`);
+// 		}
         
-		const responseData = await response.json();
-		console.log(responseData);
-	} catch (error) {
-		console.error('Error posting data:', error);
-	}
-}
-
-// Example usage:
+// 		const responseData = await response.json();
+// 		console.log(responseData);
+// 	} catch (error) {
+// 		console.error('Error posting data:', error);
+// 	}
+// }
