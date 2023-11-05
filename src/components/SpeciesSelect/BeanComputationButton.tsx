@@ -3,10 +3,11 @@ import { useSpeciesData } from '../../Contexts/SpeciesData';
 import { beanComputation } from '../../Utils/beanComputation';
 import { Button } from '@blueprintjs/core';
 import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
+import ateHeatmapInitial from '../../Contexts/ateHeatmapInitial';
 
 
 const BeanComputationButton: React.FC = () => {
-	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput } = useSpeciesData();
+	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults} = useSpeciesData();
 
 	// useEffect(() => {
 	// 	handleApiCall();
@@ -25,11 +26,17 @@ const BeanComputationButton: React.FC = () => {
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
 
-			ateHeatmapComputation(ionicEffectCopy, 8.7, speciesDictCopy).then(response => {
-				console.log(response);
-			}).catch(error => {
-				console.error('An error occurred:', error);
-			});
+
+			const ateHeatmapResults = await ateHeatmapComputation(ionicEffectCopy, 8, speciesDictCopy);
+
+			if (typeof ateHeatmapResults === 'object' && 'grid_results' in ateHeatmapResults) {
+				// It's a valid ateHeatmapResults object, so set the state
+				setAteHeatmapResults(ateHeatmapResults);
+			} else {
+				// It's not a valid ateHeatmapResults object, so set the state to the initial value
+				setAteHeatmapResults(ateHeatmapInitial);
+			}
+			console.log('rez', ateHeatmapResults);
 
 			if (response.statusCode != 200) {
 				setError(true);

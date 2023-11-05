@@ -92,7 +92,7 @@ interface DataContextProps {
 	beanResults: ComputationResult;
 	setBeanResults: React.Dispatch<React.SetStateAction<ComputationResult>>;
 	ateHeatmapResults: ateHeatmapResults;
-	setAteHeatmapResults: React.Dispatch<React.SetStateAction<ateHeatmapResults>>;
+	setAteHeatmapResults: React.Dispatch<React.SetStateAction<ateHeatmapResults>> ;
 	validInput: boolean;
 	setValidInput: React.Dispatch<React.SetStateAction<boolean>>;
 	error: boolean;

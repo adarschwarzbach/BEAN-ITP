@@ -56,6 +56,8 @@ interface SimpleHeatmapProps {
 const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 	const { ateHeatmapResults } = useSpeciesData();
 
+	console.log('ate from heatmap', ateHeatmapResults);
+
 	let colorMin = 0;
 	let colorMax = 1;
 
@@ -70,7 +72,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 	const gradientId = `gradient-${color}`;
 
 	// Extract ATEpH values from grid_results and create a list of lists
-	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body.ATEpH)) : [];
+	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['ATEpH'])) : [];
+	console.log('play', ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint['body'])));
+	console.log('heatmapData', heatmapData);
 
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -153,7 +157,6 @@ export default SimpleHeatmap;
 
 // 	const { ateHeatmapResults, setAteHeatmapResults, loading, setLoading } = useSpeciesData();
 	
-// 	console.log('from heatmap', ateHeatmapResults);
 
 	
 

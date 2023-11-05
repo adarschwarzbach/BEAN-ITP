@@ -1,40 +1,18 @@
-// Define the Species interface
-interface Species {
-    Name: string;
-    valence: number[];
-    mobility: number[];
-    pKa: number[];
-    concentration: number;
-    type: string;
+interface ateBody {
+	ATEpH: number;
+	itpCheck: boolean;
 }
 
-// Define the ErrorResponse interface
-interface ErrorResponse {
-    statusCode: number;
-    body: {
-        error: boolean;
-    };
-}
-
-// Define the ComputationResponse interface
-interface ComputationResponse {
-    statusCode: number;
-    body: {
-        Residue: number[];
-        ComputedZoneConcentrations: number[][];
-        cMat_init: number[][];
-        cH: number[][];
-        ComputedEffectiveMobilities: number[][];
-        pHInItpZones: number[][];
-        ConductivityInItpZones: number[][];
-        LEZoneConditionSatisfied: boolean;
-        AnalyteZoneConditionSatisfied: boolean;
-        TEZoneConditionSatisfied: boolean;
-        StableItpPredicted: boolean;
-        analyteZone: string[];
-        adjustedTeZone?: string[];
-        runTime: number;
-    };
+interface ateHeatmapResults {
+	grid_results: ateHeatmapDatapoint[][];
+	itpCheck_true_count: number;
+	total_calculations: number;
+	total_time: number;
+  }
+  
+interface ateHeatmapDatapoint {
+statusCode: number;
+body: ateBody;
 }
 
 // Base URL and Endpoint for the API request
@@ -84,7 +62,20 @@ export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
 		}
 
 		const data = await response.json();
-		return data;
+        
+		const ateHeatmapInitial: ateHeatmapResults = {
+			grid_results: data.grid_results.map((row) =>
+				row.map((datapoint) => ({
+					statusCode: datapoint.statusCode,
+					body: JSON.parse(datapoint.body) as ateBody, // Parse the body JSON string
+				}))
+			),
+			total_time: data.total_time,
+			total_calculations: data.total_calculations,
+			itpCheck_true_count: data.itpCheck_true_count,
+		};
+
+		return ateHeatmapInitial;
 
 	} catch (error) {
 		console.error('There was a problem with the fetch operation:', error);
