@@ -43,7 +43,6 @@ const BEAN_COMPUTATION_API = `${BASE_URL}/prod/`;
 
 // Function to perform the computation
 export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
-	console.log('hit');
     
 	// Check if speciesObject is indeed an object
 	if (typeof speciesObject !== 'object' || speciesObject === null) {
@@ -69,8 +68,6 @@ export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
 		'species': modifiedSpeciesObject
 	};
 
-	console.log(requestData);
-
 	try {
 		const response = await fetch(BEAN_COMPUTATION_API, {
 			method: 'POST',
@@ -87,7 +84,6 @@ export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
 		}
 
 		const data = await response.json();
-		console.log('work',data);
 		return data;
 
 	} catch (error) {
