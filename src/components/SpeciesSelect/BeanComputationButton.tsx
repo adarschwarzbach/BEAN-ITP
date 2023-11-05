@@ -26,7 +26,7 @@ const BeanComputationButton: React.FC = () => {
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
 
 			ateHeatmapComputation(ionicEffectCopy, 8.7, speciesDictCopy).then(response => {
-				console.log(response.body);
+				console.log(response);
 			}).catch(error => {
 				console.error('An error occurred:', error);
 			});

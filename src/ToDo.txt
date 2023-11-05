@@ -1,5 +1,9 @@
 To do:
 
+hook up heatmap data with heatmap and a button
+
+-----------
+
 Add chart headsers
 
 - Create container layouts for inputs, tables, HeatMap
