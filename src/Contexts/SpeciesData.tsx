@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import ateHeatmapInitial from './ateHeatmapInitial';
 
 const initialData = 
 {
@@ -57,6 +58,23 @@ interface ComputationResult {
 	runTime: number;
   }
 
+interface ateHeatmapResults {
+	grid_results: ateHeatmapDatapoint[][];
+	itpCheck_true_count: number;
+	total_calculations: number;
+	total_time: number;
+}
+
+interface ateHeatmapDatapoint {
+	statusCode: number;
+	body: ateBody
+}
+
+interface ateBody {
+	ATEpH: number;
+	itpCheck: boolean;
+}
+
 interface Species {
     Name: string;
     valence: number[];
@@ -75,6 +93,8 @@ interface DataContextProps {
     setSpeciesDict: React.Dispatch<React.SetStateAction<Record<string, Species>>>;
 	beanResults: ComputationResult;
 	setBeanResults: React.Dispatch<React.SetStateAction<ComputationResult>>;
+	ateHeatmapResults: ateHeatmapResults;
+	setAteHeatmapResults: React.Dispatch<React.SetStateAction<ateHeatmapResults>>;
 	validInput: boolean;
 	setValidInput: React.Dispatch<React.SetStateAction<boolean>>;
 	error: boolean;
@@ -96,6 +116,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	const [loading, setLoading] = useState<boolean>(false);
 	const [gloablLoading, setGlobalLoading] = useState<boolean>(true);
 	const [beanResults, setBeanResults] = useState<ComputationResult>(initialData);
+	const [ateHeatmapResults, setAteHeatmapResults] = useState<ateHeatmapResults>(ateHeatmapInitial);
 	const [speciesDict, setSpeciesDict] = useState<Record<string, Species>>({
 		'0': {
 			'Name': 'HCl',
@@ -133,7 +154,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	);
 
 	return (
-		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading}}>
+		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, ateHeatmapResults, setAteHeatmapResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading}}>
 			{children}
 		</DataContext.Provider>
 	);
