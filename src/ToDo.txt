@@ -2,6 +2,8 @@ To do:
 
 hook up heatmap data with heatmap and a button
 
+Throttle heatmap so not to overrun threads
+
 -----------
 
 Add chart headsers
