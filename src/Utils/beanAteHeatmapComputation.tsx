@@ -1,6 +1,7 @@
 interface ateBody {
-	ATEpH: number;
+	computation_value: number;
 	itpCheck: boolean;
+	type?: string;
 }
 
 interface ateHeatmapResults {
@@ -43,7 +44,8 @@ export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
 	const requestData = {
 		'ionicEffect': ionicEffect,
 		'pH': pH,
-		'species': modifiedSpeciesObject
+		'species': modifiedSpeciesObject,
+		'requestedOutput': 'ATE_pH',
 	};
 
 	try {
@@ -62,6 +64,8 @@ export const ateHeatmapComputation = async (ionicEffect, pH, speciesObject) => {
 		}
 
 		const data = await response.json();
+
+		console.log('Data received from the server:', data);
         
 		const ateHeatmapInitial: ateHeatmapResults = {
 			grid_results: data.grid_results.map((row) =>

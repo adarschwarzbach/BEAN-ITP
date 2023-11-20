@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import ateHeatmapInitial from './ateHeatmapInitial';
+import { type } from 'os';
 
 const initialData = 
 {
@@ -67,11 +68,13 @@ interface ComputationResult {
   interface ateHeatmapDatapoint {
 	statusCode: number;
 	body: ateBody;
+	type?: string;
   }
   
   interface ateBody {
-	ATEpH: number;
+	computation_value: number;
 	itpCheck: boolean;
+	type?: string;
   }
 interface Species {
     Name: string;

@@ -60,12 +60,14 @@ interface SimpleHeatmapProps {
 const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading }) => {
 	const { ateHeatmapResults } = useSpeciesData();
 
+	console.log(ateHeatmapResults);
+
 	let colorMin = 0;
 	let colorMax = 1;
 
 	if (ateHeatmapResults) {
 		// Calculate the minimum and maximum values in the data
-		const values = ateHeatmapResults.grid_results.flat().map(datapoint => datapoint.body.ATEpH);
+		const values = ateHeatmapResults.grid_results.flat().map(datapoint => datapoint.body.computation_value);
 		colorMin = Math.min(...values);
 		colorMax = Math.max(...values);
 	}
@@ -74,7 +76,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading }) 
 	const gradientId = `gradient-${color}`;
 
 	// Extract ATEpH values from grid_results and create a list of lists
-	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['ATEpH'])) : [];
+	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['computation_value'])) : [];
 
 	if (loading) {
 		return (
