@@ -15,6 +15,7 @@ import ComputeChecks from '../SpeciesData/ComputeChecks/ComputeChecks';
 import { beanComputation } from '../../Utils/beanComputation';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { isMobile } from 'react-device-detect';
+import { Button } from '@blueprintjs/core';
 
 
 const Entrypoint: React.FC = () => {
@@ -110,14 +111,14 @@ const Entrypoint: React.FC = () => {
 						
 							<div style = {{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
 							
-								<div style = {{padding:'12px', marginLeft:54}}>
-									<SimpleHeatmap  color = 'viridis'   title = 'Viridis Heat Map' loading = {ateHeatmapLoading} />
+								<div style = {{padding:'12px', marginLeft:54, display:'flex',  flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+									<SimpleHeatmap color='viridis' title='ATE pH' loading={ateHeatmapLoading} />									
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap  color = 'plasma'   title = 'Plasma Heat Map' loading = {ateHeatmapLoading} />
+									<SimpleHeatmap color='plasma' title='Sample pH' loading={ateHeatmapLoading} />
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap  color = 'inferno'   title = 'Inferno Heat Map' loading = {ateHeatmapLoading} />
+									<SimpleHeatmap color='inferno' title='Sample c Sample' loading={ateHeatmapLoading} />
 								</div>
 							
 							</div>
