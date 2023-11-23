@@ -1176,6 +1176,13 @@ def lambda_handler(event, context):
                 output = Sigma[0, 1]
             else:
                 raise ValueError
+                
+            output = {
+                "ATE_pH": pH[0, 2],
+                 "sample_pH": pH[0, 1],
+                 "sample_c_sample":cMat[2, 1]
+            }
+            
             return output, check_ITP_conditions(muMat)
         
         
@@ -1213,7 +1220,8 @@ def lambda_handler(event, context):
         try:
             result = {
                 "computation_value": solution[0],
-                "itpCheck": solution[1]
+                "itpCheck": solution[1],
+                "type": requested_output
             }
 
             return {

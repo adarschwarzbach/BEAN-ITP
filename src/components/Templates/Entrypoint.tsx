@@ -74,6 +74,8 @@ const Entrypoint: React.FC = () => {
 										<IonicEffectSwitch />
 										<div style={{ width: '12px' }} />
 										<BeanComputationButton />
+										<div style={{ width: '12px' }} />
+										<Button className={themeClass} text="Heatmaps" icon = 'rocket' minimal = {false}/>
 									</div>
 									<SpeciesForm index = "0"/>
 									<SpeciesForm index = "1"/>
