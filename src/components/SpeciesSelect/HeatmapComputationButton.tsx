@@ -23,7 +23,7 @@ const HeatmapComputationButton: React.FC = () => {
 			// Create a deep copy of speciesDict
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
             
-			console.log('speciesDictCopy:', speciesDictCopy);
+
 
 			const ateHeatmapResults = await ateHeatmapComputation(ionicEffectCopy, speciesDictCopy['1']['pKa'][0], speciesDictCopy);
 

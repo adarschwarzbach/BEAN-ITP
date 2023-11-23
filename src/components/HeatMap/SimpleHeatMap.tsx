@@ -1,10 +1,13 @@
 
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import { scaleSequential } from 'd3-scale';
 import { interpolateGreys, interpolatePlasma, interpolateViridis, interpolateInferno } from 'd3-scale-chromatic';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
-import { Card } from '@blueprintjs/core';
+import { Tooltip, Card } from '@blueprintjs/core';
 import { SKELETON } from '@blueprintjs/core/lib/esm/common/classes';
+
+
+
 
 
 const generateLargeData = (rows: number, columns: number): number[][] => {
@@ -59,7 +62,23 @@ interface SimpleHeatmapProps {
 }
 
 const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, dataType }) => {
-	const { ateHeatmapResults, heatmapError } = useSpeciesData();
+	const { ateHeatmapResults, heatmapError, speciesDict } = useSpeciesData();
+
+	const svgRef = useRef<SVGSVGElement>(null);
+
+	//  in javascript
+	const ph_data: number[] = [];  // Initialize as an empty array
+	const pH = speciesDict['1']['pKa'][0];  // Assuming this fetches a number
+	
+	for (let i = 0; i < 21; i++) {
+		ph_data.push(pH - 1 + i * 0.1);
+	}
+
+	const LE_C_values = [1.0, 1.4, 2.1, 3.0, 4.3, 6.2,
+		8.9, 12.7, 18.3, 26.4, 38.0,
+		54.6, 78.5, 112.9, 162.4, 233.6,
+		336.0, 483.3, 695.2, 1000.0
+	];
 
 	console.log(JSON.stringify(ateHeatmapResults, null, 4));
 
@@ -78,6 +97,44 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 	// Extract given values from grid_results and create a list of lists
 	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['computation_value'][dataType])) : [];
+
+	const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
+
+	const handleMouseEnter = (rowIndex, colIndex, value, e) => {
+		setTooltip({
+			show: true,
+			content: `LE_C: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex]}, Value: ${value.toFixed(2)}`, // Include the data point value
+			x: e.clientX + 10,  // Offset by 10 pixels to the right
+			y: e.clientY + 10   // Offset by 10 pixels down
+		});
+
+	};
+
+
+	const handleClick = (rowIndex, colIndex, value, e) => {
+		if (tooltip.show && tooltip.content === `LE_C: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex]}, Value: ${value.toFixed(2)}`) {
+			// Hide tooltip if the same rectangle is clicked again
+			setTooltip({ show: false, content: '', x: 0, y: 0 });
+		} else {
+			// Show or update tooltip for the new rectangle
+			setTooltip({
+				show: true,
+				content: `LE_C: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex]}, Value: ${value.toFixed(2)}`,
+				x: e.clientX + 10, 
+				y: e.clientY + 10
+			});
+		}
+	};
+	
+
+
+	const handleMouseLeave = () => {
+		setTimeout(() => {
+			if (tooltip.show) {
+				setTooltip(prevTooltip => ({ ...prevTooltip, show: false }));
+			}
+		});
+	};
 
 
 	if (loading) {
@@ -112,35 +169,74 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	}
 
 	return (
-		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  }}>
 			<text
 				textAnchor="middle"
 				fill="#D3D8DE"
-				style={{ fontWeight: '700', marginBottom: '4px' }}
+				style={{ fontWeight: '700', marginBottom: '4px', marginLeft:38 }}
 			>
 				{title}
 			</text>
 
 			{ateHeatmapResults && (
-				<svg width={180} height={180}>
-					{heatmapData.map((row, rowIndex) => {
-						return row.map((atepH, colIndex) => {
-							return (
-								<rect
-									key={`${rowIndex}-${colIndex}`}
-									x={colIndex * 8}
-									y={rowIndex * 8}
-									width={8}
-									height={8}
-									fill={colorScaleHeatmap(atepH)}
-								/>
-							);
-						});
-					})}
+				<svg width={200} height={180} ref={svgRef}>
+					<g transform="translate(40, 0)">
+						{heatmapData.map((row, rowIndex) => {
+							return row.map((atepH, colIndex) => {
+								return (
+									<rect
+										key={`${rowIndex}-${colIndex}`}
+										x={colIndex * 8}
+										y={rowIndex * 8}
+										width={8}
+										height={8}
+										fill={colorScaleHeatmap(atepH)}
+										// onMouseEnter={(e) => handleMouseEnter(rowIndex, colIndex, atepH, e)}
+										onMouseLeave={handleMouseLeave}
+										onClick={(e) => handleClick(rowIndex, colIndex, atepH, e)}
+									/>
+								);
+							});
+						})}
+					</g>
+        
+					{/* X-axis Label (pH) */}
+					<text x={115} y={174} fill="#D3D8DE" fontSize={12}>pH</text>
+        
+					{/* Y-axis Label (LE_C) */}
+					<text 
+						x={0} // Position the text near the middle of the height
+						y={84}  // Position the text slightly off the left edge
+						fill="#D3D8DE" 
+						fontSize={12} 
+						// transform="rotate(-90 -90,20)"
+					>
+            LE_C
+					</text>
 				</svg>
 			)}
 
-			<div style={{ marginTop: '0px' }}>
+			{tooltip.show && (
+				<div 
+					style={{ 
+						position: 'absolute', 
+						left: tooltip.x, 
+						top: tooltip.y,
+						backgroundColor: '#394B59',  // Blueprint's tooltip background color
+						color: 'white',  // Text color
+						padding: '10px',  // Padding inside the tooltip
+						borderRadius: '3px',  // Rounded corners
+						boxShadow: '0 0 5px rgba(0,0,0,0.2)',  // Shadow for a "lifted" effect
+						fontSize: '13px',  // Font size similar to Blueprint
+						zIndex: 9999,  // Ensure it's above other elements
+						transition: 'left 0.1s ease, top 0.1s ease',  // Transition for smooth animation
+					}}
+				>
+					{tooltip.content}
+				</div>
+			)}
+
+			<div style={{ marginTop: '0px'}}>
 				<svg width={190} height={20}> {/* Separate SVG for the gradient bar */}
 					<defs>
 						<linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
@@ -168,15 +264,15 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						</linearGradient>
 					</defs>
 					<rect
-						x={30}
+						x={65}
 						y={10}
-						width={120}
+						width={100}
 						height={10}
 						fill={`url(#${gradientId})`}  // Use the unique gradient ID here
 					/>
 					{/* Adding min and max labels to the gradient bar */}
-					<text x={20} y={17} fontSize={10} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(2)}</text>
-					<text x={155} y={17} fontSize={10} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(2)}</text>
+					<text x={60} y={17} fontSize={10} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(2)}</text>
+					<text x={170} y={17} fontSize={10} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(2)}</text>
 				</svg>
 			</div>
 		</div>
