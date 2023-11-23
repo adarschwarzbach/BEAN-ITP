@@ -50,7 +50,7 @@ const HeatmapComputationButton: React.FC = () => {
 			icon = 'heatmap'
 			disabled = {!validInput}
 		>
-           Heatmaps
+           Create Heatmaps
 		</Button>
 	);
 };

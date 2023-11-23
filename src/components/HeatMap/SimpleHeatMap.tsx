@@ -140,7 +140,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	if (loading) {
 		return (
 			<Card className={loading ? SKELETON : ''}  >
-				<div style={{height:190, width: 140}} />
+				<div style={{height:190, width: 140, marginLeft:16}} />
 			</Card>
 		);
 	}

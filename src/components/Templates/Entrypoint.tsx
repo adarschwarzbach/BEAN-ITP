@@ -112,9 +112,11 @@ const Entrypoint: React.FC = () => {
 							</div>
 							<div style = {{height:34}}/>
 						
-							<div style = {{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+							<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+								
+								{/* {ateHeatmapLoading ? <div style={{width:55}}/> : <></>} */}
 							
-								<div style = {{padding:'12px', marginLeft:54, display:'flex',  flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+								<div style = {{padding:'12px', marginLeft:10, display:'flex',  flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
 									<SimpleHeatmap color='viridis' title='ATE pH' loading={ateHeatmapLoading} dataType='ATE_pH' />									
 								</div>
 								<div style = {{padding:'12px',}}>
