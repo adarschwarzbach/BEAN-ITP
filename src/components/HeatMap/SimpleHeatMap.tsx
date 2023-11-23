@@ -55,19 +55,20 @@ interface SimpleHeatmapProps {
     color: 'viridis' | 'gray' | 'plasma' | 'inferno';
 	title: string;
 	loading: boolean;
+	dataType: 'ATE_pH' | 'sample_pH' | 'sample_c_sample';
 }
 
-const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading }) => {
+const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, dataType }) => {
 	const { ateHeatmapResults } = useSpeciesData();
 
-	console.log(ateHeatmapResults);
+	console.log(JSON.stringify(ateHeatmapResults, null, 4));
 
 	let colorMin = 0;
 	let colorMax = 1;
 
 	if (ateHeatmapResults) {
 		// Calculate the minimum and maximum values in the data
-		const values = ateHeatmapResults.grid_results.flat().map(datapoint => datapoint.body.computation_value);
+		const values = ateHeatmapResults.grid_results.flat().map(datapoint => datapoint.body.computation_value[dataType]);
 		colorMin = Math.min(...values);
 		colorMax = Math.max(...values);
 	}
@@ -75,8 +76,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading }) 
 	const colorScaleHeatmap = colorScaleGenerator(color).domain([colorMin, colorMax]);
 	const gradientId = `gradient-${color}`;
 
-	// Extract ATEpH values from grid_results and create a list of lists
-	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['computation_value'])) : [];
+	// Extract given values from grid_results and create a list of lists
+	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['computation_value'][dataType])) : [];
+
 
 	if (loading) {
 		return (
@@ -116,7 +118,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading }) 
 			)}
 
 			<div style={{ marginTop: '0px' }}>
-				<svg width={180} height={20}> {/* Separate SVG for the gradient bar */}
+				<svg width={190} height={20}> {/* Separate SVG for the gradient bar */}
 					<defs>
 						<linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
 							<stop offset="0%" stopColor={colorScaleHeatmap(colorMin)} />

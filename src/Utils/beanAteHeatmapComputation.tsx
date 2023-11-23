@@ -1,5 +1,11 @@
+interface computationValue {
+	ATE_pH: number;
+	sample_pH: number;
+	sample_c_sample: number;
+}
+
 interface ateBody {
-	computation_value: number;
+	computation_value: computationValue;
 	itpCheck: boolean;
 	type?: string;
 }

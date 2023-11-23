@@ -16,6 +16,7 @@ import { beanComputation } from '../../Utils/beanComputation';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { isMobile } from 'react-device-detect';
 import { Button } from '@blueprintjs/core';
+import HeatmapComputationButton from '../SpeciesSelect/HeatmapComputationButton';
 
 
 const Entrypoint: React.FC = () => {
@@ -75,7 +76,7 @@ const Entrypoint: React.FC = () => {
 										<div style={{ width: '12px' }} />
 										<BeanComputationButton />
 										<div style={{ width: '12px' }} />
-										<Button className={themeClass} text="Heatmaps" icon = 'rocket' minimal = {false}/>
+										<HeatmapComputationButton />
 									</div>
 									<SpeciesForm index = "0"/>
 									<SpeciesForm index = "1"/>
@@ -114,13 +115,13 @@ const Entrypoint: React.FC = () => {
 							<div style = {{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
 							
 								<div style = {{padding:'12px', marginLeft:54, display:'flex',  flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-									<SimpleHeatmap color='viridis' title='ATE pH' loading={ateHeatmapLoading} />									
+									<SimpleHeatmap color='viridis' title='ATE pH' loading={ateHeatmapLoading} dataType='ATE_pH' />									
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap color='plasma' title='Sample pH' loading={ateHeatmapLoading} />
+									<SimpleHeatmap color='plasma' title='Sample pH' loading={ateHeatmapLoading} dataType='sample_pH' />					
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap color='inferno' title='Sample c Sample' loading={ateHeatmapLoading} />
+									<SimpleHeatmap color='inferno' title='Sample c Sample' loading={ateHeatmapLoading} dataType='sample_c_sample' />					
 								</div>
 							
 							</div>
