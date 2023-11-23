@@ -111,6 +111,8 @@ interface DataContextProps {
 	setGlobalLoading: React.Dispatch<React.SetStateAction<boolean>>;
 	ateHeatmapLoading: boolean;
 	setAteHeatmapLoading: React.Dispatch<React.SetStateAction<boolean>>;
+	heatmapError: boolean;
+	setHeatmapError: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface DataProviderProps {
@@ -122,6 +124,7 @@ const DataContext = createContext<DataContextProps | undefined>(undefined);
 export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	const [validInput, setValidInput] = useState<boolean>(true);
 	const [error, setError] = useState<boolean>(false);
+	const [heatmapError, setHeatmapError] = useState<boolean>(false);
 	const [ionicEffect, setIonicEffect] = useState<number>(0);
 	const [loading, setLoading] = useState<boolean>(false);
 	const [gloablLoading, setGlobalLoading] = useState<boolean>(true);
@@ -165,7 +168,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	);
 
 	return (
-		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, ateHeatmapResults, setAteHeatmapResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading, ateHeatmapLoading, setAteHeatmapLoading}}>
+		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, ateHeatmapResults, setAteHeatmapResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading, ateHeatmapLoading, setAteHeatmapLoading, heatmapError, setHeatmapError}}>
 			{children}
 		</DataContext.Provider>
 	);

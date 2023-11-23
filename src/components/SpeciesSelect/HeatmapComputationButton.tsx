@@ -6,7 +6,7 @@ import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
 
 
 const HeatmapComputationButton: React.FC = () => {
-	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading} = useSpeciesData();
+	const {ionicEffect, speciesDict, validInput, setAteHeatmapResults, setAteHeatmapLoading, setHeatmapError} = useSpeciesData();
 
 	// useEffect(() => {
 	// 	handleApiCall();
@@ -15,26 +15,30 @@ const HeatmapComputationButton: React.FC = () => {
 	// Check if all inputs are valid
 	const handleApiCall = async () => {
 		setAteHeatmapLoading(true);
+		setHeatmapError(false);
 		try {
 			// Create a copy of ionicEffect (for primitives like numbers, direct assignment is okay)
 			const ionicEffectCopy = ionicEffect;
 	
 			// Create a deep copy of speciesDict
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
+            
+			console.log('speciesDictCopy:', speciesDictCopy);
 
-	
-			const ateHeatmapResults = await ateHeatmapComputation(ionicEffectCopy, 8.8, speciesDictCopy);
+			const ateHeatmapResults = await ateHeatmapComputation(ionicEffectCopy, speciesDictCopy['1']['pKa'][0], speciesDictCopy);
 
 			if (typeof ateHeatmapResults === 'object' && 'grid_results' in ateHeatmapResults) {
 				// It's a valid ateHeatmapResults object, so set the state
 				setAteHeatmapResults(ateHeatmapResults);
 			} else {
 				// It's not a valid ateHeatmapResults object, so set the state to the initial value
-				setAteHeatmapResults({grid_results: [], itpCheck_true_count: 0, total_calculations: 0, total_time: 0});
+				setAteHeatmapResults({ grid_results: [], itpCheck_true_count: 0, total_calculations: 0, total_time: 0 });
+				setHeatmapError(true);
 			}
 
 		} catch (error) {
 			console.error('Error occurred:', error);
+			setHeatmapError(true);
 		}
 		setAteHeatmapLoading(false);
 

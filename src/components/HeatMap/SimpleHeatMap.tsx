@@ -59,7 +59,7 @@ interface SimpleHeatmapProps {
 }
 
 const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, dataType }) => {
-	const { ateHeatmapResults } = useSpeciesData();
+	const { ateHeatmapResults, heatmapError } = useSpeciesData();
 
 	console.log(JSON.stringify(ateHeatmapResults, null, 4));
 
@@ -84,6 +84,29 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 		return (
 			<Card className={loading ? SKELETON : ''}  >
 				<div style={{height:190, width: 140}} />
+			</Card>
+		);
+	}
+
+	if (heatmapError) {
+		return (
+			<Card className={''} >
+				
+				<div style = {{display:'flex', flexDirection:'column', alignItems:'center'}}>
+					<text
+						fill="white"
+						style={{ fontWeight: '500', marginBottom: '4px', textAlign:'center', paddingBottom: '12px' }}
+					>
+						{'Error Computing heatmap'}
+					</text>
+					<text
+						fill="#D3D8DE"
+						style={{ fontWeight: '300', marginBottom: '4px', textAlign:'center' }}
+					>
+						{'Please try new inputs'}
+					</text>
+				</div>
+				<div style={{height:120, width: 150}} />
 			</Card>
 		);
 	}
