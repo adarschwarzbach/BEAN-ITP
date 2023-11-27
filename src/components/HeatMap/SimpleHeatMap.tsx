@@ -78,7 +78,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 		8.9, 12.7, 18.3, 26.4, 38.0,
 		54.6, 78.5, 112.9, 162.4, 233.6,
 		336.0, 483.3, 695.2, 1000.0
-	];
+	].reverse();
 
 	console.log(JSON.stringify(ateHeatmapResults, null, 4));
 
@@ -96,14 +96,14 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	const gradientId = `gradient-${color}`;
 
 	// Extract given values from grid_results and create a list of lists
-	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['computation_value'][dataType])) : [];
+	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['computation_value'][dataType])).reverse() : [];
 
 	const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
 
 	const handleMouseEnter = (rowIndex, colIndex, value, e) => {
 		setTooltip({
 			show: true,
-			content: `LE_C: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex]}, Value: ${value.toFixed(2)}`, // Include the data point value
+			content: `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${value.toFixed(2)}`, // Include the data point value
 			x: e.clientX + 10,  // Offset by 10 pixels to the right
 			y: e.clientY + 10   // Offset by 10 pixels down
 		});
@@ -119,7 +119,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			// Show or update tooltip for the new rectangle
 			setTooltip({
 				show: true,
-				content: `LE_C: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex]}, Value: ${value.toFixed(2)}`,
+				content: `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, ${title}: ${value.toFixed(2)}`,
 				x: e.clientX + 10, 
 				y: e.clientY + 10
 			});
@@ -173,7 +173,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			<text
 				textAnchor="middle"
 				fill="#D3D8DE"
-				style={{ fontWeight: '700', marginBottom: '4px', marginLeft:38 }}
+				style={{ fontWeight: '700', marginBottom: '4px', marginLeft:38, fontSize: title.length > 20 ? 9 : 12 }}
 			>
 				{title}
 			</text>
@@ -205,13 +205,13 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
         
 					{/* Y-axis Label (LE_C) */}
 					<text 
-						x={0} // Position the text near the middle of the height
+						x={-100} // Position the text near the middle of the height
 						y={84}  // Position the text slightly off the left edge
 						fill="#D3D8DE" 
 						fontSize={12} 
-						// transform="rotate(-90 -90,20)"
+						transform="rotate(-90 -10, 40)"
 					>
-            LE_C
+						{'LE \n Concentration'}
 					</text>
 				</svg>
 			)}
@@ -237,7 +237,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			)}
 
 			<div style={{ marginTop: '0px'}}>
-				<svg width={190} height={20}> {/* Separate SVG for the gradient bar */}
+				<svg width={190} height={40}> {/* Separate SVG for the gradient bar */}
 					<defs>
 						<linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
 							<stop offset="0%" stopColor={colorScaleHeatmap(colorMin)} />
@@ -273,6 +273,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					{/* Adding min and max labels to the gradient bar */}
 					<text x={60} y={17} fontSize={10} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(2)}</text>
 					<text x={170} y={17} fontSize={10} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(2)}</text>
+					<text x={110} y={32} fontSize={10} textAnchor="start" fill="#D3D8DE">
+						{title == 'Sample concentration in Sample' ? 'mM' : ''}
+					</text>
 				</svg>
 			</div>
 		</div>

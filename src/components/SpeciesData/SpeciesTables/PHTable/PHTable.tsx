@@ -21,7 +21,7 @@ const PHTable: React.FC = () => {
 		return Math.round(num / factor) * factor;
 	}
 
-	const zones = ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
+	const zones = ['LE', 'Sample', 'ATE', 'TE'];
 
 	const renderCell = (rowIndex: number, columnIndex: number) => {
 		if (error) return <Cell />;
@@ -29,7 +29,7 @@ const PHTable: React.FC = () => {
         
 		switch(columnIndex) {
 		case 0: return <Cell>{Object.values(zones)[rowIndex]}</Cell>;
-		case 1: return <Cell>{toTwoSigFigs(pHData[rowIndex])}</Cell>;
+		case 1: return <Cell>{toTwoSigFigs(pHData[rowIndex]).toFixed(1)}</Cell>;
 		default: return <Cell />;
 		}
 	};

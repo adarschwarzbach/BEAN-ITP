@@ -123,7 +123,7 @@ const Entrypoint: React.FC = () => {
 									<SimpleHeatmap color='plasma' title='Sample pH' loading={ateHeatmapLoading} dataType='sample_pH' />					
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap color='inferno' title='Sample c Sample' loading={ateHeatmapLoading} dataType='sample_c_sample' />					
+									<SimpleHeatmap color='inferno' title='Sample concentration in Sample' loading={ateHeatmapLoading} dataType='sample_c_sample' />					
 								</div>
 							
 							</div>

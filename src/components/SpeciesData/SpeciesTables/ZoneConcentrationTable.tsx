@@ -15,7 +15,7 @@ function truncateToThreeDecimal(num: number): number {
 	return Math.trunc(num * 1000) / 1000;
 }
 
-const columnNames = ['Species', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
+const columnNames = ['Species', 'LE', 'Sample', 'ATE', 'TE'];
 
 function toThreeSigFigs(num: number): number {
 	if (num === 0) return 0;
