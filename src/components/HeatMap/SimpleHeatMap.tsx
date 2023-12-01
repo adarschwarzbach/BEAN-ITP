@@ -71,7 +71,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	const pH = speciesDict['1']['pKa'][0];  // Assuming this fetches a number
 	
 	for (let i = 0; i < 21; i++) {
-		ph_data.push(pH - 1 + i * 0.1);
+		ph_data.push(parseFloat((pH - 1 + i * 0.1).toFixed(1)));
 	}
 
 	const LE_C_values = [1.0, 1.4, 2.1, 3.0, 4.3, 6.2,
@@ -119,7 +119,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			// Show or update tooltip for the new rectangle
 			setTooltip({
 				show: true,
-				content: `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, ${title}: ${value.toFixed(2)}`,
+				content: `LE Concentration: ${LE_C_values[rowIndex].toFixed(0)}, pH: ${ph_data[colIndex].toFixed(1)}, ${title}: ${value.toFixed(1)}`,
 				x: e.clientX + 10, 
 				y: e.clientY + 10
 			});
@@ -201,9 +201,21 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</g>
         
 					{/* X-axis Label (pH) */}
+					<text x={45} y={174} fill="#D3D8DE" fontSize={10}> {ph_data[0].toFixed(1)} </text>
 					<text x={115} y={174} fill="#D3D8DE" fontSize={12}>pH</text>
+					<text x={185} y={174} fill="#D3D8DE" fontSize={10}> {ph_data[ph_data.length - 1].toFixed(1)} </text>
         
 					{/* Y-axis Label (LE_C) */}
+					<text 
+						x={12} // Position the text near the middle of the height
+						y={12}  // Position the text slightly off the left edge
+						fill="#D3D8DE" 
+						fontSize={10} 
+						// transform="rotate(-90 -10, 40)"
+					>
+						{LE_C_values[0]}
+					</text>
+
 					<text 
 						x={-100} // Position the text near the middle of the height
 						y={84}  // Position the text slightly off the left edge
@@ -212,6 +224,16 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						transform="rotate(-90 -10, 40)"
 					>
 						{'LE \n Concentration'}
+					</text>
+					
+					<text 
+						x={30} // Position the text near the middle of the height
+						y={155}  // Position the text slightly off the left edge
+						fill="#D3D8DE" 
+						fontSize={10} 
+						// transform="rotate(-90 -10, 40)"
+					>
+						{LE_C_values[ LE_C_values.length - 1]}
 					</text>
 				</svg>
 			)}
