@@ -36,8 +36,7 @@ def lambda_handler(event, context):
         point_mobility = event.get('point_mobility')
         
         point_c_LE = event.get('point_c_LE')
-        
-        requested_output = event.get('requested_output')
+
 
         met2lit = 1000.0
         N = 4
