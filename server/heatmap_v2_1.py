@@ -29,6 +29,7 @@ def create_cMat(species):
     
     
 def lambda_handler(event, context):
+        start_time = time.time()
         species = convert_keys_to_int(event.get('species'))
         
         IonicEffectFlag, IonicCalcFlag = event.get('ionicEffect'), event.get('ionicEffect')
@@ -36,7 +37,8 @@ def lambda_handler(event, context):
         point_mobility = event.get('point_mobility')
         
         point_c_LE = event.get('point_c_LE')
-
+        
+        requested_output = event.get('requested_output')
 
         met2lit = 1000.0
         N = 4
@@ -1066,9 +1068,10 @@ def lambda_handler(event, context):
         
         try:
             result = {
-                "computation_value": muMat[2, 2] / muMat[3, 2],
+                "sample_mobility_ratio": muMat[2, 2] / muMat[3, 2],
                 "itpCheck": Focus == 1,
-                "input": {'point_mobility': point_mobility, 'point_c_LE':point_c_LE }
+                "input": {'point_mobility': point_mobility, 'point_c_LE':point_c_LE },
+                "compute_time": time.time() - start_time
             }
 
             return {
