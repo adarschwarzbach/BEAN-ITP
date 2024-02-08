@@ -2,6 +2,7 @@ const BASE_URL = 'https://vpqyduqulg.execute-api.us-west-1.amazonaws.com';
 const BEAN_COMPUTATION_API = `${BASE_URL}/prod`;
 
 
+
 export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) => {
     
 	// Check if speciesObject is indeed an object
@@ -147,6 +148,8 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		};
 
 		console.log(heatmapDataV2);
+
+		
 
 		return heatmapDataV2;
 
