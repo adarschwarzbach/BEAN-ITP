@@ -16,7 +16,7 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		if (Object.prototype.hasOwnProperty.call(speciesObject, key)) {
 			modifiedSpeciesObject[Number(key)] = {
 				...speciesObject[key],
-				mobility: speciesObject[key].mobility, // .map(value => value * 1e-8)
+				mobility: speciesObject[key].mobility.map(value => value * 1e-8),
 				concentration: speciesObject[key].concentration / 1000,
 			};
 		}
@@ -30,8 +30,8 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		'requestedOutput': 'ATE_pH',
 	};
 
-	console.log(requestData);
-	
+	console.log('hitting ');
+
 	try {
 		const response = await fetch(BEAN_COMPUTATION_API, {
 			method: 'POST',
@@ -48,22 +48,107 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		}
 
 		const data = await response.json();
-
-		console.log('Data received from the server:', data);
         
-		const ateHeatmapInitial = {
-			grid_results: data.grid_results.map((row) =>
-				row.map((datapoint) => ({
-					statusCode: datapoint.statusCode,
-					body: JSON.parse(datapoint.body), // Parse the body JSON string
-				}))
+		const heatmapDataV2 = {
+			sample_mobility_ratio: data.grid_results_1.map((row) =>
+				row.map((datapoint) => {
+					const datapointObject = datapoint[1];
+		
+					// Check if the datapointObject contains an errorMessage
+					if (datapointObject.errorMessage) {
+						return { computation_value: 'error due to timeout or other server-side issue' };
+					}
+		
+					// Assuming the valid response contains a 'body' property with a JSON string
+					if (typeof datapointObject.body === 'string') {
+						try {
+							const parsedBody = JSON.parse(datapointObject.body);
+		
+							// Check for 'sample_mobility_ratio' in the parsed body
+							if (parsedBody && typeof parsedBody.sample_mobility_ratio === 'number' && parsedBody.itpCheck == false) {
+								return { computation_value: 'itpCheck failed' };
+							}
+							else if (parsedBody && typeof parsedBody.sample_mobility_ratio === 'number') {
+								return { computation_value: parsedBody.sample_mobility_ratio };
+							} else {
+								return { computation_value: 'error - missing computation_value' };
+							}
+						} catch (error) {
+							return { computation_value: 'error - Server timed out or invalid JSON format' };
+						}
+					} else {
+						return { computation_value: 'error - body is not a string' };
+					}
+				})
 			),
-			total_time: data.total_time,
-			total_calculations: data.total_calculations,
-			itpCheck_true_count: data.itpCheck_true_count,
+		
+			sample_pre_concentration: data.grid_results_2.map((row) =>
+				row.map((datapoint) => {
+					const datapointObject = datapoint[1];
+	
+					// Check if the datapointObject contains an errorMessage
+					if (datapointObject.errorMessage) {
+						return { computation_value: 'error due to timeout or other server-side issue' };
+					}
+	
+					// Assuming the valid response contains a 'body' property with a JSON string
+					if (typeof datapointObject.body === 'string') {
+						try {
+							const parsedBody = JSON.parse(datapointObject.body);
+	
+							// Check for 'sample_mobility_ratio' in the parsed body
+							if (parsedBody && typeof parsedBody.computation_value === 'number' && parsedBody.itpCheck == false) {
+								return { computation_value: 'itpCheck failed' };
+							}
+							else if(parsedBody && typeof parsedBody.computation_value === 'number') {
+								return { computation_value: parsedBody.computation_value };
+							} else {
+								return { computation_value: 'error - missing computation_value' };
+							}
+						} catch (error) {
+							return { computation_value: 'error - Server timed out or invalid JSON format' };
+						}
+					} else {
+						return { computation_value: 'error - body is not a string' };
+					}
+				})
+			),
+			ph_in_sample_region: data.grid_results_3.map((row) =>
+				row.map((datapoint) => {
+					const datapointObject = datapoint[1];
+
+					// Check if the datapointObject contains an errorMessage
+					if (datapointObject.errorMessage) {
+						return { computation_value: 'error due to timeout or other server-side issue' };
+					}
+
+					// Assuming the valid response contains a 'body' property with a JSON string
+					if (typeof datapointObject.body === 'string') {
+						try {
+							const parsedBody = JSON.parse(datapointObject.body);
+
+							// Check for 'sample_mobility_ratio' in the parsed body
+							if (parsedBody && typeof parsedBody.computation_value === 'number' && parsedBody.itpCheck == false) {
+								return { computation_value: 'itpCheck failed' };
+							}
+							else if(parsedBody && typeof parsedBody.computation_value === 'number') {
+								return { computation_value: parsedBody.computation_value };
+							} else {
+								return { computation_value: 'error - missing computation_value' };
+							}
+						} catch (error) {
+							return { computation_value: 'error - Server timed out or invalid JSON format' };
+						}
+					} else {
+						return { computation_value: 'error - body is not a string' };
+					}
+				})
+			),
 		};
 
-		return ateHeatmapInitial;
+		console.log(heatmapDataV2);
+
+		return heatmapDataV2;
 
 	} catch (error) {
 		console.error('There was a problem with the fetch operation:', error);

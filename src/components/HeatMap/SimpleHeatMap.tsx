@@ -80,7 +80,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 		336.0, 483.3, 695.2, 1000.0
 	].reverse();
 
-	console.log(JSON.stringify(ateHeatmapResults, null, 4));
+
 
 	let colorMin = 0;
 	let colorMax = 1;
