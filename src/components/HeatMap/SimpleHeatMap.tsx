@@ -58,12 +58,16 @@ interface SimpleHeatmapProps {
     color: 'viridis' | 'gray' | 'plasma' | 'inferno';
 	title: string;
 	loading: boolean;
-	dataType: 'ATE_pH' | 'sample_pH' | 'sample_c_sample';
+	dataType: 'ph_in_sample_region' | 'sample_mobility_ratio' | 'sample_pre_concentration';
 }
 
 const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, dataType }) => {
-	const { ateHeatmapResults, heatmapError, speciesDict } = useSpeciesData();
+	const { heatmapError, speciesDict, heatmapV2 } = useSpeciesData();
+	
+	const renderData = heatmapV2[dataType];
 
+
+	console.log(heatmapV2); 
 	const svgRef = useRef<SVGSVGElement>(null);
 
 	//  in javascript
@@ -85,25 +89,31 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	let colorMin = 0;
 	let colorMax = 1;
 
-	if (ateHeatmapResults) {
+	if (renderData) {
 		// Calculate the minimum and maximum values in the data
-		const values = ateHeatmapResults.grid_results.flat().map(datapoint => datapoint.body.computation_value[dataType]);
-		colorMin = Math.min(...values);
-		colorMax = Math.max(...values);
+		const values = renderData
+			.flat()
+			.map(datapoint => datapoint.computation_value)
+			.filter(value => typeof value === 'number');
+
+		const numericValues = values.filter(value => typeof value === 'number') as number[];
+
+		colorMin = Math.min(...numericValues);
+		colorMax = Math.max(...numericValues);
 	}
 
 	const colorScaleHeatmap = colorScaleGenerator(color).domain([colorMin, colorMax]);
 	const gradientId = `gradient-${color}`;
 
 	// Extract given values from grid_results and create a list of lists
-	const heatmapData = ateHeatmapResults ? ateHeatmapResults.grid_results.map(row => row.map(datapoint => datapoint.body['computation_value'][dataType])).reverse() : [];
+	const heatmapData = renderData ? renderData.map(row => row.map(datapoint => datapoint['computation_value'])).reverse() : [];
 
 	const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
 
 	const handleMouseEnter = (rowIndex, colIndex, value, e) => {
 		setTooltip({
 			show: true,
-			content: `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${value.toFixed(2)}`, // Include the data point value
+			content: typeof(value) == 'string' ? `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${'ITP failed'}` : `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${value.toFixed(1)}`,
 			x: e.clientX + 10,  // Offset by 10 pixels to the right
 			y: e.clientY + 10   // Offset by 10 pixels down
 		});
@@ -112,14 +122,15 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 
 	const handleClick = (rowIndex, colIndex, value, e) => {
-		if (tooltip.show && tooltip.content === `LE_C: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex]}, Value: ${value.toFixed(2)}`) {
+		const check = typeof (value) == 'string' ? `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${'ITP failed'}` : `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${value.toFixed(1)}`;
+		if (tooltip.show && tooltip.content === check) {
 			// Hide tooltip if the same rectangle is clicked again
 			setTooltip({ show: false, content: '', x: 0, y: 0 });
 		} else {
 			// Show or update tooltip for the new rectangle
 			setTooltip({
 				show: true,
-				content: `LE Concentration: ${LE_C_values[rowIndex].toFixed(0)}, pH: ${ph_data[colIndex].toFixed(1)}, ${title}: ${value.toFixed(1)}`,
+				content: typeof (value) == 'string' ? `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${'ITP failed'}` : `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)},Value: ${value.toFixed(1)}`,
 				x: e.clientX + 10, 
 				y: e.clientY + 10
 			});
@@ -178,11 +189,20 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 				{title}
 			</text>
 
-			{ateHeatmapResults && (
+			{renderData && (
 				<svg width={200} height={180} ref={svgRef}>
 					<g transform="translate(40, 0)">
 						{heatmapData.map((row, rowIndex) => {
 							return row.map((atepH, colIndex) => {
+								// Determine the fill color based on whether atepH is a number or indicates an error
+								let fillColor: string;
+								if (typeof atepH === 'number') {
+									fillColor = colorScaleHeatmap(atepH); // This is safe since atepH is confirmed to be a number
+								} else {
+									// Use the error color if atepH is not a number
+									fillColor = '#FFFFFF';
+								}
+
 								return (
 									<rect
 										key={`${rowIndex}-${colIndex}`}
@@ -190,14 +210,14 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 										y={rowIndex * 8}
 										width={8}
 										height={8}
-										fill={colorScaleHeatmap(atepH)}
-										// onMouseEnter={(e) => handleMouseEnter(rowIndex, colIndex, atepH, e)}
+										fill={fillColor}
 										onMouseLeave={handleMouseLeave}
 										onClick={(e) => handleClick(rowIndex, colIndex, atepH, e)}
 									/>
 								);
 							});
 						})}
+
 					</g>
         
 					{/* X-axis Label (pH) */}

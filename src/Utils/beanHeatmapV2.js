@@ -147,10 +147,6 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 			),
 		};
 
-		console.log(heatmapDataV2);
-
-		
-
 		return heatmapDataV2;
 
 	} catch (error) {

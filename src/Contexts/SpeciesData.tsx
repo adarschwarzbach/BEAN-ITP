@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
+import heatmap_V2_initial from './heatmap_V2_initial.json';
 import ateHeatmapInitial from './ateHeatmapInitial';
-import { type } from 'os';
 
 const initialData = 
 {
@@ -92,6 +92,17 @@ interface Species {
 	type: string;
 }
 
+
+interface ComputationValue {
+	computation_value: number | string;
+  }
+  
+interface HeatmapV2 {
+	sample_mobility_ratio: ComputationValue[][]; 
+	sample_pre_concentration: ComputationValue[][];
+	ph_in_sample_region: ComputationValue[][];
+}
+
 interface DataContextProps {
     ionicEffect: number;
     setIonicEffect: React.Dispatch<React.SetStateAction<number>>;
@@ -113,11 +124,16 @@ interface DataContextProps {
 	setAteHeatmapLoading: React.Dispatch<React.SetStateAction<boolean>>;
 	heatmapError: boolean;
 	setHeatmapError: React.Dispatch<React.SetStateAction<boolean>>;
+	heatmapV2: HeatmapV2;
+	setHeatmapV2: React.Dispatch<React.SetStateAction<HeatmapV2>>;
 }
 
 interface DataProviderProps {
     children: React.ReactNode;
 }
+
+
+
 
 const DataContext = createContext<DataContextProps | undefined>(undefined);
 
@@ -131,6 +147,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	const [beanResults, setBeanResults] = useState<ComputationResult>(initialData);
 	const [ateHeatmapResults, setAteHeatmapResults] = useState<ateHeatmapResults>(ateHeatmapInitial);
 	const [ateHeatmapLoading, setAteHeatmapLoading] = useState<boolean>(false);
+	const [heatmapV2, setHeatmapV2] = useState<HeatmapV2>(heatmap_V2_initial);
 	const [speciesDict, setSpeciesDict] = useState<Record<string, Species>>({
 		'0': {
 			'Name': 'HCl',
@@ -168,7 +185,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	);
 
 	return (
-		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, ateHeatmapResults, setAteHeatmapResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading, ateHeatmapLoading, setAteHeatmapLoading, heatmapError, setHeatmapError}}>
+		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, ateHeatmapResults, setAteHeatmapResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading, ateHeatmapLoading, setAteHeatmapLoading, heatmapError, setHeatmapError, heatmapV2, setHeatmapV2}}>
 			{children}
 		</DataContext.Provider>
 	);

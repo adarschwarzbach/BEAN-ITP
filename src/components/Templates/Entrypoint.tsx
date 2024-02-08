@@ -117,13 +117,13 @@ const Entrypoint: React.FC = () => {
 								{/* {ateHeatmapLoading ? <div style={{width:55}}/> : <></>} */}
 							
 								<div style = {{padding:'12px', marginLeft:10, display:'flex',  flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-									<SimpleHeatmap color='viridis' title='ATE pH' loading={ateHeatmapLoading} dataType='ATE_pH' />									
+									<SimpleHeatmap color='viridis' title='pH in Sample Region' loading={ateHeatmapLoading} dataType='ph_in_sample_region' />									
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap color='plasma' title='Sample pH' loading={ateHeatmapLoading} dataType='sample_pH' />					
+									<SimpleHeatmap color='plasma' title='Sample Mobility Ratio' loading={ateHeatmapLoading} dataType='sample_mobility_ratio' />					
 								</div>
 								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap color='inferno' title='Sample concentration in Sample' loading={ateHeatmapLoading} dataType='sample_c_sample' />					
+									<SimpleHeatmap color='inferno' title='Sample Pre Concentration' loading={ateHeatmapLoading} dataType='sample_pre_concentration' />					
 								</div>
 							
 							</div>
