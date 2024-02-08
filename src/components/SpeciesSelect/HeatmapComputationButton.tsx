@@ -2,7 +2,8 @@ import React from 'react';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
 import { beanComputation } from '../../Utils/beanComputation';
 import { Button } from '@blueprintjs/core';
-import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
+// import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
+import { beanHeatmapComputationV2 } from '../../Utils/beanHeatmapV2';
 
 
 const HeatmapComputationButton: React.FC = () => {
@@ -25,11 +26,11 @@ const HeatmapComputationButton: React.FC = () => {
             
 
 
-			const ateHeatmapResults = await ateHeatmapComputation(ionicEffectCopy, speciesDictCopy['1']['pKa'][0], speciesDictCopy);
+			const ateHeatmapResults = await beanHeatmapComputationV2(ionicEffectCopy, speciesDictCopy['1']['pKa'][0], speciesDictCopy);
 
 			if (typeof ateHeatmapResults === 'object' && 'grid_results' in ateHeatmapResults) {
 				// It's a valid ateHeatmapResults object, so set the state
-				setAteHeatmapResults(ateHeatmapResults);
+				// setAteHeatmapResults(ateHeatmapResults);
 			} else {
 				// It's not a valid ateHeatmapResults object, so set the state to the initial value
 				setAteHeatmapResults({ grid_results: [], itpCheck_true_count: 0, total_calculations: 0, total_time: 0 });

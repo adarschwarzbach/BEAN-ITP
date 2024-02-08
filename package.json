@@ -21,6 +21,7 @@
     "@visx/mock-data": "^3.3.0",
     "@visx/scale": "^3.3.0",
     "@visx/shape": "^3.3.0",
+    "cors": "^2.8.5",
     "d3-scale": "^4.0.2",
     "d3-scale-chromatic": "^3.0.0",
     "eslint": "^8.47.0",
