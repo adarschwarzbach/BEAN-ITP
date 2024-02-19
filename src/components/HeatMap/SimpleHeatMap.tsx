@@ -106,11 +106,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	const handleMouseEnter = (rowIndex, colIndex, value, e) => {
 		setTooltip({
 			show: true,
-			content: typeof(value) === 'string' 
-				? `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${value}` 
-				: dataType === 'sample_pre_concentration' 
-					? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[rowIndex].toFixed(4)}, Value: ${value.toFixed(1)}` 
-					: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${value.toFixed(1)}`,
+			content: dataType === 'sample_pre_concentration'
+				? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[rowIndex].toFixed(4)}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`
+				: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`,
 			x: e.clientX + 10,  // Offset by 10 pixels to the right
 			y: e.clientY + 10   // Offset by 10 pixels down
 		});
@@ -127,11 +125,10 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			// Show or update tooltip for the new rectangle
 			setTooltip({
 				show: true,
-				content: typeof(value) === 'string' 
-					? `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${value}` 
-					: dataType === 'sample_pre_concentration' 
-						? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[rowIndex].toFixed(4)}, Value: ${value.toFixed(1)}` 
-						: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${value.toFixed(1)}`,
+				content: dataType === 'sample_pre_concentration'
+					? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[rowIndex].toFixed(4)}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`
+					: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`,
+
 				x: e.clientX + 10, 
 				y: e.clientY + 10
 			});
