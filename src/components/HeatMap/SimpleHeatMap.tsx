@@ -1,12 +1,9 @@
-
 import React, {useState, useRef} from 'react';
 import { scaleSequential } from 'd3-scale';
 import { interpolateGreys, interpolatePlasma, interpolateViridis, interpolateInferno } from 'd3-scale-chromatic';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
 import { Tooltip, Card } from '@blueprintjs/core';
 import { SKELETON } from '@blueprintjs/core/lib/esm/common/classes';
-
-
 
 
 
@@ -71,20 +68,16 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	const svgRef = useRef<SVGSVGElement>(null);
 
 	//  in javascript
-	const ph_data: number[] = [];  // Initialize as an empty array
-	const pH = speciesDict['1']['pKa'][0];  // Assuming this fetches a number
+	const mobility_values = [-1.00000000e-08, -1.23529412e-08, -1.47058824e-08, -1.70588235e-08,
+		-1.94117647e-08, -2.17647059e-08, -2.41176471e-08, -2.64705882e-08,
+		-2.88235294e-08, -3.11764706e-08, -3.35294118e-08, -3.58823529e-08,
+		-3.82352941e-08, -4.05882353e-08, -4.29411765e-08, -4.52941176e-08,
+		-4.76470588e-08, -5.00000000e-08];
 	
-	for (let i = 0; i < 21; i++) {
-		ph_data.push(parseFloat((pH - 1 + i * 0.1).toFixed(1)));
-	}
 
-	const LE_C_values = [1.0, 1.4, 2.1, 3.0, 4.3, 6.2,
-		8.9, 12.7, 18.3, 26.4, 38.0,
-		54.6, 78.5, 112.9, 162.4, 233.6,
-		336.0, 483.3, 695.2, 1000.0
-	].reverse();
+	const LE_C_values = [0.001, 0.00150131, 0.00225393, 0.00338386, 0.00508022, 0.00762699, 0.01145048, 0.01719072, 0.02580862, 0.03874675, 0.05817091, 0.08733262, 0.13111339, 0.19684194, 0.29552092, 0.44366873, 0.66608463, 1.0].reverse();
 
-
+	const point_c_values = [0.001, 0.00150131, 0.00225393, 0.00338386, 0.00508022, 0.00762699, 0.01145048, 0.01719072, 0.02580862, 0.03874675, 0.05817091, 0.08733262, 0.13111339, 0.19684194, 0.29552092, 0.44366873, 0.66608463, 1.0];
 
 	let colorMin = 0;
 	let colorMax = 1;
@@ -113,7 +106,11 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	const handleMouseEnter = (rowIndex, colIndex, value, e) => {
 		setTooltip({
 			show: true,
-			content: typeof(value) == 'string' ? `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${'ITP failed'}` : `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${value.toFixed(1)}`,
+			content: typeof(value) === 'string' 
+				? `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${value}` 
+				: dataType === 'sample_pre_concentration' 
+					? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[rowIndex].toFixed(4)}, Value: ${value.toFixed(1)}` 
+					: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${value.toFixed(1)}`,
 			x: e.clientX + 10,  // Offset by 10 pixels to the right
 			y: e.clientY + 10   // Offset by 10 pixels down
 		});
@@ -122,7 +119,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 
 	const handleClick = (rowIndex, colIndex, value, e) => {
-		const check = typeof (value) == 'string' ? `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${'ITP failed'}` : `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${value.toFixed(1)}`;
+		const check = typeof (value) == 'string' ? `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex].toFixed(1)}, Value: ${'ITP failed'}` : `LE Concentration: ${LE_C_values[rowIndex]}, mobility: ${mobility_values[colIndex]}, Value: ${value.toFixed(1)}`;
 		if (tooltip.show && tooltip.content === check) {
 			// Hide tooltip if the same rectangle is clicked again
 			setTooltip({ show: false, content: '', x: 0, y: 0 });
@@ -130,7 +127,11 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			// Show or update tooltip for the new rectangle
 			setTooltip({
 				show: true,
-				content: typeof (value) == 'string' ? `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)}, Value: ${'ITP failed'}` : `LE Concentration: ${LE_C_values[rowIndex]}, pH: ${ph_data[colIndex].toFixed(1)},Value: ${value.toFixed(1)}`,
+				content: typeof(value) === 'string' 
+					? `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${value}` 
+					: dataType === 'sample_pre_concentration' 
+						? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[rowIndex].toFixed(4)}, Value: ${value.toFixed(1)}` 
+						: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${value.toFixed(1)}`,
 				x: e.clientX + 10, 
 				y: e.clientY + 10
 			});
@@ -221,9 +222,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</g>
         
 					{/* X-axis Label (pH) */}
-					<text x={45} y={174} fill="#D3D8DE" fontSize={10}> {ph_data[0].toFixed(1)} </text>
+					<text x={45} y={174} fill="#D3D8DE" fontSize={10}> {mobility_values[0].toFixed(1)} </text>
 					<text x={115} y={174} fill="#D3D8DE" fontSize={12}>pH</text>
-					<text x={185} y={174} fill="#D3D8DE" fontSize={10}> {ph_data[ph_data.length - 1].toFixed(1)} </text>
+					<text x={185} y={174} fill="#D3D8DE" fontSize={10}> {mobility_values[mobility_values.length - 1].toFixed(1)} </text>
         
 					{/* Y-axis Label (LE_C) */}
 					<text 
