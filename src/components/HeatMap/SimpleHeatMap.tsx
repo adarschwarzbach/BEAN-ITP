@@ -307,16 +307,16 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						</linearGradient>
 					</defs>
 					<rect
-						x={65}
-						y={10}
-						width={100}
+						x={62}
+						y={0}
+						width={90}
 						height={10}
 						fill={`url(#${gradientId})`}  // Use the unique gradient ID here
 					/>
 					{/* Adding min and max labels to the gradient bar */}
-					<text x={60} y={17} fontSize={9} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(2)}</text>
-					<text x={170} y={17} fontSize={9} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(2)}</text>
-					<text x={110} y={32} fontSize={9} textAnchor="start" fill="#D3D8DE">
+					<text x={60} y={9} fontSize={9} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(1)}</text>
+					<text x={155} y={9} fontSize={9} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(1)}</text>
+					<text x={110} y={40} fontSize={9} textAnchor="start" fill="#D3D8DE">
 						{title == 'Sample concentration in Sample' ? 'mM' : ''}
 					</text>
 				</svg>

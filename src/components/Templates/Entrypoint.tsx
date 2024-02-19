@@ -17,6 +17,7 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { isMobile } from 'react-device-detect';
 import { Button } from '@blueprintjs/core';
 import HeatmapComputationButton from '../SpeciesSelect/HeatmapComputationButton';
+import ITPCheckIndicator from '../HeatMap/ITPCheckIndicator';
 
 
 const Entrypoint: React.FC = () => {
@@ -126,6 +127,9 @@ const Entrypoint: React.FC = () => {
 									<SimpleHeatmap color='inferno' title='Sample Pre Concentration' loading={ateHeatmapLoading} dataType='sample_pre_concentration'  yAxisLabel='LE concentration' xAxisLabel='TE mobility'/>					
 								</div>
 							
+							</div>
+							<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'end', justifyContent: 'start', alignSelf:'center', marginLeft:30 }}>
+								<ITPCheckIndicator />
 							</div>
 						</div>
 					</div>
