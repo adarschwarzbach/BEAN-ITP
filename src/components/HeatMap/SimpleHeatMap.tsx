@@ -56,9 +56,11 @@ interface SimpleHeatmapProps {
 	title: string;
 	loading: boolean;
 	dataType: 'ph_in_sample_region' | 'sample_mobility_ratio' | 'sample_pre_concentration';
+	xAxisLabel: 'CI concentration' | 'Analyte Mobility' | 'TE mobility'
+	yAxisLabel: 'LE concentration' 
 }
 
-const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, dataType }) => {
+const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, dataType, xAxisLabel }) => {
 	const { heatmapError, speciesDict, heatmapV2 } = useSpeciesData();
 	
 	const renderData = heatmapV2[dataType];
@@ -176,6 +178,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			</Card>
 		);
 	}
+	
 
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  }}>
@@ -219,9 +222,10 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</g>
         
 					{/* X-axis Label (pH) */}
-					<text x={45} y={174} fill="#D3D8DE" fontSize={10}> {mobility_values[0].toFixed(1)} </text>
-					<text x={115} y={174} fill="#D3D8DE" fontSize={12}>pH</text>
-					<text x={185} y={174} fill="#D3D8DE" fontSize={10}> {mobility_values[mobility_values.length - 1].toFixed(1)} </text>
+					{/* <text x={45} y={174} fill="#D3D8DE" fontSize={10}> {mobility_values[0].toFixed(1)} </text> */}
+					<text x="55%" y="174" fill="#D3D8DE" fontSize={12} textAnchor="middle">{xAxisLabel}</text>
+					{/* <text x={185} y={174} fill="#D3D8DE" fontSize={10}> {mobility_values[mobility_values.length - 1].toFixed(1)} </text> */}
+					
         
 					{/* Y-axis Label (LE_C) */}
 					<text 
