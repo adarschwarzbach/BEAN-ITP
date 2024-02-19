@@ -109,8 +109,8 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 		setTooltip({
 			show: true,
 			content: dataType === 'sample_pre_concentration'
-				? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[rowIndex].toFixed(4)}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`
-				: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`,
+				? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[colIndex].toFixed(4)}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`
+				: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${typeof(value) === 'string' ? 'ITP failed' : value.toFixed(1)}`,
 			x: e.clientX + 10,  // Offset by 10 pixels to the right
 			y: e.clientY + 10   // Offset by 10 pixels down
 		});
@@ -128,9 +128,8 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			setTooltip({
 				show: true,
 				content: dataType === 'sample_pre_concentration'
-					? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[rowIndex].toFixed(4)}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`
-					: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`,
-
+					? `LE Concentration: ${LE_C_values[rowIndex]}, Point C: ${point_c_values[colIndex].toFixed(4)}, Value: ${typeof(value) === 'string' ? value : value.toFixed(1)}`
+					: `LE Concentration: ${LE_C_values[rowIndex]}, Mobility: ${mobility_values[colIndex]}, Value: ${typeof(value) === 'string' ? 'ITP failed' : value.toFixed(1)}`,
 				x: e.clientX + 10, 
 				y: e.clientY + 10
 			});
@@ -185,7 +184,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			<text
 				textAnchor="middle"
 				fill="#D3D8DE"
-				style={{ fontWeight: '700', marginBottom: '4px', marginLeft:38, fontSize: title.length > 20 ? 9 : 12 }}
+				style={{ fontWeight: '700', marginBottom: '3px', marginLeft:24, fontSize: title.length > 20 ? 10 : 12 }}
 			>
 				{title}
 			</text>
@@ -222,24 +221,24 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</g>
         
 					{/* X-axis Label (pH) */}
-					{/* <text x={45} y={174} fill="#D3D8DE" fontSize={10}> {mobility_values[0].toFixed(1)} </text> */}
-					<text x="55%" y="174" fill="#D3D8DE" fontSize={12} textAnchor="middle">{xAxisLabel}</text>
-					{/* <text x={185} y={174} fill="#D3D8DE" fontSize={10}> {mobility_values[mobility_values.length - 1].toFixed(1)} </text> */}
+					<text x={39} y={153} fill="#D3D8DE" fontSize={8}> {dataType == 'sample_pre_concentration' ? '.001 ': '-1e-8'} </text>
+					<text x="56%" y="160" fill="#D3D8DE" fontSize={12} textAnchor="middle">{xAxisLabel}</text>
+					<text x={161} y={153} fill="#D3D8DE" fontSize={8}>  {dataType == 'sample_pre_concentration' ? '1.000': '-5e-8'} </text>
 					
         
 					{/* Y-axis Label (LE_C) */}
 					<text 
-						x={12} // Position the text near the middle of the height
-						y={12}  // Position the text slightly off the left edge
+						x={33} // Position the text near the middle of the height
+						y={10}  // Position the text slightly off the left edge
 						fill="#D3D8DE" 
-						fontSize={10} 
+						fontSize={9} 
 						// transform="rotate(-90 -10, 40)"
 					>
 						{LE_C_values[0]}
 					</text>
 
 					<text 
-						x={-100} // Position the text near the middle of the height
+						x={-95} // Position the text near the middle of the height
 						y={84}  // Position the text slightly off the left edge
 						fill="#D3D8DE" 
 						fontSize={12} 
@@ -249,13 +248,13 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</text>
 					
 					<text 
-						x={30} // Position the text near the middle of the height
-						y={155}  // Position the text slightly off the left edge
+						x={18} // Position the text near the middle of the height
+						y={144}  // Position the text slightly off the left edge
 						fill="#D3D8DE" 
-						fontSize={10} 
+						fontSize={9} 
 						// transform="rotate(-90 -10, 40)"
 					>
-						{LE_C_values[ LE_C_values.length - 1]}
+						{'.001'}
 					</text>
 				</svg>
 			)}
@@ -315,9 +314,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						fill={`url(#${gradientId})`}  // Use the unique gradient ID here
 					/>
 					{/* Adding min and max labels to the gradient bar */}
-					<text x={60} y={17} fontSize={10} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(2)}</text>
-					<text x={170} y={17} fontSize={10} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(2)}</text>
-					<text x={110} y={32} fontSize={10} textAnchor="start" fill="#D3D8DE">
+					<text x={60} y={17} fontSize={9} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(2)}</text>
+					<text x={170} y={17} fontSize={9} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(2)}</text>
+					<text x={110} y={32} fontSize={9} textAnchor="start" fill="#D3D8DE">
 						{title == 'Sample concentration in Sample' ? 'mM' : ''}
 					</text>
 				</svg>
