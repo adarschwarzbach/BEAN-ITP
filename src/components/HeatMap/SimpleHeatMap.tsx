@@ -317,9 +317,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					{/* Adding min and max labels to the gradient bar */}
 					<text x={60} y={9} fontSize={11} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(1)}</text>
 					<text x={155} y={9} fontSize={9} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(1)}</text>
-					<text x={98} y={22} fontSize={11} textAnchor="start" fill="#D3D8DE">
+					{/* <text x={98} y={22} fontSize={11} textAnchor="start" fill="#D3D8DE">
 						{'units'}
-					</text>
+					</text> */}
 				</svg>
 			</div>
 		</div>
