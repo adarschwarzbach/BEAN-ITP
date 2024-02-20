@@ -221,12 +221,13 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</g>
         
 					{/* X-axis Label (pH) */}
-					<text x={28} y={160} fill="#D3D8DE" fontSize={11}> {dataType == 'sample_pre_concentration' ? '.001 ': '-1e-8'} </text>
+					{/* flip 2 and 3 */}
+					<text x={28} y={160} fill="#D3D8DE" fontSize={11}> {dataType == 'ph_in_sample_region' ? '.001 ': '-1e-8'} </text>
 					<text x="56%" y="160" fill="#D3D8DE" fontSize={12} fontWeight={600} textAnchor="middle">
 						{xAxisLabel}
 						<tspan x="56%" dy="12" fontSize="10" fontWeight="normal">{ xAxisLabel == 'CI concentration' ? 'mM' : 'm²/(V.s)'}</tspan>
 					</text>
-					<text x={166} y={160} fill="#D3D8DE" fontSize={11}>  {dataType == 'sample_pre_concentration' ? '1.000': '-5e-8'} </text>
+					<text x={166} y={160} fill="#D3D8DE" fontSize={11}>  {dataType == 'ph_in_sample_region' ? '1.000': '-5e-8'} </text>
 					
         
 					{/* Y-axis Label (LE_C) */}
