@@ -18,7 +18,7 @@ import HeatmapComputationButton from '../SpeciesSelect/HeatmapComputationButton'
 import ITPCheckIndicator from '../HeatMap/ITPCheckIndicator';
 
 const DataDisplayTemplate: React.FC = () => {
-	const { ionicEffect, speciesDict, setGlobalLoading, ateHeatmapLoading } = useSpeciesData();
+	const { ionicEffect, speciesDict, gloablLoading, setGlobalLoading, ateHeatmapLoading } = useSpeciesData();
 
 	useEffect(() => {
 		const fetchData = async () => {

@@ -46,13 +46,15 @@ const HeatmapComputationButton: React.FC = () => {
 	};
 
 	return (
-		<Button 
-			onClick={handleApiCall} 
-			icon = 'heatmap'
-			disabled = {!validInput}
-		>
+		<div style = {{width:160}}>
+			<Button 
+				onClick={handleApiCall} 
+				icon = 'heatmap'
+				disabled = {!validInput}
+			>
            Create Heatmaps
-		</Button>
+			</Button>
+		</div>
 	);
 };
 

@@ -67,68 +67,43 @@ const Entrypoint: React.FC = () => {
 				</div>
 				:
 				<>
-					<HeaderBanner className={themeClass}/>
-					<div className = {themeClass} style = {{display:'flex', alignItems:'center', marginRight:160, marginLeft:70}}>
-						<div className={`${themeClass} app-container `} style = {{marginRight:-40}}>
-							<div className={`bp5-ui-text ${themeClass}`} style={{ padding: '20px' }}>
-								<div className='form-data'>
-									<div style={{ display: 'flex', alignItems: 'center', alignSelf:'center' }}>
-										<IonicEffectSwitch />
-										<div style={{ width: '12px' }} />
-										<BeanComputationButton />
-										<div style={{ width: '12px' }} />
-										<HeatmapComputationButton />
-									</div>
-									<SpeciesForm index = "0"/>
-									<SpeciesForm index = "1"/>
-									<SpeciesForm index = "2"/>
-									<SpeciesForm index = "3"/>
-								</div>
-							</div>	
+					<HeaderBanner className={themeClass} />
+					<div className={`${themeClass} app-container`} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', margin: '0 auto', width: '100%' }}>
+    
+						{/* Left Half */}
+						<div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+							<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '20px', marginTop: '20px' }}>
+								<IonicEffectSwitch />
+								<BeanComputationButton />
+								<HeatmapComputationButton />
+							</div>
+							<SpeciesForm index="0" />
+							<SpeciesForm index="1" />
+							<SpeciesForm index="2" />
+							<SpeciesForm index="3" />
 						</div>
+    
+						{/* Right Half */}
+						<div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+							<ZoneConcentrationsTable />
+							<div style={{height:20}} />
+							<ComputeChecks />
 
-						{/* <div style = {{margin:'-50px'}}/> */}
-                    
-
-						<div style = {{display:'flex', flexDirection:'column', marginBottom:-34}} className='bp5-dark'>
-							<div style = {{paddingLeft:60, alignItems:'center'}}>
-								<div style = {{display: 'inline-block'}}>
-									<ZoneConcentrationsTable/>
+							<div className={themeClass} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+								{/* Other UI components like forms, switches, buttons */}
+								<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '20px', marginTop: '20px' }}>
+									<SimpleHeatmap color='viridis' title='Sample Mobility Ratio' loading={ateHeatmapLoading} dataType='sample_mobility_ratio' yAxisLabel='LE concentration' xAxisLabel='Analyte Mobility'/>
+									<SimpleHeatmap color='plasma' title='Sample Pre Concentration' loading={ateHeatmapLoading} dataType='sample_pre_concentration' yAxisLabel='LE concentration' xAxisLabel='TE mobility'/>
+									<SimpleHeatmap color='inferno' title='pH in Sample Region' loading={ateHeatmapLoading} dataType='ph_in_sample_region' yAxisLabel='LE concentration' xAxisLabel='CI concentration'/>
 								</div>
-								<div style = {{height:'50px'}}/>
-                            
-                            
-								<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'end', justifyContent: 'start' }}>
-								
-									<div style={{ display: 'inline-block', marginTop:16 }}>
-										<ComputeChecks />
-									</div>
-									<div style={{ width: '30px' }} />
-								</div>
-
 							</div>
-							<div style = {{height:34}}/>
-						
-							<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-															
-								<div style = {{padding:'12px', marginLeft:10, display:'flex',  flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-									<SimpleHeatmap color='viridis' title='Sample Mobility Ratio' loading={ateHeatmapLoading} dataType='sample_mobility_ratio'  yAxisLabel='LE concentration' xAxisLabel='Analyte Mobility'/>												
-								</div>
-								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap color='plasma' title='Sample Pre Concentration' loading={ateHeatmapLoading} dataType='sample_pre_concentration'  yAxisLabel='LE concentration' xAxisLabel='TE mobility'/>					
-								</div> 
-								
-								<div style = {{padding:'12px',}}>
-									<SimpleHeatmap color='inferno' title='pH in Sample Region' loading={ateHeatmapLoading} dataType='ph_in_sample_region'  yAxisLabel='LE concentration' xAxisLabel='CI concentration'/>	 
-								</div>
-							
-							</div>
-							<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'end', justifyContent: 'start', alignSelf:'center', marginLeft:30, marginTop:-20 }}>
-								<ITPCheckIndicator />
-							</div>
+							<div style={{marginTop: -20}} />
+							<ITPCheckIndicator />
 						</div>
+    
 					</div>
 				</>
+
 	);
 };
 

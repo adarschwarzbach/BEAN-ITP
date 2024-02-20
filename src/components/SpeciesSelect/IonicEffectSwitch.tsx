@@ -15,7 +15,7 @@ const IonicEffectSwitch: React.FC = () => {
 	};
 
 	return (
-		<div className="switch-container"> {/* Wrap the switch in the new div */}
+		<div className="switch-container" style = {{width:160}}> {/* Wrap the switch in the new div */}
 			<Switch
 				label="Ionic Effect"
 				checked={ionicEffect !== 0}
