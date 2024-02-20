@@ -124,7 +124,7 @@ const Entrypoint: React.FC = () => {
 								</div>
 							
 							</div>
-							<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'end', justifyContent: 'start', alignSelf:'center', marginLeft:30 }}>
+							<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'end', justifyContent: 'start', alignSelf:'center', marginLeft:30, marginTop:-20 }}>
 								<ITPCheckIndicator />
 							</div>
 						</div>
