@@ -222,7 +222,10 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
         
 					{/* X-axis Label (pH) */}
 					<text x={28} y={160} fill="#D3D8DE" fontSize={11}> {dataType == 'sample_pre_concentration' ? '.001 ': '-1e-8'} </text>
-					<text x="56%" y="160" fill="#D3D8DE" fontSize={12} fontWeight={600} textAnchor="middle">{xAxisLabel}</text>
+					<text x="56%" y="160" fill="#D3D8DE" fontSize={12} fontWeight={600} textAnchor="middle">
+						{xAxisLabel}
+						<tspan x="56%" dy="12" fontSize="10" fontWeight="normal">{ xAxisLabel == 'CI concentration' ? 'mM' : 'm²/(V.s)'}</tspan>
+					</text>
 					<text x={166} y={160} fill="#D3D8DE" fontSize={11}>  {dataType == 'sample_pre_concentration' ? '1.000': '-5e-8'} </text>
 					
         
@@ -238,14 +241,15 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</text>
 
 					<text 
-						x={-95} // Position the text near the middle of the height
-						y={84}  // Position the text slightly off the left edge
+						x={-95} // Initial X position for "LE Concentration"
+						y={72}  // Initial Y position for "LE Concentration"
 						fill="#D3D8DE" 
 						fontSize={13} 
 						fontWeight={600}
 						transform="rotate(-90 -10, 40)"
 					>
-						{'LE \n Concentration'}
+						LE Concentration
+						<tspan dy="14" dx='-70' fontSize="11" fontWeight="normal">mM</tspan>
 					</text>
 					
 					<text 
@@ -309,14 +313,14 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</defs>
 					<rect
 						x={62}
-						y={0}
+						y={6}
 						width={90}
 						height={10}
 						fill={`url(#${gradientId})`}  // Use the unique gradient ID here
 					/>
 					{/* Adding min and max labels to the gradient bar */}
-					<text x={60} y={9} fontSize={11} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(1)}</text>
-					<text x={155} y={9} fontSize={9} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(1)}</text>
+					<text x={60} y={15} fontSize={11} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(1)}</text>
+					<text x={155} y={15} fontSize={11} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(1)}</text>
 					{/* <text x={98} y={22} fontSize={11} textAnchor="start" fill="#D3D8DE">
 						{'units'}
 					</text> */}
