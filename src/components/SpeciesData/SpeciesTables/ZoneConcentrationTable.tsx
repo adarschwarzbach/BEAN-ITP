@@ -1,9 +1,11 @@
 import React from 'react';
 import { Column, Table2, Cell, TableLoadingOption } from '@blueprintjs/table';
-import './ZoneConcentrationTable.css';
-import { useSpeciesData } from '../../../Contexts/SpeciesData';
+import './ZoneConcentrationTable.css'; // Update the path according to your file structure
+import { useSpeciesData } from '../../../Contexts/SpeciesData'; // Update the path according to your file structure
 
-type SpeciesData = {
+// Updated type definitions
+type SpeciesDataRow = {
+    type: 'speciesData';
     species: string;
     zone1: number;
     zone2: number;
@@ -11,11 +13,16 @@ type SpeciesData = {
     zone4: number;
 };
 
-function truncateToThreeDecimal(num: number): number {
-	return Math.trunc(num * 1000) / 1000;
-}
+type PHRow = {
+    type: 'pH';
+    values: number[];
+};
 
-const columnNames = ['Species', 'LE', 'Sample', 'ATE', 'TE'];
+type BlankRow = {
+    type: 'blank';
+};
+
+type TableRow = SpeciesDataRow | PHRow | BlankRow;
 
 function toThreeSigFigs(num: number): number {
 	if (num === 0) return 0;
@@ -24,15 +31,22 @@ function toThreeSigFigs(num: number): number {
 	return Math.round(num * factor) / factor;
 }
 
+function toPHValue(concentration: number): number {
+	return -Math.log10(concentration);
+}
+
+const columnNames = ['Species', 'LE', 'Sample', 'ATE', 'TE'];
+
 const ZoneConcentrationsTable: React.FC = () => {
 	const { loading, speciesDict, beanResults, error } = useSpeciesData();
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
-
 	const computedZoneConcentrations = beanResults?.ComputedZoneConcentrations ?? [];
-
 	const speciesList = Object.values(speciesDict).map(species => species.Name);
+	const pHData = beanResults?.cH[0]?.map(toPHValue); // Make sure this matches your actual data structure
 
-	const data: SpeciesData[] = computedZoneConcentrations.map((row, index) => ({
+	// Constructing the data array
+	const data: TableRow[] = computedZoneConcentrations.map((row, index) => ({
+		type: 'speciesData', // Explicitly setting the type
 		species: speciesList[index],
 		zone1: row[0],
 		zone2: row[1],
@@ -40,19 +54,46 @@ const ZoneConcentrationsTable: React.FC = () => {
 		zone4: row[3],
 	}));
 
-	const renderCell = (rowIndex: number, columnIndex: number) => {
-		if (error) return <Cell />;
+	// Inserting a blank row and then the pH row
+	data.push({ type: 'blank' }); // Blank row
+	if (pHData) {
+		data.push({ type: 'pH', values: pHData.map(toThreeSigFigs) }); // pH row
+	}
+
+	// Rendering function for cells
+	const renderCell = (rowIndex: number, columnIndex: number): JSX.Element => {
 		const rowData = data[rowIndex];
-		switch (columnIndex) {
-		case 0: return <Cell>{rowData.species}</Cell>;
-		case 1: return <Cell>{toThreeSigFigs(rowData.zone1)}</Cell>;
-		case 2: return <Cell>{toThreeSigFigs(rowData.zone2)}</Cell>;
-		case 3: return <Cell>{toThreeSigFigs(rowData.zone3)}</Cell>;
-		case 4: return <Cell>{toThreeSigFigs(rowData.zone4)}</Cell>;
-		default: return <Cell />;
+	
+		switch (rowData.type) {
+		case 'blank':
+			return <Cell />; // Render an empty cell for the blank row
+		case 'pH':
+			if (columnIndex === 0) {
+				return <Cell>pH</Cell>;
+			} else {
+				const phValue = rowData.values[columnIndex - 1];
+				return <Cell>{phValue.toString()}</Cell>;
+			}
+		case 'speciesData': {
+			// Encapsulating case block in curly braces
+			let content = ''; // Moved declaration outside the switch
+			switch (columnIndex) {
+			case 0: content = rowData.species; break;
+			case 1: content = toThreeSigFigs(rowData.zone1).toString(); break;
+			case 2: content = toThreeSigFigs(rowData.zone2).toString(); break;
+			case 3: content = toThreeSigFigs(rowData.zone3).toString(); break;
+			case 4: content = toThreeSigFigs(rowData.zone4).toString(); break;
+			default: break;
+			}
+			return <Cell>{content}</Cell>;
+		}
+		default:
+			return <Cell />;
 		}
 	};
+	
 
+	// Function to render columns based on columnNames
 	const renderColumns = (): JSX.Element[] => {
 		return columnNames.map((columnName, columnIndex) => (
 			<Column
@@ -65,20 +106,19 @@ const ZoneConcentrationsTable: React.FC = () => {
 
 	return (
 		<div>
-			<h5 style = {{marginBottom:8}} >
-				{ !error ? 'Zone Concentrations by Species ' : 'Error Computing ITP'}
+			<h5 style={{ marginBottom: 8 }}>
+				{!error ? 'Zone Concentrations and pH' : 'Error Computing ITP'}
 			</h5>
-			<Table2 
-				numRows={speciesList.length}
+			<Table2
+				numRows={data.length}
 				loadingOptions={loadingOptions}
-				enableRowHeader={false} // Disable the default row headers
+				enableRowHeader={false}
 				columnWidths={[120, 120, 120, 120, 120]}
 			>
 				{renderColumns()}
 			</Table2>
 		</div>
 	);
-
 };
 
 export default ZoneConcentrationsTable;

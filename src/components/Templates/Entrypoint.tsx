@@ -104,10 +104,6 @@ const Entrypoint: React.FC = () => {
 										<ComputeChecks />
 									</div>
 									<div style={{ width: '30px' }} />
-									<div style={{ display: 'inline-block' }}>
-										<PHTable />
-									</div>
-						
 								</div>
 
 							</div>
