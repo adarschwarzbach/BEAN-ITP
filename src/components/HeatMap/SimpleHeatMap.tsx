@@ -56,7 +56,7 @@ interface SimpleHeatmapProps {
 	title: string;
 	loading: boolean;
 	dataType: 'ph_in_sample_region' | 'sample_mobility_ratio' | 'sample_pre_concentration';
-	xAxisLabel: 'CI concentration' | 'Analyte Mobility' | 'TE mobility'
+	xAxisLabel: 'CI concentration' | 'Analyte Mobility' | 'TE Mobility'
 	yAxisLabel: 'LE concentration' 
 }
 

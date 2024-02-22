@@ -50,7 +50,7 @@ const DataDisplayTemplate: React.FC = () => {
 					<SimpleHeatmap color='plasma' title='Sample Mobility Ratio' loading={ateHeatmapLoading} dataType='sample_mobility_ratio' yAxisLabel='LE concentration' xAxisLabel='Analyte Mobility'/>
 				</div>
 				<div style={{ padding: '12px', }}>
-					<SimpleHeatmap color='inferno' title='Sample Pre Concentration' loading={ateHeatmapLoading} dataType='sample_pre_concentration' yAxisLabel='LE concentration' xAxisLabel='TE mobility'/>
+					<SimpleHeatmap color='inferno' title='Sample Pre Concentration' loading={ateHeatmapLoading} dataType='sample_pre_concentration' yAxisLabel='LE concentration' xAxisLabel='TE Mobility'/>
 				</div>
 			</div>
 			<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'end', justifyContent: 'start', alignSelf: 'center', marginLeft: 30 }}>

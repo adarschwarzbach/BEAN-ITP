@@ -93,7 +93,7 @@ const Entrypoint: React.FC = () => {
 								{/* Other UI components like forms, switches, buttons */}
 								<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '20px', marginTop: '20px' }}>
 									<SimpleHeatmap color='viridis' title='Sample Mobility Ratio' loading={ateHeatmapLoading} dataType='sample_mobility_ratio' yAxisLabel='LE concentration' xAxisLabel='Analyte Mobility'/>
-									<SimpleHeatmap color='plasma' title='Sample Pre Concentration' loading={ateHeatmapLoading} dataType='sample_pre_concentration' yAxisLabel='LE concentration' xAxisLabel='TE mobility'/>
+									<SimpleHeatmap color='plasma' title='Sample Pre Concentration' loading={ateHeatmapLoading} dataType='sample_pre_concentration' yAxisLabel='LE concentration' xAxisLabel='TE Mobility'/>
 									<SimpleHeatmap color='inferno' title='pH in Sample Region' loading={ateHeatmapLoading} dataType='ph_in_sample_region' yAxisLabel='LE concentration' xAxisLabel='CI concentration'/>
 								</div>
 							</div>
