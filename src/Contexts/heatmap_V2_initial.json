@@ -1027,43 +1027,43 @@
         "computation_value": "error due to timeout or other server-side issue"
       },
       {
-        "computation_value": "error due to timeout or other server-side issue"
+        "computation_value": 0.5131916952999684
       },
       {
-        "computation_value": 0.4390079932404291
+        "computation_value": 0.5131916952999684
       },
       {
-        "computation_value": 0.503004072903981
+        "computation_value": 0.5131916952999684
       },
       {
-        "computation_value": 0.5548922708208538
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.5991705334732416
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.6379938585497412
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.6726177668907822
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.7038624681466936
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.7323055163035002
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.7583755036168309
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.7824029198313146
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.8046501204597598
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.8253301304185233
+        "computation_value": "itpCheck failed"
       }
     ],
     [
@@ -1077,7 +1077,19 @@
         "computation_value": "error due to timeout or other server-side issue"
       },
       {
-        "computation_value": "error due to timeout or other server-side issue"
+        "computation_value": 0.9028011396341887
+      },
+      {
+        "computation_value": 0.9028011396341887
+      },
+      {
+        "computation_value": 0.9028011396341887
+      },
+      {
+        "computation_value": 0.9028011396341887
+      },
+      {
+        "computation_value": 0.9028011396341887
       },
       {
         "computation_value": "itpCheck failed"
@@ -1086,40 +1098,28 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.8318197420354057
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.89245575805454
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.9467728940078487
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 0.9959084852497324
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 1.0406882189751845
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 1.0817407369586074
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 1.1195612197660922
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 1.1545496671698943
-      },
-      {
-        "computation_value": 1.187035525473631
-      },
-      {
-        "computation_value": 1.217294312194658
-      },
-      {
-        "computation_value": 1.2455593226296486
-      },
-      {
-        "computation_value": 1.2720301325846401
+        "computation_value": "itpCheck failed"
       }
     ],
     [
@@ -1130,63 +1130,22 @@
         "computation_value": "error due to timeout or other server-side issue"
       },
       {
-        "computation_value": "error due to timeout or other server-side issue"
+        "computation_value": 1.4265387920034378
       },
       {
         "computation_value": "error due to timeout or other server-side issue"
       },
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 1.4265387920034378
       },
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 1.4265387920034378
       },
       {
-        "computation_value": 1.3341085394479335
+        "computation_value": 1.4265387920034378
       },
       {
-        "computation_value": 1.4129386378211186
-      },
-      {
-        "computation_value": 1.4847733790787598
-      },
-      {
-        "computation_value": 1.550580718272066
-      },
-      {
-        "computation_value": 1.6111373840499055
-      },
-      {
-        "computation_value": 1.6670798647382445
-      },
-      {
-        "computation_value": 1.7189381353811177
-      },
-      {
-        "computation_value": 1.7671590758903082
-      },
-      {
-        "computation_value": 1.812123407818229
-      },
-      {
-        "computation_value": 1.8541582930676774
-      },
-      {
-        "computation_value": 1.8935469568001397
-      },
-      {
-        "computation_value": 1.9305361584814893
-      }
-    ],
-    [
-      {
-        "computation_value": "error due to timeout or other server-side issue"
-      },
-      {
-        "computation_value": "error due to timeout or other server-side issue"
-      },
-      {
-        "computation_value": "error due to timeout or other server-side issue"
+        "computation_value": 1.4265387920034378
       },
       {
         "computation_value": "itpCheck failed"
@@ -1198,40 +1157,25 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2.053971463531351
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2.165743045881915
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2.2681544801303803
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2.3623727892854047
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2.4493685226994226
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2.529958500023667
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2.6048368876131276
-      },
-      {
-        "computation_value": 2.674598444350548
-      },
-      {
-        "computation_value": 2.73975638024183
-      },
-      {
-        "computation_value": 2.800756291869353
-      },
-      {
-        "computation_value": 2.857987231580539
-      },
-      {
-        "computation_value": 2.911790575640617
+        "computation_value": "itpCheck failed"
       }
     ],
     [
@@ -1242,6 +1186,33 @@
         "computation_value": "error due to timeout or other server-side issue"
       },
       {
+        "computation_value": 2.1850940359449473
+      },
+      {
+        "computation_value": 2.1850940359449473
+      },
+      {
+        "computation_value": 2.1850940359449473
+      },
+      {
+        "computation_value": 2.1850940359449473
+      },
+      {
+        "computation_value": 2.1850940359449473
+      },
+      {
+        "computation_value": 2.1850940359449473
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
         "computation_value": "itpCheck failed"
       },
       {
@@ -1254,45 +1225,39 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 3.115539520730647
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 3.2794118743123475
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 3.4298705803419876
-      },
-      {
-        "computation_value": 3.5685187728287695
-      },
-      {
-        "computation_value": 3.696708399127693
-      },
-      {
-        "computation_value": 3.8155892323426595
-      },
-      {
-        "computation_value": 3.9261462984102247
-      },
-      {
-        "computation_value": 4.0292289314865775
-      },
-      {
-        "computation_value": 4.125573747002318
-      },
-      {
-        "computation_value": 4.215822971342761
-      },
-      {
-        "computation_value": 4.300539261183503
-      },
-      {
-        "computation_value": 4.380217742679803
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": "error due to timeout or other server-side issue"
+      },
+      {
+        "computation_value": "error due to timeout or other server-side issue"
+      },
+      {
+        "computation_value": 3.3078202734005773
+      },
+      {
+        "computation_value": 3.3078202734005773
+      },
+      {
+        "computation_value": 3.3078202734005773
+      },
+      {
+        "computation_value": 3.3078202734005773
+      },
+      {
+        "computation_value": 3.3078202734005773
+      },
+      {
+        "computation_value": 3.3078202734005773
       },
       {
         "computation_value": "itpCheck failed"
@@ -1310,45 +1275,45 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 4.697377936194089
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 4.940996634212716
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 5.1648565503091355
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 5.371278881292589
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 5.562232048160524
-      },
-      {
-        "computation_value": 5.739397134503843
-      },
-      {
-        "computation_value": 5.904219015672678
-      },
-      {
-        "computation_value": 6.057946715293913
-      },
-      {
-        "computation_value": 6.201665722134045
-      },
-      {
-        "computation_value": 6.33632402294721
-      },
-      {
-        "computation_value": 6.462753310282656
-      },
-      {
-        "computation_value": 6.581686302996579
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 4.9832514737319356
+      },
+      {
+        "computation_value": 4.9832514737319356
+      },
+      {
+        "computation_value": 4.9832514737319356
+      },
+      {
+        "computation_value": 4.9832514737319356
+      },
+      {
+        "computation_value": 4.9832514737319356
+      },
+      {
+        "computation_value": 4.9832514737319356
+      },
+      {
+        "computation_value": 4.9832514737319356
+      },
+      {
+        "computation_value": 4.9832514737319356
       },
       {
         "computation_value": "itpCheck failed"
@@ -1366,45 +1331,48 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 7.064462044867679
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 7.428763102051386
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 7.7636249892683225
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 8.072482531456421
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 8.358254923957878
-      },
-      {
-        "computation_value": 8.623439366048547
-      },
-      {
-        "computation_value": 8.870184928526884
-      },
-      {
-        "computation_value": 9.100351260558432
-      },
-      {
-        "computation_value": 9.315555847801699
-      },
-      {
-        "computation_value": 9.517212228783649
-      },
-      {
-        "computation_value": 9.706561225636998
-      },
-      {
-        "computation_value": 9.884696523082338
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 7.491962766420261
+      },
+      {
+        "computation_value": 7.491962766420261
+      },
+      {
+        "computation_value": 7.491962766420261
+      },
+      {
+        "computation_value": 7.491962766420261
+      },
+      {
+        "computation_value": 7.491962766420261
+      },
+      {
+        "computation_value": 7.491962766420261
+      },
+      {
+        "computation_value": 7.491962766420261
+      },
+      {
+        "computation_value": 7.491962766420261
+      },
+      {
+        "computation_value": 7.491962766420261
       },
       {
         "computation_value": "itpCheck failed"
@@ -1419,47 +1387,62 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 10.016676651860392
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 10.612946550427585
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 11.159071992829588
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 11.661124715078538
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 12.124233751185317
-      },
-      {
-        "computation_value": 12.552761760591405
-      },
-      {
-        "computation_value": 12.950443056456791
-      },
-      {
-        "computation_value": 13.32049290377888
-      },
-      {
-        "computation_value": 13.665694613695164
-      },
-      {
-        "computation_value": 13.988469794589587
-      },
-      {
-        "computation_value": 14.290935245042558
-      },
-      {
-        "computation_value": 14.574949502903324
-      },
-      {
-        "computation_value": 14.842151004600069
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": 11.253822052865885
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
         "computation_value": "itpCheck failed"
       },
       {
@@ -1472,50 +1455,50 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 38.40528059351821
-      },
-      {
-        "computation_value": 39.12290889727323
-      },
-      {
-        "computation_value": 39.81351738903979
-      },
-      {
-        "computation_value": 40.475213987124675
-      },
-      {
-        "computation_value": 41.10715410570525
-      },
-      {
-        "computation_value": 41.709270616819026
-      },
-      {
-        "computation_value": 42.28205181217726
-      },
-      {
-        "computation_value": 42.82636608572975
-      },
-      {
-        "computation_value": 43.343328120241
-      },
-      {
-        "computation_value": 43.83419909925832
-      },
-      {
-        "computation_value": 44.30031436539182
-      },
-      {
-        "computation_value": 44.74303193515707
-      },
-      {
-        "computation_value": 45.16369696629361
-      },
-      {
-        "computation_value": 45.56361777734597
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": 40.5927737415541
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
         "computation_value": "itpCheck failed"
       },
       {
@@ -1528,51 +1511,42 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 109.18969314756119
-      },
-      {
-        "computation_value": 109.71751939893139
-      },
-      {
-        "computation_value": 110.231632873775
-      },
-      {
-        "computation_value": 110.73154546142793
-      },
-      {
-        "computation_value": 111.21694504489332
-      },
-      {
-        "computation_value": 111.68767613470081
-      },
-      {
-        "computation_value": 112.14371789229799
-      },
-      {
-        "computation_value": 112.58516203789483
-      },
-      {
-        "computation_value": 113.01219229633818
-      },
-      {
-        "computation_value": 113.42506573322706
-      },
-      {
-        "computation_value": 113.82409658621127
-      },
-      {
-        "computation_value": 114.20964228416477
-      },
-      {
-        "computation_value": 114.58209172746098
-      },
-      {
-        "computation_value": 114.9418553639298
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
+      },
+      {
+        "computation_value": 110.8212200573866
       },
       {
         "computation_value": "itpCheck failed"
@@ -1584,51 +1558,54 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 217.14667343462924
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 217.61607060058085
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 218.07217078009296
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 218.5151644011779
-      },
-      {
-        "computation_value": 218.94526625065686
-      },
-      {
-        "computation_value": 219.36271737905085
-      },
-      {
-        "computation_value": 219.76778337559216
-      },
-      {
-        "computation_value": 220.16075089380615
-      },
-      {
-        "computation_value": 220.54192371683706
-      },
-      {
-        "computation_value": 220.91161863541186
-      },
-      {
-        "computation_value": 221.27016174105287
-      },
-      {
-        "computation_value": 221.6178849920949
-      },
-      {
-        "computation_value": 221.95512328657156
-      },
-      {
-        "computation_value": 222.2822118065255
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
+      },
+      {
+        "computation_value": 218.5946129413753
       },
       {
         "computation_value": "itpCheck failed"
@@ -1640,51 +1617,51 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 379.5941721582229
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 380.0377629072351
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 380.4677987417123
-      },
-      {
-        "computation_value": 380.88474409763677
-      },
-      {
-        "computation_value": 381.2890394353759
-      },
-      {
-        "computation_value": 381.681109240464
-      },
-      {
-        "computation_value": 382.06136590839446
-      },
-      {
-        "computation_value": 382.4302113796049
-      },
-      {
-        "computation_value": 382.7880377922744
-      },
-      {
-        "computation_value": 383.13522745115455
-      },
-      {
-        "computation_value": 383.4721527193599
-      },
-      {
-        "computation_value": 383.7991757381168
-      },
-      {
-        "computation_value": 384.1166482346984
-      },
-      {
-        "computation_value": 384.4249112364805
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
+      },
+      {
+        "computation_value": 380.9594589910805
       },
       {
         "computation_value": "itpCheck failed"
@@ -1696,51 +1673,51 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 627.2139210907508
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 627.887561023079
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 628.5198761594975
-      },
-      {
-        "computation_value": 629.1142532206056
-      },
-      {
-        "computation_value": 629.6737566759697
-      },
-      {
-        "computation_value": 630.2011606551307
-      },
-      {
-        "computation_value": 630.6989780589488
-      },
-      {
-        "computation_value": 631.1694868251241
-      },
-      {
-        "computation_value": 631.6147538221318
-      },
-      {
-        "computation_value": 632.0366562152282
-      },
-      {
-        "computation_value": 632.4369008700639
-      },
-      {
-        "computation_value": 632.8170416467682
-      },
-      {
-        "computation_value": 633.1784949750318
-      },
-      {
-        "computation_value": 633.5225536197462
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
+      },
+      {
+        "computation_value": 629.2188788014458
       },
       {
         "computation_value": "itpCheck failed"
@@ -1752,51 +1729,51 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 993.5840094889659
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 994.2441825523845
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 994.8639097375323
-      },
-      {
-        "computation_value": 995.4466173205233
-      },
-      {
-        "computation_value": 995.9953749275137
-      },
-      {
-        "computation_value": 996.5129386300393
-      },
-      {
-        "computation_value": 997.0017880988344
-      },
-      {
-        "computation_value": 997.4641586228606
-      },
-      {
-        "computation_value": 997.9020690835451
-      },
-      {
-        "computation_value": 998.3173461886067
-      },
-      {
-        "computation_value": 998.7116458573531
-      },
-      {
-        "computation_value": 999.0864718596598
-      },
-      {
-        "computation_value": 999.4431922740255
-      },
-      {
-        "computation_value": 999.7830538082753
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
+      },
+      {
+        "computation_value": 995.5492131590682
       },
       {
         "computation_value": "itpCheck failed"
@@ -1808,51 +1785,51 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 1543.7133363376547
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 1544.3651801139702
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 1544.9770666742522
-      },
-      {
-        "computation_value": 1545.552452506041
-      },
-      {
-        "computation_value": 1546.0944167161638
-      },
-      {
-        "computation_value": 1546.6057105832665
-      },
-      {
-        "computation_value": 1547.0887993834785
-      },
-      {
-        "computation_value": 1547.545897782385
-      },
-      {
-        "computation_value": 1547.9790002306318
-      },
-      {
-        "computation_value": 1548.3899069276927
-      },
-      {
-        "computation_value": 1548.7802464261051
-      },
-      {
-        "computation_value": 1549.1514951222218
-      },
-      {
-        "computation_value": 1549.504994294245
-      },
-      {
-        "computation_value": 1549.8419648073261
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
+      },
+      {
+        "computation_value": 1545.6537691176281
       },
       {
         "computation_value": "itpCheck failed"
@@ -1864,51 +1841,51 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2369.6849846734945
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2370.3316520686435
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 2370.9386444012644
-      },
-      {
-        "computation_value": 2371.509439873204
-      },
-      {
-        "computation_value": 2372.0471263335658
-      },
-      {
-        "computation_value": 2372.554454767259
-      },
-      {
-        "computation_value": 2373.0338839771193
-      },
-      {
-        "computation_value": 2373.4876180480937
-      },
-      {
-        "computation_value": 2373.917638240499
-      },
-      {
-        "computation_value": 2374.325730032281
-      },
-      {
-        "computation_value": 2374.7135064940276
-      },
-      {
-        "computation_value": 2375.082428323732
-      },
-      {
-        "computation_value": 2375.433821263681
-      },
-      {
-        "computation_value": 2375.7688910651514
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
-        "computation_value": "itpCheck failed"
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
+      },
+      {
+        "computation_value": 2371.6099523827565
       },
       {
         "computation_value": "itpCheck failed"
@@ -1920,50 +1897,109 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 3609.760831872313
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 3610.40436068548
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 3611.008375536085
-      },
-      {
-        "computation_value": 3611.57637045821
-      },
-      {
-        "computation_value": 3612.1114407470723
-      },
-      {
-        "computation_value": 3612.61633893761
-      },
-      {
-        "computation_value": 3613.093521298008
-      },
-      {
-        "computation_value": 3613.5451866126546
-      },
-      {
-        "computation_value": 3613.9733090331138
-      },
-      {
-        "computation_value": 3614.379665814821
-      },
-      {
-        "computation_value": 3614.7658611916195
-      },
-      {
-        "computation_value": 3615.13334676791
-      },
-      {
-        "computation_value": 3615.4834391874992
-      },
-      {
-        "computation_value": 3615.8173352736576
+        "computation_value": "itpCheck failed"
       }
     ],
     [
       {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": 3611.676391650179
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      },
+      {
+        "computation_value": "itpCheck failed"
+      }
+    ],
+    [
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
+        "computation_value": 5473.434209414652
+      },
+      {
         "computation_value": "itpCheck failed"
       },
       {
@@ -1976,46 +2012,10 @@
         "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 5471.5238655681205
+        "computation_value": "itpCheck failed"
       },
       {
-        "computation_value": 5472.165660485912
-      },
-      {
-        "computation_value": 5472.768023702718
-      },
-      {
-        "computation_value": 5473.334461578809
-      },
-      {
-        "computation_value": 5473.868076115685
-      },
-      {
-        "computation_value": 5474.3716225590015
-      },
-      {
-        "computation_value": 5474.847557077694
-      },
-      {
-        "computation_value": 5475.298076413718
-      },
-      {
-        "computation_value": 5475.725151366094
-      },
-      {
-        "computation_value": 5476.130554989728
-      },
-      {
-        "computation_value": 5476.515886805442
-      },
-      {
-        "computation_value": 5476.88259343477
-      },
-      {
-        "computation_value": 5477.2319864424735
-      },
-      {
-        "computation_value": 5477.565257599713
+        "computation_value": "itpCheck failed"
       }
     ]
   ],

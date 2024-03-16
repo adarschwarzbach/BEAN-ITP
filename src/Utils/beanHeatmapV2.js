@@ -31,8 +31,6 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		'requestedOutput': 'ATE_pH',
 	};
 
-	console.log('hitting ');
-
 	try {
 		const response = await fetch(BEAN_COMPUTATION_API, {
 			method: 'POST',

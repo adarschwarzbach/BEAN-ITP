@@ -4,7 +4,6 @@ import { beanComputation } from '../../Utils/beanComputation';
 import { Button } from '@blueprintjs/core';
 // import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
 import { beanHeatmapComputationV2 } from '../../Utils/beanHeatmapV2';
-import { downloadAsJson } from '../../Utils/downloadAsJSON';
 
 
 const HeatmapComputationButton: React.FC = () => {
@@ -32,8 +31,6 @@ const HeatmapComputationButton: React.FC = () => {
 			if (typeof heatmap_v2_results === 'object' && 'sample_mobility_ratio' in heatmap_v2_results) {
 				// It's a valid ateHeatmapResults object, so set the state
 				setHeatmapV2(heatmap_v2_results);
-				// downloadAsJson(heatmap_v2_results); // If new initial data is needed
-				
 			} else {
 				// It's not a valid ateHeatmapResults object, so set the state to the initial value
 				setHeatmapV2({ sample_mobility_ratio: [], sample_pre_concentration:[], ph_in_sample_region:[] });
@@ -55,7 +52,7 @@ const HeatmapComputationButton: React.FC = () => {
 				icon = 'heatmap'
 				disabled = {!validInput}
 			>
-           Create Heatmaps
+           Mobility Plot
 			</Button>
 		</div>
 	);

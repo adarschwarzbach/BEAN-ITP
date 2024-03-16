@@ -4,7 +4,8 @@ import { beanComputation } from '../../Utils/beanComputation';
 import { Button } from '@blueprintjs/core';
 import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
 import ateHeatmapInitial from '../../Contexts/ateHeatmapInitial';
-
+import { mobility_plot_computation } from '../../Utils/mobility_plot_computation';
+import ts from 'typescript';
 
 const BeanComputationButton: React.FC = () => {
 	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading} = useSpeciesData();
@@ -25,6 +26,8 @@ const BeanComputationButton: React.FC = () => {
 
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
+
+			await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
 			
 			if (response.statusCode != 200) {
 				setError(true);
