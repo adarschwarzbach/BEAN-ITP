@@ -8,7 +8,7 @@ import { mobility_plot_computation } from '../../Utils/mobility_plot_computation
 import ts from 'typescript';
 
 const BeanComputationButton: React.FC = () => {
-	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading} = useSpeciesData();
+	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading, setMobilityData} = useSpeciesData();
 
 	// useEffect(() => {
 	// 	handleApiCall();
@@ -27,7 +27,7 @@ const BeanComputationButton: React.FC = () => {
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
 
-			await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
+			const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
 			
 			if (response.statusCode != 200) {
 				setError(true);
@@ -39,6 +39,15 @@ const BeanComputationButton: React.FC = () => {
 				const parsedBody = JSON.parse(response.body);
 				setBeanResults(parsedBody);
 				setError(false);
+
+				const parsedMobility = JSON.parse(mobility_data.body);
+				console.log('pmp', parsedMobility);
+				setMobilityData({
+					lin_pH: parsedMobility.lin_pH, // Example data
+					sol1:parsedMobility.sol1, // Example data
+				});
+				// setMobilityData(parsedBody);
+
 			} 
 
 			else {

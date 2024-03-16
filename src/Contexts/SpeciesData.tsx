@@ -41,6 +41,10 @@ const initialData =
 	'runTime': 0.08933067321777344
 };
 
+const mobilityDataInitial = {
+	lin_pH: [1, 2, 3, 4], // Example data
+	sol1: [[1, 2], [3, 4]], // Example data
+};
 
 interface ComputationResult {
 	Residue: number[];
@@ -103,6 +107,12 @@ interface HeatmapV2 {
 	ph_in_sample_region: ComputationValue[][];
 }
 
+interface MobilityData {
+    lin_pH: number[];
+    sol1: number[][];
+}
+
+
 interface DataContextProps {
     ionicEffect: number;
     setIonicEffect: React.Dispatch<React.SetStateAction<number>>;
@@ -126,6 +136,8 @@ interface DataContextProps {
 	setHeatmapError: React.Dispatch<React.SetStateAction<boolean>>;
 	heatmapV2: HeatmapV2;
 	setHeatmapV2: React.Dispatch<React.SetStateAction<HeatmapV2>>;
+	mobilityData: MobilityData;
+    setMobilityData: React.Dispatch<React.SetStateAction<MobilityData>>;
 }
 
 interface DataProviderProps {
@@ -148,6 +160,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	const [ateHeatmapResults, setAteHeatmapResults] = useState<ateHeatmapResults>(ateHeatmapInitial);
 	const [ateHeatmapLoading, setAteHeatmapLoading] = useState<boolean>(false);
 	const [heatmapV2, setHeatmapV2] = useState<HeatmapV2>(heatmap_V2_initial);
+	const [mobilityData, setMobilityData] = useState<MobilityData>(mobilityDataInitial);
 	const [speciesDict, setSpeciesDict] = useState<Record<string, Species>>({
 		'0': {
 			'Name': 'HCl',
@@ -185,7 +198,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 	);
 
 	return (
-		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, ateHeatmapResults, setAteHeatmapResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading, ateHeatmapLoading, setAteHeatmapLoading, heatmapError, setHeatmapError, heatmapV2, setHeatmapV2}}>
+		<DataContext.Provider value={{ ionicEffect, setIonicEffect, loading, setLoading, speciesDict, setSpeciesDict, beanResults, setBeanResults, ateHeatmapResults, setAteHeatmapResults, validInput, setValidInput, error, setError, gloablLoading, setGlobalLoading, ateHeatmapLoading, setAteHeatmapLoading, heatmapError, setHeatmapError, heatmapV2, setHeatmapV2, mobilityData, setMobilityData}}>
 			{children}
 		</DataContext.Provider>
 	);

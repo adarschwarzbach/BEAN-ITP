@@ -18,6 +18,7 @@ import { isMobile } from 'react-device-detect';
 import { Button } from '@blueprintjs/core';
 import HeatmapComputationButton from '../SpeciesSelect/HeatmapComputationButton';
 import ITPCheckIndicator from '../HeatMap/ITPCheckIndicator';
+import MobilityPlot from '../MobilityPlot/MobilityPlot';
 
 
 const Entrypoint: React.FC = () => {
@@ -99,6 +100,7 @@ const Entrypoint: React.FC = () => {
 							</div>
 							<div style={{marginTop: -20}} />
 							<ITPCheckIndicator />
+							<MobilityPlot />
 						</div>
     
 					</div>
