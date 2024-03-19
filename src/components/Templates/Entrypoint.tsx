@@ -67,7 +67,7 @@ const Entrypoint: React.FC = () => {
 					<p style={{ textAlign: 'center' }}>We do not currently support mobile. For the best BEAN experience, please try a computer :)</p>
 				</div>
 				:
-				<>
+				<div style = {{display:'flex', flexDirection:'column'}}>
 					<HeaderBanner className={themeClass} />
 					<div className={`${themeClass} app-container`} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', margin: '0 auto', width: '100%' }}>
     
@@ -100,11 +100,14 @@ const Entrypoint: React.FC = () => {
 							</div>
 							<div style={{marginTop: -20}} />
 							<ITPCheckIndicator />
-							<MobilityPlot />
 						</div>
+						
     
 					</div>
-				</>
+					<div style={{alignSelf: 'center', justifySelf:'center' }}>
+						<MobilityPlot />
+					</div>
+				</div>
 
 	);
 };

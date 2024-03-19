@@ -31,9 +31,8 @@ const MobilityPlot = () => {
 		backgroundColor: `hsl(${(index / sol1.length) * 360}, 100%, 50%, 0)`, // fully transparent background
 		fill: false,
 		tension: 0.1,
-		borderWidth: 0.5, // Ultra-thin lines
+		borderWidth: 0.5,
 	}));
-    
 
 	const data = { datasets };
 
@@ -51,6 +50,12 @@ const MobilityPlot = () => {
 				title: {
 					display: true,
 					text: 'μX [10^-8 m²/(V⋅s)]'
+				},
+				ticks: {
+					// Truncate to one decimal place
+					callback: function(value) {
+						return Number((value * 100000000).toFixed(1));
+					}
 				}
 			}
 		},
@@ -58,10 +63,30 @@ const MobilityPlot = () => {
 			legend: {
 				display: true,
 				position: 'top',
+				labels: {
+					// Customize legend labels to prevent truncation or format as needed
+					padding: 20, // Adjust padding
+					boxWidth: 10, // Adjust checkbox size
+					font: {
+						size: 14, // Adjust font size
+					}
+				},
+				onClick: function(e, legendItem, legend) {
+					// Custom legend onClick event to handle dataset toggling
+					const index = legendItem.datasetIndex;
+					const ci = legend.chart;
+					if (ci.isDatasetVisible(index)) {
+						ci.hide(index);
+						legendItem.hidden = true;
+					} else {
+						ci.show(index);
+						legendItem.hidden = false;
+					}
+					ci.update();
+				}
 			},
 		},
 		maintainAspectRatio: false,
-		// Responsive: true, // Optional: if you want the chart to be responsive
 	};
 
 	return (

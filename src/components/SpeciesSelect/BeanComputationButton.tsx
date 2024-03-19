@@ -6,9 +6,10 @@ import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
 import ateHeatmapInitial from '../../Contexts/ateHeatmapInitial';
 import { mobility_plot_computation } from '../../Utils/mobility_plot_computation';
 import ts from 'typescript';
+import { downloadAsJson } from '../../Utils/downloadAsJSON';
 
 const BeanComputationButton: React.FC = () => {
-	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading, setMobilityData} = useSpeciesData();
+	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading, setMobilityData, mobilityPlotLoading, setMobilityPlotLoading} = useSpeciesData();
 
 	// useEffect(() => {
 	// 	handleApiCall();
@@ -17,6 +18,7 @@ const BeanComputationButton: React.FC = () => {
 	// Check if all inputs are valid
 	const handleApiCall = async () => {
 		setLoading(true);
+		setMobilityPlotLoading(true);
 		try {
 			// Create a copy of ionicEffect (for primitives like numbers, direct assignment is okay)
 			const ionicEffectCopy = ionicEffect;
@@ -27,26 +29,28 @@ const BeanComputationButton: React.FC = () => {
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
 
-			const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
 			
 			if (response.statusCode != 200) {
 				setError(true);
 				setLoading(false);
 				return;
 			}
-		
+
+
+			
 			if (typeof response.body === 'string') {
 				const parsedBody = JSON.parse(response.body);
 				setBeanResults(parsedBody);
 				setError(false);
+				setLoading(false);
 
+				const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
 				const parsedMobility = JSON.parse(mobility_data.body);
-				console.log('pmp', parsedMobility);
 				setMobilityData({
 					lin_pH: parsedMobility.lin_pH, // Example data
 					sol1:parsedMobility.sol1, // Example data
 				});
-				// setMobilityData(parsedBody);
+				setMobilityPlotLoading(false);
 
 			} 
 
@@ -55,6 +59,7 @@ const BeanComputationButton: React.FC = () => {
 			}
 
 			setLoading(false);
+			setMobilityPlotLoading(false);
 
 
 		} catch (error) {
