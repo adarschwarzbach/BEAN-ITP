@@ -35,7 +35,7 @@ function toPHValue(concentration: number): number {
 	return -Math.log10(concentration);
 }
 
-const columnNames = ['Species', 'LE', 'Sample', 'ATE', 'TE'];
+const columnNames = ['', 'LE', 'Sample', 'ATE', 'TE'];
 
 const ZoneConcentrationsTable: React.FC = () => {
 	const { loading, speciesDict, beanResults, error } = useSpeciesData();

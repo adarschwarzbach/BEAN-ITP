@@ -15,11 +15,12 @@ const IonicEffectSwitch: React.FC = () => {
 	};
 
 	return (
-		<div className="switch-container" style = {{width:160}}> {/* Wrap the switch in the new div */}
+		<div className="switch-container" style = {{width:180}}> {/* Wrap the switch in the new div */}
 			<Switch
-				label="Ionic Effect"
+				// label="Ionic Strength Effects"
 				checked={ionicEffect !== 0}
 				onChange={toggleIonicEffect}
+				labelElement={<span style={{ fontSize: '12px' }}>Ionic Strength Effects</span>}
 			/>
 		</div>
 	);

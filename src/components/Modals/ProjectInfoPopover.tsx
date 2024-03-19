@@ -2,6 +2,7 @@
 import React from 'react';
 import { Dialog, Button } from '@blueprintjs/core';
 import '@blueprintjs/core/lib/css/blueprint.css';
+import PDFDisplay from '../Header/PDFDisplay';
 
 interface PopupProps {
     isOpen: boolean;
@@ -27,8 +28,7 @@ const ProjectInfoPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 				padding: '20px',
 				marginBottom: '20px'
 			}}>
-				<p>Information about BEAN.</p>
-				<p>Or something else if you want :)</p>
+				{/* <PDFDisplay fileUrl='Nomenclature.pdf'/> */}
 			</div>
 
 			<div style={{

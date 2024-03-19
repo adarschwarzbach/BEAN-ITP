@@ -17,6 +17,16 @@ interface Props {
     index: string;
 }
 
+const typeLabels = {
+	'LE': 'Leading ion (LI)',
+	'Background': 'Counter-ion (CI)',
+	'Analyte': 'Analyte (A)',
+	'TE': 'Trailing ion (TI)'
+};
+
+const getTypeLabel = (type) => typeLabels[type] || type; // Fallback to type if not found
+
+
 const SpeciesForm: React.FC<Props> = ({ index }) => {
 	const { speciesDict, setSpeciesDict, validInput, setValidInput} = useSpeciesData();
 	const speciesData = speciesDict[index];
@@ -140,7 +150,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 				collapsible = {false}
 				compact = {true}
 				title ={speciesData.Name}
-				subtitle={`Type: ${speciesData.type}`}
+				subtitle={`Type: ${getTypeLabel(speciesData.type)}`}
 				elevation={1}
 				rightElement={
 					<SpeciesSelect dataIndex={index}/>
@@ -188,7 +198,9 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 							onInteraction={(nextOpen) => setPkaTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
 						>
-							<FormGroup label="pKa" style={{ flex: 1, marginRight: 20, minWidth:48 }}>
+							<FormGroup label={<span>pK<sub>a</sub></span>} // This line has been updated
+								style={{ flex: 1, marginRight: 20, minWidth: 48 }}
+							>
 								<InputGroup 
 									style = {{fontSize: 12,}}
 									name="pKa" 

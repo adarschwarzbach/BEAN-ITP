@@ -68,6 +68,8 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 	console.log(heatmapV2); 
 	const svgRef = useRef<SVGSVGElement>(null);
+	
+	
 
 	//  in javascript
 	const mobility_values = [-1.00000000e-08, -1.23529412e-08, -1.47058824e-08, -1.70588235e-08,
@@ -242,16 +244,17 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</text>
 
 					<text 
-						x={-95} // Initial X position for "LE Concentration"
-						y={72}  // Initial Y position for "LE Concentration"
+						x={16} // Adjusted for better centering due to the upright orientation
+						y={80} // Adjusted for vertical positioning
 						fill="#D3D8DE" 
 						fontSize={13} 
 						fontWeight={600}
-						transform="rotate(-90 -10, 40)"
 					>
-						LE Concentration
-						<tspan dy="14" dx='-70' fontSize="11" fontWeight="normal">mM</tspan>
+						C
+						<tspan baselineShift="super" fontSize="10">LE</tspan>
+						<tspan x="27" dy="0" fontSize="10" baselineShift="sub">LI</tspan>
 					</text>
+
 					
 					<text 
 						x={16} // Position the text near the middle of the height
