@@ -1,0 +1,74 @@
+.nomenclature h2 {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    /* background-color: #f2f2f2; */
+  }
+  
+  /* Styling for formulas and scientific notations */
+  .formula {
+    font-style: italic;
+  }
+  
+  .superscript {
+    vertical-align: super;
+    font-size: smaller;
+  }
+  
+  .subscript {
+    vertical-align: sub;
+    font-size: smaller;
+  }
+  
+  /* Styling for lists and definitions */
+  .definition-list {
+    margin-top: 10px;
+  }
+  
+  .definition-term {
+    font-weight: bold;
+  }
+  
+  .definition-description {
+    margin-left: 20px;
+  }
+  
+  /* Ensure that the sections have a clear separation */
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  /* Specific styles for emphasizing certain types of content */
+  .important {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .note {
+    color: #555;
+    font-style: italic;
+  }
+  
+  /* Adjust the size for better readability on web */
+  body {
+    font-size: 16px;
+  }
+  

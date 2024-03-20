@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Navbar, Alignment, Button } from '@blueprintjs/core';
 import './HeaderBanner.css';
 import ProjectInfoPopup from '../Modals/ProjectInfoPopover';
+import AdditionalPopup from '../Modals/AdditionalPopup';
 
 interface Props {
     className?: string; // This will allow you to pass a CSS class to your HeaderBanner component
@@ -9,6 +10,7 @@ interface Props {
 
 const HeaderBanner: React.FC<Props> = ({ className }) => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [additionalIsOpen, setAdditionalIsOpen] = useState(false);
 	return (
 		<Navbar className={`${className} .header-banner-class-name`}>
 			<Navbar.Group align={Alignment.LEFT} className={`${className } background`}>
@@ -21,8 +23,10 @@ const HeaderBanner: React.FC<Props> = ({ className }) => {
 				<Navbar.Heading className='custom-title'> BEAN</Navbar.Heading>
 			</Navbar.Group>
 			<Navbar.Group align={Alignment.RIGHT}>
-				<Button className="bp5-minimal" icon="info-sign" text="About" onClick={() => setIsOpen(true)}/>
-				<ProjectInfoPopup isOpen = {isOpen} onClose = {()=> setIsOpen(false)}/>
+				<Button className="bp5-minimal" icon="manual" text="Nomenclature" onClick={() => setIsOpen(true)}/>
+				<ProjectInfoPopup isOpen={isOpen} onClose={() => setIsOpen(false)} />
+				<Button className="bp5-minimal" icon="info-sign" text="About" onClick={() => setAdditionalIsOpen(true)}/>
+				<AdditionalPopup isOpen={additionalIsOpen} onClose={() => setAdditionalIsOpen(false)}/>
 			</Navbar.Group>
 		</Navbar>
 	);

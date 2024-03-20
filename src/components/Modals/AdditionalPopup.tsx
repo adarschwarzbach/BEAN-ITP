@@ -2,19 +2,19 @@
 import React from 'react';
 import { Dialog, Button } from '@blueprintjs/core';
 import '@blueprintjs/core/lib/css/blueprint.css';
-import Nomenclature from '../Header/Nomenclature';
 
 interface PopupProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
-const ProjectInfoPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
+const AdditionalPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 	return (
 		<Dialog
 			className="bp5-dark"  // Add bp5-dark for dark mode
-			icon="manual"
+			icon="info-sign"
 			onClose={onClose}
+			title="About BEAN"
 			isOpen={isOpen}
 			style={{
 				padding: '12px',
@@ -27,7 +27,7 @@ const ProjectInfoPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 				padding: '20px',
 				marginBottom: '20px'
 			}}>
-				<Nomenclature />
+				<text> Info about Bean</text>
 			</div>
 
 			<div style={{
@@ -41,4 +41,4 @@ const ProjectInfoPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 	);
 };
 
-export default ProjectInfoPopup;
+export default AdditionalPopup;
