@@ -198,7 +198,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 							onInteraction={(nextOpen) => setPkaTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
 						>
-							<FormGroup label={<span>pK<sub>a</sub></span>} // This line has been updated
+							<FormGroup label={<span>p<span style={{ fontStyle: 'italic' }}>K</span><sub>a</sub></span>}
 								style={{ flex: 1, marginRight: 20, minWidth: 48 }}
 							>
 								<InputGroup 
