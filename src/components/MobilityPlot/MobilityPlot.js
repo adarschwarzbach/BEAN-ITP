@@ -117,7 +117,7 @@ const MobilityPlot = () => {
 
 	return (
 		<div style={{ margin: '14px' }}>
-			<div style={{ height:18 }}></div>
+			<div style={{ height: 18 }}></div>
 			
 			<div style={{ width: '800px', height: '300px', color: 'white' }}>
 				<Line data={{ datasets: datasets }} options={optionsWithoutIonicEffect} />
