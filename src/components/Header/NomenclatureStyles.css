@@ -72,3 +72,38 @@
     font-size: 16px;
   }
   
+  /* Adjusting superscript and subscript specifically for scientific notation */
+.superscript,
+.subscript {
+  font-size: smaller;
+}
+
+.superscript {
+  vertical-align: super;
+}
+
+.subscript {
+  vertical-align: sub;
+}
+
+/* Additional styling for scientific notation */
+.notation {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.notation .base {
+  line-height: normal;
+}
+
+.notation .superscript {
+  line-height: normal;
+  font-size: smaller;
+}
+
+.notation .subscript {
+  line-height: normal;
+  font-size: smaller;
+}

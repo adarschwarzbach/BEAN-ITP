@@ -31,7 +31,23 @@ const Nomenclature = () => {
 						</tr>
 					</tbody>
 				</table>
-				<p>Subscripts indicate chemical species (e.g., the leading ion) and superscripts indicate the zone of interest (e.g., the leading electrolyte zone). Species type and zone abbreviations are listed in the tables below. For example, μ<sub>AATE</sub> and c<sub>LLIE</sub> refer to the effective mobility of the sample in the ATE region and the concentration of the leading ion within the leading electrolyte zone. μ<sub>Xo</sub> denotes the fully ionized mobility of species X and c<sub>Xi</sub> denotes the initial concentration of species X as specified in the user inputs.</p>
+				<div>
+					<p>Subscripts indicate chemical species (e.g., the leading ion) and superscripts indicate the zone
+         of interest (e.g., the leading electrolyte zone). Species type and zone abbreviations are listed
+         in the tables below. For example, μ<sub>AATE</sub> and c<sub>LLIE</sub> refer to the effective mobility of the sample
+         in the ATE region and the concentration of the leading ion within the leading electrolyte
+         zone. μ<sub>X<sup>o</sup></sub> denotes the fully ionized mobility of species X, and c<sub>X<sub>i</sub></sub> denotes the initial
+         concentration of species X as specified in the user inputs. We also use these commonly
+         defined notations:</p>
+					<p>pH = -log<sub>10</sub> [H<sup>+</sup>], where c<sub>o</sub> = 1 M and pK<sub>a</sub> = -log<sub>10</sub> K<sub>a</sub>, where
+         K<sub>a</sub> is the acid dissociation constant.</p>
+
+					{/* Correcting the representation of nested subscripts and superscripts */}
+					<p>For example, the notation for the initial concentration of species X would be correctly
+         represented in JSX as: c<sub>X<sub>i</sub></sub> for clarity.</p>
+      
+					<p>The electrophoretic mobility notation might be represented as μ<sub>X<sup>o</sup></sub>, indicating the fully ionized mobility.</p>
+				</div>
 			</section>
 
 			<section>
