@@ -189,7 +189,42 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 				fill="#D3D8DE"
 				style={{ fontWeight: '800', marginBottom: '3px', marginLeft:24, fontSize: title.length > 20 ? 12 : 14 }}
 			>
-				{title}
+				{<svg width="200" height={title === 'Sample Mobility Ratio' || title === 'Sample Pre Concentration' ? '50' : '30'}>
+					{title === 'Sample Mobility Ratio' && (
+						<>
+							<text textAnchor="middle" fill="#D3D8DE" x="100" y="15" fontSize="14" style={{ fontStyle: 'italic' }}>
+            μ<tspan baselineShift="sub" fontSize="10">A</tspan>
+								<tspan baselineShift="super" fontSize="10" dx = '-6'>ATE</tspan>
+							</text>
+							<line x1="75" y1="25" x2="125" y2="25" stroke="#D3D8DE" strokeWidth="1"/>
+							<text textAnchor="middle" fill="#D3D8DE" x="100" y="40" fontSize="14" style={{ fontStyle: 'italic' }}>
+            μ<tspan baselineShift="sub" fontSize="10">TI</tspan>
+								<tspan baselineShift="super" fontSize="10" dx = '-8'>ATE</tspan>
+							</text>
+						</>
+					)}
+
+					{title === 'Sample Pre Concentration' && (
+						<>
+							<text textAnchor="middle" fill="#D3D8DE" x="100" y="15" fontSize="14" style={{ fontStyle: 'italic' }}>
+            C<tspan baselineShift="super" fontSize="10">S</tspan>
+								<tspan baselineShift="sub" fontSize="10" dx = '-8'>A</tspan>
+							</text>
+							<line x1="75" y1="25" x2="125" y2="25" stroke="#D3D8DE" strokeWidth="1"/>
+							<text textAnchor="middle" fill="#D3D8DE" x="100" y="40" fontSize="14" style={{ fontStyle: 'italic' }}>
+            C<tspan baselineShift="super" fontSize="10" dx='1'>i</tspan>
+								<tspan baselineShift="sub" fontSize="10"  dx = '-6' >A</tspan>
+							</text>
+						</>
+					)}
+
+					{title === 'pH in Sample Region' && (
+						<text textAnchor="middle" fill="#D3D8DE" x="100" y="28" fontSize="14">
+          pH<tspan fontSize="12"  dy = '-7' style={{ fontStyle: 'italic' }}>s</tspan>
+						</text>
+					)}
+				</svg>}
+
 			</text>
 
 			{renderData && (
