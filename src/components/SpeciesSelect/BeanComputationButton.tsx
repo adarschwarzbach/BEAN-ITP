@@ -48,7 +48,8 @@ const BeanComputationButton: React.FC = () => {
 				const parsedMobility = JSON.parse(mobility_data.body);
 				setMobilityData({
 					lin_pH: parsedMobility.lin_pH, // Example data
-					sol1:parsedMobility.sol1, // Example data
+					sol1: parsedMobility.sol1, // Example data
+					sol2:  parsedMobility.sol2
 				});
 				setMobilityPlotLoading(false);
 

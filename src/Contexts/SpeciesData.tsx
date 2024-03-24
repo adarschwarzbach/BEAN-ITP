@@ -105,7 +105,8 @@ interface HeatmapV2 {
 
 interface MobilityData {
     lin_pH: number[];
-    sol1: number[][];
+	sol1: number[][];
+	sol2: number[][];
 }
 
 

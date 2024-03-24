@@ -348,10 +348,10 @@ def create_mobility_plots(
     return lin_pH, sol
 
 
-concentrations = np.array([10e-3, 20e-3, 5e-3, 10e-3])
+concentrations = np.array([10e-3, 20e-3, 1e-3, 5e-3])
 valences = [[-1], [1], [-1], [-1]]
-pKa = [[-2], [8.076], [8.1], [7.5]]
-mobilities = [[-7.91e-8], [2.95e-8], [-23e-9], [-2.6e-8]]
+pKa = [[-2], [8.076], [7.2], [7.5]]
+mobilities = [[-7.91e-8], [2.95e-8], [-2.69e-8], [-2.35e-8]]
 labels = ["HCl", "Tris", "MOPS", "HEPES"]
 
 # sol1, sol2 are the values to plot on the y-axis. lin_pH is the x-axis.
