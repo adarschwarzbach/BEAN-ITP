@@ -219,7 +219,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					)}
 
 					{title === 'pH in Sample Region' && (
-						<text textAnchor="middle" fill="#D3D8DE" x="100" y="28" fontSize="14">
+						<text textAnchor="middle" fill="#D3D8DE" x="100" y="24" fontSize="14">
           pH<tspan fontSize="12"  dy = '-7' style={{ fontStyle: 'italic' }}>s</tspan>
 						</text>
 					)}
@@ -388,7 +388,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					/>
 					{/* Adding min and max labels to the gradient bar */}
 					<text x={60} y={15} fontSize={11} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(1)}</text>
-					<text x={155} y={15} fontSize={11} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(1)}</text>
+					<text x={155} y={15} fontSize={11} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(0)}</text>
 					{/* <text x={98} y={22} fontSize={11} textAnchor="start" fill="#D3D8DE">
 						{'units'}
 					</text> */}
