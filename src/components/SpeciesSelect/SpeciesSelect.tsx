@@ -1,4 +1,4 @@
-import commonSpeciesData from './commonSpecies.json';
+import commonSpeciesData from './updated_species.json';
 import React, { useState, useContext } from 'react';
 import { Select, ItemRenderer } from '@blueprintjs/select';
 import { Button, MenuItem} from '@blueprintjs/core';

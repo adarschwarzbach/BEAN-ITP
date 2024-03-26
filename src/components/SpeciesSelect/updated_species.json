@@ -1,0 +1,6923 @@
+[
+    {
+        "name": "2-AMINO-2-METHYL-1-PROPANOL",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.33
+        ],
+        "pKa": [
+            9.72
+        ]
+    },
+    {
+        "name": "2-BROMOBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            2.987
+        ]
+    },
+    {
+        "name": "2-BROMOPROPIONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            2.975
+        ]
+    },
+    {
+        "name": "2-CHLORO-3-OH-BUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            2.602
+        ]
+    },
+    {
+        "name": "2-CHLOROBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            2.839
+        ]
+    },
+    {
+        "name": "2-CHLOROCROTONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.54
+        ],
+        "pKa": [
+            3.155
+        ]
+    },
+    {
+        "name": "2-CHLOROISOCROTONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.54
+        ],
+        "pKa": [
+            2.81
+        ]
+    },
+    {
+        "name": "2-CHLOROPROPIONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.69
+        ],
+        "pKa": [
+            2.796
+        ]
+    },
+    {
+        "name": "2-ETHYLBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.02
+        ],
+        "pKa": [
+            4.734
+        ]
+    },
+    {
+        "name": "2-HYDROXY-3-CHLOROBUTYRIC A.",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            3.092
+        ]
+    },
+    {
+        "name": "2-HYDROXY-3-Cl-ISOBUTYRIC A.",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            3.208
+        ]
+    },
+    {
+        "name": "2-HYDROXY-3-Cl-PROPIONIC A.",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.65
+        ],
+        "pKa": [
+            3.124
+        ]
+    },
+    {
+        "name": "2-HYDROXY-m-TOLUIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            3.0
+        ]
+    },
+    {
+        "name": "2-HYDROXYBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.43
+        ],
+        "pKa": [
+            3.979
+        ]
+    },
+    {
+        "name": "2-HYDROXYISOBUTYRIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.35
+        ],
+        "pKa": [
+            3.971
+        ]
+    },
+    {
+        "name": "2-HYDROXYVALERIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            3.886
+        ]
+    },
+    {
+        "name": "2-KETOGLUTARIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.36,
+            -5.9
+        ],
+        "pKa": [
+            2.8,
+            5.006
+        ]
+    },
+    {
+        "name": "2-METHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.01
+        ],
+        "pKa": [
+            6.2
+        ]
+    },
+    {
+        "name": "2-NAPHTALENESULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            0.167
+        ]
+    },
+    {
+        "name": "2-NITRO-3-BROMOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.82
+        ],
+        "pKa": [
+            2.495
+        ]
+    },
+    {
+        "name": "2-NITRO-3-CHLOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            2.398
+        ]
+    },
+    {
+        "name": "2-PHENYLPROPIONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.65
+        ],
+        "pKa": [
+            2.237
+        ]
+    },
+    {
+        "name": "2.3-DIBROMOPROPIONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            2.201
+        ]
+    },
+    {
+        "name": "2.3-DIMETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.71
+        ],
+        "pKa": [
+            3.738
+        ]
+    },
+    {
+        "name": "2.3-DIMETHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.49
+        ],
+        "pKa": [
+            6.57
+        ]
+    },
+    {
+        "name": "2.3-DINITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            4.018
+        ]
+    },
+    {
+        "name": "2.4-DICHLOROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            7.699
+        ]
+    },
+    {
+        "name": "2.4-DICHLOROPHENOXYACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.5
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "2.4-DIHYDROXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.2
+        ],
+        "pKa": [
+            3.395
+        ]
+    },
+    {
+        "name": "2.4-DIMETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.71
+        ],
+        "pKa": [
+            4.182
+        ]
+    },
+    {
+        "name": "2.4-DIMETHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.49
+        ],
+        "pKa": [
+            6.99
+        ]
+    },
+    {
+        "name": "2.4-DINITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            4.11
+        ]
+    },
+    {
+        "name": "2.4.6-TRIMETHYLANILINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.44
+        ],
+        "pKa": [
+            4.38
+        ]
+    },
+    {
+        "name": "2.4.6-TRIMETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.47
+        ],
+        "pKa": [
+            3.437
+        ]
+    },
+    {
+        "name": "2.4.6-TRIMETHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.18
+        ],
+        "pKa": [
+            6.688
+        ]
+    },
+    {
+        "name": "2.5-DIHYDROXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            2.975
+        ]
+    },
+    {
+        "name": "2.5-DIMETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.71
+        ],
+        "pKa": [
+            3.977
+        ]
+    },
+    {
+        "name": "2.5-DIMETHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.49
+        ],
+        "pKa": [
+            6.43
+        ]
+    },
+    {
+        "name": "2.5-DINITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            5.216
+        ]
+    },
+    {
+        "name": "2.6-DIHYDROXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.72
+        ],
+        "pKa": [
+            1.301
+        ]
+    },
+    {
+        "name": "2.6-DIMETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.71
+        ],
+        "pKa": [
+            3.246
+        ]
+    },
+    {
+        "name": "2.6-DIMETHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.49
+        ],
+        "pKa": [
+            6.75
+        ]
+    },
+    {
+        "name": "2.6-DINITROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            1.14
+        ]
+    },
+    {
+        "name": "2.6-DINITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            3.706
+        ]
+    },
+    {
+        "name": "3-CHLOROBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            4.056
+        ]
+    },
+    {
+        "name": "3-CHLOROCROTONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.54
+        ],
+        "pKa": [
+            3.848
+        ]
+    },
+    {
+        "name": "3-CHLOROPROPIONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.69
+        ],
+        "pKa": [
+            3.867
+        ]
+    },
+    {
+        "name": "3-ETHYLGLUTARIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.5,
+            -5.0
+        ],
+        "pKa": [
+            4.287,
+            5.329
+        ]
+    },
+    {
+        "name": "3-HYDROXY-o-TOLUIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            2.983
+        ]
+    },
+    {
+        "name": "3-HYDROXY-p-TOLUIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            3.143
+        ]
+    },
+    {
+        "name": "3-HYDROXYBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.43
+        ],
+        "pKa": [
+            4.519
+        ]
+    },
+    {
+        "name": "3-IODOPROPIONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.65
+        ],
+        "pKa": [
+            4.056
+        ]
+    },
+    {
+        "name": "3-METHOXYPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.0
+        ],
+        "pKa": [
+            4.91
+        ]
+    },
+    {
+        "name": "3-METHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.01
+        ],
+        "pKa": [
+            5.52
+        ]
+    },
+    {
+        "name": "3-NITRO-2-BROMOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.82
+        ],
+        "pKa": [
+            2.979
+        ]
+    },
+    {
+        "name": "3-NITRO-4-BROMOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.82
+        ],
+        "pKa": [
+            3.377
+        ]
+    },
+    {
+        "name": "3-NITRO-4-CHLOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            3.357
+        ]
+    },
+    {
+        "name": "3-NITRO-5-CHLOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            3.13
+        ]
+    },
+    {
+        "name": "3-PHENYLPROPIONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.65
+        ],
+        "pKa": [
+            4.664
+        ]
+    },
+    {
+        "name": "3-PROPYLGLUTARIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.35,
+            -4.7
+        ],
+        "pKa": [
+            4.312,
+            5.386
+        ]
+    },
+    {
+        "name": "3.4-DIHYDROXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            4.509
+        ]
+    },
+    {
+        "name": "3.4-DIMETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.71
+        ],
+        "pKa": [
+            4.408
+        ]
+    },
+    {
+        "name": "3.4-DIMETHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.49
+        ],
+        "pKa": [
+            6.47
+        ]
+    },
+    {
+        "name": "3.4-DINITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            5.424
+        ]
+    },
+    {
+        "name": "3.5-DIHYDROXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            4.051
+        ]
+    },
+    {
+        "name": "3.5-DIMETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.71
+        ],
+        "pKa": [
+            4.301
+        ]
+    },
+    {
+        "name": "3.5-DIMETHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.49
+        ],
+        "pKa": [
+            6.15
+        ]
+    },
+    {
+        "name": "3.5-DINITROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.93
+        ],
+        "pKa": [
+            2.824
+        ]
+    },
+    {
+        "name": "3.5-DINITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            6.699
+        ]
+    },
+    {
+        "name": "4-BROMOBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            4.585
+        ]
+    },
+    {
+        "name": "4-HYDROXY-m-TOLUIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            3.066
+        ]
+    },
+    {
+        "name": "4-HYDROXYBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.43
+        ],
+        "pKa": [
+            4.721
+        ]
+    },
+    {
+        "name": "4-HYDROXYVALERIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            4.699
+        ]
+    },
+    {
+        "name": "4-IODOBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            4.638
+        ]
+    },
+    {
+        "name": "4-METHOXYPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.0
+        ],
+        "pKa": [
+            6.47
+        ]
+    },
+    {
+        "name": "4-METHYLPYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.01
+        ],
+        "pKa": [
+            6.08
+        ]
+    },
+    {
+        "name": "4-PHENYLBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.47
+        ],
+        "pKa": [
+            4.757
+        ]
+    },
+    {
+        "name": "5-BROMO-2.4-DIHYDROXYBENZOIC A",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.76,
+            -5.07
+        ],
+        "pKa": [
+            3.0,
+            7.6
+        ]
+    },
+    {
+        "name": "5-BROMOVALERIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            4.721
+        ]
+    },
+    {
+        "name": "5-CHLOROVALERIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            4.697
+        ]
+    },
+    {
+        "name": "5-IODOVALERIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            4.77
+        ]
+    },
+    {
+        "name": "6-HYDROXY-o-TOLUIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            3.321
+        ]
+    },
+    {
+        "name": "a-Amino-n-Butyric Acid",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.05,
+            3.05
+        ],
+        "pKa": [
+            2.286,
+            9.827
+        ]
+    },
+    {
+        "name": "ACETIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.24
+        ],
+        "pKa": [
+            4.756
+        ]
+    },
+    {
+        "name": "ACRYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.27
+        ],
+        "pKa": [
+            4.258
+        ]
+    },
+    {
+        "name": "ADIPIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.46,
+            -5.24
+        ],
+        "pKa": [
+            4.43,
+            5.277
+        ]
+    },
+    {
+        "name": "ADP",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -1.92,
+            -3.67,
+            -5.37
+        ],
+        "pKa": [
+            0.0,
+            4.101,
+            7.056
+        ]
+    },
+    {
+        "name": "Ala-Ala",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.7,
+            2.7
+        ],
+        "pKa": [
+            3.17,
+            8.49
+        ]
+    },
+    {
+        "name": "Ala-Amin",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.58,
+            2.58
+        ],
+        "pKa": [
+            3.0,
+            8.495
+        ]
+    },
+    {
+        "name": "Ala-Asn",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.55,
+            2.55
+        ],
+        "pKa": [
+            3.0,
+            8.47
+        ]
+    },
+    {
+        "name": "Ala-Gly",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.88,
+            2.88
+        ],
+        "pKa": [
+            3.0,
+            8.39
+        ]
+    },
+    {
+        "name": "Ala-Leu",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.39,
+            2.39
+        ],
+        "pKa": [
+            3.0,
+            8.505
+        ]
+    },
+    {
+        "name": "Ala-Met",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.42,
+            2.42
+        ],
+        "pKa": [
+            3.0,
+            8.463
+        ]
+    },
+    {
+        "name": "Ala-Phe",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.39,
+            2.39
+        ],
+        "pKa": [
+            3.0,
+            8.502
+        ]
+    },
+    {
+        "name": "Ala-Ser",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.62,
+            2.62
+        ],
+        "pKa": [
+            3.0,
+            8.297
+        ]
+    },
+    {
+        "name": "Ala-Val",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.52,
+            2.52
+        ],
+        "pKa": [
+            3.0,
+            8.5
+        ]
+    },
+    {
+        "name": "Alanine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.22,
+            3.22
+        ],
+        "pKa": [
+            2.348,
+            9.857
+        ]
+    },
+    {
+        "name": "ALLYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.39
+        ],
+        "pKa": [
+            4.674
+        ]
+    },
+    {
+        "name": "ALLYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.43
+        ],
+        "pKa": [
+            9.69
+        ]
+    },
+    {
+        "name": "ALUMINIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.32,
+            4.21,
+            2.11
+        ],
+        "pKa": [
+            4.9,
+            6.0,
+            7.0
+        ]
+    },
+    {
+        "name": "AMEDIOL",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.2
+        ],
+        "pKa": [
+            8.78
+        ]
+    },
+    {
+        "name": "AMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            7.62
+        ],
+        "pKa": [
+            13.0
+        ]
+    },
+    {
+        "name": "AMP",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.26,
+            -3.95
+        ],
+        "pKa": [
+            3.981,
+            6.791
+        ]
+    },
+    {
+        "name": "AMYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.41
+        ],
+        "pKa": [
+            10.63
+        ]
+    },
+    {
+        "name": "AMYLBUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.48
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "AMYLBUTYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.38
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "AMYLDIETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.84
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "AMYLDIPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.51
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "AMYLHEPTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.14
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "AMYLHEXYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.24
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "AMYLMETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.01
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "AMYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.63
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "AMYLTRIMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.26
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "ANILINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.0
+        ],
+        "pKa": [
+            4.596
+        ]
+    },
+    {
+        "name": "ARGININE",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            5.3,
+            2.65,
+            2.65
+        ],
+        "pKa": [
+            1.823,
+            9.116,
+            12.48
+        ]
+    },
+    {
+        "name": "Arginine",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            5.38,
+            2.69,
+            2.69
+        ],
+        "pKa": [
+            1.823,
+            8.919,
+            12.48
+        ]
+    },
+    {
+        "name": "ARSENIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.52,
+            -7.0
+        ],
+        "pKa": [
+            2.19,
+            6.94
+        ]
+    },
+    {
+        "name": "ASCORBIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.55,
+            -5.1
+        ],
+        "pKa": [
+            4.25,
+            10.5
+        ]
+    },
+    {
+        "name": "Asparagine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.16,
+            3.16
+        ],
+        "pKa": [
+            2.18,
+            9.03
+        ]
+    },
+    {
+        "name": "ASPARTIC ACID",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -3.01,
+            -3.01,
+            -5.54
+        ],
+        "pKa": [
+            1.99,
+            3.9,
+            10.002
+        ]
+    },
+    {
+        "name": "ASPIRIN",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.67
+        ],
+        "pKa": [
+            3.485
+        ]
+    },
+    {
+        "name": "AZELAIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.2,
+            -4.59
+        ],
+        "pKa": [
+            4.55,
+            5.333
+        ]
+    },
+    {
+        "name": "b-Ala-His",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.44,
+            2.44
+        ],
+        "pKa": [
+            3.0,
+            9.664
+        ]
+    },
+    {
+        "name": "b-Alanine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.67,
+            3.08
+        ],
+        "pKa": [
+            3.552,
+            10.241
+        ]
+    },
+    {
+        "name": "BARIUM",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.6,
+            3.3
+        ],
+        "pKa": [
+            13.2,
+            13.7
+        ]
+    },
+    {
+        "name": "BENZENESULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.87
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "BENZOIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.36
+        ],
+        "pKa": [
+            4.203
+        ]
+    },
+    {
+        "name": "BENZYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.47
+        ],
+        "pKa": [
+            9.33
+        ]
+    },
+    {
+        "name": "BENZYLASPARATIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.58,
+            -2.58
+        ],
+        "pKa": [
+            -3.0,
+            4.855
+        ]
+    },
+    {
+        "name": "BENZYLDIETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.46
+        ],
+        "pKa": [
+            9.48
+        ]
+    },
+    {
+        "name": "BERYLLIUM",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            4.66,
+            2.33
+        ],
+        "pKa": [
+            3.2,
+            4.2
+        ]
+    },
+    {
+        "name": "BIS-TRIS",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.6
+        ],
+        "pKa": [
+            6.4
+        ]
+    },
+    {
+        "name": "BORIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.0
+        ],
+        "pKa": [
+            9.24
+        ]
+    },
+    {
+        "name": "BROMIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.78
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "BROMOACETIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.06
+        ],
+        "pKa": [
+            2.901
+        ]
+    },
+    {
+        "name": "BUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.77
+        ],
+        "pKa": [
+            10.59
+        ]
+    },
+    {
+        "name": "BUTYLDIETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.04
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "BUTYLDIPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.66
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "BUTYLETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.01
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "BUTYLETHYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.84
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "BUTYLHEXYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.35
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "BUTYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.8
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "BUTYLTRIETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.84
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "BUTYLTRIMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.45
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "BUTYRIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.38
+        ],
+        "pKa": [
+            4.82
+        ]
+    },
+    {
+        "name": "CACODYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.99
+        ],
+        "pKa": [
+            6.184
+        ]
+    },
+    {
+        "name": "CADMIUM",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.6,
+            2.8
+        ],
+        "pKa": [
+            7.6,
+            8.6
+        ]
+    },
+    {
+        "name": "CALCIUM",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.17,
+            3.09
+        ],
+        "pKa": [
+            12.6,
+            13.6
+        ]
+    },
+    {
+        "name": "CAPRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.21
+        ],
+        "pKa": [
+            5.0
+        ]
+    },
+    {
+        "name": "CAPROIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.02
+        ],
+        "pKa": [
+            4.857
+        ]
+    },
+    {
+        "name": "CAPRYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.74
+        ],
+        "pKa": [
+            4.894
+        ]
+    },
+    {
+        "name": "CARBONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.61,
+            -7.18
+        ],
+        "pKa": [
+            6.352,
+            10.329
+        ]
+    },
+    {
+        "name": "CDP",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -1.95,
+            -4.0,
+            -5.73
+        ],
+        "pKa": [
+            0.0,
+            4.782,
+            7.349
+        ]
+    },
+    {
+        "name": "CERIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            7.24,
+            4.83,
+            2.41
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "CESIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            8.01
+        ],
+        "pKa": [
+            13.0
+        ]
+    },
+    {
+        "name": "CHLORIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -6.7
+        ],
+        "pKa": [
+            -2.7
+        ]
+    },
+    {
+        "name": "CHLOROACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.37
+        ],
+        "pKa": [
+            2.865
+        ]
+    },
+    {
+        "name": "CHLORODIBROMOACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.65
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "CHLORODIFLUOROACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.86
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "CHLOROUS ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.39
+        ],
+        "pKa": [
+            1.96
+        ]
+    },
+    {
+        "name": "CHROMIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -5.93,
+            -8.11
+        ],
+        "pKa": [
+            0.745,
+            6.49
+        ]
+    },
+    {
+        "name": "CHROMIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.94,
+            4.63,
+            2.31
+        ],
+        "pKa": [
+            3.95,
+            5.5,
+            6.5
+        ]
+    },
+    {
+        "name": "CINNAMIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.83
+        ],
+        "pKa": [
+            4.438
+        ]
+    },
+    {
+        "name": "cis-CINNAMIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.83
+        ],
+        "pKa": [
+            3.879
+        ]
+    },
+    {
+        "name": "CITRACONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.8,
+            -5.6
+        ],
+        "pKa": [
+            2.458,
+            6.146
+        ]
+    },
+    {
+        "name": "CITRIC ACID (S)",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -2.87,
+            -5.47,
+            -7.44
+        ],
+        "pKa": [
+            3.128,
+            4.761,
+            6.396
+        ]
+    },
+    {
+        "name": "CMP",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.37,
+            -4.06
+        ],
+        "pKa": [
+            4.468,
+            6.705
+        ]
+    },
+    {
+        "name": "COBALT",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.7,
+            2.85
+        ],
+        "pKa": [
+            11.2,
+            12.2
+        ]
+    },
+    {
+        "name": "COPPER",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.56,
+            3.23
+        ],
+        "pKa": [
+            7.3,
+            8.5
+        ]
+    },
+    {
+        "name": "CREATININE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.72
+        ],
+        "pKa": [
+            4.828
+        ]
+    },
+    {
+        "name": "CRESOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            10.287
+        ]
+    },
+    {
+        "name": "CROTONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.35
+        ],
+        "pKa": [
+            4.705
+        ]
+    },
+    {
+        "name": "CYANIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -6.7
+        ],
+        "pKa": [
+            3.47
+        ]
+    },
+    {
+        "name": "CYANOACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.5
+        ],
+        "pKa": [
+            2.469
+        ]
+    },
+    {
+        "name": "CYCLOBUTANE-1.1-DICARBOXYLIC A",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.55,
+            -5.11
+        ],
+        "pKa": [
+            3.127,
+            5.879
+        ]
+    },
+    {
+        "name": "CYCLOHEXANE-1.1-DICARBOXYLIC A",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.4,
+            -4.8
+        ],
+        "pKa": [
+            3.451,
+            4.11
+        ]
+    },
+    {
+        "name": "CYCLOHEXYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.25
+        ],
+        "pKa": [
+            10.66
+        ]
+    },
+    {
+        "name": "CYCLOPENTANE-1.1-DICARBOXYLIC",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.5,
+            -5.0
+        ],
+        "pKa": [
+            3.23,
+            4.08
+        ]
+    },
+    {
+        "name": "Cysteine",
+        "valence": [
+            1.0,
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            3.17,
+            3.17,
+            6.27
+        ],
+        "pKa": [
+            1.8,
+            8.6,
+            10.28
+        ]
+    },
+    {
+        "name": "Cystine",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            5.39,
+            2.7,
+            2.7
+        ],
+        "pKa": [
+            1.65,
+            2.26,
+            8.405
+        ]
+    },
+    {
+        "name": "DECAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            4.85,
+            2.55
+        ],
+        "pKa": [
+            10.5,
+            11.0
+        ]
+    },
+    {
+        "name": "DECYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.62
+        ],
+        "pKa": [
+            10.64
+        ]
+    },
+    {
+        "name": "DECYLSULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.69
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "DIAMYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.21
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "DIAMYLETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.38
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "DIBROMOFLUOROACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.86
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "DIBUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.56
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "DIBUTYLETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.66
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "DIBUTYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.51
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "DICHLOROACETIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.97
+        ],
+        "pKa": [
+            1.257
+        ]
+    },
+    {
+        "name": "DICHLOROFLUOROACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.65
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "DICHROMIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -5.89,
+            -8.21
+        ],
+        "pKa": [
+            0.745,
+            6.723
+        ]
+    },
+    {
+        "name": "DIETHYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.03
+        ],
+        "pKa": [
+            4.734
+        ]
+    },
+    {
+        "name": "DIETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.64
+        ],
+        "pKa": [
+            10.93
+        ]
+    },
+    {
+        "name": "DIETHYLDIMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.84
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "DIETHYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.5,
+            -4.95
+        ],
+        "pKa": [
+            2.211,
+            7.29
+        ]
+    },
+    {
+        "name": "DIETHYLMETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.9
+        ],
+        "pKa": [
+            10.43
+        ]
+    },
+    {
+        "name": "DIETHYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.27
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "DIFLUOROACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.06
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "DIHEXYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.21
+        ],
+        "pKa": [
+            11.01
+        ]
+    },
+    {
+        "name": "DIHYDROXYTARTARIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.2,
+            -6.0
+        ],
+        "pKa": [
+            1.947,
+            4.004
+        ]
+    },
+    {
+        "name": "DIISOAMYLAINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.46
+        ],
+        "pKa": [
+            10.98
+        ]
+    },
+    {
+        "name": "DIISOBUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.77
+        ],
+        "pKa": [
+            10.68
+        ]
+    },
+    {
+        "name": "DIMETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            5.39
+        ],
+        "pKa": [
+            10.77
+        ]
+    },
+    {
+        "name": "DIMETHYLBENZYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.97
+        ],
+        "pKa": [
+            8.93
+        ]
+    },
+    {
+        "name": "DIMETHYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.55,
+            -5.11
+        ],
+        "pKa": [
+            3.166,
+            6.059
+        ]
+    },
+    {
+        "name": "DIPHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.62
+        ],
+        "pKa": [
+            3.939
+        ]
+    },
+    {
+        "name": "DIPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.97
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "DIPROPYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.3,
+            -4.6
+        ],
+        "pKa": [
+            2.067,
+            7.51
+        ]
+    },
+    {
+        "name": "DITHIONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.82,
+            -9.64
+        ],
+        "pKa": [
+            0.2,
+            3.4
+        ]
+    },
+    {
+        "name": "DITHIONOUS ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.45,
+            -6.89
+        ],
+        "pKa": [
+            0.3,
+            2.5
+        ]
+    },
+    {
+        "name": "DODECAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            4.59,
+            2.42
+        ],
+        "pKa": [
+            10.7,
+            11.0
+        ]
+    },
+    {
+        "name": "DODECYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.47
+        ],
+        "pKa": [
+            10.63
+        ]
+    },
+    {
+        "name": "DODECYLSULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.49
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "DYSPROSIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.8,
+            4.53,
+            2.27
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "e-AMINOCAPROIC ACID",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.88
+        ],
+        "pKa": [
+            4.373
+        ]
+    },
+    {
+        "name": "ENANTHYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.84
+        ],
+        "pKa": [
+            4.893
+        ]
+    },
+    {
+        "name": "ERBIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.83,
+            4.55,
+            2.28
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "ETHANOLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.43
+        ],
+        "pKa": [
+            9.498
+        ]
+    },
+    {
+        "name": "ETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.89
+        ],
+        "pKa": [
+            10.63
+        ]
+    },
+    {
+        "name": "ETHYLDIPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.04
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "ETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            8.03,
+            4.23
+        ],
+        "pKa": [
+            6.838,
+            9.96
+        ]
+    },
+    {
+        "name": "ETHYLFUMARIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.92
+        ],
+        "pKa": [
+            3.325
+        ]
+    },
+    {
+        "name": "ETHYLMALEIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.92
+        ],
+        "pKa": [
+            2.959
+        ]
+    },
+    {
+        "name": "ETHYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.55,
+            -5.1
+        ],
+        "pKa": [
+            2.988,
+            5.833
+        ]
+    },
+    {
+        "name": "ETHYLMETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.03
+        ],
+        "pKa": [
+            10.8
+        ]
+    },
+    {
+        "name": "ETHYLMETHYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.55
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "ETHYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.27
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "ETHYLPROPYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.35,
+            -4.7
+        ],
+        "pKa": [
+            2.145,
+            7.43
+        ]
+    },
+    {
+        "name": "ETHYLSULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.1
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "ETHYLTRIMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.2
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "ETHYLTRIPROPYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.67
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "EUROPIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            7.03,
+            4.69,
+            2.34
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "FLUOROACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.6
+        ],
+        "pKa": [
+            2.584
+        ]
+    },
+    {
+        "name": "FORMIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.66
+        ],
+        "pKa": [
+            3.752
+        ]
+    },
+    {
+        "name": "FUMARIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.1,
+            -6.12
+        ],
+        "pKa": [
+            3.019,
+            4.384
+        ]
+    },
+    {
+        "name": "GADOLINIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.98,
+            4.65,
+            2.33
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "GALLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            4.469
+        ]
+    },
+    {
+        "name": "GDP",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -1.87,
+            -3.73,
+            -5.29
+        ],
+        "pKa": [
+            0.0,
+            2.958,
+            7.116
+        ]
+    },
+    {
+        "name": "GLUCONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.72
+        ],
+        "pKa": [
+            3.662
+        ]
+    },
+    {
+        "name": "GLUCURONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.67
+        ],
+        "pKa": [
+            3.677
+        ]
+    },
+    {
+        "name": "GLUTACONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.8,
+            -5.6
+        ],
+        "pKa": [
+            3.767,
+            5.077
+        ]
+    },
+    {
+        "name": "Glutamic Acid",
+        "valence": [
+            1.0,
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            2.7,
+            2.7,
+            5.39
+        ],
+        "pKa": [
+            2.162,
+            4.324,
+            9.845
+        ]
+    },
+    {
+        "name": "GLUTAMIC ACID (S)",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -2.7,
+            -2.7,
+            -5.43
+        ],
+        "pKa": [
+            2.155,
+            4.324,
+            9.96
+        ]
+    },
+    {
+        "name": "Glutamine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            5.43,
+            2.88
+        ],
+        "pKa": [
+            9.96,
+            2.17
+        ]
+    },
+    {
+        "name": "GLUTARIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.66,
+            -5.56
+        ],
+        "pKa": [
+            4.343,
+            5.272
+        ]
+    },
+    {
+        "name": "Gly-Ala",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.88,
+            2.88
+        ],
+        "pKa": [
+            9.224,
+            3.17
+        ]
+    },
+    {
+        "name": "Gly-Amin",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.88,
+            2.72
+        ],
+        "pKa": [
+            8.435,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Asn",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.72,
+            2.75
+        ],
+        "pKa": [
+            8.421,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Gly",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.74,
+            3.15
+        ],
+        "pKa": [
+            9.78,
+            3.14
+        ]
+    },
+    {
+        "name": "Gly-Ile",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.15,
+            2.52
+        ],
+        "pKa": [
+            8.4,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Leu",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.52,
+            2.51
+        ],
+        "pKa": [
+            8.412,
+            3.18
+        ]
+    },
+    {
+        "name": "Gly-Phe",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.51,
+            2.47
+        ],
+        "pKa": [
+            8.432,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Pro",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.47,
+            2.78
+        ],
+        "pKa": [
+            8.31,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Ser",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.78,
+            2.81
+        ],
+        "pKa": [
+            8.746,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Thr",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.81,
+            2.63
+        ],
+        "pKa": [
+            8.35,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Trp",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.63,
+            2.36
+        ],
+        "pKa": [
+            8.334,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Tyr",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.36,
+            1.97
+        ],
+        "pKa": [
+            8.359,
+            3.0
+        ]
+    },
+    {
+        "name": "Gly-Val",
+        "valence": [
+            1.0,
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            2.6,
+            1.97,
+            3.94
+        ],
+        "pKa": [
+            3.17,
+            8.211,
+            9.981
+        ]
+    },
+    {
+        "name": "GLYCERIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.64
+        ],
+        "pKa": [
+            3.737
+        ]
+    },
+    {
+        "name": "Glycine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.75,
+            3.74
+        ],
+        "pKa": [
+            8.388,
+            2.35
+        ]
+    },
+    {
+        "name": "GLYCOLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.24
+        ],
+        "pKa": [
+            3.886
+        ]
+    },
+    {
+        "name": "GLYOXYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.96
+        ],
+        "pKa": [
+            3.337
+        ]
+    },
+    {
+        "name": "GMP",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -2.17,
+            -3.8,
+            -5.43
+        ],
+        "pKa": [
+            2.845,
+            6.512,
+            9.5
+        ]
+    },
+    {
+        "name": "HEPES",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.35
+        ],
+        "pKa": [
+            7.5
+        ]
+    },
+    {
+        "name": "HEPTAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.64,
+            2.97
+        ],
+        "pKa": [
+            9.9,
+            11.0
+        ]
+    },
+    {
+        "name": "HEPTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.06
+        ],
+        "pKa": [
+            10.66
+        ]
+    },
+    {
+        "name": "HEPTYLTRIMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.84
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "HEXAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.03,
+            3.17
+        ],
+        "pKa": [
+            9.84,
+            10.93
+        ]
+    },
+    {
+        "name": "HEXYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.35
+        ],
+        "pKa": [
+            10.64
+        ]
+    },
+    {
+        "name": "HEXYLTRIMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.03
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "HIPPURIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.53,
+            -5.51
+        ],
+        "pKa": [
+            2.7,
+            7.271
+        ]
+    },
+    {
+        "name": "Histidine",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            5.92,
+            2.96,
+            2.6,
+            2.83
+        ],
+        "pKa": [
+            1.82,
+            6.04,
+            8.385,
+            9.33
+        ]
+    },
+    {
+        "name": "HOLMIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.87,
+            4.58,
+            2.29
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "HYDROBROMIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -8.1
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "HYDROCHLORIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -7.91
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "HYDROCYANIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -8.09
+        ],
+        "pKa": [
+            9.4
+        ]
+    },
+    {
+        "name": "HYDROFLUORIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.74
+        ],
+        "pKa": [
+            3.173
+        ]
+    },
+    {
+        "name": "HYDROGEN AZIDE",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -7.2
+        ],
+        "pKa": [
+            4.72
+        ]
+    },
+    {
+        "name": "HYDROGEN HEXAFLUOROPHOSPHIDE",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.9
+        ],
+        "pKa": [
+            0.0
+        ]
+    },
+    {
+        "name": "HYDROGEN SULFIDE",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -6.74
+        ],
+        "pKa": [
+            6.96
+        ]
+    },
+    {
+        "name": "HYDROIODIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -7.96
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "HYDROXYLYSINE",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            4.58,
+            2.29,
+            2.29
+        ],
+        "pKa": [
+            2.13,
+            8.62,
+            9.67
+        ]
+    },
+    {
+        "name": "HYDROXYPROLINE",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.01,
+            3.01
+        ],
+        "pKa": [
+            1.818,
+            9.816
+        ]
+    },
+    {
+        "name": "HYDROXYTRIMETHYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            4.863
+        ]
+    },
+    {
+        "name": "HYPOPHOSPHOROUS ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.51
+        ],
+        "pKa": [
+            1.1
+        ]
+    },
+    {
+        "name": "I2-Tyr",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            2.1,
+            4.2
+        ],
+        "pKa": [
+            6.5,
+            9.69
+        ]
+    },
+    {
+        "name": "IMIDAZOLE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            5.2
+        ],
+        "pKa": [
+            7.15
+        ]
+    },
+    {
+        "name": "IODIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.2
+        ],
+        "pKa": [
+            0.77
+        ]
+    },
+    {
+        "name": "IODOACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.21
+        ],
+        "pKa": [
+            3.174
+        ]
+    },
+    {
+        "name": "IRON(II)",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.6,
+            2.8
+        ],
+        "pKa": [
+            8.3,
+            9.3
+        ]
+    },
+    {
+        "name": "ISOAMYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.49
+        ],
+        "pKa": [
+            10.6
+        ]
+    },
+    {
+        "name": "ISOBUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.94
+        ],
+        "pKa": [
+            10.43
+        ]
+    },
+    {
+        "name": "ISOBUTYRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            4.86
+        ]
+    },
+    {
+        "name": "ISOCAPROIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.03
+        ],
+        "pKa": [
+            4.845
+        ]
+    },
+    {
+        "name": "ISOCITRIC ACID",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -2.9,
+            -5.5,
+            -7.4
+        ],
+        "pKa": [
+            3.25,
+            4.72,
+            6.38
+        ]
+    },
+    {
+        "name": "ISOLEUCINE",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.67,
+            2.67
+        ],
+        "pKa": [
+            2.318,
+            9.765
+        ]
+    },
+    {
+        "name": "ISOPHTHALIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.8,
+            -5.3
+        ],
+        "pKa": [
+            3.72,
+            4.6
+        ]
+    },
+    {
+        "name": "ISOPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.13
+        ],
+        "pKa": [
+            10.72
+        ]
+    },
+    {
+        "name": "ISOPROPYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.6,
+            -5.2
+        ],
+        "pKa": [
+            2.943,
+            5.879
+        ]
+    },
+    {
+        "name": "ISOVALERIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.21
+        ],
+        "pKa": [
+            4.78
+        ]
+    },
+    {
+        "name": "ITACONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.8,
+            -5.6
+        ],
+        "pKa": [
+            3.815,
+            5.449
+        ]
+    },
+    {
+        "name": "LACTIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.65
+        ],
+        "pKa": [
+            3.86
+        ]
+    },
+    {
+        "name": "LANTHANUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            7.23,
+            4.82,
+            2.41
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "LAURYLSULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.29
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "LEAD",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            7.2,
+            3.6
+        ],
+        "pKa": [
+            7.8,
+            9.9
+        ]
+    },
+    {
+        "name": "Leu-Gly",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.5,
+            2.5
+        ],
+        "pKa": [
+            3.28,
+            8.269
+        ]
+    },
+    {
+        "name": "Leu-Leu",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.16,
+            2.16
+        ],
+        "pKa": [
+            3.0,
+            8.397
+        ]
+    },
+    {
+        "name": "Leu-Phe",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.18,
+            2.18
+        ],
+        "pKa": [
+            3.0,
+            8.413
+        ]
+    },
+    {
+        "name": "Leu-Tyr",
+        "valence": [
+            1.0,
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            1.82,
+            1.82,
+            3.64
+        ],
+        "pKa": [
+            3.0,
+            7.828,
+            10.065
+        ]
+    },
+    {
+        "name": "Leu-Val",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.23,
+            2.23
+        ],
+        "pKa": [
+            3.0,
+            8.364
+        ]
+    },
+    {
+        "name": "Leucine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.64,
+            2.64
+        ],
+        "pKa": [
+            2.318,
+            9.728
+        ]
+    },
+    {
+        "name": "LEVULINIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            4.602
+        ]
+    },
+    {
+        "name": "LITHIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.01
+        ],
+        "pKa": [
+            13.8
+        ]
+    },
+    {
+        "name": "LUTETIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.7,
+            4.47,
+            2.23
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "LYSINE",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            5.24,
+            2.62,
+            2.62
+        ],
+        "pKa": [
+            2.16,
+            9.318,
+            10.79
+        ]
+    },
+    {
+        "name": "Lysine",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            5.28,
+            2.64,
+            2.64
+        ],
+        "pKa": [
+            2.318,
+            9.127,
+            10.79
+        ]
+    },
+    {
+        "name": "m-BROMOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.15
+        ],
+        "pKa": [
+            3.812
+        ]
+    },
+    {
+        "name": "m-CHLOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.2
+        ],
+        "pKa": [
+            3.83
+        ]
+    },
+    {
+        "name": "m-CHLOROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            9.023
+        ]
+    },
+    {
+        "name": "m-CRESOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            10.091
+        ]
+    },
+    {
+        "name": "m-CYANOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            3.598
+        ]
+    },
+    {
+        "name": "m-FLUOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            3.865
+        ]
+    },
+    {
+        "name": "m-HYDROXYBENZOIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.4,
+            -6.2
+        ],
+        "pKa": [
+            4.082,
+            9.609
+        ]
+    },
+    {
+        "name": "m-HYDROXYCINNAMIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.7
+        ],
+        "pKa": [
+            4.397
+        ]
+    },
+    {
+        "name": "m-IODOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            3.851
+        ]
+    },
+    {
+        "name": "m-IODOPHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.43
+        ],
+        "pKa": [
+            4.159
+        ]
+    },
+    {
+        "name": "m-METHOXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.83
+        ],
+        "pKa": [
+            4.088
+        ]
+    },
+    {
+        "name": "m-NITROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            3.493
+        ]
+    },
+    {
+        "name": "m-NITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            8.399
+        ]
+    },
+    {
+        "name": "m-SULFANILIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            3.74
+        ]
+    },
+    {
+        "name": "m-TOLUIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.91
+        ],
+        "pKa": [
+            4.272
+        ]
+    },
+    {
+        "name": "m-TOLUIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.0
+        ],
+        "pKa": [
+            4.683
+        ]
+    },
+    {
+        "name": "MAGNESIUM",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.5,
+            2.75
+        ],
+        "pKa": [
+            11.4,
+            12.2
+        ]
+    },
+    {
+        "name": "MALEIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.13,
+            -6.24
+        ],
+        "pKa": [
+            1.921,
+            6.225
+        ]
+    },
+    {
+        "name": "MALIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.26,
+            -5.9
+        ],
+        "pKa": [
+            3.46,
+            5.05
+        ]
+    },
+    {
+        "name": "MALONIC ACID (S)",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.07,
+            -6.7
+        ],
+        "pKa": [
+            2.847,
+            5.696
+        ]
+    },
+    {
+        "name": "MANDELIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.83
+        ],
+        "pKa": [
+            3.411
+        ]
+    },
+    {
+        "name": "MANGANESE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.54,
+            2.77
+        ],
+        "pKa": [
+            10.6,
+            11.6
+        ]
+    },
+    {
+        "name": "MCA(NEW)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.11
+        ],
+        "pKa": [
+            2.865
+        ]
+    },
+    {
+        "name": "MES (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.8
+        ],
+        "pKa": [
+            6.095
+        ]
+    },
+    {
+        "name": "MESACONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.8,
+            -5.6
+        ],
+        "pKa": [
+            3.098,
+            4.75
+        ]
+    },
+    {
+        "name": "MESOTARTARIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.24,
+            -6.06
+        ],
+        "pKa": [
+            3.222,
+            4.815
+        ]
+    },
+    {
+        "name": "METHACRYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.67
+        ],
+        "pKa": [
+            4.483
+        ]
+    },
+    {
+        "name": "METHIONINE",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.93,
+            2.93
+        ],
+        "pKa": [
+            2.28,
+            9.344
+        ]
+    },
+    {
+        "name": "METHOXYACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.65
+        ],
+        "pKa": [
+            3.57
+        ]
+    },
+    {
+        "name": "METHYL AMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            6.04
+        ],
+        "pKa": [
+            10.62
+        ]
+    },
+    {
+        "name": "METHYLDIPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.27
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "METHYLETHYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.5,
+            -5.0
+        ],
+        "pKa": [
+            2.86,
+            6.413
+        ]
+    },
+    {
+        "name": "METHYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.93,
+            -5.85
+        ],
+        "pKa": [
+            3.072,
+            5.787
+        ]
+    },
+    {
+        "name": "METHYLPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.59
+        ],
+        "pKa": [
+            10.9
+        ]
+    },
+    {
+        "name": "METHYLSULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.06
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "METHYLTRIPROPYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.84
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "MOPS",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.69
+        ],
+        "pKa": [
+            7.2
+        ]
+    },
+    {
+        "name": "MORPHOLINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.13
+        ],
+        "pKa": [
+            8.33
+        ]
+    },
+    {
+        "name": "NEODYMIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            7.2,
+            4.8,
+            2.4
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "NICKEL",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.39,
+            2.69
+        ],
+        "pKa": [
+            9.3,
+            10.6
+        ]
+    },
+    {
+        "name": "NICOTINIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.46,
+            -3.46
+        ],
+        "pKa": [
+            2.07,
+            4.819
+        ]
+    },
+    {
+        "name": "NITRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -7.41
+        ],
+        "pKa": [
+            -1.37
+        ]
+    },
+    {
+        "name": "NITROUS ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -7.46
+        ],
+        "pKa": [
+            3.22
+        ]
+    },
+    {
+        "name": "NONAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.14,
+            2.71
+        ],
+        "pKa": [
+            10.4,
+            11.0
+        ]
+    },
+    {
+        "name": "NONYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.74
+        ],
+        "pKa": [
+            10.64
+        ]
+    },
+    {
+        "name": "o-AMINOBENZOIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.16,
+            -3.16
+        ],
+        "pKa": [
+            2.108,
+            4.939
+        ]
+    },
+    {
+        "name": "o-BROMOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.15
+        ],
+        "pKa": [
+            2.854
+        ]
+    },
+    {
+        "name": "o-BROMOPHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.14
+        ],
+        "pKa": [
+            4.054
+        ]
+    },
+    {
+        "name": "o-CHLOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.38
+        ],
+        "pKa": [
+            2.943
+        ]
+    },
+    {
+        "name": "o-CHLOROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            8.477
+        ]
+    },
+    {
+        "name": "o-ETHOXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.66
+        ],
+        "pKa": [
+            4.208
+        ]
+    },
+    {
+        "name": "o-ETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.65
+        ],
+        "pKa": [
+            3.793
+        ]
+    },
+    {
+        "name": "o-FLUOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            3.267
+        ]
+    },
+    {
+        "name": "o-HYDROXYCINNAMIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.7
+        ],
+        "pKa": [
+            4.613
+        ]
+    },
+    {
+        "name": "o-IODOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            2.863
+        ]
+    },
+    {
+        "name": "o-IODOPHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.43
+        ],
+        "pKa": [
+            4.038
+        ]
+    },
+    {
+        "name": "o-ISOPROPYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.47
+        ],
+        "pKa": [
+            3.635
+        ]
+    },
+    {
+        "name": "o-METHOXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.83
+        ],
+        "pKa": [
+            4.094
+        ]
+    },
+    {
+        "name": "o-NITROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.36
+        ],
+        "pKa": [
+            2.173
+        ]
+    },
+    {
+        "name": "o-NITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            7.234
+        ]
+    },
+    {
+        "name": "o-SULFANILIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            7.488
+        ]
+    },
+    {
+        "name": "o-t-BUTYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.32
+        ],
+        "pKa": [
+            3.535
+        ]
+    },
+    {
+        "name": "o-TOLUIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.91
+        ],
+        "pKa": [
+            3.908
+        ]
+    },
+    {
+        "name": "o-TOLUIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.0
+        ],
+        "pKa": [
+            4.394
+        ]
+    },
+    {
+        "name": "OCTAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.38,
+            2.83
+        ],
+        "pKa": [
+            10.1,
+            11.0
+        ]
+    },
+    {
+        "name": "OCTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.91
+        ],
+        "pKa": [
+            10.65
+        ]
+    },
+    {
+        "name": "OCTYLSULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.01
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "OCTYLTRIMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.72
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "ORNITHINE",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            5.62,
+            2.81,
+            2.81
+        ],
+        "pKa": [
+            1.705,
+            8.87,
+            10.75
+        ]
+    },
+    {
+        "name": "Ornithine",
+        "valence": [
+            2.0,
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            5.68,
+            2.84,
+            2.84
+        ],
+        "pKa": [
+            1.705,
+            8.712,
+            10.755
+        ]
+    },
+    {
+        "name": "OROTIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.31
+        ],
+        "pKa": [
+            2.803
+        ]
+    },
+    {
+        "name": "OXALIC ACID (S)",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.24,
+            -7.7
+        ],
+        "pKa": [
+            1.271,
+            4.266
+        ]
+    },
+    {
+        "name": "OXALOACETIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.8,
+            -5.6
+        ],
+        "pKa": [
+            2.555,
+            4.37
+        ]
+    },
+    {
+        "name": "p-AMINOBENZOIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.16,
+            -3.16
+        ],
+        "pKa": [
+            2.413,
+            4.853
+        ]
+    },
+    {
+        "name": "p-BROMOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.15
+        ],
+        "pKa": [
+            3.971
+        ]
+    },
+    {
+        "name": "p-CHLOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            3.977
+        ]
+    },
+    {
+        "name": "p-CHLOROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            9.378
+        ]
+    },
+    {
+        "name": "p-CHLOROPHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.45
+        ],
+        "pKa": [
+            4.19
+        ]
+    },
+    {
+        "name": "p-CRESOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            10.262
+        ]
+    },
+    {
+        "name": "p-ETHOXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.66
+        ],
+        "pKa": [
+            4.796
+        ]
+    },
+    {
+        "name": "p-ETHYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.65
+        ],
+        "pKa": [
+            4.353
+        ]
+    },
+    {
+        "name": "p-FLUOROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.42
+        ],
+        "pKa": [
+            4.142
+        ]
+    },
+    {
+        "name": "p-HYDROXYBENZOIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.4,
+            -6.2
+        ],
+        "pKa": [
+            4.53,
+            9.31
+        ]
+    },
+    {
+        "name": "p-HYDROXYCINNAMIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.7
+        ],
+        "pKa": [
+            4.678
+        ]
+    },
+    {
+        "name": "p-HYDROXYPHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.69
+        ],
+        "pKa": [
+            3.171
+        ]
+    },
+    {
+        "name": "p-IODOBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            3.93
+        ]
+    },
+    {
+        "name": "p-IODOPHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.43
+        ],
+        "pKa": [
+            4.178
+        ]
+    },
+    {
+        "name": "p-ISOPROPYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.47
+        ],
+        "pKa": [
+            4.354
+        ]
+    },
+    {
+        "name": "p-METHOXYBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.0
+        ],
+        "pKa": [
+            4.471
+        ]
+    },
+    {
+        "name": "p-METHOXYPHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.97
+        ],
+        "pKa": [
+            4.361
+        ]
+    },
+    {
+        "name": "p-NITROBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.23
+        ],
+        "pKa": [
+            3.523
+        ]
+    },
+    {
+        "name": "p-NITROPHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            7.149
+        ]
+    },
+    {
+        "name": "p-t-BUTYLBENZOIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.32
+        ],
+        "pKa": [
+            4.4
+        ]
+    },
+    {
+        "name": "p-TOLUENESULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.11
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "p-TOLUIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.91
+        ],
+        "pKa": [
+            4.373
+        ]
+    },
+    {
+        "name": "p-TOLUIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.0
+        ],
+        "pKa": [
+            5.091
+        ]
+    },
+    {
+        "name": "p-TOLYLTRIMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.06
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "PELARGONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.67
+        ],
+        "pKa": [
+            4.955
+        ]
+    },
+    {
+        "name": "PENTAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.32,
+            3.33
+        ],
+        "pKa": [
+            9.74,
+            11.05
+        ]
+    },
+    {
+        "name": "PERCHLORIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -6.98
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "PERIODIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.65
+        ],
+        "pKa": [
+            1.55
+        ]
+    },
+    {
+        "name": "PERMANGANIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -6.34
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "PEROXYSULFURIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.46,
+            -8.91
+        ],
+        "pKa": [
+            -2.0,
+            -1.0
+        ]
+    },
+    {
+        "name": "PERRHENIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.67
+        ],
+        "pKa": [
+            0.0
+        ]
+    },
+    {
+        "name": "PHENOL",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.44
+        ],
+        "pKa": [
+            9.998
+        ]
+    },
+    {
+        "name": "PHENOXYACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.78
+        ],
+        "pKa": [
+            3.171
+        ]
+    },
+    {
+        "name": "PHENYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.17
+        ],
+        "pKa": [
+            4.405
+        ]
+    },
+    {
+        "name": "Phenylalanine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.69,
+            2.69
+        ],
+        "pKa": [
+            1.83,
+            9.262
+        ]
+    },
+    {
+        "name": "PHOSPHORIC ACID (S)",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -3.42,
+            -5.91,
+            -7.15
+        ],
+        "pKa": [
+            2.161,
+            7.207,
+            12.325
+        ]
+    },
+    {
+        "name": "PHOSPHOROUS ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.0,
+            -6.59
+        ],
+        "pKa": [
+            1.3,
+            7.086
+        ]
+    },
+    {
+        "name": "PHTHALIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.81,
+            -5.29
+        ],
+        "pKa": [
+            2.95,
+            5.408
+        ]
+    },
+    {
+        "name": "PIC(NEW)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.2
+        ],
+        "pKa": [
+            0.708
+        ]
+    },
+    {
+        "name": "PICRIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.15
+        ],
+        "pKa": [
+            0.708
+        ]
+    },
+    {
+        "name": "PIMELIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.4,
+            -4.99
+        ],
+        "pKa": [
+            4.509,
+            5.312
+        ]
+    },
+    {
+        "name": "PIPERIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.98
+        ],
+        "pKa": [
+            11.12
+        ]
+    },
+    {
+        "name": "POTASSIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            7.62
+        ],
+        "pKa": [
+            13.0
+        ]
+    },
+    {
+        "name": "PRASEODYMIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            7.22,
+            4.81,
+            2.41
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "Proline",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.9,
+            2.9
+        ],
+        "pKa": [
+            3.0,
+            10.64
+        ]
+    },
+    {
+        "name": "PROPIONIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.71
+        ],
+        "pKa": [
+            4.874
+        ]
+    },
+    {
+        "name": "PROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.23
+        ],
+        "pKa": [
+            10.53
+        ]
+    },
+    {
+        "name": "PROPYLMALONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.6,
+            -5.2
+        ],
+        "pKa": [
+            2.971,
+            5.845
+        ]
+    },
+    {
+        "name": "PROPYLSULFONIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.85
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "PYRAZOLE-2.3-DICARBOXYLIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.38,
+            -5.6
+        ],
+        "pKa": [
+            1.0,
+            4.228
+        ]
+    },
+    {
+        "name": "PYRIDINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.0
+        ],
+        "pKa": [
+            5.18
+        ]
+    },
+    {
+        "name": "PYROPHOSPHORIC ACID",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -2.9,
+            -5.79,
+            -7.64
+        ],
+        "pKa": [
+            1.0,
+            1.9,
+            6.6
+        ]
+    },
+    {
+        "name": "PYRUVIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.23
+        ],
+        "pKa": [
+            2.49
+        ]
+    },
+    {
+        "name": "RADIUM",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.92,
+            3.46
+        ],
+        "pKa": [
+            13.0,
+            13.5
+        ]
+    },
+    {
+        "name": "RUBIDIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            8.06
+        ],
+        "pKa": [
+            13.0
+        ]
+    },
+    {
+        "name": "SACCHARIN",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.13
+        ],
+        "pKa": [
+            2.432
+        ]
+    },
+    {
+        "name": "SALICYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.54
+        ],
+        "pKa": [
+            3.107
+        ]
+    },
+    {
+        "name": "SAMARIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            7.11,
+            4.74,
+            2.37
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "SCANDIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.71,
+            4.47,
+            2.24
+        ],
+        "pKa": [
+            4.9,
+            5.9,
+            6.9
+        ]
+    },
+    {
+        "name": "SEBACIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.07,
+            -4.49
+        ],
+        "pKa": [
+            4.53,
+            5.38
+        ]
+    },
+    {
+        "name": "sec-BUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.71
+        ],
+        "pKa": [
+            10.6
+        ]
+    },
+    {
+        "name": "SELENIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.1,
+            -8.05
+        ],
+        "pKa": [
+            0.0,
+            2.05
+        ]
+    },
+    {
+        "name": "SELENIOUS ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.12,
+            -6.05
+        ],
+        "pKa": [
+            2.62,
+            8.45
+        ]
+    },
+    {
+        "name": "SELENOCYANIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -6.71
+        ],
+        "pKa": [
+            0.0
+        ]
+    },
+    {
+        "name": "Serine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.36,
+            3.36
+        ],
+        "pKa": [
+            2.186,
+            9.302
+        ]
+    },
+    {
+        "name": "SILVER",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            6.45
+        ],
+        "pKa": [
+            11.7
+        ]
+    },
+    {
+        "name": "SODIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            5.19
+        ],
+        "pKa": [
+            13.7
+        ]
+    },
+    {
+        "name": "SORBIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            4.77
+        ]
+    },
+    {
+        "name": "STRONTIUM",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.16,
+            3.08
+        ],
+        "pKa": [
+            13.2,
+            13.7
+        ]
+    },
+    {
+        "name": "SUBERIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.25,
+            -4.72
+        ],
+        "pKa": [
+            4.517,
+            5.403
+        ]
+    },
+    {
+        "name": "SUCCINIC ACID (S)",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.3,
+            -6.09
+        ],
+        "pKa": [
+            4.207,
+            5.638
+        ]
+    },
+    {
+        "name": "SULFANILIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.37
+        ],
+        "pKa": [
+            3.227
+        ]
+    },
+    {
+        "name": "SULFURIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -5.2,
+            -8.29
+        ],
+        "pKa": [
+            -3.0,
+            1.921
+        ]
+    },
+    {
+        "name": "SULFUROUS ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -5.18,
+            -7.46
+        ],
+        "pKa": [
+            1.78,
+            6.991
+        ]
+    },
+    {
+        "name": "SULPHAMIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -5.03
+        ],
+        "pKa": [
+            -2.0
+        ]
+    },
+    {
+        "name": "TAPS",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.5
+        ],
+        "pKa": [
+            8.3
+        ]
+    },
+    {
+        "name": "TARTARIC ACID (S)",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.26,
+            -6.07
+        ],
+        "pKa": [
+            3.036,
+            4.366
+        ]
+    },
+    {
+        "name": "TARTRONIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -3.6,
+            -6.83
+        ],
+        "pKa": [
+            2.366,
+            4.735
+        ]
+    },
+    {
+        "name": "TAURINE",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.79,
+            3.79
+        ],
+        "pKa": [
+            1.5,
+            9.182
+        ]
+    },
+    {
+        "name": "TELEPHTHALIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -2.8,
+            -5.3
+        ],
+        "pKa": [
+            3.54,
+            4.46
+        ]
+    },
+    {
+        "name": "TERBIUM",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.9,
+            4.6
+        ],
+        "pKa": [
+            6.0,
+            7.0
+        ]
+    },
+    {
+        "name": "tert-BUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.71
+        ],
+        "pKa": [
+            10.6
+        ]
+    },
+    {
+        "name": "TETRAETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.42
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "TETRAMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.7
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "TETRAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.79,
+            3.57
+        ],
+        "pKa": [
+            9.216,
+            10.75
+        ]
+    },
+    {
+        "name": "TETRAPROPYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.38
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "THALLIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            7.74
+        ],
+        "pKa": [
+            13.2
+        ]
+    },
+    {
+        "name": "THIOACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.37
+        ],
+        "pKa": [
+            3.337
+        ]
+    },
+    {
+        "name": "THIOCYANIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -6.85
+        ],
+        "pKa": [
+            0.848
+        ]
+    },
+    {
+        "name": "THIOCYANOACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.06
+        ],
+        "pKa": [
+            2.585
+        ]
+    },
+    {
+        "name": "THIOGLYCOLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.86
+        ],
+        "pKa": [
+            3.545
+        ]
+    },
+    {
+        "name": "THIOSULFURIC ACID",
+        "valence": [
+            -1.0,
+            -2.0
+        ],
+        "mobility": [
+            -4.4,
+            -8.81
+        ],
+        "pKa": [
+            0.6,
+            1.72
+        ]
+    },
+    {
+        "name": "Threonine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            3.09,
+            3.09
+        ],
+        "pKa": [
+            2.088,
+            9.2
+        ]
+    },
+    {
+        "name": "THULIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.78,
+            4.52,
+            2.26
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "TRIBROMOACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.65
+        ],
+        "pKa": [
+            1.0
+        ]
+    },
+    {
+        "name": "TRIBUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.39
+        ],
+        "pKa": [
+            11.0
+        ]
+    },
+    {
+        "name": "TRICHLOROACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.79
+        ],
+        "pKa": [
+            0.635
+        ]
+    },
+    {
+        "name": "TRICHLOROACRYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.34
+        ],
+        "pKa": [
+            0.0
+        ]
+    },
+    {
+        "name": "TRICHLOROLACTIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.42
+        ],
+        "pKa": [
+            2.347
+        ]
+    },
+    {
+        "name": "TRICINE",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.0
+        ],
+        "pKa": [
+            8.15
+        ]
+    },
+    {
+        "name": "TRIDECAMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            4.45,
+            2.34
+        ],
+        "pKa": [
+            10.8,
+            11.0
+        ]
+    },
+    {
+        "name": "TRIETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.56
+        ],
+        "pKa": [
+            10.86
+        ]
+    },
+    {
+        "name": "TRIETHYLMETHYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.52
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "TRIETHYLPHENYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.08
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "TRIETHYLPROPYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.04
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "TRIFLUOROACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -4.27
+        ],
+        "pKa": [
+            0.6
+        ]
+    },
+    {
+        "name": "TRIISOBUTYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.25
+        ],
+        "pKa": [
+            10.41
+        ]
+    },
+    {
+        "name": "TRIMETHYLACETIC ACID (S)",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.18
+        ],
+        "pKa": [
+            5.037
+        ]
+    },
+    {
+        "name": "TRIMETHYLACRYLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.03
+        ],
+        "pKa": [
+            4.42
+        ]
+    },
+    {
+        "name": "TRIMETHYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.97
+        ],
+        "pKa": [
+            9.8
+        ]
+    },
+    {
+        "name": "TRIMETHYLENEDIAMINE",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            7.5,
+            3.95
+        ],
+        "pKa": [
+            8.64,
+            10.62
+        ]
+    },
+    {
+        "name": "TRIMETHYLPHENYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.56
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "TRIMETHYLPROPYLAMMONIUM",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            3.84
+        ],
+        "pKa": [
+            14.0
+        ]
+    },
+    {
+        "name": "TRIMETYLPYRUVIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.92
+        ],
+        "pKa": [
+            1.469
+        ]
+    },
+    {
+        "name": "TRIPHOSHORIC ACID",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -2.4,
+            -4.8,
+            -7.47
+        ],
+        "pKa": [
+            0.0,
+            1.1,
+            2.3
+        ]
+    },
+    {
+        "name": "TRIPROPYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.71
+        ],
+        "pKa": [
+            10.74
+        ]
+    },
+    {
+        "name": "TRIS",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.95
+        ],
+        "pKa": [
+            8.076
+        ]
+    },
+    {
+        "name": "Tryptophane",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.54,
+            2.54
+        ],
+        "pKa": [
+            2.38,
+            9.594
+        ]
+    },
+    {
+        "name": "Tyrosine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.0,
+            2.0
+        ],
+        "pKa": [
+            2.34,
+            9.099
+        ]
+    },
+    {
+        "name": "UDP",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -2.0,
+            -3.94,
+            -5.6
+        ],
+        "pKa": [
+            0.0,
+            0.0,
+            7.088
+        ]
+    },
+    {
+        "name": "UMP",
+        "valence": [
+            -1.0,
+            -2.0,
+            -3.0
+        ],
+        "mobility": [
+            -2.34,
+            -3.97,
+            -5.6
+        ],
+        "pKa": [
+            2.499,
+            6.529,
+            9.5
+        ]
+    },
+    {
+        "name": "UNDECAMETHYLENEDIAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            4.75
+        ],
+        "pKa": [
+            10.6
+        ]
+    },
+    {
+        "name": "UNDECYLAMINE",
+        "valence": [
+            1.0
+        ],
+        "mobility": [
+            2.51
+        ],
+        "pKa": [
+            10.63
+        ]
+    },
+    {
+        "name": "URANYL(VI)",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            3.32,
+            1.66
+        ],
+        "pKa": [
+            8.0,
+            9.0
+        ]
+    },
+    {
+        "name": "VALERIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.16
+        ],
+        "pKa": [
+            4.842
+        ]
+    },
+    {
+        "name": "Valine",
+        "valence": [
+            1.0,
+            -1.0
+        ],
+        "mobility": [
+            2.84,
+            2.84
+        ],
+        "pKa": [
+            2.286,
+            9.71
+        ]
+    },
+    {
+        "name": "VANILLIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -2.71
+        ],
+        "pKa": [
+            4.523
+        ]
+    },
+    {
+        "name": "VINYLACETIC ACID",
+        "valence": [
+            -1.0
+        ],
+        "mobility": [
+            -3.86
+        ],
+        "pKa": [
+            4.342
+        ]
+    },
+    {
+        "name": "YTTERBIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.75,
+            4.5,
+            2.25
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "YTTRIUM",
+        "valence": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            6.47,
+            4.33,
+            2.16
+        ],
+        "pKa": [
+            6.0,
+            7.0,
+            8.0
+        ]
+    },
+    {
+        "name": "ZINC",
+        "valence": [
+            2.0,
+            1.0
+        ],
+        "mobility": [
+            5.47,
+            2.74
+        ],
+        "pKa": [
+            9.0,
+            9.7
+        ]
+    }
+]
