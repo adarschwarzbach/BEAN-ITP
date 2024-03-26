@@ -27,7 +27,7 @@ const HeaderBanner: React.FC<Props> = ({ className }) => {
 					className="bp5-minimal"
 					icon="manual"
 					text="Nomenclature"
-					onClick={() => window.open('https://nomenclature-public.s3.us-west-1.amazonaws.com/Nomenclature.pdf', '_blank')}
+					onClick={() => window.open('https://nomenclature-public.s3.us-west-1.amazonaws.com/BEAN+nomenclature.pdf', '_blank')}
 				/>
 				{/* <ProjectInfoPopup isOpen={isOpen} onClose={() => setIsOpen(false)} /> */}
 				<Button className="bp5-minimal" icon="info-sign" text="About" onClick={() => setAdditionalIsOpen(true)}/>
