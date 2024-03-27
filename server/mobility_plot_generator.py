@@ -350,14 +350,23 @@ def lambda_handler(event, context):
         pKa=pKa,
         mobilities=mobilities,
         labels=labels,
-        ionic_effect_flag=ionic_effect_flag
+        ionic_effect_flag=False
+    )
+    lin_pH, sol2 = create_mobility_plots(
+        concentrations=concentrations,
+        valences=valences,
+        pKa=pKa,
+        mobilities=mobilities,
+        labels=labels,
+        ionic_effect_flag=True
     )
     
     # Prepare the response
     # Note: Numpy arrays need to be converted to lists for JSON serialization
     response = {
         "lin_pH": lin_pH.tolist(),
-        "sol1": sol1.tolist()
+        "sol1": sol1.tolist(),
+        "sol2": sol2.tolist()
     }
     
     return {
