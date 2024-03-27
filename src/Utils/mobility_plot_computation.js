@@ -15,7 +15,7 @@ export const mobility_plot_computation = async (ionicEffect, speciesObject) => {
 	const concentrations = speciesArray.map(s => s.concentration);
 	const valences = speciesArray.map(s => s.valence);
 	const pKa = speciesArray.map(s => s.pKa);
-	const mobilities = speciesArray.map(s => s.mobility.map(value => value * 1e-8)); // Convert mobility values as needed
+	const mobilities = speciesArray.map(s => s.mobility); // Convert mobility values as needed
 	const labels = speciesArray.map(s => s.Name);
 
 	const requestData = {
@@ -27,6 +27,8 @@ export const mobility_plot_computation = async (ionicEffect, speciesObject) => {
 		labels: labels,
 		ionic_effect_flag: ionicEffect // Assuming this is boolean or similarly simple value
 	};
+
+	console.log('rx', requestData);
 
 	try {
 		const response = await fetch(BEAN_COMPUTATION_API, {

@@ -54,7 +54,7 @@ const MobilityPlot = () => {
 		const baseHue = (index / sol1.length) * 360;
 		return {
 			label: labels[index] || `Species ${index + 1} (sol1)`,
-			data: sol.map((y, i) => ({ x: lin_pH[i], y: y * 1e16 })),
+			data: sol.map((y, i) => ({ x: lin_pH[i], y: y * 1e8 })),
 			borderColor: `hsl(${baseHue}, 100%, 50%)`,
 			backgroundColor: `hsla(${baseHue}, 100%, 50%, 0)`,
 			fill: false,
@@ -65,8 +65,8 @@ const MobilityPlot = () => {
 	}), ...sol2.map((sol, index) => {
 		const baseHue = (index / sol2.length) * 360;
 		return {
-			label: `${labels[index]})`,
-			data: sol.map((y, i) => ({ x: lin_pH[i], y: y * 1e9 })),
+			label: `${labels[index]}`,
+			data: sol.map((y, i) => ({ x: lin_pH[i], y: y * 1e8 })),
 			borderColor: `hsl(${baseHue}, 100%, 30%)`,
 			backgroundColor: `hsla(${baseHue}, 100%, 80%, 0)`,
 			borderDash: [5, 5], // Distinguish by dash style
