@@ -248,7 +248,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					{title === 'Sample Pre Concentration' && (
 						<>
 							<text textAnchor="middle" fill="#D3D8DE" x="100" y="15" fontSize="14" style={{ fontStyle: 'italic' }}>
-            C<tspan baselineShift="super" fontSize="10">S</tspan>
+            C<tspan baselineShift="super" fontSize="10" dx = '1'>S</tspan>
 								<tspan baselineShift="sub" fontSize="10" dx = '-8'>A</tspan>
 							</text>
 							<line x1="75" y1="25" x2="125" y2="25" stroke="#D3D8DE" strokeWidth="1"/>
@@ -269,7 +269,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			</text>
 
 			{renderData && (
-				<svg width={200} height={180} ref={svgRef}>
+				<svg width={200} height={190} ref={svgRef}>
 					{/* SVG elements remain unchanged */}
 					<g transform="translate(40, 0)">
 						{heatmapData.map((row, rowIndex) => {
@@ -330,39 +330,37 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</g>
 					{/* X-axis Label (pH) */}
 					{/* flip 2 and 3 */}
-					<text x={28} y={160} fill="#D3D8DE" fontSize={11}> {dataType == 'ph_in_sample_region' ? '.001 ': '-1e-8'} </text>
-					<text x="56%" y="160" fill="#D3D8DE" fontSize={12} fontWeight={600} textAnchor="middle">
+					<text x={22} y={160} fill="#D3D8DE" fontSize={14}> {dataType == 'ph_in_sample_region' ? '.001 ': '-1e-8'} </text>
+					<text x="56%" y="164" fill="#D3D8DE" fontSize={12} fontWeight={600} textAnchor="middle">
 						{xAxisLabel === 'CI concentration' && (
 							<>
-								<tspan style={{ fontStyle: 'italic' }}  fontSize={13} x='56%'>c</tspan>
-								{/* Move down slightly for LE subscript, then move back for CI */}
-								<tspan fontSize="10" dy="4" style={{ fontStyle: 'italic' }}>CI</tspan>
-								<tspan fontSize="10" dy="-9" dx = '-9' style={{ fontStyle: 'italic' }}>LE</tspan>
-								{/* CI subscript without moving back up since we're continuing at subscript level */}
+								<tspan style={{ fontStyle: 'italic' }}  fontSize={16} x='56%'>c</tspan>
+								<tspan fontSize="14" dy="9" dx = '-1'style={{ fontStyle: 'italic' }}>CI</tspan>
+								
+								<tspan fontSize="14" dy="-14" dx = '-11' style={{ fontStyle: 'italic' }}>LE</tspan>
 							</>
 						)}
 						{xAxisLabel === 'Analyte Mobility' && (
 							<>
-								<tspan style={{ fontStyle: 'italic' }} fontSize={13}>μ</tspan>
-								{/* Adjust dy and fontSize for super/subscript appearance */}
-								<tspan dy="-7" fontSize="10">o</tspan>
-								<tspan dy="10" dx = '-7' fontSize="10" style={{ fontStyle: 'italic' }}>A</tspan>
+								<tspan style={{ fontStyle: 'italic' }} fontSize={14}>μ</tspan>
+								<tspan dy="-6" dx= '1' fontSize="14">o</tspan>
+								<tspan dy="12" dx = '-10' fontSize="14" style={{ fontStyle: 'italic' }}>A</tspan>
 							</>
 						)}
 						{xAxisLabel === 'TE Mobility' && (
 							<>
-								<tspan fontSize={13} style={{ fontStyle: 'italic' }}>μ</tspan>
-								<tspan dy="-7" fontSize="10">o</tspan>
-								<tspan dy="10" dx = '-7' fontSize="10" style={{ fontStyle: 'italic' }}>TI</tspan>
+								<tspan fontSize={16} style={{ fontStyle: 'italic' }}>μ</tspan>
+								<tspan dy="-8" dx = '1' fontSize="14">o</tspan>
+								<tspan dy="13" dx = '-10' fontSize="14" style={{ fontStyle: 'italic' }}>TI</tspan>
 							</>
 						)}
 						{/* This tspan is for unit display, adjust x and dy to align it correctly */}
-						<tspan x="56%" dy= {xAxisLabel === 'CI concentration' ? 22 : 14} fontSize="10" fontWeight="normal">
+						<tspan x="56%" dy= {xAxisLabel === 'CI concentration' ? 30 : 20} fontSize="14" fontWeight="normal">
 							{xAxisLabel === 'CI concentration' ? 'mM' : 'm²/(V.s)'}
 						</tspan>
 					</text>
 
-					<text x={166} y={160} fill="#D3D8DE" fontSize={11}>  {dataType == 'ph_in_sample_region' ? '1.000': '-5e-8'} </text>
+					<text x={158} y={160} fill="#D3D8DE" fontSize={14}>  {dataType == 'ph_in_sample_region' ? '1.000': '-5e-8'} </text>
 					
         
 					{/* Y-axis Label (LE_C) */}
@@ -370,31 +368,31 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						x={31} // Position the text near the middle of the height
 						y={10}  // Position the text slightly off the left edge
 						fill="#D3D8DE" 
-						fontSize={11} 
+						fontSize={14} 
 						// transform="rotate(-90 -10, 40)"
 					>
 						{LE_C_values[0]}
 					</text>
 
 					<text 
-						x={18} // Adjusted for better centering due to the upright orientation
+						x={9} // Adjusted for better centering due to the upright orientation
 						y={80} // Adjusted for vertical positioning
 						fill="#D3D8DE" 
-						fontSize={10} 
+						fontSize={16} 
 						fontWeight={600}
 						style={{ fontStyle: 'italic' }}
 					>
 						C
-						<tspan baselineShift="super" fontSize="8" x={26} style={{ fontStyle: 'italic' }}>LE</tspan>
-						<tspan x="25" dy="0" fontSize="8" baselineShift="sub" style={{ fontStyle: 'italic' }}>LI</tspan>
+						<tspan baselineShift="super" fontSize="12" x={22} style={{ fontStyle: 'italic' }}>LE</tspan>
+						<tspan x="21" dy="0" fontSize="12" baselineShift="sub" style={{ fontStyle: 'italic' }}>LI</tspan>
 					</text>
 
 					
 					<text 
-						x={16} // Position the text near the middle of the height
+						x={10} // Position the text near the middle of the height
 						y={144}  // Position the text slightly off the left edge
 						fill="#D3D8DE" 
-						fontSize={11} 
+						fontSize={14} 
 						// transform="rotate(-90 -10, 40)"
 					>
 						{'.001'}
@@ -423,8 +421,11 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 				</div>
 			)}
 
-			<div style={{ marginTop: '0px'}}>
-				<svg width={190} height={40}> {/* Separate SVG for the gradient bar */}
+			<div style={{ marginTop: '4px', margin: '4' }}>
+				{xAxisLabel === 'CI concentration' && (
+					<div style={{ marginBottom: 0 }}></div>)}
+				
+				<svg width={190} height={38} > {/* Separate SVG for the gradient bar */}
 					<defs>
 						<linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
 							<stop offset="0%" stopColor={colorScaleHeatmap(colorMin)} />
@@ -464,6 +465,8 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						{'units'}
 					</text> */}
 				</svg>
+				{xAxisLabel === 'CI concentration' && (
+					<div style={{ marginBottom: -22 }}></div>)}
 			</div>
 		</div>
 	);
