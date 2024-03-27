@@ -12,7 +12,33 @@ ChartJS.register(
 	Tooltip,
 	Legend
 );
+const CustomLegend = () => {
+	return (
+		<div style={{ fontSize: '16px', color: 'white', width:135 }}>
+		μ<span style={{ verticalAlign: 'sub', fontSize: 'smaller' }}>X</span> [10
+			<span style={{ verticalAlign: 'super', fontSize: 'smaller' }}>-8</span> m²/(V⋅s)]
+		</div>
+	);
+};
 
+
+
+const DashDistinction = () => {
+	return (
+		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', fontSize: '16px', color: 'white' }}>
+			<div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+				<div style={{ width: '30px', height: '2px', backgroundColor: 'white', marginRight: '10px' }}></div>
+				Without Ionic Strength Effect
+			</div>
+			<div style={{ display: 'flex', alignItems: 'center' }}>
+				<div style={{ width: '30px', height: '2px', border: '2px dashed white', marginRight: '10px' }}></div>
+				With Ionic Strength Effect
+			</div>
+		</div>
+	);
+};
+  
+  
 const MobilityPlot = () => {
 	const { mobilityData, speciesDict } = useSpeciesData();
 
@@ -39,7 +65,7 @@ const MobilityPlot = () => {
 	}), ...sol2.map((sol, index) => {
 		const baseHue = (index / sol2.length) * 360;
 		return {
-			label: `${labels[index]} (Ionic Strength Effect)`,
+			label: `${labels[index]})`,
 			data: sol.map((y, i) => ({ x: lin_pH[i], y: y * 1e9 })),
 			borderColor: `hsl(${baseHue}, 100%, 30%)`,
 			backgroundColor: `hsla(${baseHue}, 100%, 80%, 0)`,
@@ -71,7 +97,7 @@ const MobilityPlot = () => {
 			y: {
 				title: {
 					display: true,
-					text: 'μX [10^-8 m²/(V⋅s)]',
+					// text: 'μX [10⁻⁸ m²/(V⋅s)]',
 					color: 'white',
 					font: {
 						size: 16,
@@ -111,10 +137,17 @@ const MobilityPlot = () => {
 	};
 
 	return (
-		<div style={{ margin: '14px' }}>
-			<div style={{ width: '800px', height: '600px', color: 'white' }}>
-				<Line data={{ datasets }} options={options} />
+		<div style={{padding:'30px', display:'flex', flexDirection:'column', alignItems:'center'}}>
+			<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '14px', height: '600px' }}>
+				<div style={{ position: 'absolute', marginLeft: '-900px', color: 'white',}}>
+					<CustomLegend />
+				</div>
+				<div style={{ width: '800px', height: '600px', display: 'flex', justifyContent: 'center' }}>
+					<Line data={{ datasets }} options={options} />
+				</div>
 			</div>
+			<div style={{height:24}} />
+			<DashDistinction />
 		</div>
 	);
 };
