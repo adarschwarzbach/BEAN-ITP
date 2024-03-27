@@ -51,11 +51,6 @@ const BeanComputationButton: React.FC = () => {
 					sol1: parsedMobility.sol1, // Example data
 					sol2:  parsedMobility.sol2
 				});
-				downloadAsJson({
-					lin_pH: parsedMobility.lin_pH, // Example data
-					sol1: parsedMobility.sol1, // Example data
-					sol2: parsedMobility.sol2
-				});
 				setMobilityPlotLoading(false);
 
 			} 

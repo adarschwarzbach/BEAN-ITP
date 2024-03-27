@@ -40,14 +40,14 @@ const DashDistinction = () => {
   
   
 const MobilityPlot = () => {
-	const { mobilityData, speciesDict } = useSpeciesData();
+	const { mobilityData, speciesDict, error } = useSpeciesData();
 
 	const { lin_pH = [], sol1 = [], sol2 = [] } = mobilityData || {};
 	const labels = Object.values(speciesDict || {}).map(species => species.Name);
 
-	if (!Array.isArray(lin_pH) || !Array.isArray(sol1) || !Array.isArray(sol2) || !lin_pH.length || !sol1.length || !sol2.length) {
+	if (!Array.isArray(lin_pH) || !Array.isArray(sol1) || !Array.isArray(sol2) || !lin_pH.length || !sol1.length || !sol2.length || error) {
 		console.error('Invalid data for MobilityPlot:', { lin_pH, sol1, sol2 });
-		return <div>Error loading data. Please check the console for more details.</div>;
+		return <div style = {{fontSize:32, margin:40, color:'white'}} > Error building mobility plot</div>;
 	}
 
 	const datasets = [...sol1.map((sol, index) => {
@@ -137,6 +137,7 @@ const MobilityPlot = () => {
 	};
 
 	return (
+
 		<div style={{padding:'30px', display:'flex', flexDirection:'column', alignItems:'center'}}>
 			<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '14px', height: '600px' }}>
 				<div style={{ position: 'absolute', marginLeft: '-900px', color: 'white',}}>
@@ -146,7 +147,7 @@ const MobilityPlot = () => {
 					<Line data={{ datasets }} options={options} />
 				</div>
 			</div>
-			<div style={{height:24}} />
+			<div style={{height:24, display:'flex', alignItems:'center', justifyItems:'center'}}  />
 			<DashDistinction />
 		</div>
 	);
