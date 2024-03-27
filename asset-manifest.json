@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BEAN-ITP/static/css/main.ed07e2cc.css",
-    "main.js": "/BEAN-ITP/static/js/main.0473aa43.js",
+    "main.js": "/BEAN-ITP/static/js/main.47328da2.js",
     "static/js/883.2992ac1d.chunk.js": "/BEAN-ITP/static/js/883.2992ac1d.chunk.js",
     "static/js/224.5ad54878.chunk.js": "/BEAN-ITP/static/js/224.5ad54878.chunk.js",
     "static/js/787.9f68ca54.chunk.js": "/BEAN-ITP/static/js/787.9f68ca54.chunk.js",
@@ -21,7 +21,7 @@
     "static/media/blueprint-icons-16.woff2?": "/BEAN-ITP/static/media/blueprint-icons-16.5d3be7e91ef0bd98ba43.woff2",
     "index.html": "/BEAN-ITP/index.html",
     "main.ed07e2cc.css.map": "/BEAN-ITP/static/css/main.ed07e2cc.css.map",
-    "main.0473aa43.js.map": "/BEAN-ITP/static/js/main.0473aa43.js.map",
+    "main.47328da2.js.map": "/BEAN-ITP/static/js/main.47328da2.js.map",
     "883.2992ac1d.chunk.js.map": "/BEAN-ITP/static/js/883.2992ac1d.chunk.js.map",
     "224.5ad54878.chunk.js.map": "/BEAN-ITP/static/js/224.5ad54878.chunk.js.map",
     "787.9f68ca54.chunk.js.map": "/BEAN-ITP/static/js/787.9f68ca54.chunk.js.map",
@@ -31,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.ed07e2cc.css",
-    "static/js/main.0473aa43.js"
+    "static/js/main.47328da2.js"
   ]
 }
