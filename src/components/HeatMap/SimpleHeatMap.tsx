@@ -328,9 +328,80 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 							});
 						})}
 					</g>
-					{/* Additional SVG elements remain unchanged */}
+					{/* X-axis Label (pH) */}
+					{/* flip 2 and 3 */}
+					<text x={28} y={160} fill="#D3D8DE" fontSize={11}> {dataType == 'ph_in_sample_region' ? '.001 ': '-1e-8'} </text>
+					<text x="56%" y="160" fill="#D3D8DE" fontSize={12} fontWeight={600} textAnchor="middle">
+						{xAxisLabel === 'CI concentration' && (
+							<>
+								<tspan style={{ fontStyle: 'italic' }}  fontSize={13} x='56%'>c</tspan>
+								{/* Move down slightly for LE subscript, then move back for CI */}
+								<tspan fontSize="10" dy="4" style={{ fontStyle: 'italic' }}>CI</tspan>
+								<tspan fontSize="10" dy="-9" dx = '-9' style={{ fontStyle: 'italic' }}>LE</tspan>
+								{/* CI subscript without moving back up since we're continuing at subscript level */}
+							</>
+						)}
+						{xAxisLabel === 'Analyte Mobility' && (
+							<>
+								<tspan style={{ fontStyle: 'italic' }} fontSize={13}>μ</tspan>
+								{/* Adjust dy and fontSize for super/subscript appearance */}
+								<tspan dy="-7" fontSize="10">o</tspan>
+								<tspan dy="10" dx = '-7' fontSize="10" style={{ fontStyle: 'italic' }}>A</tspan>
+							</>
+						)}
+						{xAxisLabel === 'TE Mobility' && (
+							<>
+								<tspan fontSize={13} style={{ fontStyle: 'italic' }}>μ</tspan>
+								<tspan dy="-7" fontSize="10">o</tspan>
+								<tspan dy="10" dx = '-7' fontSize="10" style={{ fontStyle: 'italic' }}>TI</tspan>
+							</>
+						)}
+						{/* This tspan is for unit display, adjust x and dy to align it correctly */}
+						<tspan x="56%" dy= {xAxisLabel === 'CI concentration' ? 22 : 14} fontSize="10" fontWeight="normal">
+							{xAxisLabel === 'CI concentration' ? 'mM' : 'm²/(V.s)'}
+						</tspan>
+					</text>
+
+					<text x={166} y={160} fill="#D3D8DE" fontSize={11}>  {dataType == 'ph_in_sample_region' ? '1.000': '-5e-8'} </text>
+					
+        
+					{/* Y-axis Label (LE_C) */}
+					<text 
+						x={31} // Position the text near the middle of the height
+						y={10}  // Position the text slightly off the left edge
+						fill="#D3D8DE" 
+						fontSize={11} 
+						// transform="rotate(-90 -10, 40)"
+					>
+						{LE_C_values[0]}
+					</text>
+
+					<text 
+						x={18} // Adjusted for better centering due to the upright orientation
+						y={80} // Adjusted for vertical positioning
+						fill="#D3D8DE" 
+						fontSize={10} 
+						fontWeight={600}
+						style={{ fontStyle: 'italic' }}
+					>
+						C
+						<tspan baselineShift="super" fontSize="8" x={26} style={{ fontStyle: 'italic' }}>LE</tspan>
+						<tspan x="25" dy="0" fontSize="8" baselineShift="sub" style={{ fontStyle: 'italic' }}>LI</tspan>
+					</text>
+
+					
+					<text 
+						x={16} // Position the text near the middle of the height
+						y={144}  // Position the text slightly off the left edge
+						fill="#D3D8DE" 
+						fontSize={11} 
+						// transform="rotate(-90 -10, 40)"
+					>
+						{'.001'}
+					</text>
 				</svg>
 			)}
+
 
 			{tooltip.show && (
 				<div 
