@@ -31,6 +31,7 @@ const HeatmapComputationButton: React.FC = () => {
 
 			if (typeof heatmap_v2_results === 'object' && 'sample_mobility_ratio' in heatmap_v2_results) {
 				// It's a valid ateHeatmapResults object, so set the state
+				console.log('hm', heatmap_v2_results);
 				setHeatmapV2(heatmap_v2_results);
 				// downloadAsJson(heatmap_v2_results); // If new initial data is needed
 				
