@@ -28,8 +28,6 @@ export const mobility_plot_computation = async (ionicEffect, speciesObject) => {
 		ionic_effect_flag: ionicEffect // Assuming this is boolean or similarly simple value
 	};
 
-	console.log('rx', requestData);
-
 	try {
 		const response = await fetch(BEAN_COMPUTATION_API, {
 			method: 'POST',
