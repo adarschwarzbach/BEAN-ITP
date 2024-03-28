@@ -85,7 +85,7 @@ const Entrypoint: React.FC = () => {
 						</div>
     
 						{/* Right Half */}
-						<div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', marginBottom:'-46px' }}>
+						<div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', marginBottom: '-46px' }}>
 							<ZoneConcentrationsTable />
 							<div style={{height:20}} />
 							<ComputeChecks />
@@ -98,13 +98,15 @@ const Entrypoint: React.FC = () => {
 									<SimpleHeatmap color='inferno' title='pH in Sample Region' loading={ateHeatmapLoading} dataType='ph_in_sample_region' yAxisLabel='LE concentration' xAxisLabel='CI concentration'/>
 								</div>
 							</div>
-							<div style={{marginTop: -20, alignSelf:'center', justifySelf:'center'}} />
-							<ITPCheckIndicator />
+							<div style={{ marginTop: -20, alignSelf: 'center', justifySelf: 'center' }} />
+							<div style={{ justifyContent: 'center', display: 'flex', width: '100%' }}>
+								<ITPCheckIndicator />
+							</div>
 						</div>
 						
     
 					</div>
-					<div style={{alignSelf: 'center', justifySelf:'center' }}>
+					<div style={{justifyContent: 'center', alignContent:'center', display:'flex' }}>
 						<MobilityPlot />
 					</div>
 				</div>
