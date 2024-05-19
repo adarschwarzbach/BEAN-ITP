@@ -98,6 +98,16 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 		colorMax = Math.max(...numericValues);
 	}
 
+	function toScientificNotation(num) {
+		// Ensure the input is a number
+		if (typeof num !== 'number') {
+			throw new TypeError('Input must be a number');
+		}
+		
+		// Convert the number to scientific notation with 3 significant figures
+		return num.toExponential(2);
+	}
+
 	const colorScaleHeatmap = colorScaleGenerator(color).domain([colorMin, colorMax]);
 	const gradientId = `gradient-${color}`;
 
@@ -124,15 +134,15 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			}
 		} else {
 			// For numerical values, format the message with the value to one decimal place
-			message = value.toFixed(1);
+			message = value.toFixed(2);
 		}
 	
 		setTooltip({
 			show: true,
-			content: `LE Concentration: ${LE_C_values[rowIndex]}, ${
+			content: `LE Concentration: ${toScientificNotation(LE_C_values[rowIndex])}, ${
 				dataType === 'sample_pre_concentration'
-					? `Point C: ${point_c_values[colIndex].toFixed(4)}, `
-					: `Mobility: ${mobility_values[colIndex]}, `
+					? `Point C: ${toScientificNotation(point_c_values[colIndex])}, `
+					: `Mobility: ${toScientificNotation(mobility_values[colIndex])}, `
 			}Value: ${message}`,
 			x: e.clientX + 10, // Offset by 10 pixels to the right
 			y: e.clientY + 10  // Offset by 10 pixels down
@@ -160,10 +170,10 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			message = value.toFixed(1);
 		}
 	
-		const checkContent = `LE Concentration: ${LE_C_values[rowIndex]}, ${
+		const checkContent = `LE Concentration: ${LE_C_values[rowIndex].toFixed(3)}, ${
 			dataType === 'sample_pre_concentration'
-				? `Point C: ${point_c_values[colIndex].toFixed(4)}, `
-				: `Mobility: ${mobility_values[colIndex]}, `
+				? `Point C: ${point_c_values[colIndex].toFixed(3)}, `
+				: `Mobility: ${mobility_values[colIndex].toFixed(3)}, `
 		}Value: ${message}`;
 	
 		if (tooltip.show && tooltip.content === checkContent) {

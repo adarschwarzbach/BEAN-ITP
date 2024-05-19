@@ -160,7 +160,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 					<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
 						<Tooltip 
 							content="Information about Valence" 
-							isOpen={valenceTooltipOpen}
+							isOpen={false}
 							onInteraction={(nextOpen) => setValenceTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
 						>
@@ -176,10 +176,13 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						</Tooltip>
 
 						<Tooltip 
-							content="Absolute mobility at each valence, 10^-8 m²/(V.s)" 
+							content={
+								'Absolute mobility at each valence, 10^-8 m²/(V.s)'
+							}
 							isOpen={mobilityTooltipOpen}
 							onInteraction={(nextOpen) => setMobilityTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
+							inheritDarkTheme={true}
 						>
 							<FormGroup label="Mobility" style={{ flex: 1, marginRight: 20 }}>
 								<InputGroup 
@@ -194,7 +197,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 
 						<Tooltip 
 							content="Information about pKa" 
-							isOpen={pKaTooltipOpen}
+							isOpen={false} //pKaTooltipOpen
 							onInteraction={(nextOpen) => setPkaTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
 						>
@@ -216,6 +219,7 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 							isOpen={concentrationTooltipOpen}
 							onInteraction={(nextOpen) => setConcentrationTooltipOpen(nextOpen)}
 							position={Position.BOTTOM}
+							inheritDarkTheme={true}
 						>
 							<FormGroup label="Concentration" style={{ flex: 1 }}>
 								<InputGroup 
