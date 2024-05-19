@@ -143,15 +143,15 @@ const MobilityPlot = () => {
 	return (
 
 		<div style={{padding:'30px', display:'flex', flexDirection:'column', alignItems:'center'}}>
-			<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '14px', height: '600px' }}>
+			<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '14px', height: '300px' }}>
 				<div style={{ position: 'absolute', marginLeft: '-900px', color: 'white',}}>
 					<CustomLegend />
 				</div>
-				<div style={{ width: '800px', height: '600px', display: 'flex', justifyContent: 'center' }}>
+				<div style={{ width: '800px', height: '300px', display: 'flex', justifyContent: 'center' }}>
 					<Line data={{ datasets }} options={options} />
 				</div>
 			</div>
-			<div style={{height:24, display:'flex', alignItems:'center', justifyItems:'center'}}  />
+			<div style={{height:0, display:'flex', alignItems:'center', justifyItems:'center'}}  />
 			<DashDistinction />
 		</div>
 	);
