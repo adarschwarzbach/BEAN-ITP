@@ -176,9 +176,9 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 								name="valence" 
 								value={rawData.valence} 
 								onChange={handleChange} 
-								intent={invalidInputs.valence ? 'danger' : 'none'}
-								onMouseEnter={(e) => handleTooltipShow(e, 'Information about Valence')}
-								onMouseLeave={handleTooltipHide}
+								// intent={invalidInputs.valence ? 'danger' : 'none'}
+								// onMouseEnter={(e) => handleTooltipShow(e, 'Information about Valence')}
+								// onMouseLeave={handleTooltipHide}
 							/>
 						</FormGroup>
 
@@ -203,8 +203,8 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 								value={rawData.pKa} 
 								onChange={handleChange} 
 								intent={invalidInputs.pKa ? 'danger' : 'none'}
-								onMouseEnter={(e) => handleTooltipShow(e, 'Information about pKa')}
-								onMouseLeave={handleTooltipHide}
+								// onMouseEnter={(e) => handleTooltipShow(e, 'Information about pKa')}
+								// onMouseLeave={handleTooltipHide}
 							/>
 						</FormGroup>
 
