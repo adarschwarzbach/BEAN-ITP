@@ -98,7 +98,7 @@ const Entrypoint: React.FC = () => {
 								</div>
 							</div>
 							<div style={{ marginTop: -20, alignSelf: 'center', justifySelf: 'center' }} />
-							<div style={{ justifyContent: 'center', display: 'flex', width: '100%' }}>
+							<div style={{ justifyContent: 'center', display: 'flex', width: '100%', marginTop: ateHeatmapLoading ? 20:0 }}>
 								<ITPCheckIndicator />
 							</div>
 						</div>

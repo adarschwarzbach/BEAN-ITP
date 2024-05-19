@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Section, SectionCard, FormGroup, InputGroup, Tooltip } from '@blueprintjs/core';
+import { Section, SectionCard, FormGroup, InputGroup } from '@blueprintjs/core';
 import './SpeciesForm.css';
 import SpeciesSelect from '../SpeciesSelect/SpeciesSelect';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
@@ -133,6 +133,29 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 		setValidInput(allValid);
 	};
 
+	const [tooltip, setTooltip] = useState({
+		show: false,
+		x: 0,
+		y: 0,
+		content: ''
+	});
+
+	const handleTooltipShow = (e: React.MouseEvent, content: string) => {
+		setTooltip({
+			show: true,
+			x: e.clientX + 20,
+			y: e.clientY + 20,
+			content
+		});
+	};
+
+	const handleTooltipHide = () => {
+		setTooltip({
+			...tooltip,
+			show: false
+		});
+	};
+
 	return (
 		<div style={{ margin: 4 }}>
 			<Section 
@@ -148,58 +171,76 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 				<SectionCard padded={true} className='background-override'>
 					<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
 						<FormGroup label="Valence" style={{ flex: 1, marginRight: 20 }}>
-							<Tooltip content="Information about Valence" placement="bottom" isOpen={false}>
-								<InputGroup 
-									style={{ fontSize: 12, minWidth: 20 }}
-									name="valence" 
-									value={rawData.valence} 
-									onChange={handleChange} 
-									intent={invalidInputs.valence ? 'danger' : 'none'}
-									
-								/>
-							</Tooltip>
+							<InputGroup 
+								style={{ fontSize: 12, minWidth: 20 }}
+								name="valence" 
+								value={rawData.valence} 
+								onChange={handleChange} 
+								intent={invalidInputs.valence ? 'danger' : 'none'}
+								onMouseEnter={(e) => handleTooltipShow(e, 'Information about Valence')}
+								onMouseLeave={handleTooltipHide}
+							/>
 						</FormGroup>
 
 						<FormGroup label="Mobility" style={{ flex: 1, marginRight: 20 }}>
-							<Tooltip content='Absolute mobility at each valence, 10^-8 m²/(V.s)' placement="bottom">
-								<InputGroup 
-									style={{ fontSize: 12, color:'white' }}
-									name="mobility" 
-									value={rawData.mobility} 
-									onChange={handleChange} 
-									intent={invalidInputs.mobility ? 'danger' : 'none'}
-								/>
-							</Tooltip>
+							<InputGroup 
+								style={{ fontSize: 12, color: 'white' }}
+								name="mobility" 
+								value={rawData.mobility} 
+								onChange={handleChange} 
+								intent={invalidInputs.mobility ? 'danger' : 'none'}
+								onMouseEnter={(e) => handleTooltipShow(e, 'Absolute mobility at each valence, 10^-8 m²/(V.s)')}
+								onMouseLeave={handleTooltipHide}
+							/>
 						</FormGroup>
 
 						<FormGroup label={<span>p<span style={{ fontStyle: 'italic' }}>K</span><sub>a</sub></span>}
 							style={{ flex: 1, marginRight: 20, minWidth: 48 }}
 						>
-							<Tooltip content="Information about pKa" placement="bottom" isOpen={false}>
-								<InputGroup 
-									style={{ fontSize: 12 }}
-									name="pKa" 
-									value={rawData.pKa} 
-									onChange={handleChange} 
-									intent={invalidInputs.pKa ? 'danger' : 'none'}
-								/>
-							</Tooltip>
+							<InputGroup 
+								style={{ fontSize: 12 }}
+								name="pKa" 
+								value={rawData.pKa} 
+								onChange={handleChange} 
+								intent={invalidInputs.pKa ? 'danger' : 'none'}
+								onMouseEnter={(e) => handleTooltipShow(e, 'Information about pKa')}
+								onMouseLeave={handleTooltipHide}
+							/>
 						</FormGroup>
 
 						<FormGroup label="Concentration" style={{ flex: 1 }}>
-							<Tooltip content="Concentration in mM (millimolar)" placement="bottom">
-								<InputGroup 
-									style={{ fontSize: 12 }}
-									name="concentration" 
-									value={rawData.concentration} 
-									onChange={handleChange} 
-									intent={invalidInputs.concentration ? 'danger' : 'none'}
-								/>
-							</Tooltip>
+							<InputGroup 
+								style={{ fontSize: 12 }}
+								name="concentration" 
+								value={rawData.concentration} 
+								onChange={handleChange} 
+								intent={invalidInputs.concentration ? 'danger' : 'none'}
+								onMouseEnter={(e) => handleTooltipShow(e, 'Concentration in mM (millimolar)')}
+								onMouseLeave={handleTooltipHide}
+							/>
 						</FormGroup>
 					</div>
 				</SectionCard>
 			</Section>
+			{tooltip.show && (
+				<div 
+					style={{ 
+						position: 'absolute', 
+						left: tooltip.x, 
+						top: tooltip.y,
+						backgroundColor: '#394B59',  // Blueprint's tooltip background color
+						color: 'white',  // Text color
+						padding: '10px',  // Padding inside the tooltip
+						borderRadius: '3px',  // Rounded corners
+						boxShadow: '0 0 5px rgba(0,0,0,0.2)',  // Shadow for a "lifted" effect
+						fontSize: '13px',  // Font size similar to Blueprint
+						zIndex: 9999,  // Ensure it's above other elements
+						transition: 'left 0.1s ease, top 0.1s ease',  // Transition for smooth animation
+					}}
+				>
+					{tooltip.content}
+				</div>
+			)}
 		</div>
 	);
 };
