@@ -222,7 +222,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</text>
 					<text
 						fill="#D3D8DE"
-						style={{ fontWeight: '300', marginBottom: '4px', textAlign:'center' }}
+						style={{ fontWeight: '500', marginBottom: '4px', textAlign:'center' }}
 					>
 						{'Please try new inputs'}
 					</text>
@@ -234,11 +234,14 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	
 
 	return (
-		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  }}>
+		<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
+			<text style = {{paddingLeft:25, marginBottom: title === 'pH in Sample Region' ?  -0 : 4}}>
+				Heatmap of
+			</text>
 			<text
 				textAnchor="middle"
 				fill="#D3D8DE"
-				style={{ fontWeight: '800', marginBottom: '3px', marginLeft:24, fontSize: title.length > 20 ? 12 : 14 }}
+				style={{ fontWeight: '500', marginBottom: '3px', marginLeft:24, fontSize: title.length > 20 ? 12 : 14 }}
 			>
 				{<svg width="200" height={title === 'Sample Mobility Ratio' || title === 'Sample Pre Concentration' ? '50' : '30'}>
 					{title === 'Sample Mobility Ratio' && (
@@ -341,7 +344,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					{/* X-axis Label (pH) */}
 					{/* flip 2 and 3 */}
 					<text x={22} y={160} fill="#D3D8DE" fontSize={14}> {dataType == 'ph_in_sample_region' ? '.001 ': '-1e-8'} </text>
-					<text x="56%" y="164" fill="#D3D8DE" fontSize={12} fontWeight={600} textAnchor="middle">
+					<text x="56%" y="164" fill="#D3D8DE" fontSize={12} fontWeight={500} textAnchor="middle">
 						{xAxisLabel === 'CI concentration' && (
 							<>
 								<tspan style={{ fontStyle: 'italic' }}  fontSize={16} x='56%'>c</tspan>
@@ -389,7 +392,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						y={80} // Adjusted for vertical positioning
 						fill="#D3D8DE" 
 						fontSize={16} 
-						fontWeight={600}
+						fontWeight={500}
 						style={{ fontStyle: 'italic' }}
 					>
 						C
