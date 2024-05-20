@@ -14,8 +14,8 @@ ChartJS.register(
 );
 const CustomLegend = () => {
 	return (
-		<div style={{ fontSize: '16px', color: 'white', width:135 }}>
-		μ<span style={{ verticalAlign: 'sub', fontSize: 'smaller' }}>X</span> [10
+		<div style={{ fontSize: '16px', color: 'white', width: 135 }}>
+			<i>μ</i><span style={{ verticalAlign: 'sub', fontSize: 'smaller' }}><i>X</i></span> [10
 			<span style={{ verticalAlign: 'super', fontSize: 'smaller' }}>-8</span> m²/(V⋅s)]
 		</div>
 	);
