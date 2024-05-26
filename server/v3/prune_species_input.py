@@ -65,17 +65,6 @@ def lambda_handler(event, context):
                 LMat, muMat, zMat, DMat, KaMat, zListArranged, MaxCol: arrays of physical input quantities
             """
 
-            f = open(filename)
-
-            input_lines = ""
-            for line in f:  # loop over the file
-                line = line.lstrip("\n")  # strip lines of left indents/whitespace
-                input_lines = input_lines + line  # join all lines in input file
-
-            # announce global variables to be modified
-            exec(input_lines, globals())
-            f.close()
-
             cMat = cMat_read * met2lit  # Convert from mol/lit to mol/m^3
             cMat_init = np.copy(cMat)
             LMat, muMat, ValMat, KaMat, zListArranged, PolDeg = EquilibriumParameters(species)
@@ -1094,20 +1083,6 @@ def lambda_handler(event, context):
             
             return species
 
-        print('og', species)
-        print('update', update_species(species, ValCube, muCube, KaListCube, i, j))
-        # new species object
-        species = { 0: {'Name': 'HCl', 'valence': [-1], 'mobility': [-79.1e-9], 
-                'pKa': [-2], 'concentration': 0.01, 'type': 'LE'},
-                1: {'Name': 'Tris', 'valence': [1], 'mobility': [29.5e-9], 
-                'pKa': [8.076], 'concentration': 0.02, 'type': 'Background'}, 
-                2: {'Name': 'MOPS', 'valence': [ValCube[2][0][i]], 'mobility': [muCube[2][0][i]], 
-                'pKa': [-np.log10(KaListCube[2][0][i])], 'concentration': 0.001, 'type': 'Analyte'},
-                3: {'Name': 'HEPES', 'valence': [ValCube[3][0][j]], 'mobility': [muCube[3][0][j]], 
-                'pKa': [-np
-                .log10(KaListCube[3][0][j])], 'concentration': 0.005, 'type': 'TE'}, 
-            }
-        print('hard', species)
         
         
-        return species
+        return update_species(species, ValCube, muCube, KaListCube, i, j)
