@@ -35,14 +35,14 @@ function toPHValue(concentration: number): number {
 	return -Math.log10(concentration);
 }
 
-const columnNames = ['', 'LE', 'Sample', 'ATE', 'TE'];
+const columnNames = ['', 'TE', 'ATE', 'Sample', 'LE'];
 
 const ZoneConcentrationsTable: React.FC = () => {
 	const { loading, speciesDict, beanResults, error } = useSpeciesData();
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 	const computedZoneConcentrations = beanResults?.ComputedZoneConcentrations ?? [];
 	const speciesList = Object.values(speciesDict).map(species => species.Name);
-	const pHData = beanResults?.cH[0]?.map(toPHValue); // Make sure this matches your actual data structure
+	const pHData = beanResults?.cH[0]?.map(toPHValue).reverse(); // Make sure this matches your actual data structure
 
 	// Constructing the data array
 	const data: TableRow[] = computedZoneConcentrations.map((row, index) => ({
@@ -63,7 +63,7 @@ const ZoneConcentrationsTable: React.FC = () => {
 	// Rendering function for cells
 	const renderCell = (rowIndex: number, columnIndex: number): JSX.Element => {
 		const rowData = data[rowIndex];
-	
+
 		switch (rowData.type) {
 		case 'blank':
 			return <Cell />; // Render an empty cell for the blank row
@@ -75,14 +75,13 @@ const ZoneConcentrationsTable: React.FC = () => {
 				return <Cell>{phValue.toString()}</Cell>;
 			}
 		case 'speciesData': {
-			// Encapsulating case block in curly braces
 			let content = ''; // Moved declaration outside the switch
 			switch (columnIndex) {
 			case 0: content = rowData.species; break;
-			case 1: content = toThreeSigFigs(rowData.zone1).toString(); break;
-			case 2: content = toThreeSigFigs(rowData.zone2).toString(); break;
-			case 3: content = toThreeSigFigs(rowData.zone3).toString(); break;
-			case 4: content = toThreeSigFigs(rowData.zone4).toString(); break;
+			case 1: content = toThreeSigFigs(rowData.zone4).toString(); break; // TE
+			case 2: content = toThreeSigFigs(rowData.zone3).toString(); break; // ATE
+			case 3: content = toThreeSigFigs(rowData.zone2).toString(); break; // Sample
+			case 4: content = toThreeSigFigs(rowData.zone1).toString(); break; // LE
 			default: break;
 			}
 			return <Cell>{content}</Cell>;
@@ -91,7 +90,6 @@ const ZoneConcentrationsTable: React.FC = () => {
 			return <Cell />;
 		}
 	};
-	
 
 	// Function to render columns based on columnNames
 	const renderColumns = (): JSX.Element[] => {
