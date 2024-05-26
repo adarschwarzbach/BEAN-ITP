@@ -71,6 +71,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	
 	const renderData = heatmapV2[dataType];
 
+
 	const svgRef = useRef<SVGSVGElement>(null);
 	
 	
@@ -267,14 +268,14 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 					{title === 'Sample Pre Concentration' && (
 						<>
-							<text textAnchor="middle" fill="#D3D8DE" x="100" y="15" fontSize="12" style={{ fontStyle: 'italic' }}>
-            c<tspan baselineShift="super" fontSize="10" dx = '1'>S</tspan>
-								<tspan baselineShift="sub" fontSize="10" dx = '-8'>A</tspan>
+							<text textAnchor="middle" fill="#D3D8DE" x="100" y="15" fontSize="14" style={{ fontStyle: 'italic' }}>
+		μ<tspan baselineShift="sub" fontSize="10">A</tspan>
+								<tspan baselineShift="super" fontSize="10" dx = '-6'>ATE</tspan>
 							</text>
 							<line x1="75" y1="25" x2="125" y2="25" stroke="#D3D8DE" strokeWidth="1"/>
-							<text textAnchor="middle" fill="#D3D8DE" x="100" y="40" fontSize="12" style={{ fontStyle: 'italic' }}>
-            c<tspan baselineShift="super" fontSize="10" dx='1'>i</tspan>
-								<tspan baselineShift="sub" fontSize="10"  dx = '-6' >A</tspan>
+							<text textAnchor="middle" fill="#D3D8DE" x="100" y="40" fontSize="14" style={{ fontStyle: 'italic' }}>
+		μ<tspan baselineShift="sub" fontSize="10">TI</tspan>
+								<tspan baselineShift="super" fontSize="10" dx = '-8'>ATE</tspan>
 							</text>
 						</>
 					)}
