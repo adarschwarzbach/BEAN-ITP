@@ -112,6 +112,7 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 					}
 				})
 			),
+			
 			ph_in_sample_region: data.grid_results_3.map((row) =>
 				row.map((datapoint) => {
 					const datapointObject = datapoint[1];
