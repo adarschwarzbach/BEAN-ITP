@@ -27,11 +27,13 @@ type TableRow = SpeciesDataRow | PHRow | BlankRow;
 function toThreeSigFigs(num: number): number {
 	if (num === 0) return 0;
 	const magnitude = Math.floor(Math.log10(Math.abs(num)));
-	const factor = Math.pow(10, 3 - 1 - magnitude);
+	const factor = Math.pow(10, 2 - magnitude); // 3-1 is simplified to 2
 	return Math.round(num * factor) / factor;
 }
 
+
 function toPHValue(concentration: number): number {
+	console.log('ph', -Math.log10(concentration));
 	return -Math.log10(concentration);
 }
 
@@ -42,7 +44,7 @@ const ZoneConcentrationsTable: React.FC = () => {
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 	const computedZoneConcentrations = beanResults?.ComputedZoneConcentrations ?? [];
 	const speciesList = Object.values(speciesDict).map(species => species.Name);
-	const pHData = beanResults?.cH[0]?.map(toPHValue).reverse(); // Make sure this matches your actual data structure
+	const pHData = beanResults?.cH[0]?.map(toPHValue).reverse();
 
 	// Constructing the data array
 	const data: TableRow[] = computedZoneConcentrations.map((row, index) => ({

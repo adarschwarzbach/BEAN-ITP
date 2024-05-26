@@ -10,6 +10,7 @@ const PHTable: React.FC = () => {
 	const numRows = 4;
 
 	function toPHValue(concentration: number): number {
+		console.log('ph', -Math.log10(concentration));
 		return -Math.log10(concentration);
 	}
 
