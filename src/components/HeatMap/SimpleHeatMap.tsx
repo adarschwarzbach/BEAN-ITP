@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import { scaleSequential } from 'd3-scale';
 import { interpolateGreys, interpolatePlasma, interpolateViridis, interpolateInferno } from 'd3-scale-chromatic';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
@@ -63,6 +63,11 @@ interface SimpleHeatmapProps {
 
 const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, dataType, xAxisLabel }) => {
 	const { heatmapError, speciesDict, heatmapV2 } = useSpeciesData();
+	const [negOrPos, setNegOrPos] = useState('+');
+
+	useEffect(() => {
+		setNegOrPos(speciesDict['0'].valence[0] < 0 ? '-' : '+');
+	}, [heatmapV2]);
 	
 	const renderData = heatmapV2[dataType];
 
@@ -260,13 +265,13 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 					{title === 'Sample Pre Concentration' && (
 						<>
-							<text textAnchor="middle" fill="#D3D8DE" x="100" y="15" fontSize="14" style={{ fontStyle: 'italic' }}>
-            C<tspan baselineShift="super" fontSize="10" dx = '1'>S</tspan>
+							<text textAnchor="middle" fill="#D3D8DE" x="100" y="15" fontSize="12" style={{ fontStyle: 'italic' }}>
+            c<tspan baselineShift="super" fontSize="10" dx = '1'>S</tspan>
 								<tspan baselineShift="sub" fontSize="10" dx = '-8'>A</tspan>
 							</text>
 							<line x1="75" y1="25" x2="125" y2="25" stroke="#D3D8DE" strokeWidth="1"/>
-							<text textAnchor="middle" fill="#D3D8DE" x="100" y="40" fontSize="14" style={{ fontStyle: 'italic' }}>
-            C<tspan baselineShift="super" fontSize="10" dx='1'>i</tspan>
+							<text textAnchor="middle" fill="#D3D8DE" x="100" y="40" fontSize="12" style={{ fontStyle: 'italic' }}>
+            c<tspan baselineShift="super" fontSize="10" dx='1'>i</tspan>
 								<tspan baselineShift="sub" fontSize="10"  dx = '-6' >A</tspan>
 							</text>
 						</>
@@ -343,12 +348,12 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</g>
 					{/* X-axis Label (pH) */}
 					{/* flip 2 and 3 */}
-					<text x={22} y={160} fill="#D3D8DE" fontSize={14}> {dataType == 'ph_in_sample_region' ? '.001 ': '-1e-8'} </text>
+					<text x={22} y={160} fill="#D3D8DE" fontSize={14}> {dataType == 'ph_in_sample_region' ? '.001 ': negOrPos == '-' ? -1e-8 : 1e-8} </text>
 					<text x="56%" y="164" fill="#D3D8DE" fontSize={12} fontWeight={500} textAnchor="middle">
 						{xAxisLabel === 'CI concentration' && (
 							<>
 								<tspan style={{ fontStyle: 'italic' }}  fontSize={16} x='56%'>c</tspan>
-								<tspan fontSize="14" dy="9" dx = '-1'style={{ fontStyle: 'italic' }}>CI</tspan>
+								<tspan fontSize="14" dy="9" dx = '-1'style={{ fontStyle: 'italic' }}>cI</tspan>
 								
 								<tspan fontSize="14" dy="-14" dx = '-11' style={{ fontStyle: 'italic' }}>LE</tspan>
 							</>
@@ -373,7 +378,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						</tspan>
 					</text>
 
-					<text x={158} y={160} fill="#D3D8DE" fontSize={14}>  {dataType == 'ph_in_sample_region' ? '1.000': '-5e-8'} </text>
+					<text x={158} y={160} fill="#D3D8DE" fontSize={14}>  {dataType == 'ph_in_sample_region' ? '1.000': negOrPos == '-' ? -5e-8 : 5e-8} </text>
 					
         
 					{/* Y-axis Label (LE_C) */}
@@ -388,10 +393,10 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</text>
 
 					<text 
-						x={9} // Adjusted for better centering due to the upright orientation
+						x={12} // Adjusted for better centering due to the upright orientation
 						y={80} // Adjusted for vertical positioning
 						fill="#D3D8DE" 
-						fontSize={16} 
+						fontSize={12} 
 						fontWeight={500}
 						style={{ fontStyle: 'italic' }}
 					>
