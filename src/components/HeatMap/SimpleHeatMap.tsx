@@ -144,11 +144,13 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	
 		setTooltip({
 			show: true,
-			content: `LE Concentration: ${toScientificNotation(LE_C_values[rowIndex])}, ${
-				dataType === 'sample_pre_concentration'
-					? `Point C: ${toScientificNotation(point_c_values[colIndex])}, `
-					: `Mobility: ${toScientificNotation(mobility_values[colIndex])}, `
-			}Value: ${message}`,
+			content: `LI concentration: ${toScientificNotation(LE_C_values[rowIndex])}, ${
+				dataType === 'ph_in_sample_region'
+					? `CI concentration: ${toScientificNotation(point_c_values[colIndex])}, `
+					: `A mobility: ${toScientificNotation(mobility_values[colIndex])}, `
+			}${
+				dataType === 'ph_in_sample_region' ? 'concentration ratio: ' : 'mobility ratio: '
+			} ${message}`,
 			x: e.clientX + 10, // Offset by 10 pixels to the right
 			y: e.clientY + 10  // Offset by 10 pixels down
 		});
@@ -177,7 +179,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	
 		const checkContent = `LE Concentration: ${LE_C_values[rowIndex].toFixed(3)}, ${
 			dataType === 'sample_pre_concentration'
-				? `Point C: ${point_c_values[colIndex].toFixed(3)}, `
+				? `Point: ${point_c_values[colIndex].toFixed(3)}, `
 				: `Mobility: ${mobility_values[colIndex].toFixed(3)}, `
 		}Value: ${message}`;
 	
