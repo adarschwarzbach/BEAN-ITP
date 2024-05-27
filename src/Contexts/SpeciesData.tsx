@@ -179,10 +179,10 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 			'type': 'Background'
 		},
 		'2': {
-			'Name': 'MOPS',
-			'valence': [-1],
-			'mobility': [-2.69],
-			'pKa': [7.2],
+			'Name': 'Fluorescein',
+			'valence': [-2, -1],
+			'mobility': [-3.95, -2.5],
+			'pKa': [6.8, 4.45],
 			'concentration': 1,
 			'type': 'Analyte'
 		},

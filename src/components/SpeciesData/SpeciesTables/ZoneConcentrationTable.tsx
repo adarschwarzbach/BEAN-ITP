@@ -33,7 +33,6 @@ function toThreeSigFigs(num: number): number {
 
 
 function toPHValue(concentration: number): number {
-	console.log('ph', -Math.log10(concentration));
 	return -Math.log10(concentration);
 }
 
@@ -44,7 +43,8 @@ const ZoneConcentrationsTable: React.FC = () => {
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 	const computedZoneConcentrations = beanResults?.ComputedZoneConcentrations ?? [];
 	const speciesList = Object.values(speciesDict).map(species => species.Name);
-	const pHData = beanResults?.cH[0]?.map(toPHValue).reverse();
+	const pHData = beanResults?.pHInItpZones[0].map(toThreeSigFigs).reverse();
+
 
 	// Constructing the data array
 	const data: TableRow[] = computedZoneConcentrations.map((row, index) => ({
@@ -59,7 +59,7 @@ const ZoneConcentrationsTable: React.FC = () => {
 	// Inserting a blank row and then the pH row
 	data.push({ type: 'blank' }); // Blank row
 	if (pHData) {
-		data.push({ type: 'pH', values: pHData.map(toThreeSigFigs) }); // pH row
+		data.push({ type: 'pH', values: pHData }); // pH row
 	}
 
 	// Rendering function for cells
