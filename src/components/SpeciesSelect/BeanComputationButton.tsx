@@ -41,6 +41,7 @@ const BeanComputationButton: React.FC = () => {
 			
 			if (typeof response.body === 'string') {
 				const parsedBody = JSON.parse(response.body);
+				// downloadAsJson(parsedBody, 'beanComputation.json'); // if new initial data is needed
 				setBeanResults(parsedBody);
 				setError(false);
 				setLoading(false);
@@ -48,9 +49,10 @@ const BeanComputationButton: React.FC = () => {
 				const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
 				console.log('pb' , parsedBody);
 				const parsedMobility = JSON.parse(mobility_data.body);
+				// downloadAsJson(parsedMobility, 'mobility_data.json');
 				setMobilityData({
-					lin_pH: parsedMobility.lin_pH, // Example data
-					sol1: parsedMobility.sol1, // Example data
+					lin_pH: parsedMobility.lin_pH, 
+					sol1: parsedMobility.sol1,
 					sol2:  parsedMobility.sol2
 				});
 				setMobilityPlotLoading(false);
