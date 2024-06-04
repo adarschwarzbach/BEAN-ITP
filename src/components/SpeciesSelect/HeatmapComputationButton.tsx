@@ -25,11 +25,15 @@ const HeatmapComputationButton: React.FC = () => {
 	
 			// Create a deep copy of speciesDict
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
+
+			// Turn valence to +-1
             
 
 
 			// const heatmap_v2_results = await beanHeatmapComputationV2(ionicEffectCopy, speciesDictCopy['1']['pKa'][0], speciesDictCopy);
 			const prunedSpecies = await pruneSpeciesInputs(ionicEffectCopy, speciesDictCopy);
+			prunedSpecies['2']['valence'] = prunedSpecies['2']['valence'] > 0 ? [1] : [-1];
+			prunedSpecies['3']['valence'] = prunedSpecies['3']['valence'] > 0 ? [1] : [-1];
 			console.log(speciesDict, '---', prunedSpecies, 'prunedSpecies');
 			const heatmap_v2_results = await beanHeatmapComputationV2(ionicEffectCopy, prunedSpecies['1']['pKa'][0], prunedSpecies);
 			console.log('prune_results', heatmap_v2_results);
