@@ -27,7 +27,7 @@ const AdditionalPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 				padding: '20px',
 				marginBottom: '20px'
 			}}>
-				<text> Info about Bean</text>
+				<text>Coming soon...</text>
 			</div>
 
 			<div style={{

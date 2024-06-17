@@ -356,7 +356,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						{xAxisLabel === 'CI concentration' && (
 							<>
 								<tspan style={{ fontStyle: 'italic' }}  fontSize={16} x='56%'>c</tspan>
-								<tspan fontSize="14" dy="9" dx = '-1'style={{ fontStyle: 'italic' }}>cI</tspan>
+								<tspan fontSize="14" dy="9" dx = '-1'style={{ fontStyle: 'italic' }}>CI</tspan>
 								
 								<tspan fontSize="14" dy="-14" dx = '-11' style={{ fontStyle: 'italic' }}>LE</tspan>
 							</>
@@ -377,7 +377,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						)}
 						{/* This tspan is for unit display, adjust x and dy to align it correctly */}
 						<tspan x="56%" dy= {xAxisLabel === 'CI concentration' ? 30 : 20} fontSize="14" fontWeight="normal">
-							{xAxisLabel === 'CI concentration' ? 'mM' : 'm²/(V.s)'}
+							{xAxisLabel === 'CI concentration' ? 'M' : 'm²/(V.s)'}
 						</tspan>
 					</text>
 
@@ -396,7 +396,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</text>
 
 					<text 
-						x={12} // Adjusted for better centering due to the upright orientation
+						x={2} // Adjusted for better centering due to the upright orientation
 						y={80} // Adjusted for vertical positioning
 						fill="#D3D8DE" 
 						fontSize={12} 
@@ -404,8 +404,17 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						style={{ fontStyle: 'italic' }}
 					>
 						C
-						<tspan baselineShift="super" fontSize="12" x={22} style={{ fontStyle: 'italic' }}>LE</tspan>
-						<tspan x="21" dy="0" fontSize="12" baselineShift="sub" style={{ fontStyle: 'italic' }}>LI</tspan>
+						<tspan baselineShift="super" fontSize="12" x={12} style={{ fontStyle: 'italic' }}>LE</tspan>
+						<tspan x="11" dy="0" fontSize="12" baselineShift="sub" style={{ fontStyle: 'italic' }}>LI</tspan>
+					</text>
+					<text 
+						x={26.5}
+						y={80} 
+						fill="#D3D8DE" 
+						fontSize={12} 
+						fontWeight={500}
+					>
+						M
 					</text>
 
 					
