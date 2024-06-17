@@ -148,7 +148,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			content: `LI concentration: ${toScientificNotation(LE_C_values[rowIndex])}, ${
 				dataType === 'ph_in_sample_region'
 					? `CI concentration: ${toScientificNotation(point_c_values[colIndex])}, `
-					: `A mobility: ${toScientificNotation(mobility_values[colIndex])}, `
+					: `TI mobility: ${toScientificNotation(mobility_values[colIndex])}, `
 			}${
 				dataType === 'ph_in_sample_region' ? 'concentration ratio: ' : 'mobility ratio: '
 			} ${message}`,
