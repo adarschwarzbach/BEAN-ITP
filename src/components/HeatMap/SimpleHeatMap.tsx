@@ -1,4 +1,6 @@
-import React, {useState, useRef, useEffect} from 'react';
+/* eslint-disable */
+
+import React, { useState, useRef, useEffect } from 'react';
 import { scaleSequential } from 'd3-scale';
 import { interpolateGreys, interpolatePlasma, interpolateViridis, interpolateInferno } from 'd3-scale-chromatic';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
@@ -147,11 +149,13 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			show: true,
 			content: `LI concentration: ${toScientificNotation(LE_C_values[rowIndex])}, ${
 				dataType === 'ph_in_sample_region'
-					? `CI concentration: ${toScientificNotation(point_c_values[colIndex])}, `
-					: `TI mobility: ${toScientificNotation(mobility_values[colIndex])}, `
+				? `CI concentration: ${toScientificNotation(point_c_values[colIndex])}, `
+				: dataType === 'sample_pre_concentration'
+				? `TI mobility: ${toScientificNotation(mobility_values[colIndex])}, `
+				: `A mobility: ${toScientificNotation(mobility_values[colIndex])}, `
 			}${
 				dataType === 'ph_in_sample_region' ? 'concentration ratio: ' : 'mobility ratio: '
-			} ${message}`,
+			} ${message}`,			
 			x: e.clientX + 10, // Offset by 10 pixels to the right
 			y: e.clientY + 10  // Offset by 10 pixels down
 		});
@@ -329,7 +333,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 											fill={fillColor}
 											onMouseEnter={(e) => handleMouseEnter(rowIndex, colIndex, value, e)}
 											onMouseLeave={handleMouseLeave}
-											onClick={(e) => handleClick(rowIndex, colIndex, value, e)}
+											// onClick={(e) => handleClick(rowIndex, colIndex, value, e)} // gotta replace on click if you want these sticky
 										/>
 										{typeof value === 'string' && (
 											<text
@@ -376,8 +380,8 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 							</>
 						)}
 						{/* This tspan is for unit display, adjust x and dy to align it correctly */}
-						<tspan x="56%" dy= {xAxisLabel === 'CI concentration' ? 30 : 20} fontSize="14" fontWeight="normal">
-							{xAxisLabel === 'CI concentration' ? 'M' : 'm²/(V.s)'}
+						<tspan x="56%" dy={xAxisLabel === 'CI concentration' ? 29 : 18} fontSize={xAxisLabel === 'CI concentration' ? "13" : "14" } fontWeight="normal">
+							{xAxisLabel === 'CI concentration' ? '[M]' : '[m²/(V.s)]'}
 						</tspan>
 					</text>
 
@@ -396,7 +400,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 					</text>
 
 					<text 
-						x={2} // Adjusted for better centering due to the upright orientation
+						x={12} // Adjusted for better centering due to the upright orientation
 						y={80} // Adjusted for vertical positioning
 						fill="#D3D8DE" 
 						fontSize={12} 
@@ -404,17 +408,17 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						style={{ fontStyle: 'italic' }}
 					>
 						C
-						<tspan baselineShift="super" fontSize="12" x={12} style={{ fontStyle: 'italic' }}>LE</tspan>
-						<tspan x="11" dy="0" fontSize="12" baselineShift="sub" style={{ fontStyle: 'italic' }}>LI</tspan>
+						<tspan baselineShift="super" fontSize="12" x={22} style={{ fontStyle: 'italic' }}>LE</tspan>
+						<tspan x="21" dy="0" fontSize="12" baselineShift="sub" style={{ fontStyle: 'italic' }}>LI</tspan>
 					</text>
 					<text 
-						x={26.5}
-						y={80} 
+						x={14.5}
+						y={105} 
 						fill="#D3D8DE" 
-						fontSize={12} 
-						fontWeight={500}
+						fontSize={13} 
+						fontWeight="normal"
 					>
-						M
+						[M]
 					</text>
 
 					
