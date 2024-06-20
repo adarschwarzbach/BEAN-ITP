@@ -154,7 +154,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 				? `TI mobility: ${toScientificNotation(mobility_values[colIndex])}, `
 				: `A mobility: ${toScientificNotation(mobility_values[colIndex])}, `
 			}${
-				dataType === 'ph_in_sample_region' ? 'concentration ratio: ' : 'mobility ratio: '
+				dataType === 'ph_in_sample_region' ? 'pH: ' : 'mobility ratio: '
 			} ${message}`,			
 			x: e.clientX + 10, // Offset by 10 pixels to the right
 			y: e.clientY + 10  // Offset by 10 pixels down
