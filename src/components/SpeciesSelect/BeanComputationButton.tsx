@@ -19,7 +19,6 @@ const BeanComputationButton: React.FC = () => {
 	const handleApiCall = async () => {
 		setLoading(true);
 		setMobilityPlotLoading(true);
-		console.log('ionicEffect', ionicEffect);
 		try {
 			// Create a copy of ionicEffect (for primitives like numbers, direct assignment is okay)
 			const ionicEffectCopy = ionicEffect;
@@ -47,9 +46,9 @@ const BeanComputationButton: React.FC = () => {
 				setLoading(false);
 
 				const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
-				console.log('pb' , parsedBody);
 				const parsedMobility = JSON.parse(mobility_data.body);
 				// downloadAsJson(parsedMobility, 'mobility_data.json');
+				// console.log('pb', parsedMobility);
 				setMobilityData({
 					lin_pH: parsedMobility.lin_pH, 
 					sol1: parsedMobility.sol1,
