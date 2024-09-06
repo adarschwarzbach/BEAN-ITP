@@ -27,7 +27,7 @@ const AdditionalPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 				padding: '20px',
 				marginBottom: '20px'
 			}}>
-				<text>Coming soon...</text>
+				<text>This tool is part of work that is currently under review in the journal Analytical Chemistry, 2024.</text>
 			</div>
 
 			<div style={{
