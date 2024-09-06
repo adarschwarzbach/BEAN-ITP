@@ -44,7 +44,7 @@ export const mobility_plot_computation = async (ionicEffect, speciesObject) => {
 		}
 
 		const data = await response.json();
-		console.log(data, 'd');
+		// console.log(data, 'd');
 		return data;
 		// Process the response data as needed
 	} catch (error) {

@@ -25,6 +25,7 @@ const BeanComputationButton: React.FC = () => {
 	
 			// Create a deep copy of speciesDict
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
+			console.log('sp, dict', speciesDictCopy);
 
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
@@ -42,6 +43,7 @@ const BeanComputationButton: React.FC = () => {
 				const parsedBody = JSON.parse(response.body);
 				// downloadAsJson(parsedBody, 'beanComputation.json'); // if new initial data is needed
 				setBeanResults(parsedBody);
+				console.log('pb', parsedBody);
 				setError(false);
 				setLoading(false);
 

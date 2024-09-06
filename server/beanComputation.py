@@ -1,7 +1,8 @@
-#  Current beanComputation on AWS Lambda
+
 import numpy as np
 import json
 import time
+import math
 
 def convert_keys_to_int(data):
     updated_data = {}
@@ -570,6 +571,21 @@ def lambda_handler(event, context):
             pass
         else:
             Focus=Focus*0
+            
+        def to_ph_value(concentration):
+            pH = -math.log10(concentration)
+            return pH
+            
+            
+        ph_data = []
+        
+        for n in cH.tolist()[0]:
+            ph_data.append(to_ph_value(n))
+            
+        
+
+        print('pH Data:', ph_data)
+        print('other pH', pH.tolist())
     
         result = {
             'Residue': Res.tolist(),

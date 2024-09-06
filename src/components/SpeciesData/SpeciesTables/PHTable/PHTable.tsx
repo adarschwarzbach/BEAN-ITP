@@ -7,6 +7,8 @@ const PHTable: React.FC = () => {
 	const { loading, beanResults, error, speciesDict } = useSpeciesData();
 	const loadingOptions = loading ? [TableLoadingOption.CELLS] : [];
 
+	console.log('rez', beanResults)
+
 	const numRows = 4;
 
 	function toPHValue(concentration: number): number {
@@ -15,6 +17,8 @@ const PHTable: React.FC = () => {
 	}
 
 	const pHData = beanResults.cH[0].map(toPHValue);
+
+	console.log(pHData, 'phData');
 
 	function toTwoSigFigs(num: number): number {
 		const magnitude = Math.floor(Math.log10(Math.abs(num)));
