@@ -45,7 +45,7 @@ const MobilityPlot = () => {
 	const { lin_pH = [], sol1 = [], sol2 = [] } = mobilityData || {};
 	const labels = Object.values(speciesDict || {}).map(species => species.Name);
 
-	if (!Array.isArray(lin_pH) || !Array.isArray(sol1) || !Array.isArray(sol2) || !lin_pH.length || !sol1.length || !sol2.length || error) {
+	if (!Array.isArray(lin_pH) || !Array.isArray(sol1) || !Array.isArray(sol2) || !lin_pH.length || !sol1.length || !sol2.length) { // remove error check
 		console.error('Invalid data for MobilityPlot:', { lin_pH, sol1, sol2 });
 		return <div style = {{fontSize:32, margin:40, color:'white'}} > Error building mobility plot</div>;
 	}

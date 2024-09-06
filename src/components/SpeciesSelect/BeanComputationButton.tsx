@@ -47,22 +47,26 @@ const BeanComputationButton: React.FC = () => {
 				setError(false);
 				setLoading(false);
 
-				const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
-				const parsedMobility = JSON.parse(mobility_data.body);
-				// downloadAsJson(parsedMobility, 'mobility_data.json');
-				// console.log('pb', parsedMobility);
-				setMobilityData({
-					lin_pH: parsedMobility.lin_pH, 
-					sol1: parsedMobility.sol1,
-					sol2:  parsedMobility.sol2
-				});
-				setMobilityPlotLoading(false);
+				
 
 			} 
-
 			else {
 				throw new Error('Error occurred: response.body is not a string');
 			}
+
+
+			const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
+			const parsedMobility = JSON.parse(mobility_data.body);
+			// downloadAsJson(parsedMobility, 'mobility_data.json');
+			// console.log('pb', parsedMobility);
+			setMobilityData({
+				lin_pH: parsedMobility.lin_pH, 
+				sol1: parsedMobility.sol1,
+				sol2:  parsedMobility.sol2
+			});
+			setMobilityPlotLoading(false);
+
+
 
 			setLoading(false);
 			setMobilityPlotLoading(false);

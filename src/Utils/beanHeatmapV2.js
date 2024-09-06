@@ -4,6 +4,7 @@ const BEAN_COMPUTATION_API = `${BASE_URL}/prod`;
 
 
 export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) => {
+
     
 	// Check if speciesObject is indeed an object
 	if (typeof speciesObject !== 'object' || speciesObject === null) {
@@ -23,6 +24,7 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		}
 	}
 
+	console.log('heatmap call', modifiedSpeciesObject);
 
 	const requestData = {
 		'ionicEffect': ionicEffect,

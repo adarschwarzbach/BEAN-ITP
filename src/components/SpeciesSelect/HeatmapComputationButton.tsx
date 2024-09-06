@@ -34,6 +34,9 @@ const HeatmapComputationButton: React.FC = () => {
 			const prunedSpecies = await pruneSpeciesInputs(ionicEffectCopy, speciesDictCopy);
 			prunedSpecies['2']['valence'] = prunedSpecies['2']['valence'] > 0 ? [1] : [-1];
 			prunedSpecies['3']['valence'] = prunedSpecies['3']['valence'] > 0 ? [1] : [-1];
+
+			console.log('pruned species', prunedSpecies);
+
 			const heatmap_v2_results = await beanHeatmapComputationV2(ionicEffectCopy, prunedSpecies['1']['pKa'][0], prunedSpecies);
 
 			if (typeof heatmap_v2_results === 'object' && 'sample_mobility_ratio' in heatmap_v2_results) {
