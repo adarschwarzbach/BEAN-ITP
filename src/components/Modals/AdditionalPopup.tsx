@@ -27,7 +27,16 @@ const AdditionalPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 				padding: '20px',
 				marginBottom: '20px'
 			}}>
-				<text>This tool is part of work that is currently under review in the journal Analytical Chemistry, 2024.</text>
+				<div>
+					<p>Reference*:</p>
+					<p>
+						A. S. Avaro, A. Schwarzbach, A. Jangra, S. S. Bahga, and J. G. Santiago. <br />
+						&quot;Highly Parallel Simulation Tool for the Design of Isotachophoresis Experiments&quot;, under review, 2024.
+					</p>
+					<p>
+						*If you use this tool as part of any published work, please cite this paper.
+					</p>
+				</div>
 			</div>
 
 			<div style={{
