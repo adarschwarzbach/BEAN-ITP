@@ -24,7 +24,7 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		}
 	}
 
-	console.log('heatmap call', modifiedSpeciesObject);
+	// console.log('heatmap call', modifiedSpeciesObject);
 
 	const requestData = {
 		'ionicEffect': ionicEffect,
@@ -34,7 +34,6 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 	};
 
 	try {
-		console.log('hit');
 		const response = await fetch(BEAN_COMPUTATION_API, {
 			method: 'POST',
 			headers: {

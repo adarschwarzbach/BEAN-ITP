@@ -36,16 +36,16 @@ const HeatmapComputationButton: React.FC = () => {
 			// Try to force heatmap on prune failure
 			if ('errorMessage' in prunedSpecies) {
 				prunedSpecies = speciesDict;
-				console.log('prune failure');
+				// console.log('prune failure');
 			}
 			else {
-				console.log('pruned');
+				// console.log('pruned');
 			}
 
 			prunedSpecies['2']['valence'] = prunedSpecies['2']['valence'] > 0 ? [1] : [-1];
 			prunedSpecies['3']['valence'] = prunedSpecies['3']['valence'] > 0 ? [1] : [-1];
 
-			console.log('pruned species', prunedSpecies);
+			// console.log('pruned species', prunedSpecies);
 
 			const heatmap_v2_results = await beanHeatmapComputationV2(ionicEffectCopy, prunedSpecies['1']['pKa'][0], prunedSpecies);
 

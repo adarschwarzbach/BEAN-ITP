@@ -19,6 +19,11 @@ import { Button } from '@blueprintjs/core';
 import HeatmapComputationButton from '../SpeciesSelect/HeatmapComputationButton';
 import ITPCheckIndicator from '../HeatMap/ITPCheckIndicator';
 import MobilityPlot from '../MobilityPlot/MobilityPlot';
+import axios from 'axios';
+
+
+const HEATMAP_BASE_URL = 'https://vpqyduqulg.execute-api.us-west-1.amazonaws.com';
+const BEAN_COMPUTATION_API = `${HEATMAP_BASE_URL}/prod`;
 
 
 const Entrypoint: React.FC = () => {
@@ -33,14 +38,24 @@ const Entrypoint: React.FC = () => {
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
 	
 			const computationPromise = beanComputation(ionicEffectCopy, speciesDictCopy);
+			
 			const timeoutPromise = new Promise(resolve => setTimeout(resolve, 600));
 	
 			await Promise.all([computationPromise, timeoutPromise]);
 	
 			setGlobalLoading(false);
+
+			axios.post(BEAN_COMPUTATION_API, {}).then(response => {
+				console.log(response.data);
+			}).catch(error => {
+				console.log(error);
+			});
 		};
+
 	
 		fetchData();
+		
+
 	}, []);
 
 	const themeClass = 'bp5-dark';
