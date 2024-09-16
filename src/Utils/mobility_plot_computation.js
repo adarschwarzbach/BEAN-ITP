@@ -2,6 +2,7 @@ const BASE_URL = 'https://ngs7p9iikb.execute-api.us-west-1.amazonaws.com';
 const BEAN_COMPUTATION_API = `${BASE_URL}/default`; // Change from /prod to /default to match the curl command
 
 export const mobility_plot_computation = async (ionicEffect, speciesObject) => {
+	console.log('m plot hit');
 	// Validate the input speciesObject
 	if (typeof speciesObject !== 'object' || speciesObject === null || Object.keys(speciesObject).length === 0) {
 		console.error('Invalid species object:', speciesObject);
@@ -25,7 +26,7 @@ export const mobility_plot_computation = async (ionicEffect, speciesObject) => {
 		pKa: pKa,
 		mobilities: mobilities,
 		labels: labels,
-		ionic_effect_flag: ionicEffect // Assuming this is boolean or similarly simple value
+		ionic_effect_flag: ionicEffect 
 	};
 
 	try {
@@ -44,7 +45,7 @@ export const mobility_plot_computation = async (ionicEffect, speciesObject) => {
 		}
 
 		const data = await response.json();
-		// console.log(data, 'd');
+		console.log('m plot data', data);
 		return data;
 		// Process the response data as needed
 	} catch (error) {

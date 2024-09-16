@@ -29,9 +29,19 @@ const HeatmapComputationButton: React.FC = () => {
 			// Turn valence to +-1
             
 
-
+			
 			// const heatmap_v2_results = await beanHeatmapComputationV2(ionicEffectCopy, speciesDictCopy['1']['pKa'][0], speciesDictCopy);
-			const prunedSpecies = await pruneSpeciesInputs(ionicEffectCopy, speciesDictCopy);
+			let prunedSpecies = await pruneSpeciesInputs(ionicEffectCopy, speciesDictCopy);
+
+			// Try to force heatmap on prune failure
+			if ('errorMessage' in prunedSpecies) {
+				prunedSpecies = speciesDict;
+				console.log('prune failure');
+			}
+			else {
+				console.log('pruned');
+			}
+
 			prunedSpecies['2']['valence'] = prunedSpecies['2']['valence'] > 0 ? [1] : [-1];
 			prunedSpecies['3']['valence'] = prunedSpecies['3']['valence'] > 0 ? [1] : [-1];
 

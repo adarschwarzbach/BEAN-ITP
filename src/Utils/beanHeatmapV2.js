@@ -34,6 +34,7 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 	};
 
 	try {
+		console.log('hit');
 		const response = await fetch(BEAN_COMPUTATION_API, {
 			method: 'POST',
 			headers: {
@@ -49,6 +50,8 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		}
 
 		const data = await response.json();
+
+		console.log('hmd', data, 'hmd');
         
 		const heatmapDataV2 = {
 			sample_mobility_ratio: data.grid_results_1.map((row) =>
