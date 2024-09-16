@@ -863,10 +863,21 @@ def FuncSteadyStateSolver(
 
 
 def lambda_handler(event, context):
-    concentrations = np.array(event.get('concentrations'))
+    # Convert concentrations 2D array elements to float
+    concentrations = np.array(event.get('concentrations'), dtype=float)
+    
+    # Convert valences 2D array elements to float
     valences = event.get('valences')
+    valences = [[float(val) for val in sublist] for sublist in valences]
+    
+    # Convert pKa 2D array elements to float
     pKa = event.get('pKa')
+    pKa = [[float(x) for x in sublist] for sublist in pKa]
+    
+    # Convert mobilities 2D array elements to float
     mobilities = event.get('mobilities')
+    mobilities = [[float(x) for x in sublist] for sublist in mobilities]
+    
     labels = event.get('labels')
 
     Npoints = 500
