@@ -62,7 +62,7 @@ const BeanComputationButton: React.FC = () => {
 			} 
 
 			else {
-				throw new Error('Error occurred: response.body is not a string');
+				console.log('Error occurred: response.body is not a string');
 			}
 
 			setLoading(false);
@@ -71,6 +71,9 @@ const BeanComputationButton: React.FC = () => {
 
 		} catch (error) {
 			console.error('Error occurred:', error);
+			setError(true);
+			setLoading(false);
+			setMobilityPlotLoading(false);
 		}
 	};
 
