@@ -1,5 +1,5 @@
-# BEAN - An Isotachphoresis Calculator
-**Work in progress** 🟢🟢🟢🟡⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+# BEAN - A Highly Parallel Isotachphoresis Calculator
+**Manuscript in review!** 🟢🟢🟢🟢🟢🟢🟡🟡⚪️
 
 
 Try it out [here](https://adarschwarzbach.github.io/BEAN-ITP/)!
