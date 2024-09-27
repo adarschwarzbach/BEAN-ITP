@@ -85,6 +85,10 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 		-3.82352941e-08, -4.05882353e-08, -4.29411765e-08, -4.52941176e-08,
 		-4.76470588e-08, -5.00000000e-08];
 	
+		if (speciesDict['0']['valence'][0] > 0) {
+			mobility_values = mobility_values.map(value => value > 0 ? -value : value);
+		  }
+	
 	
 	
 
