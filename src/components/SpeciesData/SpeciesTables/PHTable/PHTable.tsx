@@ -42,7 +42,7 @@ const PHTable: React.FC = () => {
 	return (
 		<div style={{width: 280}}>
 			<h5 style = {{marginBottom:8}} >
-				{ !error ? 'pH by Zone' : 'Error Computing ITP'}
+				{ !error ? 'pH by Zone' : 'Computation timed out. Please try new inputs.P'}
 			</h5>
 			<Table2 
 				numRows={numRows}
