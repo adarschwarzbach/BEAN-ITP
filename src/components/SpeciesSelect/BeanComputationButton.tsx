@@ -27,7 +27,16 @@ const BeanComputationButton: React.FC = () => {
 			// Create a deep copy of speciesDict
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
 
-			console.log('bean computation dict', speciesDict);
+			const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
+			const parsedMobility = JSON.parse(mobility_data.body);
+			// downloadAsJson(parsedMobility, 'mobility_data.json');
+			// console.log('pb', parsedMobility);
+			setMobilityData({
+				lin_pH: parsedMobility.lin_pH, 
+				sol1: parsedMobility.sol1,
+				sol2:  parsedMobility.sol2
+			});
+			setMobilityPlotLoading(false);
 
 	
 			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
@@ -36,6 +45,8 @@ const BeanComputationButton: React.FC = () => {
 			if (response.statusCode != 200) {
 				setError(true);
 				setLoading(false);
+
+				
 				return;
 			}
 
@@ -48,16 +59,16 @@ const BeanComputationButton: React.FC = () => {
 				setError(false);
 				setLoading(false);
 
-				const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
-				const parsedMobility = JSON.parse(mobility_data.body);
-				// downloadAsJson(parsedMobility, 'mobility_data.json');
-				// console.log('pb', parsedMobility);
-				setMobilityData({
-					lin_pH: parsedMobility.lin_pH, 
-					sol1: parsedMobility.sol1,
-					sol2:  parsedMobility.sol2
-				});
-				setMobilityPlotLoading(false);
+				// const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
+				// const parsedMobility = JSON.parse(mobility_data.body);
+				// // downloadAsJson(parsedMobility, 'mobility_data.json');
+				// // console.log('pb', parsedMobility);
+				// setMobilityData({
+				// 	lin_pH: parsedMobility.lin_pH, 
+				// 	sol1: parsedMobility.sol1,
+				// 	sol2:  parsedMobility.sol2
+				// });
+				// setMobilityPlotLoading(false);
 
 			} 
 

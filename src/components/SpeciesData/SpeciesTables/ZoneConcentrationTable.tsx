@@ -107,7 +107,7 @@ const ZoneConcentrationsTable: React.FC = () => {
 	return (
 		<div>
 			<h5 style={{ marginBottom: 8 }}>
-				{!error ? <>Zone Concentrations (mM) and pH</> : 'Error Computing ITP'}
+				{!error ? <>Zone Concentrations (mM) and pH</> : 'Computation timed out. Please try new inputs.'}
 			</h5>
 
 			<Table2
