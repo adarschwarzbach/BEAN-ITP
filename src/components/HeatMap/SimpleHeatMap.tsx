@@ -79,11 +79,13 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	
 
 	//  in javascript
-	const mobility_values = [-1.00000000e-08, -1.23529412e-08, -1.47058824e-08, -1.70588235e-08,
+	let mobility_values = [-1.00000000e-08, -1.23529412e-08, -1.47058824e-08, -1.70588235e-08,
 		-1.94117647e-08, -2.17647059e-08, -2.41176471e-08, -2.64705882e-08,
 		-2.88235294e-08, -3.11764706e-08, -3.35294118e-08, -3.58823529e-08,
 		-3.82352941e-08, -4.05882353e-08, -4.29411765e-08, -4.52941176e-08,
 		-4.76470588e-08, -5.00000000e-08];
+	
+	
 	
 
 	const LE_C_values = [0.001, 0.00150131, 0.00225393, 0.00338386, 0.00508022, 0.00762699, 0.01145048, 0.01719072, 0.02580862, 0.03874675, 0.05817091, 0.08733262, 0.13111339, 0.19684194, 0.29552092, 0.44366873, 0.66608463, 1.0].reverse();
@@ -126,6 +128,7 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 	const handleMouseEnter = (rowIndex, colIndex, value, e) => {
 		let message;
+		let mobility_val_normalized = mobility_values[colIndex];
 		if (typeof(value) === 'string') {
 			switch (value) {
 			case 'itpCheck failed':
@@ -143,6 +146,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 		} else {
 			// For numerical values, format the message with the value to one decimal place
 			message = value.toFixed(2);
+			if (value > 0 && mobility_val_normalized < 0) {
+				mobility_val_normalized = -1 * mobility_val_normalized
+			}
 		}
 	
 		setTooltip({
@@ -151,8 +157,8 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 				dataType === 'ph_in_sample_region'
 				? `CI concentration: ${toScientificNotation(point_c_values[colIndex])}, `
 				: dataType === 'sample_pre_concentration'
-				? `TI mobility: ${toScientificNotation(mobility_values[colIndex])}, `
-				: `A mobility: ${toScientificNotation(mobility_values[colIndex])}, `
+				? `TI mobility: ${toScientificNotation(mobility_val_normalized)}, `
+				: `A mobility: ${toScientificNotation(mobility_val_normalized)}, `
 			}${
 				dataType === 'ph_in_sample_region' ? 'pH: ' : 'mobility ratio: '
 			} ${message}`,			
