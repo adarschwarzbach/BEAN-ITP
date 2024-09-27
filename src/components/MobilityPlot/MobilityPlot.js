@@ -56,7 +56,7 @@ const MobilityPlot = () => {
 		const baseHue = (index * hueStep) % hueRange; // Adjust so it never reaches purple
 		return {
 			label: labels[index] || `Species ${index + 1} (sol1)`,
-			data: sol.map((y, i) => ({ x: lin_pH[i], y: y * 1e8 })),
+			data: sol.map((y, i) => ({ x: lin_pH[i], y: y  })),
 			borderColor: `hsl(${baseHue}, 100%, 50%)`,
 			backgroundColor: `hsla(${baseHue}, 100%, 50%, 0)`,
 			fill: false,
@@ -70,7 +70,7 @@ const MobilityPlot = () => {
 		const baseHue = (index * hueStep) % hueRange; // Adjust so it never reaches purple
 		return {
 			label: `${labels[index]}`,
-			data: sol.map((y, i) => ({ x: lin_pH[i], y: y * 1e8 })),
+			data: sol.map((y, i) => ({ x: lin_pH[i], y: y  })),
 			borderColor: `hsl(${baseHue}, 100%, 30%)`,
 			backgroundColor: `hsla(${baseHue}, 100%, 80%, 0)`,
 			borderDash: [5, 5], // Distinguish by dash style
@@ -109,7 +109,12 @@ const MobilityPlot = () => {
 				},
 				ticks: {
 					callback: function (value) {
-						return Number(value.toFixed(2));
+						if (String(value).length > 2) {
+							return Number((value * 1e8).toFixed(2)); // not normalized
+						}
+						else {
+							return Number(value.toFixed(2)); // already normalized
+						}
 					},
 					color: 'white',
 				}
