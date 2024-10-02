@@ -19,67 +19,46 @@ const BeanComputationButton: React.FC = () => {
 	const handleApiCall = async () => {
 		setLoading(true);
 		setMobilityPlotLoading(true);
-		
+	
 		try {
 			// Create a copy of ionicEffect (for primitives like numbers, direct assignment is okay)
 			const ionicEffectCopy = ionicEffect;
 	
 			// Create a deep copy of speciesDict
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
-
-			const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
-			const parsedMobility = JSON.parse(mobility_data.body);
-			// downloadAsJson(parsedMobility, 'mobility_data.json');
-			// console.log('pb', parsedMobility);
+	
+			// Run both API calls in parallel using Promise.all
+			const [response, mobilityDataResponse] = await Promise.all([
+				beanComputation(ionicEffectCopy, speciesDictCopy),
+				mobility_plot_computation(ionicEffectCopy, speciesDictCopy)
+			]);
+	
+			// Process mobility plot data
+			const parsedMobility = JSON.parse(mobilityDataResponse.body);
 			setMobilityData({
-				lin_pH: parsedMobility.lin_pH, 
+				lin_pH: parsedMobility.lin_pH,
 				sol1: parsedMobility.sol1,
-				sol2:  parsedMobility.sol2
+				sol2: parsedMobility.sol2,
 			});
 			setMobilityPlotLoading(false);
-
 	
-			const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
-
-			
-			if (response.statusCode != 200) {
+			// Process bean computation response
+			if (response.statusCode !== 200) {
 				setError(true);
 				setLoading(false);
-
-				
 				return;
 			}
-
-
-			
+	
 			if (typeof response.body === 'string') {
 				const parsedBody = JSON.parse(response.body);
 				// downloadAsJson(parsedBody, 'beanComputation.json'); // if new initial data is needed
 				setBeanResults(parsedBody);
 				setError(false);
-				setLoading(false);
-
-				// const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
-				// const parsedMobility = JSON.parse(mobility_data.body);
-				// // downloadAsJson(parsedMobility, 'mobility_data.json');
-				// // console.log('pb', parsedMobility);
-				// setMobilityData({
-				// 	lin_pH: parsedMobility.lin_pH, 
-				// 	sol1: parsedMobility.sol1,
-				// 	sol2:  parsedMobility.sol2
-				// });
-				// setMobilityPlotLoading(false);
-
-			} 
-
-			else {
+			} else {
 				console.log('Error occurred: response.body is not a string');
 			}
-
+	
 			setLoading(false);
-			setMobilityPlotLoading(false);
-
-
 		} catch (error) {
 			console.error('Error occurred:', error);
 			setError(true);
