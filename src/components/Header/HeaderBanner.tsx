@@ -5,7 +5,7 @@ import ProjectInfoPopup from '../Modals/ProjectInfoPopover';
 import AdditionalPopup from '../Modals/AdditionalPopup';
 
 interface Props {
-    className?: string; // This will allow you to pass a CSS class to your HeaderBanner component
+    className?: string;
 }
 
 const HeaderBanner: React.FC<Props> = ({ className }) => {
@@ -29,7 +29,6 @@ const HeaderBanner: React.FC<Props> = ({ className }) => {
 					text="Nomenclature"
 					onClick={() => window.open('https://nomenclature-public.s3.us-west-1.amazonaws.com/BEAN+nomenclature.pdf', '_blank')}
 				/>
-				{/* <ProjectInfoPopup isOpen={isOpen} onClose={() => setIsOpen(false)} /> */}
 				<Button className="bp5-minimal" icon="info-sign" text="About" onClick={() => setAdditionalIsOpen(true)}/>
 				<AdditionalPopup isOpen={additionalIsOpen} onClose={() => setAdditionalIsOpen(false)}/>
 			</Navbar.Group>

@@ -20,7 +20,6 @@
   }
   
   th {
-    /* background-color: #f2f2f2; */
   }
   
   /* Styling for formulas and scientific notations */
@@ -51,12 +50,10 @@
     margin-left: 20px;
   }
   
-  /* Ensure that the sections have a clear separation */
   .section {
     margin-bottom: 30px;
   }
   
-  /* Specific styles for emphasizing certain types of content */
   .important {
     font-weight: bold;
     color: #007bff;
@@ -67,12 +64,10 @@
     font-style: italic;
   }
   
-  /* Adjust the size for better readability on web */
   body {
     font-size: 16px;
   }
   
-  /* Adjusting superscript and subscript specifically for scientific notation */
 .superscript,
 .subscript {
   font-size: smaller;
@@ -86,7 +81,6 @@
   vertical-align: sub;
 }
 
-/* Additional styling for scientific notation */
 .notation {
   display: inline-flex;
   flex-direction: column;

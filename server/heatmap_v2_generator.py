@@ -8,7 +8,6 @@ client_config = botocore.config.Config(max_pool_connections=990)
 lambda_client = boto3.client('lambda', config=client_config)
 
 def invoke_lambda_function(args):
-    # Extract arguments specific to the function call
     point_c = args[0]
     point_mobility_or_CI = args[1]
     species = args[2]
@@ -16,7 +15,6 @@ def invoke_lambda_function(args):
     index = args[4]
     lambda_type = args[5]  # Determines which Lambda function to call
 
-    # Prepare the payload based on Lambda function type
     payload = {
         "ionicEffect": ionicEffect,
         "point_c_LE": point_c,
@@ -30,7 +28,6 @@ def invoke_lambda_function(args):
         payload["point_c_CI"] = point_mobility_or_CI
         function_suffix = '3'
 
-    # Invoke the corresponding Lambda function
     response = lambda_client.invoke(
         FunctionName=f'arn:aws:lambda:us-west-1:039289163902:function:heatmap_point_v2_{function_suffix}',
         InvocationType='RequestResponse',
@@ -49,7 +46,6 @@ def organize_results(results):
     list_324_647 = []
     list_648_up = []
     
-    # Iterate through the original list and append each sublist to the appropriate new list
     for sublist in sorted_results:
         if 0 <= sublist[0] <= 323:
             list_0_323.append(sublist)
@@ -105,11 +101,10 @@ def lambda_handler(event, context):
 
     point_c_values =  [0.001, 0.00150131, 0.00225393, 0.00338386, 0.00508022, 0.00762699, 0.01145048, 0.01719072, 0.02580862, 0.03874675, 0.05817091, 0.08733262, 0.13111339, 0.19684194, 0.29552092, 0.44366873, 0.66608463, 1.0]
 
-    # Initialize argument lists for each Lambda function
     args_list_lambda_1 = []
     args_list_lambda_2 = []
     args_list_lambda_3 = []
-    index = 0  # Initialize index for ordering results
+    index = 0 
 
     # Arguments for Lambda 1
     for LE_C in LE_C_values:
@@ -139,8 +134,6 @@ def lambda_handler(event, context):
         futures = [executor.submit(invoke_lambda_function, args) for args in combined_args_list]
         for future in as_completed(futures):
             results.append(future.result())
-
-    # grid_lambda_1, grid_lambda_2, grid_lambda_3 = organize_results_separately(results, LE_C_values, mobility_values, point_c_values)
 
 
     list_1, list_2, list_3 = organize_results(results)

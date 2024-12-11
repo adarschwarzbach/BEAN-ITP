@@ -5,14 +5,8 @@ body .bp5-navbar.bp5-dark, .bp5-dark .bp5-navbar {
   min-width:550px;
 }
 
-/* .custom-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
 
 .custom-title {
-    /* font-size: 18px; */
     font-weight: bold;
     flex-grow: 0;
     flex-shrink: 0;
@@ -37,13 +31,13 @@ body .bp5-navbar.bp5-dark, .bp5-dark .bp5-navbar {
 }
 
 a {
-    color: #FFFFFF; /* blue colors for links too */
-    text-decoration: inherit; /* no underline */
+    color: #FFFFFF; 
+    text-decoration: inherit; 
   }
 
 .header-banner-class-name {
     position: -webkit-sticky; /* For Safari browser compatibility */
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures that the header remains above other elements when scrolling */
+    z-index: 1000; 
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './NomenclatureStyles.css'; // Assuming you have a CSS file for styling
+import './NomenclatureStyles.css'; 
 
 const Nomenclature = () => {
 	return (

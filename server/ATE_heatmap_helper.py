@@ -69,16 +69,6 @@ def InitialConditions(species):
         LMat, muMat, zMat, DMat, KaMat, zListArranged, MaxCol: arrays of physical input quantities
     """
 
-    # f = open(filename)
-
-    # input_lines = ""
-    # for line in f:  # loop over the file
-    #     line = line.lstrip("\n")  # strip lines of left indents/whitespace
-    #     input_lines = input_lines + line  # join all lines in input file
-
-    # # announce global variables to be modified
-    # exec(input_lines, globals())
-    # f.close()
 
 
     Nspecies = len(species)

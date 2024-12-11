@@ -83,13 +83,12 @@ visc = 1e-3  # Dynamic viscosity (water) (Pa s)
 
 
 def InitialConditions():
-    # # reads input file and assigns values to various simulation variables and parameters
     # f = open(filename)
 
     # input_lines = ''
-    # for line in f:                         # loop over the file
-    #     line = line.lstrip('\n')  # strip lines of left indents/whitespace
-    #     input_lines = input_lines + line  # join all lines in input file
+    # for line in f:                        
+    #     line = line.lstrip('\n') 
+    #     input_lines = input_lines + line  
 
     # # announce global variables to be modified
     # exec(input_lines, globals())

@@ -1,10 +1,10 @@
 import requests
 import json
 
-# API endpoint
+
 url = 'https://vpqyduqulg.execute-api.us-west-1.amazonaws.com/prod'
 
-# Request data
+
 data = {
     "ionicEffect": 0,
     "species": {
@@ -15,21 +15,18 @@ data = {
     }
 }
 
-# Headers
+
 headers = {
     "Content-Type": "application/json"
 }
 
-# Sending POST request to the API
 response = requests.post(url, headers=headers, data=json.dumps(data))
 
 fail_count = 0
 valid = 0
 long_compute_responses = []
 max_valid = 0
-# Checking if the request was successful
 if response.status_code == 200:
-    # Parsing the response
     response_data = response.json()
 
     for key in response_data:
@@ -51,29 +48,6 @@ if response.status_code == 200:
                                     fail_count += 1
 
 
-    # Filtering results with compute time longer than 3 seconds
-
-    # one_two = response_data["grid_results_1_2"]
-    # three = response_data["grid_results_3"]
-
-    # for item in one_two:
-    #     print(json.loads(item).keys())
-    #     if "errorMessage" in item[0]:
-    #         continue
-    #     print(json.loads(item[0]['body'])["compute_time"]  )
-    #     if json.loads(item[0]['body'])["compute_time"] > 3:
-    #         long_compute_responses.append(item)
-        # if "body" in item[0].keys():
-        #     if item[0]["body"][0]["compute_time"] > 3:
-        #         long_compute_responses.append(item)
-
-    # for item in response_data["grid_results_3"]:
-    #     print(item)
-    #     if item["body"]["compute_time"] > 3:
-    #         long_compute_responses.append(item)
-
-
-    # Printing the filtered results
     print("Responses with compute time longer than 3 seconds:")
     for item in long_compute_responses:
         print(item)
