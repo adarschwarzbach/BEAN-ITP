@@ -9,7 +9,7 @@ import ts from 'typescript';
 import { downloadAsJson } from '../../Utils/downloadAsJSON';
 
 const BeanComputationButton: React.FC = () => {
-	const {setLoading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading, setMobilityData, mobilityPlotLoading, setMobilityPlotLoading} = useSpeciesData();
+	const {setLoading, loading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading, setMobilityData, mobilityPlotLoading, setMobilityPlotLoading, ateHeatmapLoading } = useSpeciesData();
 
 	// useEffect(() => {
 	// 	handleApiCall();
@@ -85,7 +85,7 @@ const BeanComputationButton: React.FC = () => {
 		<Button 
 			onClick={handleApiCall} 
 			icon = 'rocket'
-			disabled = {!validInput}
+			disabled = {!validInput || loading  || ateHeatmapLoading } // consider adding mobilityPlotLoading
 		>
            Run
 		</Button>

@@ -2,14 +2,13 @@ import React from 'react';
 import { useSpeciesData } from '../../Contexts/SpeciesData';
 import { beanComputation } from '../../Utils/beanComputation';
 import { Button } from '@blueprintjs/core';
-// import { ateHeatmapComputation } from '../../Utils/beanAteHeatmapComputation';
 import { beanHeatmapComputationV2 } from '../../Utils/beanHeatmapV2';
 import { downloadAsJson } from '../../Utils/downloadAsJSON';
 import { pruneSpeciesInputs } from '../../Utils/pruneHeatmapInputs';
 
 
 const HeatmapComputationButton: React.FC = () => {
-	const {ionicEffect, speciesDict, validInput, setAteHeatmapResults, setAteHeatmapLoading, setHeatmapError, setHeatmapV2} = useSpeciesData();
+	const {ionicEffect, loading, speciesDict, validInput, setAteHeatmapResults, setAteHeatmapLoading, setHeatmapError, setHeatmapV2, ateHeatmapLoading, mobilityPlotLoading} = useSpeciesData();
 
 	// useEffect(() => {
 	// 	handleApiCall();
@@ -73,7 +72,7 @@ const HeatmapComputationButton: React.FC = () => {
 			<Button 
 				onClick={handleApiCall} 
 				icon = 'heatmap'
-				disabled = {!validInput}
+				disabled = {!validInput || ateHeatmapLoading || loading } // consider adding mobilityPlotLoading
 			>
            Create Heatmaps
 			</Button>
