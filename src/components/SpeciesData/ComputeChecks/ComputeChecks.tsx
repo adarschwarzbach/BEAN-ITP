@@ -59,12 +59,6 @@ const ComputeChecks: React.FC = () => {
 						{beanResults.TEZoneConditionSatisfied && !error ? 'TE zone condition is satisfied' : 'TE zone condition NOT satisfied'}
 					</span>
 				</div>
-				{/* <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
-					{renderStatusIcon(beanResults.StableItpPredicted)}
-					<span style={{ marginLeft: '8px', whiteSpace:'nowrap' }}>
-						{beanResults.StableItpPredicted && !error ? 'Stable ITP is predicted' : 'Stable ITP NOT predicted'}
-					</span>
-				</div> */}
 			</Card>
 		</>
 	);

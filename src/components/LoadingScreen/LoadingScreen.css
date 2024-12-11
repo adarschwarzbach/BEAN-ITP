@@ -4,12 +4,12 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.85); 
     padding-bottom: 40;
 }
 
 .loading-image {
-    width: 400px; /* Adjust based on your needs */
+    width: 400px;
     height: auto;
     margin-bottom: 20px;
 }

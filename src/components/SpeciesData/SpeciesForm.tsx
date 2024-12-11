@@ -203,8 +203,6 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 								value={rawData.pKa} 
 								onChange={handleChange} 
 								intent={invalidInputs.pKa ? 'danger' : 'none'}
-								// onMouseEnter={(e) => handleTooltipShow(e, 'Information about pKa')}
-								// onMouseLeave={handleTooltipHide}
 							/>
 						</FormGroup>
 
@@ -228,14 +226,14 @@ const SpeciesForm: React.FC<Props> = ({ index }) => {
 						position: 'absolute', 
 						left: tooltip.x, 
 						top: tooltip.y,
-						backgroundColor: '#394B59',  // Blueprint's tooltip background color
-						color: 'white',  // Text color
-						padding: '10px',  // Padding inside the tooltip
-						borderRadius: '3px',  // Rounded corners
-						boxShadow: '0 0 5px rgba(0,0,0,0.2)',  // Shadow for a "lifted" effect
-						fontSize: '13px',  // Font size similar to Blueprint
-						zIndex: 9999,  // Ensure it's above other elements
-						transition: 'left 0.1s ease, top 0.1s ease',  // Transition for smooth animation
+						backgroundColor: '#394B59',  
+						color: 'white',  
+						padding: '10px', 
+						borderRadius: '3px',  
+						boxShadow: '0 0 5px rgba(0,0,0,0.2)',  
+						fontSize: '13px',  
+						zIndex: 9999, 
+						transition: 'left 0.1s ease, top 0.1s ease', 
 					}}
 				>
 					{tooltip.content}

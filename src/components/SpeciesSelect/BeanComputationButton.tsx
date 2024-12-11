@@ -10,24 +10,13 @@ import { downloadAsJson } from '../../Utils/downloadAsJSON';
 
 const BeanComputationButton: React.FC = () => {
 	const {setLoading, loading,  ionicEffect, speciesDict, setBeanResults, setError, validInput, setAteHeatmapResults, setAteHeatmapLoading, setMobilityData, mobilityPlotLoading, setMobilityPlotLoading, ateHeatmapLoading } = useSpeciesData();
-
-	// useEffect(() => {
-	// 	handleApiCall();
-	// }, []);
-
-	// Check if all inputs are valid
 	const handleApiCall = async () => {
-		// Set the loading states for both operations initially
 		setLoading(true);
 		setMobilityPlotLoading(true);
 	
-		// Create a copy of ionicEffect (for primitives like numbers, direct assignment is okay)
 		const ionicEffectCopy = ionicEffect;
-	
-		// Create a deep copy of speciesDict
 		const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
 	
-		// Handle bean computation in isolation
 		const handleBeanComputation = async () => {
 			try {
 				const response = await beanComputation(ionicEffectCopy, speciesDictCopy);
@@ -40,7 +29,6 @@ const BeanComputationButton: React.FC = () => {
 	
 				if (typeof response.body === 'string') {
 					const parsedBody = JSON.parse(response.body);
-					// downloadAsJson(parsedBody, 'beanComputation.json'); // if new initial data is needed
 					setBeanResults(parsedBody);
 					setError(false);
 				} else {
@@ -61,7 +49,6 @@ const BeanComputationButton: React.FC = () => {
 				const mobility_data = await mobility_plot_computation(ionicEffectCopy, speciesDictCopy);
 				const parsedMobility = JSON.parse(mobility_data.body);
 				
-				// Update mobility data state
 				setMobilityData({
 					lin_pH: parsedMobility.lin_pH,
 					sol1: parsedMobility.sol1,
@@ -75,7 +62,6 @@ const BeanComputationButton: React.FC = () => {
 			}
 		};
 	
-		// Run both computations in parallel
 		handleBeanComputation();
 		handleMobilityPlot();
 	};

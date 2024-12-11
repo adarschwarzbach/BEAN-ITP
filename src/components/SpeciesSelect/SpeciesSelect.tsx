@@ -15,7 +15,7 @@ interface Species {
 }
 
 interface Props {
-    dataIndex: string;  // This prop will determine which species in the speciesDict we are updating
+    dataIndex: string; 
 }
 
 const renderSpecies: ItemRenderer<Species> = (species, { handleClick, modifiers }) => {
@@ -49,7 +49,7 @@ const renderSpecies: ItemRenderer<Species> = (species, { handleClick, modifiers 
 };
 
 export const SpeciesSelect: React.FC<Props> = ({dataIndex}) => {
-	const { speciesDict, setSpeciesDict } = useSpeciesData(); // Extract values from context
+	const { speciesDict, setSpeciesDict } = useSpeciesData();
 	const [selectedSpecies, setSelectedSpecies] = useState<Species | null>(null);
 	const [query, setQuery] = useState<string>('');
 	const [inputPlaceholder, setInputPlaceholder] = useState<string>('Choose a species...');
@@ -69,8 +69,7 @@ export const SpeciesSelect: React.FC<Props> = ({dataIndex}) => {
 
 	const handleSpeciesSelect = (species: Species) => {
 		setSelectedSpecies(species);
-	
-		// Deep copy of the speciesDict
+
 		const updatedSpeciesDict = JSON.parse(JSON.stringify(speciesDict));
 	
 		// Find the species data from commonSpecies

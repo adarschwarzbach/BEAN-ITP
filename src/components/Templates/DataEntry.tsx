@@ -1,4 +1,4 @@
-// ContentArea.jsx
+
 import React from 'react';
 import IonicEffectSwitch from '../SpeciesSelect/IonicEffectSwitch';
 import BeanComputationButton from '../SpeciesSelect/BeanComputationButton';

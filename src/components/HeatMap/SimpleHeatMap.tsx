@@ -22,8 +22,6 @@ const generateLargeData = (rows: number, columns: number): number[][] => {
 		for (let j = 0; j < columns; j++) {
 			const distanceFromCenter = Math.sqrt((centerX - j) ** 2 + (centerY - i) ** 2);
 			const normalizedDistance = distanceFromCenter / maxDistance; 
-
-			// This will be a random value that decreases as we get closer to the center
 			const randomAdjustment = Math.random() * normalizedDistance;
 
 			rowData.push(randomAdjustment);
@@ -100,7 +98,6 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	let colorMax = 1;
 
 	if (renderData) {
-		// Calculate the minimum and maximum values in the data
 		const values = renderData
 			.flat()
 			.map(datapoint => datapoint.computation_value)
@@ -113,19 +110,16 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 	}
 
 	function toScientificNotation(num) {
-		// Ensure the input is a number
 		if (typeof num !== 'number') {
 			throw new TypeError('Input must be a number');
 		}
 		
-		// Convert the number to scientific notation with 3 significant figures
 		return num.toExponential(2);
 	}
 
 	const colorScaleHeatmap = colorScaleGenerator(color).domain([colorMin, colorMax]);
 	const gradientId = `gradient-${color}`;
 
-	// Extract given values from grid_results and create a list of lists
 	const heatmapData = renderData ? renderData.map(row => row.map(datapoint => datapoint['computation_value'])).reverse() : [];
 
 	const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 });
@@ -145,10 +139,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 				message = 'ITP did not converge';
 				break;
 			default:
-				message = value; // Fallback to the actual message if none of the cases match
+				message = value; 
 			}
 		} else {
-			// For numerical values, format the message with the value to one decimal place
 			message = value.toFixed(2);
 			if (value > 0 && mobility_val_normalized < 0) {
 				mobility_val_normalized = -1 * mobility_val_normalized
@@ -166,8 +159,8 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 			}${
 				dataType === 'ph_in_sample_region' ? 'pH: ' : 'mobility ratio: '
 			} ${message}`,			
-			x: e.clientX + 10, // Offset by 10 pixels to the right
-			y: e.clientY + 10  // Offset by 10 pixels down
+			x: e.clientX + 10, 
+			y: e.clientY + 10 
 		});
 	};
 	
@@ -185,10 +178,9 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 				message = 'ITP did not converge';
 				break;
 			default:
-				message = value; // Fallback to the actual message if none of the cases match
+				message = value; 
 			}
 		} else {
-			// For numerical values, format the message with the value to one decimal place
 			message = value.toFixed(1);
 		}
 	
@@ -199,10 +191,8 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 		}Value: ${message}`;
 	
 		if (tooltip.show && tooltip.content === checkContent) {
-			// Hide tooltip if the same rectangle is clicked again
 			setTooltip({ show: false, content: '', x: 0, y: 0 });
 		} else {
-			// Show or update tooltip for the new rectangle
 			setTooltip({
 				show: true,
 				content: checkContent,
@@ -305,32 +295,31 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 			{renderData && (
 				<svg width={200} height={190} ref={svgRef}>
-					{/* SVG elements remain unchanged */}
 					<g transform="translate(40, 0)">
 						{heatmapData.map((row, rowIndex) => {
 							return row.map((value, colIndex) => {
 								let fillColor: string;
 								let textStrikethrough = false;
-								let textColor = '#D3D8DE'; // Default text color
+								let textColor = '#D3D8DE';
                                 
 								if (typeof value === 'string') {
-									// Apply different styles based on the error message
+									
 									if (value === 'itpCheck failed') {
-										fillColor = '#FFFFFF'; // white
+										fillColor = '#FFFFFF'; 
 									} else if (value === 'error - Server timed out or invalid JSON format') {
-										fillColor = '#A9A9A9'; // gray
+										fillColor = '#A9A9A9'; 
 										textColor = '#FFFFFF';
 										textStrikethrough = true;
 									} else if (value.includes('error due to timeout or other server-side issue')) {
-										fillColor = '#A9A9A9'; // Dark Gray
+										fillColor = '#A9A9A9'; 
 										textColor = '#FFFFFF';
 									} else {
-										fillColor = '#FFFFFF'; // Default error color
+										fillColor = '#FFFFFF'; 
 									}
 								} else if (typeof value === 'number') {
 									fillColor = colorScaleHeatmap(value);
 								} else {
-									fillColor = '#FFFFFF'; // Fallback color
+									fillColor = '#FFFFFF'; 
 								}
 
 								return (
@@ -343,7 +332,6 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 											fill={fillColor}
 											onMouseEnter={(e) => handleMouseEnter(rowIndex, colIndex, value, e)}
 											onMouseLeave={handleMouseLeave}
-											// onClick={(e) => handleClick(rowIndex, colIndex, value, e)} // gotta replace on click if you want these sticky
 										/>
 										{typeof value === 'string' && (
 											<text
@@ -363,8 +351,6 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 							});
 						})}
 					</g>
-					{/* X-axis Label (pH) */}
-					{/* flip 2 and 3 */}
 					<text x={22} y={160} fill="#D3D8DE" fontSize={14}> {dataType == 'ph_in_sample_region' ? '.001 ': negOrPos == '-' ? -1e-8 : 1e-8} </text>
 					<text x="56%" y="164" fill="#D3D8DE" fontSize={12} fontWeight={500} textAnchor="middle">
 						{xAxisLabel === 'CI concentration' && (
@@ -389,7 +375,6 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 								<tspan dy="13" dx = '-10' fontSize="14" style={{ fontStyle: 'italic' }}>TI</tspan>
 							</>
 						)}
-						{/* This tspan is for unit display, adjust x and dy to align it correctly */}
 						<tspan x="56%" dy={xAxisLabel === 'CI concentration' ? 29 : 18} fontSize={xAxisLabel === 'CI concentration' ? "13" : "14" } fontWeight="normal">
 							{xAxisLabel === 'CI concentration' ? '[M]' : '[m²/(V.s)]'}
 						</tspan>
@@ -400,18 +385,17 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
         
 					{/* Y-axis Label (LE_C) */}
 					<text 
-						x={31} // Position the text near the middle of the height
-						y={10}  // Position the text slightly off the left edge
+						x={31} 
+						y={10}  
 						fill="#D3D8DE" 
 						fontSize={14} 
-						// transform="rotate(-90 -10, 40)"
 					>
 						{LE_C_values[0]}
 					</text>
 
 					<text 
-						x={12} // Adjusted for better centering due to the upright orientation
-						y={80} // Adjusted for vertical positioning
+						x={12} 
+						y={80} 
 						fill="#D3D8DE" 
 						fontSize={12} 
 						fontWeight={500}
@@ -433,11 +417,10 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 
 					
 					<text 
-						x={10} // Position the text near the middle of the height
-						y={144}  // Position the text slightly off the left edge
+						x={10} 
+						y={144}  
 						fill="#D3D8DE" 
 						fontSize={14} 
-						// transform="rotate(-90 -10, 40)"
 					>
 						{'.001'}
 					</text>
@@ -451,14 +434,14 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						position: 'absolute', 
 						left: tooltip.x, 
 						top: tooltip.y,
-						backgroundColor: '#394B59',  // Blueprint's tooltip background color
-						color: 'white',  // Text color
-						padding: '10px',  // Padding inside the tooltip
-						borderRadius: '3px',  // Rounded corners
-						boxShadow: '0 0 5px rgba(0,0,0,0.2)',  // Shadow for a "lifted" effect
-						fontSize: '13px',  // Font size similar to Blueprint
-						zIndex: 9999,  // Ensure it's above other elements
-						transition: 'left 0.1s ease, top 0.1s ease',  // Transition for smooth animation
+						backgroundColor: '#394B59',  
+						color: 'white',  
+						padding: '10px',  
+						borderRadius: '3px',  
+						boxShadow: '0 0 5px rgba(0,0,0,0.2)', 
+						fontSize: '13px',  
+						zIndex: 9999,  
+						transition: 'left 0.1s ease, top 0.1s ease', 
 					}}
 				>
 					{tooltip.content}
@@ -500,14 +483,10 @@ const SimpleHeatmap: React.FC<SimpleHeatmapProps> = ({ color, title, loading, da
 						y={6}
 						width={90}
 						height={10}
-						fill={`url(#${gradientId})`}  // Use the unique gradient ID here
+						fill={`url(#${gradientId})`} 
 					/>
-					{/* Adding min and max labels to the gradient bar */}
 					<text x={60} y={15} fontSize={11} textAnchor="end" fill="#D3D8DE">{colorMin.toFixed(1)}</text>
 					<text x={155} y={15} fontSize={11} textAnchor="start" fill="#D3D8DE">{colorMax.toFixed(0)}</text>
-					{/* <text x={98} y={22} fontSize={11} textAnchor="start" fill="#D3D8DE">
-						{'units'}
-					</text> */}
 				</svg>
 				{xAxisLabel === 'CI concentration' && (
 					<div style={{ marginBottom: -22 }}></div>)}

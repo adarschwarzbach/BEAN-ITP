@@ -14,34 +14,32 @@
     color: #FFFFFF; 
 }
 
-/* ProjectInfoPopup.css */
 
 .custom-popup .bp3-dialog-body {
     padding: 20px;
     background-color: #30404D;
     color: #CED9E0;
-    display: flex;                /* Flexbox for centering */
-    justify-content: center;     /* Horizontally center */
-    align-items: center;         /* Vertically center */
-    height: 100%;                /* Take full available height */
+    display: flex;                
+    justify-content: center;     
+    align-items: center;         
+    height: 100%;              
 }
 
-/* Wrapper around the content for additional control */
 .content-wrapper {
-    padding: 20px;                /* Padding around actual content */
-    text-align: center;          /* Center text elements */
-    max-width: 80%;              /* Don't let content get too wide */
+    padding: 20px;               
+    text-align: center;          
+    max-width: 80%;              
 }
 
 .custom-popup .bp3-dialog-footer {
     background-color: #21282D;
     padding: 10px 20px;
     display: flex;
-    justify-content: center;     /* Horizontally center footer buttons */
+    justify-content: center;     
 }
 
 .custom-popup .bp3-button {
     background-color: #137CBD;
     color: #FFFFFF;
-    margin: 0 10px;               /* Space out buttons */
+    margin: 0 10px;              
 }

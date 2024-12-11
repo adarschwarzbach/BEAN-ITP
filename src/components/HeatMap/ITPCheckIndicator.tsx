@@ -21,10 +21,10 @@ const ITPCheckIndicator = () => {
 					backgroundColor: '#A9A9A9',
 					marginRight: '10px',
 					display: 'flex',
-					alignItems: 'center', // Vertically center the content
-					justifyContent: 'center', // Horizontally center the content
-					fontSize: '16px', // Adjust as needed to make the dash larger
-					color: 'white', // Adjust the color of the dash if needed
+					alignItems: 'center',
+					justifyContent: 'center', 
+					fontSize: '16px',
+					color: 'white', 
 				}}>
 					–
 				</div>

@@ -5,14 +5,11 @@ const BEAN_COMPUTATION_API = `${BASE_URL}/prod`;
 
 export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) => {
 
-    
-	// Check if speciesObject is indeed an object
 	if (typeof speciesObject !== 'object' || speciesObject === null) {
 		console.error('speciesObject is not an object:', speciesObject);
 		return;
 	}
 
-	// Convert the species object to the desired format
 	const modifiedSpeciesObject = {};
 	for (const key in speciesObject) {
 		if (Object.prototype.hasOwnProperty.call(speciesObject, key)) {
@@ -24,7 +21,6 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 		}
 	}
 
-	// console.log('heatmap call', modifiedSpeciesObject);
 
 	const requestData = {
 		'ionicEffect': ionicEffect,
@@ -57,17 +53,14 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 				row.map((datapoint) => {
 					const datapointObject = datapoint[1];
 		
-					// Check if the datapointObject contains an errorMessage
 					if (datapointObject.errorMessage) {
 						return { computation_value: 'error due to timeout or other server-side issue' };
 					}
 		
-					// Assuming the valid response contains a 'body' property with a JSON string
 					if (typeof datapointObject.body === 'string') {
 						try {
 							const parsedBody = JSON.parse(datapointObject.body);
 		
-							// Check for 'sample_mobility_ratio' in the parsed body
 							if (parsedBody && typeof parsedBody.sample_mobility_ratio === 'number' && parsedBody.itpCheck == false) {
 								return { computation_value: 'itpCheck failed' };
 							}
@@ -89,17 +82,14 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 				row.map((datapoint) => {
 					const datapointObject = datapoint[1];
 	
-					// Check if the datapointObject contains an errorMessage
 					if (datapointObject.errorMessage) {
 						return { computation_value: 'error due to timeout or other server-side issue' };
 					}
 	
-					// Assuming the valid response contains a 'body' property with a JSON string
 					if (typeof datapointObject.body === 'string') {
 						try {
 							const parsedBody = JSON.parse(datapointObject.body);
 	
-							// Check for 'sample_mobility_ratio' in the parsed body
 							if (parsedBody && typeof parsedBody.computation_value === 'number' && parsedBody.itpCheck == false) {
 								return { computation_value: 'itpCheck failed' };
 							}
@@ -121,17 +111,14 @@ export const beanHeatmapComputationV2 = async (ionicEffect, pH, speciesObject) =
 				row.map((datapoint) => {
 					const datapointObject = datapoint[1];
 
-					// Check if the datapointObject contains an errorMessage
 					if (datapointObject.errorMessage) {
 						return { computation_value: 'error due to timeout or other server-side issue' };
 					}
 
-					// Assuming the valid response contains a 'body' property with a JSON string
 					if (typeof datapointObject.body === 'string') {
 						try {
 							const parsedBody = JSON.parse(datapointObject.body);
 
-							// Check for 'sample_mobility_ratio' in the parsed body
 							if (parsedBody && typeof parsedBody.computation_value === 'number' && parsedBody.itpCheck == false) {
 								return { computation_value: 'itpCheck failed' };
 							}

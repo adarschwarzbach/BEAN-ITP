@@ -1,9 +1,8 @@
 import React from 'react';
 import { Column, Table2, Cell, TableLoadingOption } from '@blueprintjs/table';
-import './ZoneConcentrationTable.css'; // Update the path according to your file structure
-import { useSpeciesData } from '../../../Contexts/SpeciesData'; // Update the path according to your file structure
+import './ZoneConcentrationTable.css';
+import { useSpeciesData } from '../../../Contexts/SpeciesData';
 
-// Updated type definitions
 type SpeciesDataRow = {
     type: 'speciesData';
     species: string;
@@ -27,7 +26,7 @@ type TableRow = SpeciesDataRow | PHRow | BlankRow;
 function toThreeSigFigs(num: number): number {
 	if (num === 0) return 0;
 	const magnitude = Math.floor(Math.log10(Math.abs(num)));
-	const factor = Math.pow(10, 2 - magnitude); // 3-1 is simplified to 2
+	const factor = Math.pow(10, 2 - magnitude); 
 	return Math.round(num * factor) / factor;
 }
 
@@ -45,10 +44,8 @@ const ZoneConcentrationsTable: React.FC = () => {
 	const speciesList = Object.values(speciesDict).map(species => species.Name);
 	const pHData = beanResults?.pHInItpZones[0].map(toThreeSigFigs).reverse();
 
-
-	// Constructing the data array
 	const data: TableRow[] = computedZoneConcentrations.map((row, index) => ({
-		type: 'speciesData', // Explicitly setting the type
+		type: 'speciesData', 
 		species: speciesList[index],
 		zone1: row[0],
 		zone2: row[1],
@@ -56,19 +53,17 @@ const ZoneConcentrationsTable: React.FC = () => {
 		zone4: row[3],
 	}));
 
-	// Inserting a blank row and then the pH row
-	data.push({ type: 'blank' }); // Blank row
+	data.push({ type: 'blank' }); 
 	if (pHData) {
-		data.push({ type: 'pH', values: pHData }); // pH row
+		data.push({ type: 'pH', values: pHData }); 
 	}
 
-	// Rendering function for cells
 	const renderCell = (rowIndex: number, columnIndex: number): JSX.Element => {
 		const rowData = data[rowIndex];
 
 		switch (rowData.type) {
 		case 'blank':
-			return <Cell />; // Render an empty cell for the blank row
+			return <Cell />; 
 		case 'pH':
 			if (columnIndex === 0) {
 				return <Cell>pH</Cell>;
@@ -77,7 +72,7 @@ const ZoneConcentrationsTable: React.FC = () => {
 				return <Cell>{phValue.toString()}</Cell>;
 			}
 		case 'speciesData': {
-			let content = ''; // Moved declaration outside the switch
+			let content = ''; 
 			switch (columnIndex) {
 			case 0: content = rowData.species; break;
 			case 1: content = toThreeSigFigs(rowData.zone4).toString(); break; // TE
@@ -93,7 +88,6 @@ const ZoneConcentrationsTable: React.FC = () => {
 		}
 	};
 
-	// Function to render columns based on columnNames
 	const renderColumns = (): JSX.Element[] => {
 		return columnNames.map((columnName, columnIndex) => (
 			<Column

@@ -35,7 +35,6 @@ const ProjectInfoPopup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
 				display: 'flex',
 				justifyContent: 'center'
 			}}>
-				{/* <Button onClick={onClose}>Close</Button> */}
 			</div>
 		</Dialog>
 	);

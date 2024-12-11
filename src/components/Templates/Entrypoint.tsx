@@ -31,10 +31,8 @@ const Entrypoint: React.FC = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			// Create a copy of ionicEffect 
 			const ionicEffectCopy = ionicEffect;
-	
-			// Create a deep copy of speciesDict
+
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
 	
 			const computationPromise = beanComputation(ionicEffectCopy, speciesDictCopy);
@@ -75,7 +73,7 @@ const Entrypoint: React.FC = () => {
 					alignItems: 'center',
 					height: '100vh',
 					padding: 12,
-					marginTop: '-20%' // Move the content up by 10% of its parent's height
+					marginTop: '-20%' 
 				}} className={themeClass}>
 					<h3 style={{ textAlign: 'center' }}>Try a computer</h3>
 					<p style={{ textAlign: 'center' }}>We do not currently support mobile. For the best BEAN experience, please try a computer :)</p>

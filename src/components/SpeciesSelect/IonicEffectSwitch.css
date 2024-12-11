@@ -5,9 +5,9 @@
     padding-bottom: 0px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    display: flex; /* Use flex instead of inline-block */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
 
 .bp3-switch:focus .bp3-control-indicator {

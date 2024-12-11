@@ -1,6 +1,6 @@
 import React from 'react';
-import Entrypoint from './Entrypoint'; // Adjust the path as necessary
-import DataDisplayTemplate from './DataDisplayTemplate'; // Adjust the path as necessary
+import Entrypoint from './Entrypoint'; 
+import DataDisplayTemplate from './DataDisplayTemplate';
 
 const FullScreen = () => {
 	return (

@@ -3,7 +3,6 @@
 @import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 
 
-/* Container for our App to avoid full screen color */
 .app-container {
   padding: 20px;
   margin: 0 auto;

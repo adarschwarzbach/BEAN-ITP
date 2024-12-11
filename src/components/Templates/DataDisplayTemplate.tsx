@@ -22,10 +22,8 @@ const DataDisplayTemplate: React.FC = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			// Create a copy of ionicEffect
 			const ionicEffectCopy = ionicEffect;
 
-			// Create a deep copy of speciesDict
 			const speciesDictCopy = JSON.parse(JSON.stringify(speciesDict));
 
 			const computationPromise = beanComputation(ionicEffectCopy, speciesDictCopy);
@@ -41,7 +39,6 @@ const DataDisplayTemplate: React.FC = () => {
 
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', marginBottom: -34 }} className='bp5-dark'>
-			{/* Other component rendering removed for brevity */}
 			<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
 				<div style={{ padding: '12px', marginLeft: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
 					<SimpleHeatmap color='viridis' title='pH in Sample Region' loading={ateHeatmapLoading} dataType='ph_in_sample_region' yAxisLabel='LE concentration' xAxisLabel='CI concentration'/>

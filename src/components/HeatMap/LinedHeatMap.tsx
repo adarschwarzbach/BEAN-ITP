@@ -16,7 +16,6 @@ const generateLargeData = (rows: number, columns: number): number[][] => {
 			const distanceFromCenter = Math.sqrt((centerX - j) ** 2 + (centerY - i) ** 2);
 			const normalizedDistance = distanceFromCenter / maxDistance; 
 
-			// This will be a random value that decreases as we get closer to the center
 			const randomAdjustment = Math.random() * normalizedDistance;
 
 			rowData.push(randomAdjustment);
@@ -82,7 +81,6 @@ const LinedHeatMap: React.FC<SimpleHeatmapProps> = ({ color, title }) => {
 					});
 				})}
 
-				{/* Drawing the x and y axes */}
 				{Array.from({ length: 25 }).map((_, i) => (
 					<line 
 						key={`x-${i}`} 

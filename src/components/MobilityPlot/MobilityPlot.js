@@ -51,9 +51,9 @@ const MobilityPlot = () => {
 	}
 
 	const datasets = [...sol1.map((sol, index) => {
-		const hueRange = 400; // Max hue, avoiding purple range
+		const hueRange = 400;
 		const hueStep = hueRange / sol1.length;
-		const baseHue = (index * hueStep) % hueRange; // Adjust so it never reaches purple
+		const baseHue = (index * hueStep) % hueRange;
 		return {
 			label: labels[index] || `Species ${index + 1} (sol1)`,
 			data: sol.map((y, i) => ({ x: lin_pH[i], y: y  })),
