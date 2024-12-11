@@ -7,32 +7,33 @@ Try it out [here](https://adarschwarzbach.github.io/BEAN-ITP/)!
 # File Structure
 ```sh
 BEAN_ITP/
-├── node_modules/
+├── node_modules/ # Dependencies
 ├── public/
 │   ├── index.html
 │   └── ...
-├── server/
+├── server/ # Server side code
+│   ├── computations_v1/ # Initial computations & expirements in TensorFlow
+│   ├── computations_v2/ # v2 computations for heatmaps
+│   ├── computations_v3/ # Latest computations for heatmaps live on the site
 │   ├── docker/ # Containarize python venv & dependencies 
-│   │   └── ...
-│   ├── numpyLambdaLayer/ # Service to use numpy in AWS
-│   │   └── ...
-│   ├── beanBackend.py # AWS Lambda function for BEAN API
-│   ├── zipBackend.sh # Script to zip beanBackend.py
-│   ├── diffusion_free_model.py # Edited version of diffusion calculations
-│   ├── printOutput.py # Script to print .npz otput files from the model
+│   ├── mobility_plot/ # generate the mobility plot 
+│   ├── lambda_layers/ # Services to use .py dependencies (numpy, etc) in AWS Lambda
+│   ├── utils/ # Helper functions for development & testing
 │   └── ...
 ├── src/ # Client
-│   ├── App.tsx
-│   ├── index.tsx
+│   ├── index.tsx # Entrypoint 
+│   ├── components/ # React components making up the BEAN GUI
+│   ├── Contexts/ # Global state
+│   ├── utils/ # Helper functions for development & testing
 │   └── ...
-├── README.md
+├── README.md 
+├── LICENSE
 ├── package.json
 ├── tsconfig.json
 ├── yarn.lock
 ```
 
 # To locally run the client 
-(once client is completed)
 
 1. **Clone the Project:**
 
