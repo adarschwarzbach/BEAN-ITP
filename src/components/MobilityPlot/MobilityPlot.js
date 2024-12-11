@@ -81,6 +81,8 @@ const MobilityPlot = () => {
 		};
 	})];
 
+
+	
 	const options = {
 		scales: {
 			x: {
@@ -121,6 +123,19 @@ const MobilityPlot = () => {
 			}
 		},
 		plugins: {
+			tooltip: {
+				padding: 10, 
+				callbacks: {
+					title: function () {
+						return ''; 
+					},
+					label: function (context) {
+						const xValue = context.raw.x.toFixed(2); 
+						const yValue = (context.raw.y * 1e8).toFixed(2); // Normalize mobility
+						return `pH: ${xValue}, Mobility: ${yValue} × 10⁻⁸ m²/(V⋅s)`;
+					}
+				}
+			},
 			legend: {
 				display: true,
 				position: 'top',
@@ -133,14 +148,6 @@ const MobilityPlot = () => {
 					},
 				},
 			},
-			// title: {
-			// 	display: true,
-			// 	text: 'Mobility vs pH - Including and Excluding Ionic Strength Effect',
-			// 	color: 'white',
-			// 	font: {
-			// 		size: 14
-			// 	},
-			// },
 		},
 		maintainAspectRatio: false,
 	};
