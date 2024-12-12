@@ -8,11 +8,11 @@ Try BEAN out at [https://web.stanford.edu/group/microfluidics/bean/](https://web
 ```sh
 BEAN_ITP/
 ├── node_modules/ # Dependencies
-├── public/
+├── public/ # Static assests
 │   ├── index.html
 │   └── ...
-├── server/ # Server side code
-│   ├── computations_v1/ # Initial computations & expirements in TensorFlow
+├── server/ # Server code
+│   ├── computations_v1/ # Initial computations & TensorFlow expirements
 │   ├── computations_v2/ # v2 computations for heatmaps
 │   ├── computations_v3/ # Latest computations for heatmaps live on the site
 │   ├── docker/          # Containarize python venv & dependencies 
@@ -20,7 +20,7 @@ BEAN_ITP/
 │   ├── lambda_layers/   # Services to use .py dependencies (numpy, etc) in AWS Lambda
 │   ├── utils/           # Helper functions for development & testing
 │   └── ...
-├── src/ # Client
+├── src/ # Client code
 │   ├── index.tsx        # Entrypoint 
 │   ├── components/      # React components making up the BEAN GUI
 │   ├── Contexts/        # Global state
