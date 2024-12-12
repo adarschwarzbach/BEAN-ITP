@@ -2,7 +2,7 @@
 **Manuscript in review!** 🟢🟢🟢🟢🟢🟢🟡🟡⚪️
 
 
-Try it out [here](https://adarschwarzbach.github.io/BEAN-ITP/)!
+Try BEAN out [https://web.stanford.edu/group/microfluidics/bean/](https://web.stanford.edu/group/microfluidics/bean/)!
 
 # File Structure
 ```sh
