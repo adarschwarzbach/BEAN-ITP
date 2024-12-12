@@ -2,7 +2,7 @@
 **Manuscript in review!** 🟢🟢🟢🟢🟢🟢🟡🟡⚪️
 
 
-Try BEAN out [https://web.stanford.edu/group/microfluidics/bean/](https://web.stanford.edu/group/microfluidics/bean/)!
+Try BEAN out at [https://web.stanford.edu/group/microfluidics/bean/](https://web.stanford.edu/group/microfluidics/bean/)!
 
 # File Structure
 ```sh
