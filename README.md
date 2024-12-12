@@ -15,16 +15,16 @@ BEAN_ITP/
 │   ├── computations_v1/ # Initial computations & expirements in TensorFlow
 │   ├── computations_v2/ # v2 computations for heatmaps
 │   ├── computations_v3/ # Latest computations for heatmaps live on the site
-│   ├── docker/ # Containarize python venv & dependencies 
-│   ├── mobility_plot/ # generate the mobility plot 
-│   ├── lambda_layers/ # Services to use .py dependencies (numpy, etc) in AWS Lambda
-│   ├── utils/ # Helper functions for development & testing
+│   ├── docker/          # Containarize python venv & dependencies 
+│   ├── mobility_plot/   # generate the mobility plot 
+│   ├── lambda_layers/   # Services to use .py dependencies (numpy, etc) in AWS Lambda
+│   ├── utils/           # Helper functions for development & testing
 │   └── ...
 ├── src/ # Client
-│   ├── index.tsx # Entrypoint 
-│   ├── components/ # React components making up the BEAN GUI
-│   ├── Contexts/ # Global state
-│   ├── utils/ # Helper functions for development & testing
+│   ├── index.tsx        # Entrypoint 
+│   ├── components/      # React components making up the BEAN GUI
+│   ├── Contexts/        # Global state
+│   ├── utils/           # Helper functions for development & testing
 │   └── ...
 ├── README.md 
 ├── LICENSE
