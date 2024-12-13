@@ -1,5 +1,6 @@
 # BEAN - A Highly Parallel Isotachphoresis Calculator
-**Manuscript in review!** 🟢🟢🟢🟢🟢🟢🟡🟡⚪️
+
+Manuscript accepted for publication as a featured article in [Analytica Chimica Acta](https://www.sciencedirect.com/journal/analytica-chimica-acta).
 
 
 Try BEAN out at [https://web.stanford.edu/group/microfluidics/bean/](https://web.stanford.edu/group/microfluidics/bean/)!
@@ -50,3 +51,7 @@ BEAN_ITP/
     yarn start
 
 Open [http://localhost:3000](http://localhost:3000) to view BEAN in the browser.
+
+# Adapting or locally running the server & simulations
+
+Please reach out to adar [dot] schwarzbach [at] gmail [dot] com for guidance on adapting or updating the ITP simulations and server behind BEAN.
