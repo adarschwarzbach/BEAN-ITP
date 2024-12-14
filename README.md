@@ -1,10 +1,10 @@
 # BEAN - A Highly Parallel Isotachphoresis Calculator
 
-Manuscript accepted for publication as a featured article in [Analytica Chimica Acta](https://www.sciencedirect.com/journal/analytica-chimica-acta).
+Manuscript accepted for publication as a featured article in [Analytica Chimica Acta](https://www.sciencedirect.com/journal/analytica-chimica-acta)
 
 
 # Using BEAN
-You can try BEAN out at [https://web.stanford.edu/group/microfluidics/bean/](https://web.stanford.edu/group/microfluidics/bean/)!
+You can try BEAN out at [https://web.stanford.edu/group/microfluidics/bean/](https://web.stanford.edu/group/microfluidics/bean/)
 
 # File Structure
 ```sh
