@@ -9,7 +9,6 @@ You can try BEAN out at [https://web.stanford.edu/group/microfluidics/bean/](htt
 # File Structure
 ```sh
 BEAN_ITP/
-├── node_modules/ # Dependencies
 ├── public/ # Static assests
 │   ├── index.html
 │   └── ...
