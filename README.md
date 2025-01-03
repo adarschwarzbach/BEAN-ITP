@@ -1,6 +1,6 @@
 # BEAN - A Highly Parallel Isotachphoresis Calculator
 
-Manuscript accepted for publication as a featured article in [Analytica Chimica Acta](https://www.sciencedirect.com/journal/analytica-chimica-acta)
+Article published as a featured article in [Analytica Chimica Acta](https://doi.org/10.1016/j.aca.2024.343553).
 
 
 # Using BEAN
